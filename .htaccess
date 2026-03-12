@@ -1,0 +1,200 @@
+RewriteEngine On
+# Ensure favicon always resolves to the HTTPS images path to avoid mixed-content
+RewriteCond %{REQUEST_URI} ^/favicon\.ico$
+RewriteRule ^favicon\.ico$ https://%{HTTP_HOST}/images/favicon.ico [L,R=301]
+
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Redirect explicit requests to /index.php to canonical /
+  RewriteCond %{THE_REQUEST} \s/index\.php[?\s] [NC]
+  RewriteRule ^index\.php$ / [R=301,L]
+
+</IfModule>
+
+# Ensure favicon requests are served (avoid 404s)
+Redirect 301 /favicon.ico /images/favicon.ico
+Options -Indexes
+
+SetOutputFilter DEFLATE
+AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml
+
+<IfModule mod_expires.c>
+ExpiresActive on
+# cache.appcache needs re-requests in FF 3.6 (thx Remy ~Introducing HTML5)   
+ExpiresByType text/cache-manifest       "access plus 0 seconds"           
+# Your document html    
+ExpiresByType text/html                 "access plus 0 seconds"       
+# Data    
+ExpiresByType text/xml                  "access plus 0 seconds"    
+ExpiresByType application/xml           "access plus 0 seconds"    
+ExpiresByType application/json          "access plus 0 seconds"  
+# enable the directives - assuming they're not enabled globally
+
+
+# send an Expires: header for each of these mimetypes (as defined by server)
+ExpiresByType image/png "access plus 1 month"
+ExpiresByType image/gif "access plus 1 month"
+ExpiresByType image/jpeg "access plus 1 month"
+
+# css may change a bit sometimes, so define shorter expiration
+ExpiresByType text/css "access plus 1 days"
+
+# Favicon (cannot be renamed)
+  ExpiresByType image/x-icon              "access plus 1 week"
+
+# Webfonts
+ExpiresByType font/truetype "access plus 1 month"
+ExpiresByType font/opentype "access plus 1 month"
+ExpiresByType application/x-font-woff "access plus 1 month"
+
+#Create filter to match files you want to cache
+<Files "*.js">
+    Header add "Cache-Control" "max-age=604800"
+</Files>
+ <IfModule mod_headers.c>
+    Header append Cache-Control "public"
+  </IfModule>
+   
+</IfModule>
+
+
+###################### Redirect old URLs to current structure #################
+RewriteEngine On
+Redirect 301 /en/ https://mydropintheoceans.org/
+Redirect 301 /home/ https://mydropintheoceans.org/
+Redirect 301 /home https://mydropintheoceans.org/
+Redirect 301 /business/ https://mydropintheoceans.org/
+################################################################################
+
+######################### Howto map /~user to /user ############################
+RewriteEngine On
+RewriteCond %{REQUEST_URI} ^/([^/]+)$
+RewriteCond %{DOCUMENT_ROOT}/%1 !-d
+RewriteCond /home/sites/%{SERVER_NAME}/users/%1 -d
+RewriteRule ^([^/]+)$ http://mydropintheoceans.org/$1/ [R,L]
+RewriteCond %{REQUEST_URI} ^/([^/]+)/
+RewriteCond %{DOCUMENT_ROOT}/%1 !-d
+RewriteCond /home/sites/%{SERVER_NAME}/users/%1 -d
+RewriteRule ^([^/]+)(.+)$ /~$1/$2
+################################################################################
+
+###################### Howto map /users/user to /users/user ####################
+RewriteEngine On
+RewriteCond %{REQUEST_URI} ^/users/([^/]+)$
+RewriteCond %{DOCUMENT_ROOT}/%1 !-d
+RewriteCond /home/sites/%{SERVER_NAME}/users/%1 -d
+RewriteRule ^users/([^/]+)$ http://mydropintheoceans.org/users/$1/ [R,L]
+RewriteCond %{REQUEST_URI} ^/users/([^/]+)/
+RewriteCond %{DOCUMENT_ROOT}/%1 !-d
+RewriteCond /home/sites/%{SERVER_NAME}/users/%1 -d
+RewriteRule ^users/([^/]+)(.+)$ /~$1/$2
+################################################################################
+
+
+###RewriteEngine On
+###RewriteBase /
+###RewriteCond %{HTTP_HOST} mydio.ch$ [NC]
+###RewriteRule ^(.*)$ https://mydropintheoceans.org/$1 [L,R=301]
+
+###RewriteEngine On
+###RewriteBase /
+###RewriteCond %{HTTP_HOST} mydio.club$ [NC]
+###RewriteRule ^(.*)$ https://mydropintheoceans.org/$1 [L,R=301]
+
+
+###################### map /http:// to https:// ####################
+
+RewriteEngine On 
+RewriteCond %{HTTP_HOST} ^www\.(.+)
+RewriteCond %{HTTPS}s/%1 ^(on(s)|offs)/(.+)
+RewriteRule ^ http%2://%3%{REQUEST_URI} [L,R=301]
+RewriteCond %{HTTPS} off 
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteEngine On
+RewriteCond %{SERVER_PORT} =443
+RewriteBase /
+RewriteCond %{HTTP_HOST} mydropintheoceans.org$ [NC]
+RewriteRule ^(.*)$ https://mydropintheoceans.org/$1 [L,R=301]
+
+##RewriteEngine On
+RewriteCond %{SERVER_PORT} =80
+RewriteCond %{HTTP_HOST} mydropintheoceans\\.org$ [NC]
+RewriteRule ^(.*)$ https://mydropintheoceans.org%{REQUEST_URI} [L,R=301]
+
+# BEGIN GD-SSL
+##
+######## INFO http://webmasters.stackexchange.com/questions/76871/why-does-my-htaccess-work-for-all-browsers-but-internet-explorer
+##<IfModule mod_rewrite.c>
+##Options +FollowSymLinks
+##RewriteEngine On
+##RewriteCond %{HTTPS} !=on
+######## MAY NOT BE NECESSARY RewriteCond %{HTTP_USER_AGENT} ^(.+)$
+##RewriteCond %{SERVER_NAME} ^mydropintheoceans\.org$
+##RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
+##Header add Strict-Transport-Security "max-age=300"
+##</IfModule>
+# END GD-SSL
+
+# Redirect /index.php to /
+RewriteCond %{THE_REQUEST} /index\.php[?\s] [NC]
+RewriteRule ^index\.php$ / [R=301,L]
+
+################################################################################
+
+################################## Errors ######################################
+#ErrorDocument 301 /error/301-moved_permanently.html
+#ErrorDocument 302 /error/302-moved_temporarily.html
+#ErrorDocument 303 /error/303-see_other.html
+#ErrorDocument 400 /error/400-bad_request.html
+ErrorDocument 401 /error/401-authorization_required.html
+#ErrorDocument 402 /error/402-payment_required.html
+ErrorDocument 403 /error/403-forbidden.html
+ErrorDocument 404 /error/404-not_found.html
+#ErrorDocument 405 /error/405-method_not_allowed.html
+#ErrorDocument 406 /error/406-not_acceptable.html
+#ErrorDocument 407 /error/407-proxy_authentication_required.html
+ErrorDocument 408 /error/408-request_timed_out.html
+#ErrorDocument 409 /error/409-conflicting_request.html
+#ErrorDocument 410 /error/410-gone.html
+#ErrorDocument 411 /error/411-content_length_required.html
+#ErrorDocument 412 /error/412-precondition_failed.html
+#ErrorDocument 413 /error/413-request_entity_too_long.html
+#ErrorDocument 414 /error/414-request_uri_too_long.html
+#ErrorDocument 415 /error/415-unsupported_media_type.html
+ErrorDocument 500 /error/500-internal_server_error.html
+#ErrorDocument 501 /error/501-not_implemented.html
+#ErrorDocument 502 /error/502-bad_gateway.html
+ErrorDocument 503 /error/503-service_unavailable.html
+#ErrorDocument 504 /error/504-gateway_timeout.html
+#ErrorDocument 505 /error/505-http_version_not_supported.html
+################################################################################
+
+
+AddOutputFilterByType DEFLATE "application/atom+xml" "application/javascript" "application/json" "application/ld+json" "application/manifest+json" "application/rdf+xml" "application/rss+xml" "application/schema+json" "application/vnd.geo+json" "application/vnd.ms-fontobject" "application/x-font-ttf" "application/x-javascript" "application/x-web-app-manifest+json" "application/xhtml+xml" "application/xml" "font/eot" "font/opentype" "image/bmp" "image/svg+xml" "image/vnd.microsoft.icon" "image/x-icon" "text/cache-manifest" "text/css" "text/html" "text/javascript" "text/plain" "text/vcard" "text/vnd.rim.location.xloc" "text/vtt" "text/x-component" "text/x-cross-domain-policy" "text/xml"
+
+
+
+
+#php_value mbstring.func_overload 4 -- cause code 500 server error
+
+#php_value allow_url_fopen On -- cause code 500 server error
+
+# BEGIN WordPress
+# The directives (lines) between "BEGIN WordPress" and "END WordPress" are
+# dynamically generated, and should only be modified via WordPress filters.
+# Any changes to the directives between these markers will be overwritten.
+# <IfModule mod_rewrite.c>
+# RewriteEngine On
+# RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+# RewriteBase /
+# RewriteRule ^index\.php$ - [L]
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule . /index.php [L]
+# </IfModule>
+
+# END WordPress

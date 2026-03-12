@@ -1,0 +1,12 @@
+{
+	"lang": "en",
+	"name": "MyDIO App",
+	"short_name": "MyDIO",
+	"icons": [{
+		"src": "/images/connect-icons/mydio-icon-144x144-precomposed.png",
+		"sizes": "144x144",
+	 	"type" : "image/png"}],
+	"display": "fullscreen",
+	 "orientation": "landscape",
+	 "start_url" : "/login/loggedin/account.php"
+}
