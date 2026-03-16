@@ -30,7 +30,7 @@
 			<a href="<?php echo htmlspecialchars(localized_path('/blog/money-work-worth/', $locale)); ?>" class="link">Argent = Travail = Valeur</a>,
 			<a href="<?php echo htmlspecialchars(localized_path('/blog/what-if-stewardship-was-financially-recognised/', $locale)); ?>" class="link">Et si la préservation était reconnue financièrement ?</a>
 			et
-			<a href="<?php echo htmlspecialchars(localized_path('/blog/nature-is-not-a-charity/', $locale)); ?>" class="link">La nature n’est pas une charité</a>.
+			<a href="<?php echo htmlspecialchars(localized_path('/blog/nature-is-not-a-charity/', $locale)); ?>" class="link">La Nature n’est pas une charité — c’est une nécessité économique</a>.
 		</span>
 
 		<h2 class="header_two">Reconnaître le capital naturel comme richesse de base</h2>
