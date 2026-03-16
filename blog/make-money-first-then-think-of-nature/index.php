@@ -1,36 +1,59 @@
-<?php 
+<?php
+include __DIR__ . '/../../php/i18n.php';
+$locale = get_current_locale();
+$alternateLocale = get_alternate_locale($locale);
+$articlePath = '/blog/make-money-first-then-think-of-nature/';
+
+$metaDescriptionEn = 'Why our economy puts profit before Nature — how a Citizen’s Dividend for Nature could align incentives and recognise natural capital in a market economy';
+$metaDescriptionFr = 'Pourquoi notre économie pousse à gagner de l’argent avant de penser à la Nature. Comment un dividende citoyen peut aligner l’économie avec le capital naturel.';
+
+$pageTitle = $locale === 'fr'
+  ? 'Gagner de l\'argent d\'abord, puis (peut-être) penser à la Nature'
+  : 'Make Money First, Then (Maybe) Think of Nature';
+
+$metaKeywordsEn = 'Nature, natural capital, Citizen’s Dividend for Nature, economy, incentives, stewardship, sustainability, ecological value, My Drop In The Oceans';
+$metaKeywordsFr = 'Nature, capital naturel, dividende citoyen pour la Nature, économie, incitations économiques, durabilité, biodiversité, valeur écologique, My Drop In The Oceans';
+$metaKeywords = $locale === 'fr' ? $metaKeywordsFr : $metaKeywordsEn;
+$metaDescription = $locale === 'fr' ? $metaDescriptionFr : $metaDescriptionEn;
+$canonicalUrl = localized_url($articlePath, $locale);
+
 include __DIR__ . '/../../php/analytics.php';
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="<?php echo $locale; ?>">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
     <!-- SEO -->
-    <meta name="description" content="Why our economy puts profit before Nature — how a Citizen’s Dividend for Nature could align incentives and recognise natural capital in a market economy">
-    <meta name="keywords" content="Nature, Natural Capital, Citizen’s Dividend for Nature, Economy, Incentives, Stewardship, Sustainability, Value, My Drop In The Oceans">
+    <meta name="description" content="<?php echo htmlspecialchars($metaDescription); ?>">
+    <meta name="keywords" content="<?php echo htmlspecialchars($metaKeywords); ?>">
     <meta name="author" content="My Drop In The Oceans">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://mydropintheoceans.org/blog/make-money-first-then-think-of-nature/" />
+    <link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl); ?>" />
+    <link rel="alternate" hreflang="en" href="<?php echo htmlspecialchars(localized_url($articlePath, 'en')); ?>" />
+    <link rel="alternate" hreflang="fr" href="<?php echo htmlspecialchars(localized_url($articlePath, 'fr')); ?>" />
+    <link rel="alternate" hreflang="x-default" href="<?php echo htmlspecialchars(localized_url($articlePath, 'en')); ?>" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Make Money First, Then (Maybe) Think of Nature">
-    <meta property="og:description" content="Why our economy puts profit before Nature — how a Citizen’s Dividend for Nature could align incentives and recognise natural capital in a market economy">
-    <meta property="og:url" content="https://mydropintheoceans.org/blog/make-money-first-then-think-of-nature/">
+    <meta property="og:title" content="<?php echo htmlspecialchars($pageTitle); ?>">
+    <meta property="og:description" content="<?php echo htmlspecialchars($metaDescription); ?>">
+    <meta property="og:url" content="<?php echo htmlspecialchars($canonicalUrl); ?>">
     <meta property="og:type" content="article">
     <meta property="og:image" content="https://mydropintheoceans.org/images/backdrop_an_economy_linkedin.jpg">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="200">
-    <meta property="og:image:height" content="200">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="812">
+    <meta property="og:image:height" content="424">
+    <meta property="og:image:alt" content="<?php echo htmlspecialchars($pageTitle); ?>">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Make Money First, Then (Maybe) Think of Nature">
-    <meta name="twitter:description" content="Why our economy puts profit before Nature — how a Citizen’s Dividend for Nature could align incentives and recognise natural capital in a market economy">
+    <meta name="twitter:title" content="<?php echo htmlspecialchars($pageTitle); ?>">
+    <meta name="twitter:description" content="<?php echo htmlspecialchars($metaDescription); ?>">
     <meta name="twitter:image" content="https://mydropintheoceans.org/images/backdrop_an_economy_linkedin.jpg">
+    <meta name="twitter:image:alt" content="<?php echo htmlspecialchars($pageTitle); ?>">
 
-    <title>Make Money First, Then (Maybe) Think of Nature</title>
+    <title><?php echo htmlspecialchars($pageTitle); ?></title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/connect-icons/apple-touch-icon.png">
     <link rel="stylesheet" type="text/css" href="/css/mydropintheoceans-style.css?v=<?php echo time(); ?>">
@@ -40,8 +63,8 @@ include __DIR__ . '/../../php/analytics.php';
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      "headline": "Make Money First, Then (Maybe) Think of Nature",
-      "description": "Why our economy puts profit before Nature — how a Citizen’s Dividend for Nature could align incentives and recognise natural capital in a market economy.",
+      "headline": "<?php echo htmlspecialchars($pageTitle, ENT_QUOTES); ?>",
+      "description": "<?php echo htmlspecialchars($metaDescription, ENT_QUOTES); ?>",
       "image": "https://mydropintheoceans.org/images/backdrop_an_economy_linkedin.jpg",
       "author": {
         "@type": "Organization",
@@ -58,7 +81,7 @@ include __DIR__ . '/../../php/analytics.php';
       "datePublished": "2026-02-28",
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://mydropintheoceans.org/blog/make-money-first-then-think-of-nature/"
+        "@id": "<?php echo htmlspecialchars($canonicalUrl, ENT_QUOTES); ?>"
       }
     }
     </script>
@@ -124,27 +147,7 @@ include __DIR__ . '/../../php/analytics.php';
 
 <body style="border: 0;margin: 0;padding: 0;background-color: #080a23;">
   <div style="max-width: 1000px !important;margin-right: auto;margin-left: auto;">
-    <div style="height:60px;background-color: white;width:100%;max-width:1000px; color: #fff!important;
-        font-size: 18px!important;
-        padding-top: 10px!important;
-        padding-bottom: 10px!important;
-        box-shadow: 0 0 20px 8px rgba(60,60,60,.06)!important;
-        border-bottom-right-radius: 5px;
-        border-bottom-left-radius: 5px;position: fixed;z-index: 2;border-bottom: #8e807687;
-        border-bottom-color: #8e807687;
-        border-bottom-style: inset;
-        border-bottom-width: thin;">
-        <div style="width: 80%;
-        background-image: url(/images/logo/mydropintheoceans_logo_large_no_drop.png);
-        height: 40px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        margin-left: auto;
-        margin-right: auto;
-        position: relative;
-        background-position: center;
-        margin-top: 13px;"></div>
-    </div>
+    <?php include __DIR__ . '/../../php/site-header.php'; ?>
 
     <div style="background-size: cover; width:100%;height:120%;background-image: url(/images/background/MyDIO_back.jpg);background-repeat: no-repeat;background-position-x: center;background-position-y: 74px;position:fixed;max-width:1000px;">
     </div>
@@ -154,7 +157,7 @@ include __DIR__ . '/../../php/analytics.php';
         <div style="padding-left: 15%;width: 85%; top: 30%;position: relative;height: 5%;"></div>
 
         <div class="intro_box"><br>
-          <b>Blog</b><br>Make Money First, Then (Maybe) Think of Nature
+          <b><?php echo $locale === 'fr' ? 'Blog' : 'Blog'; ?></b><br><?php echo htmlspecialchars($pageTitle); ?>
         </div>
 
         <div class="brown_page_spacer_top">
@@ -164,11 +167,15 @@ include __DIR__ . '/../../php/analytics.php';
 
         <div class="white_page_span">
           <p></p>
-          <h1 class="header_one">Make Money First, Then (Maybe) Think of Nature</h1>
+          <h1 class="header_one"><?php echo htmlspecialchars($pageTitle); ?></h1>
           <p></p>
-          <div class="published-date">Published 2026-02-28</div>
+          <div class="published-date"><?php echo $locale === 'fr' ? 'Publié' : 'Published'; ?> 2026-02-28</div>
 
           <span class="span_text_box">
+            <?php if ($locale === 'fr'): ?>
+              <?php include __DIR__ . '/content-fr.php'; ?>
+            <?php else: ?>
+
             <p>There is a phrase that quietly governs much of our modern economy:</p>
 
             <blockquote>First make money.<br>
@@ -425,23 +432,25 @@ include __DIR__ . '/../../php/analytics.php';
 
             <div class="social-share-bar">
               <div class="share-label">Share:</div>
-              <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://mydropintheoceans.org/blog/make-money-first-then-think-of-nature/" target="_blank" rel="noopener" class="social-link"><img src="/images/social/linkedin.svg" alt="LinkedIn" style="width:28px;height:28px;vertical-align:middle;"></a>
-              <a href="https://twitter.com/intent/tweet?url=https://mydropintheoceans.org/blog/make-money-first-then-think-of-nature/&text=Make%20Money%20First%2C%20Then%20(Maybe)%20Think%20of%20Nature" target="_blank" rel="noopener" class="social-link"><img src="/images/social/twitter.svg" alt="Twitter" style="width:28px;height:28px;vertical-align:middle;"></a>
-              <a href="https://www.facebook.com/sharer/sharer.php?u=https://mydropintheoceans.org/blog/make-money-first-then-think-of-nature/" target="_blank" rel="noopener" class="social-link"><img src="/images/social/facebook.svg" alt="Facebook" style="width:28px;height:28px;vertical-align:middle;"></a>
-              <a href="https://wa.me/?text=Make%20Money%20First%2C%20Then%20(Maybe)%20Think%20of%20Nature%20https://mydropintheoceans.org/blog/make-money-first-then-think-of-nature/" target="_blank" rel="noopener" class="social-link"><img src="/images/social/whatsapp.svg" alt="WhatsApp" style="width:28px;height:28px;vertical-align:middle;"></a>
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo urlencode($canonicalUrl); ?>" target="_blank" rel="noopener" class="social-link"><img src="/images/social/linkedin.svg" alt="LinkedIn" style="width:28px;height:28px;vertical-align:middle;"></a>
+              <a href="https://twitter.com/intent/tweet?url=<?php echo urlencode($canonicalUrl); ?>&text=<?php echo urlencode($pageTitle); ?>" target="_blank" rel="noopener" class="social-link"><img src="/images/social/twitter.svg" alt="Twitter" style="width:28px;height:28px;vertical-align:middle;"></a>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode($canonicalUrl); ?>" target="_blank" rel="noopener" class="social-link"><img src="/images/social/facebook.svg" alt="Facebook" style="width:28px;height:28px;vertical-align:middle;"></a>
+              <a href="https://wa.me/?text=<?php echo urlencode($pageTitle . ' ' . $canonicalUrl); ?>" target="_blank" rel="noopener" class="social-link"><img src="/images/social/whatsapp.svg" alt="WhatsApp" style="width:28px;height:28px;vertical-align:middle;"></a>
             </div>
 
             <div style="font-size: 0.95em; color: #222; margin-top: 2em;">
               <p><strong>Related reading:</strong></p>
               <ul>
-                <li><a class="blog-nav-link" href="/theory-of-change/">Theory of Change — including the Citizen’s Dividend for Nature</a></li>
-                <li><a class="blog-nav-link" href="/blog/why-the-swiss-said-no-to-free-money/">Why the Swiss Said No to Free Money</a></li>
-                <li><a class="blog-nav-link" href="/blog/">Browse all essays on economy and Nature</a></li>
+                <li><a class="blog-nav-link" href="<?php echo htmlspecialchars(localized_path('/theory-of-change/', $locale)); ?>">Theory of Change — including the Citizen’s Dividend for Nature</a></li>
+                <li><a class="blog-nav-link" href="<?php echo htmlspecialchars(localized_path('/blog/why-the-swiss-said-no-to-free-money/', $locale)); ?>">Why the Swiss Said No to Free Money</a></li>
+                <li><a class="blog-nav-link" href="<?php echo htmlspecialchars(localized_path('/blog/', $locale)); ?>">Browse all essays on economy and Nature</a></li>
               </ul>
-              <p>Have questions or want to share your thoughts? <a class="blog-nav-link" href="/contact/">Contact us here</a>.</p>
-              <p>Want to know more about our mission? Visit the <a class="blog-nav-link" href="/">About page</a>.</p>
-              <p>We value your privacy. Read our <a class="blog-nav-link" href="/privacy/">full Privacy Policy</a>.</p>
+              <p>Have questions or want to share your thoughts? <a class="blog-nav-link" href="<?php echo htmlspecialchars(localized_path('/contact/', $locale)); ?>">Contact us here</a>.</p>
+              <p>Want to know more about our mission? Visit the <a class="blog-nav-link" href="<?php echo htmlspecialchars(localized_path('/', $locale)); ?>">About page</a>.</p>
+              <p>We value your privacy. Read our <a class="blog-nav-link" href="<?php echo htmlspecialchars(localized_path('/privacy/', $locale)); ?>">full Privacy Policy</a>.</p>
             </div>
+
+            <?php endif; ?>
 
           </span>
         </div>

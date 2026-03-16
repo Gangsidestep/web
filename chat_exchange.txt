@@ -1,0 +1,1221 @@
+1. USER:
+I am looking to compare the 3 offers attached here where with the liberty offer we would tick the box corresponding to 1'329.- under Grille tarifaire: somme d’assurance (SA) et prime   - a fourth document covers the terms and conditions of the liberty offer
+
+2. ASSISTANT:
+I reviewed the documents you uploaded. The three offers appear to be:
+
+-
+AXA offer – 14.582.223 - Coopérative La Man…
+
+-
+Allianz Protect D&O offer – Offerte
+
+-
+Liberty Specialty Markets offer – based on the tariff grid + general conditions
+
+Below is a clear side-by-side comparison based on the key parameters that typically matter for D&O insurance: price, insured amount, deductibles, major sub-limits, and notable conditions.
+
+---
+
+Summary comparison of the three D&O offers
+
+ItemAXAAllianzLibertyAnnual premium (incl. stamp duty)CHF 829.50CHF 887.30~ CHF 1’395 (1’329 + 5% duty)Insured amount (per claim / per year)CHF 500,000CHF 500,000CHF 1,000,000DeductibleCHF 0CHF 0not stated in grid (typically 0 or small)Defense costs after exhaustion+ CHF 50,000 extra limitincluded within limitincluded within limitImage rehabilitationup to CHF 500,000CHF 200,000covered (limit defined in policy)Psychological supportnot highlightedCHF 50,000coveredTax / social security claimscovered up to CHF 500,000not specifically highlightedcoveredCivil penalties / finescoverednot highlightedexplicitly coveredEmployment claimscoveredcoveredcoveredRun-off / extended reportingup to 120 monthsoptions up to 36 monthsoptions up to 10 yearsRetroactive covertied to continuity dateunlimited retroactivecovers unknown past acts
+Sources: AXA offer details p.4 14.582.223 - Coopérative La Man…
+
+, Allianz coverage p.2-3 Offerte
+
+, Liberty tariff and conditions p.2-5 .
+
+---
+
+Key differences
+
+1️⃣ Coverage limit
+
+-
+AXA: CHF 500k
+
+-
+Allianz: CHF 500k
+
+-
+Liberty: CHF 1M
+
+➡️ Liberty offers double the protection.
+
+For board liability, the limit is usually the most important factor.
+
+---
+
+2️⃣ Price
+
+Approximate annual cost:
+
+-
+AXA: 829 CHF
+
+-
+Allianz: 887 CHF
+
+-
+Liberty: ~1,395 CHF
+
+So Liberty costs about:
+
+-
++500 CHF vs AXA
+
+-
++508 CHF vs Allianz
+
+But provides 2× coverage.
+
+---
+
+3️⃣ Coverage structure
+
+AXA
+
+Strengths:
+
+-
+Very simple structure
+
+-
+No deductible
+
+-
+High sublimits (many items up to full limit)
+
+-
+Extra 50k defense cost after limit
+
+Weakness:
+
+-
+Only 500k total coverage
+
+---
+
+Allianz
+
+Strengths:
+
+-
+Very structured policy
+
+-
+Many extensions (investigations, extradition defense, etc.)
+
+-
+Good legal coverage features
+
+Weakness:
+
+-
+Several sub-limits (e.g., reputation CHF 200k, psychological CHF 50k) Offerte
+
+.
+
+---
+
+Liberty
+
+Strengths:
+
+-
+Highest limit (1M)
+
+-
+Very broad list of extensions:
+
+-
+founder liability
+
+-
+tax/social security claims
+
+-
+employment disputes
+
+-
+civil penalties
+
+-
+psychological coaching D&O Liberty Conditions Generale
+
+-
+Long run-off options (up to 10 years)
+
+Weakness:
+
+-
+More expensive
+
+---
+
+Practical interpretation
+
+If you think about board liability risk, the main exposure usually comes from:
+
+-
+insolvency claims
+
+-
+tax/social security claims
+
+-
+employment disputes
+
+-
+creditor claims
+
+Those claims can easily exceed 500k, so limit size matters.
+
+---
+
+My neutral assessment
+
+Best price
+
+AXA
+
+-
+cheapest
+
+-
+simple
+
+-
+solid baseline coverage
+
+---
+
+Best balance
+
+Liberty
+
+-
+double coverage limit
+
+-
+strongest wording
+
+-
+best run-off options
+
+The extra ~500 CHF buys 500k additional protection, which is usually considered good value.
+
+---
+
+Most conservative insurer
+
+Allianz
+
+-
+strong brand
+
+-
+detailed wording
+
+-
+but similar coverage to AXA at higher price.
+
+---
+
+Simple decision rule
+
+-
+Budget sensitive → AXA
+
+-
+Better protection → Liberty
+
+-
+If you prefer Allianz as insurer → Allianz
+
+---
+
+✅ If you want, I can also:
+
+-
+point out 3 clauses where these policies materially differ (this often matters more than price), or
+
+-
+tell you which one board members typically choose in Switzerland for small organisations like yours.
+
+Sources
+
+3. USER:
+go ahead for both
+
+4. ASSISTANT:
+Below are the two deeper analyses you asked for:
+1️⃣ the three clauses that actually matter most in D&O policies, and
+2️⃣ which offer is typically chosen in Switzerland for organisations like yours.
+
+I’m focusing on practical board-risk implications rather than marketing features.
+
+---
+
+1️⃣ The 3 clauses that matter most (and how the offers differ)
+
+A. Coverage of fines, penalties, and tax / social security claims
+
+This is one of the most frequent real claims against directors in Switzerland (especially for SMEs and cooperatives).
+
+Liberty
+
+Very strong here.
+
+The policy explicitly extends coverage to civil penalties and punitive damages and certain tax-related liabilities. D&O Liberty Conditions Generale
+
+This can matter for things like:
+
+-
+AVS / social security non-payment claims
+
+-
+tax authority actions
+
+-
+regulatory sanctions.
+
+Advantage: Liberty
+
+---
+
+AXA
+
+AXA explicitly lists coverage for:
+
+-
+tax and social security claims
+
+-
+fines and civil sanctions
+
+with sub-limits up to the insured amount. 14.582.223 - Coopérative La Man…
+
+That’s very good wording for a small-company D&O policy.
+
+Advantage: AXA ≈ Liberty
+
+---
+
+Allianz
+
+The Allianz offer includes standard D&O coverage but the summary shows fewer explicit references to tax/social security liabilities in the summary page. Offerte
+
+It may still exist in the full wording, but it is less prominently covered in the offer.
+
+Slight disadvantage: Allianz
+
+---
+
+B. Coverage for investigations and criminal defence
+
+Directors often face investigations before any formal claim.
+
+Allianz
+
+This is where Allianz is strongest.
+
+It explicitly covers:
+
+-
+criminal defence costs
+
+-
+extradition proceedings
+
+-
+regulatory investigations
+
+-
+asset seizure defence
+
+-
+legal costs during investigations. Offerte
+
+These can be very expensive in governance disputes.
+
+Advantage: Allianz
+
+---
+
+Liberty
+
+Also strong — covers:
+
+-
+criminal proceedings
+
+-
+regulatory investigations
+
+-
+preventive legal costs for imminent claims. D&O Liberty Conditions Generale
+
+Comparable to Allianz.
+
+---
+
+AXA
+
+AXA coverage is broader but less detailed in the summary.
+
+The focus is more on claims than investigations.
+
+---
+
+C. Run-off / protection after leaving the board
+
+This is extremely important for board members.
+
+Claims may appear years after a director leaves.
+
+Liberty
+
+Very strong:
+
+-
+optional up to 10 years run-off coverage. D&O Liberty Conditions Generale
+
+This is excellent protection.
+
+---
+
+AXA
+
+Offers run-off options up to 120 months (10 years). 14.582.223 - Coopérative La Man…
+
+Also very strong.
+
+---
+
+Allianz
+
+Only:
+
+-
+30 days automatic
+
+-
+paid options up to 36 months. Offerte
+
+This is noticeably weaker.
+
+---
+
+Summary of the 3 key clauses
+
+ClauseBestFines / tax / social securityAXA / LibertyInvestigations & defenceAllianzRun-off protectionAXA / Liberty
+
+---
+
+2️⃣ What organisations like yours usually choose
+
+Your organisation (based on the offer):
+
+-
+Swiss cooperative
+
+-
+small balance sheet (~278k CHF)
+
+-
+turnover under ~1M CHF. Offerte
+
+For Swiss SMEs / associations / cooperatives, the typical patterns are:
+
+Most common choice
+
+AXA
+
+Reasons:
+
+-
+cheapest
+
+-
+very standard wording
+
+-
+strong claims handling reputation in Switzerland
+
+-
+simple contract structure.
+
+For many small boards this is good enough protection.
+
+---
+
+Second most common
+
+Allianz
+
+Often chosen when:
+
+-
+broker prefers Allianz
+
+-
+organisation already insured with Allianz
+
+-
+board wants a very structured legal policy.
+
+---
+
+When Liberty is chosen
+
+Usually when:
+
+-
+directors want higher liability limits
+
+-
+board members are risk-sensitive
+
+-
+organisation is growing quickly.
+
+Because Liberty offers 1M coverage vs 500k.
+
+---
+
+My honest recommendation (based on these documents)
+
+If the board wants the safest option overall:
+
+➡️ Liberty
+
+Reason:
+
+-
+double coverage (1M)
+
+-
+strong wording
+
+-
+best long-term protection.
+
+The extra ~500 CHF/year buys 500k extra liability protection, which is usually worth it.
+
+---
+
+If the board wants a perfectly acceptable low-cost solution:
+
+➡️ AXA
+
+---
+
+One more important observation
+
+Your cooperative currently has:
+
+-
+turnover ~859k CHF
+
+-
+balance sheet ~278k CHF. Offerte
+
+For organisations in this size range, many advisors recommend at least 1M D&O coverage.
+
+500k can be a bit tight if:
+
+-
+creditors sue directors after insolvency
+
+-
+tax authority claims arise
+
+-
+employee litigation occurs.
+
+---
+
+✅ If you want, I can also show you one hidden clause difference that could matter a lot in a claim (AXA vs Liberty wording).
+
+Sources
+
+5. USER:
+ok
+
+6. ASSISTANT:
+Here is the one hidden clause difference that could actually matter the most in a real claim between the AXA and Liberty offers. It’s subtle, but insurance lawyers pay a lot of attention to it.
+
+---
+
+The key hidden difference: how defence costs interact with the insurance limit
+
+AXA – defence costs can exceed the main limit
+
+AXA provides:
+
+-
+CHF 500,000 main insured limit
+
+-
++ CHF 50,000 additional limit specifically for defence costs after the limit is exhausted 14.582.223 - Coopérative La Man…
+
+Meaning:
+
+Example scenario:
+
+EventCostClaim settlement500,000Lawyers / defence60,000
+AXA would pay:
+
+-
+500,000 damages
+
+-
++ 50,000 additional defence costs
+
+Total paid: 550,000
+
+This is relatively unusual and favorable wording.
+
+---
+
+Liberty – defence costs usually count inside the limit
+
+The Liberty wording indicates that:
+
+-
+defence costs and extensions are included within the policy limit. D&O Liberty Conditions Generale
+
+Example:
+
+EventCostClaim settlement450,000Lawyers50,000
+Total = 500,000 → policy exhausted.
+
+So the legal costs reduce the amount available to pay damages.
+
+This is actually the most common structure in D&O policies worldwide.
+
+---
+
+Why this matters
+
+In real D&O cases:
+
+-
+lawyers are expensive
+
+-
+litigation can last years.
+
+Typical cost ranges in Switzerland:
+
+SituationDefence costInvestigation20–80kCivil lawsuit50–200kComplex case200k+
+So if defence costs eat the limit, directors can run out of coverage faster.
+
+---
+
+Which one is better here?
+
+FeatureBetterExtra defence protectionAXAHigher coverage limitLiberty
+So there is a trade-off:
+
+-
+AXA → smaller limit but extra defence buffer
+
+-
+Liberty → larger limit but defence costs inside limit
+
+---
+
+What insurance brokers usually say in this situation
+
+When comparing 500k vs 1M limits, brokers generally prioritize:
+
+Total limit > defence structure
+
+because claims can exceed 500k quickly.
+
+So they often still recommend 1M coverage.
+
+---
+
+My final ranking (based on all clauses)
+
+1️⃣ Liberty — strongest overall protection
+2️⃣ AXA — best value / good wording
+3️⃣ Allianz — good but weakest run-off and slightly higher price
+
+---
+
+✅ If you'd like, I can also show you something useful for the board:
+
+The single biggest liability risk for directors of Swiss cooperatives like La Manivelle (this is what most D&O claims actually come from).
+
+Sources
+
+7. USER:
+ok
+
+8. ASSISTANT:
+Here is the single biggest liability risk for directors of Swiss cooperatives and small organisations like La Manivelle — and why it matters when choosing the insurance limit.
+
+---
+
+The most common D&O claim in Switzerland
+
+👉 Social security (AVS/AI/APG) and tax liability of directors
+
+Under Swiss law, directors (or board members of a cooperative) can be personally liable if the organisation fails to pay certain obligations.
+
+The most frequent cases involve:
+
+-
+AVS/AI/APG contributions
+
+-
+withholding taxes
+
+-
+social security deductions from salaries
+
+-
+sometimes VAT
+
+If the company becomes insolvent, authorities may claim the unpaid amounts directly from directors.
+
+This is based mainly on:
+
+-
+Art. 52 AVS law (LAVS)
+
+-
+Art. 754 Swiss Code of Obligations (director liability).
+
+---
+
+Why this risk appears even in well-run organisations
+
+It usually happens in this scenario:
+
+-
+Organisation has financial difficulties.
+
+-
+It delays payment of:
+
+-
+social security contributions
+
+-
+taxes.
+
+-
+Insolvency occurs.
+
+-
+Authorities investigate whether the board acted with due diligence.
+
+-
+If not, directors become personally liable.
+
+Even non-profit boards are exposed.
+
+---
+
+Typical size of claims
+
+Real Swiss cases often involve:
+
+SituationTypical claimSmall cooperative50k – 200kSmall company100k – 500kMedium company500k – 2M+
+Because contributions accumulate quickly.
+
+---
+
+Example (very typical case)
+
+A cooperative:
+
+-
+12 employees
+
+-
+financial difficulties for 2 years.
+
+Unpaid obligations:
+
+ItemAmountAVS contributions180,000Interest / penalties20,000
+Total claim against board: 200,000 CHF
+
+Legal defence costs: 40,000–100,000 CHF
+
+Total exposure: 240k–300k.
+
+---
+
+Why this matters for your offers
+
+If a claim like this occurs:
+
+With 500k coverage
+
+You may still be safe, but:
+
+-
+defence costs reduce the available limit
+
+-
+multiple directors may need coverage.
+
+With 1M coverage
+
+Much more comfortable.
+
+---
+
+This is why many advisors recommend
+
+For organisations with:
+
+-
+turnover above ~500k
+
+-
+employees
+
+-
+public interaction
+
+👉 minimum 1M D&O limit
+
+Even if the organisation itself is small.
+
+---
+
+How your three offers handle this risk
+
+InsurerTax / social security claimsAXAexplicitly coveredLibertyexplicitly coveredAllianzcovered under general wording
+AXA and Liberty highlight this more clearly in their documentation.
+
+---
+
+The real decision in your case
+
+It actually comes down to one strategic question:
+
+Do you want:
+
+Option A — cheaper
+
+-
+AXA
+
+-
+~830 CHF
+
+-
+500k limit
+
+or
+
+Option B — safer
+
+-
+Liberty
+
+-
+~1,395 CHF
+
+-
+1M limit.
+
+---
+
+My honest recommendation (if I were advising the board)
+
+For a cooperative with employees:
+
+➡️ Liberty with 1M coverage is the safer governance choice.
+
+The additional 500 CHF/year is small compared to potential personal liability.
+
+---
+
+✅ If you'd like, I can also show you two very practical board governance steps that dramatically reduce the chance of a D&O claim (most boards are never told these).
+
+9. USER:
+ok this is your analysis - give me 3 questions I should ask my insurance broker - in french please
+
+10. ASSISTANT:
+Voici 3 questions pertinentes à poser à votre courtier pour comparer réellement les offres et clarifier les points qui peuvent avoir un impact en cas de sinistre.
+
+---
+
+1️⃣ Sur les frais de défense et la limite d’assurance
+
+« Dans chaque offre, est-ce que les frais de défense sont inclus dans la somme d’assurance ou payés en plus de celle-ci ? Concrètement, si les frais juridiques sont élevés, quelle part de la limite restera disponible pour indemniser un éventuel dommage ? »
+
+Pourquoi c’est important : dans certaines polices les frais d’avocat réduisent la limite disponible, ce qui peut épuiser plus vite la couverture.
+
+---
+
+2️⃣ Sur la couverture des responsabilités fiscales et sociales
+
+« Les trois offres couvrent-elles explicitement la responsabilité personnelle des administrateurs pour les cotisations sociales (AVS/AI/APG), impôts ou autres dettes publiques en cas d’insolvabilité de la coopérative ? Y a-t-il des sous-limites ou exclusions particulières ? »
+
+Pourquoi c’est important : c’est une des causes les plus fréquentes de mise en cause des administrateurs en Suisse.
+
+---
+
+3️⃣ Sur la protection après la fin du mandat (garantie subséquente / run-off)
+
+« Si un membre du conseil quitte ses fonctions ou si l’assurance est résiliée, pendant combien de temps les anciens administrateurs restent-ils couverts pour des réclamations liées à leur période de mandat ? Et quelles sont les conditions ou le coût pour prolonger cette protection ? »
+
+Pourquoi c’est important : beaucoup de réclamations apparaissent plusieurs années après les faits.
+
+---
+
+✅ Si vous voulez, je peux aussi vous donner 2 questions “techniques” que les avocats posent presque toujours aux assureurs D&O, car elles révèlent souvent les différences cachées entre les polices.
+
+11. USER:
+please synthesize all of your remarks from above in one table / document
+
+12. ASSISTANT:
+Below is a concise synthesis document combining all the remarks from the analysis: comparison of the three offers, key clauses, risks, recommendation, and questions for the broker.
+
+---
+
+D&O Insurance Comparison – Coopérative La Manivelle
+
+1. Basic comparison of the three offers
+
+ItemAXAAllianzLibertyAnnual premium (incl. 5% duty)CHF 829.50CHF 887.30≈ CHF 1,395Insured limitCHF 500,000CHF 500,000CHF 1,000,000DeductibleCHF 0CHF 0Typically CHF 0Defence costsLimit + CHF 50k additional defence costsIncluded in limitIncluded in limitImage rehabilitationUp to CHF 500kCHF 200kCoveredPsychological supportNot highlightedCHF 50kCoveredTax / social security claimsExplicitly coveredCovered in general wordingExplicitly coveredCivil penalties / finesCoveredLess explicitExplicitly coveredRun-off coverage (after policy ends)Up to 120 months (10 yrs)Up to 36 monthsUp to 10 yrsRetroactive coverageFrom policy continuity dateUnlimited retroactiveCovers unknown past acts
+Key takeaway:
+
+-
+AXA and Allianz offer 500k coverage
+
+-
+Liberty offers 1M coverage (double the limit)
+
+---
+
+2. Key policy clauses that matter most
+
+ClauseAXAAllianzLibertyBestCoverage of taxes / AVS / social security claimsExplicitGeneral wordingExplicitAXA / LibertyCriminal defence & investigationsStandardVery detailed coverageStrong coverageAllianzRun-off protection for former directorsUp to 10 yrsUp to 3 yrsUp to 10 yrsAXA / LibertyDefence costs outside the limitYes (+50k)NoNoAXATotal insurance limit500k500k1MLiberty
+
+---
+
+3. Structural difference: defence costs vs limit
+
+ScenarioAXALibertyClaim settlement500k450kLegal defence+60k+50kTotal paid by insurer550k possible500k limit exhausted
+Explanation:
+
+-
+AXA allows extra defence costs beyond the policy limit.
+
+-
+Liberty includes defence costs inside the limit, but provides double coverage overall.
+
+---
+
+4. Most common D&O risk for Swiss directors
+
+For Swiss SMEs and cooperatives, the most frequent claims involve:
+
+Personal liability for unpaid social security or taxes.
+
+Typical process:
+
+-
+Organisation experiences financial difficulty.
+
+-
+Social security contributions (AVS/AI/APG) or taxes are delayed.
+
+-
+Insolvency occurs.
+
+-
+Authorities claim damages from directors personally.
+
+Typical claim sizes:
+
+SituationTypical claimSmall cooperative50k – 200kSmall company100k – 500kMedium company500k – 2M+
+This is why many advisors recommend at least 1M D&O coverage.
+
+---
+
+5. Typical insurer choice for Swiss SMEs / cooperatives
+
+InsurerTypical reason chosenAXALowest cost, simple contract, strong Swiss presenceAllianzStrong structured wording, often chosen when already insured with AllianzLibertyHigher coverage limits and strong wording
+
+---
+
+6. Overall assessment
+
+RankingOfferReason1LibertyHighest coverage (1M), strong wording2AXABest price / good protection3AllianzSolid but weaker run-off and slightly higher cost
+Decision trade-off:
+
+OptionPremiumCoverageAXA~830 CHF500kLiberty~1,395 CHF1M
+The extra ~500 CHF/year buys 500k additional liability protection.
+
+---
+
+7. Questions to ask the insurance broker
+
+1. Defence costs
+
+Dans chaque offre, les frais de défense sont-ils inclus dans la somme d’assurance ou payés en plus de celle-ci ?
+
+---
+
+2. Social security / tax liability
+
+Les trois offres couvrent-elles explicitement la responsabilité personnelle des administrateurs pour les cotisations sociales (AVS/AI/APG) ou les dettes fiscales ?
+
+---
+
+3. Run-off protection
+
+Si un membre du conseil quitte ses fonctions ou si l’assurance est résiliée, pendant combien de temps reste-t-il couvert pour des réclamations liées à son mandat ?
+
+---
+
+Final practical recommendation
+
+For a cooperative with:
+
+-
+~859k CHF turnover
+
+-
+employees
+
+-
+board liability exposure
+
+A 1M D&O limit is generally safer.
+
+Therefore:
+
+-
+Best protection: Liberty
+
+-
+Best budget option: AXA
+
+---
+
+If helpful, I can also produce a one-page board memo version (the format typically used to present insurance decisions to a board).
+
+13. USER:
+are the 3 questions for the courtier already answered in the documents I shared?
+
+14. ASSISTANT:
+Short answer: partially yes, partially no.
+Some elements are visible in the documents, but not all details are clear enough to avoid asking the broker. Below is a precise check of each question against the documents you shared.
+
+---
+
+1️⃣ Defence costs vs insurance limit
+
+Question:
+
+Les frais de défense sont-ils inclus dans la somme d’assurance ou payés en plus ?
+
+AXA
+
+Yes — answered in the AXA offer.
+
+-
+Main limit: CHF 500,000
+
+-
+Additional CHF 50,000 defence costs after exhaustion of the limit 14.582.223 - Coopérative La Man…
+
+So AXA clearly states that some defence costs can be paid beyond the main limit.
+
+Allianz
+
+Partially answered.
+
+The general conditions state that:
+
+-
+frais de défense et prestations sont inclus dans la somme d’assurance Offerte
+
+So defence costs reduce the limit.
+
+Liberty
+
+Partially answered.
+
+The Liberty wording indicates that:
+
+-
+extensions and defence costs are included within the policy limit D&O Liberty Conditions Generale
+
+However, the exact structure and sublimits are not shown in the tariff document, so clarification may still be useful.
+
+✅ Conclusion:
+Mostly answered, but still worth confirming with the broker.
+
+---
+
+2️⃣ Coverage of AVS / tax / social security liability
+
+Question:
+
+Les responsabilités liées aux cotisations sociales ou aux impôts sont-elles couvertes ?
+
+AXA
+
+Yes — explicitly stated.
+
+Coverage includes claims related to:
+
+-
+impôts directs/indirects
+
+-
+cotisations d’assurances sociales 14.582.223 - Coopérative La Man…
+
+Allianz
+
+Not explicitly stated in the summary pages.
+
+The offer references:
+
+-
+préjudices pécuniaires
+
+-
+general D&O liability coverage Offerte
+
+But no explicit mention of AVS or tax liability in the visible summary.
+
+Liberty
+
+Yes — covered.
+
+The general conditions include coverage for:
+
+-
+claims related to non-payment of taxes or social contributions D&O Liberty Conditions Generale
+
+✅ Conclusion:
+Partially answered, but Allianz wording should be clarified with the broker.
+
+---
+
+3️⃣ Run-off / protection after leaving the board
+
+Question:
+
+Combien de temps les administrateurs restent-ils couverts après la fin du contrat ?
+
+AXA
+
+Clearly answered.
+
+Run-off options up to:
+
+-
+120 months (10 years) 14.582.223 - Coopérative La Man…
+
+Allianz
+
+Answered.
+
+-
+automatic: 30 days
+
+-
+optional: 12 / 24 / 36 months Offerte
+
+Liberty
+
+Partially answered.
+
+The general conditions allow:
+
+-
+extended reporting periods up to 10 years D&O Liberty Conditions Generale
+
+But the exact price or activation conditions are not visible in the questionnaire.
+
+✅ Conclusion:
+Mostly answered, but details and costs are missing.
+
+---
+
+Overall conclusion
+
+QuestionAnswer in documents?Need to ask broker?Defence costs vs limitMostly yesGood to confirmCoverage of AVS / taxesAXA & Liberty yes, Allianz unclearYesRun-off protectionMostly yesYes (conditions/cost)
+So the questions are still valid, because the documents:
+
+-
+sometimes summarize but do not fully specify coverage
+
+-
+sometimes require interpretation of the full policy wording.
+
+---
+
+✅ Practical tip:
+When comparing D&O policies, brokers often summarize offers but omit the full wording differences, so asking these questions helps confirm there are no hidden exclusions or sublimits.
+
+---
+
+If you want, I can also show you one clause in the Allianz wording that could actually make it safer than the others in a very specific scenario (this is quite subtle but interesting for board liability).
+
+Sources
+
+15. USER:
+how about this phrase to the courtier to introduce the 3 questions: En comparent les 3 offres D&O nous sommes revenue avec les 3 questions suivant en terms de elaborations / clarifications
+
+16. ASSISTANT:
+Your sentence is understandable but needs a few corrections and smoothing in French. Here are three improved versions, depending on the tone you want.
+
+---
+
+1️⃣ Clear and natural (recommended)
+
+En comparant les trois offres D&O, nous avons identifié trois questions pour lesquelles nous souhaiterions quelques précisions.
+
+This is professional and neutral.
+
+---
+
+2️⃣ Slightly more formal
+
+Après comparaison des trois offres D&O, nous avons trois questions pour lesquelles nous aimerions obtenir quelques clarifications.
+
+Good for a formal email to a broker.
+
+---
+
+3️⃣ Closest to your original wording
+
+En comparant les trois offres D&O, nous sommes revenus avec trois questions pour lesquelles nous souhaiterions des précisions ou clarifications.
+
+But note: “sommes revenus avec” sounds slightly translated from English, so version 1 is better.
+
+---
+
+✅ Best full introduction sentence (recommended):
+
+En comparant les trois offres D&O, nous avons identifié trois questions pour lesquelles nous souhaiterions quelques précisions.
+
+Then you can list the questions.
+
+---
+
+If you'd like, I can also rewrite the full email to the broker (intro + the 3 questions) in clean professional French so it sounds very natural.
+
+17. USER:
+how does the D&O relate to CEO vs Board members
+
+18. ASSISTANT:
+Streaming interrupted. Waiting for the complete message...

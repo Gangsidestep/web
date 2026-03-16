@@ -1,10 +1,25 @@
 RewriteEngine On
+# Canonical host: force www -> non-www in one hop
+RewriteCond %{HTTP_HOST} ^www\.mydropintheoceans\.org$ [NC]
+RewriteRule ^ https://mydropintheoceans.org%{REQUEST_URI} [R=301,L]
+
 # Ensure favicon always resolves to the HTTPS images path to avoid mixed-content
 RewriteCond %{REQUEST_URI} ^/favicon\.ico$
 RewriteRule ^favicon\.ico$ https://%{HTTP_HOST}/images/favicon.ico [L,R=301]
 
+# Retire old page: return 410 Gone to accelerate de-indexing
+RewriteRule ^about-mydio(/.*)?$ - [G,L,NC]
+
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Internal locale routing for multilingual URLs
+# /en/... and /fr/... are rewritten to existing paths while exposing locale via APP_LOCALE
+RewriteRule ^(en|fr)/?$ / [QSA,E=APP_LOCALE:$1,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(en|fr)/(.*)$ /$2 [QSA,E=APP_LOCALE:$1,L]
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
@@ -63,7 +78,7 @@ ExpiresByType application/x-font-woff "access plus 1 month"
 
 ###################### Redirect old URLs to current structure #################
 RewriteEngine On
-Redirect 301 /en/ https://mydropintheoceans.org/
+# Keep locale-prefixed paths active for multilingual routing
 Redirect 301 /home/ https://mydropintheoceans.org/
 Redirect 301 /home https://mydropintheoceans.org/
 Redirect 301 /business/ https://mydropintheoceans.org/

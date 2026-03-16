@@ -30,6 +30,7 @@ $visitor_id = substr(hash('sha256', $ip . $user_agent . $date_only . 'salt_chang
 $log_entry = json_encode([
     'timestamp' => $timestamp,
     'visitor_id' => $visitor_id,
+    'ip' => $ip,
     'page' => $page,
     'referer' => $referer,
     'user_agent' => $user_agent

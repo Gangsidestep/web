@@ -1,31 +1,28 @@
-					 <script>
-							jQuery(function($){
-							$("a.product_id_<? echo $product_id; ?>").click(function(){
-								//$("div.product_form_<? echo $product_id; ?>").slideToggle(120, function(){});
-
+			 <script>
 				jQuery(function($){
-                    $("a.descript_<? echo $product_id; ?>").click(function(){
-                        $("#descript_form_<? echo $product_id; ?>").slideToggle(120, function(){
-                        });
-                    });
-                });
-					jQuery(function($){
-                    $("a.descript_close<? echo $product_id; ?>").click(function(){
-                        $("#descript_form_<? echo $product_id; ?>").slideToggle(120, function(){
-                        });
-                    });
-                });
-									jQuery(function($){
-                    $("a.insufficient_close<? echo $product_id; ?>").click(function(){
-                        $("#insufficient<? echo $product_id; ?>").slideToggle(10, function(){
-                        });
-                    });
-                });
-			jQuery(function($){
-                    $("a.cancel_order").click(function(){
-                       document.getElementById("confirm").style.display="none";
-					   document.getElementById("balance").style.color="#FFF";
-					   	document.getElementById("balance").innerHTML = "<?php echo round($balance, 0, PHP_ROUND_HALF_DOWN); ?>";
+					$("a.product_id_<? echo $product_id; ?>").click(function(){
+						//$("div.product_form_<? echo $product_id; ?>").slideToggle(120, function(){});
+					});
+
+					$("a.descript_<? echo $product_id; ?>").click(function(){
+						$("#descript_form_<? echo $product_id; ?>").slideToggle(120, function(){
+						});
+					});
+
+					$("a.descript_close<? echo $product_id; ?>").click(function(){
+						$("#descript_form_<? echo $product_id; ?>").slideToggle(120, function(){
+						});
+					});
+
+					$("a.insufficient_close<? echo $product_id; ?>").click(function(){
+						$("#insufficient<? echo $product_id; ?>").slideToggle(10, function(){
+						});
+					});
+
+					$("a.cancel_order").click(function(){
+						document.getElementById("confirm").style.display="none";
+						document.getElementById("balance").style.color="#FFF";
+						document.getElementById("balance").innerHTML = "<?php echo round($balance, 0, PHP_ROUND_HALF_DOWN); ?>";
 						document.getElementById("balance_full").innerHTML =  "<?php echo round($balance, 0, PHP_ROUND_HALF_DOWN); ?>";
 						document.getElementById("total_items_ordered").setAttribute("value", 0);
 						document.getElementById("total_order_CHF").setAttribute("value", 0);
@@ -35,12 +32,12 @@
 						document.getElementById("show-dio_<?php echo $product_id; ?>").innerHTML = '';
 						document.getElementById("show_<?php echo $product_id; ?>").innerHTML = '';
 						document.getElementById("product_<?php echo $product_id; ?>").setAttribute("value", 0);
-								 jQuery(function($){
-											$("div.product_form_<? echo $product_id; ?>").slideUp(120);
-										});
-                    });
-                });
-				</script>
+						jQuery(function($){
+							$("div.product_form_<? echo $product_id; ?>").slideUp(120);
+						});
+					});
+				});
+			</script>
                        <div class="center-310-ecomm">
 				<div class="product-description" id="insufficient<? echo $product_id; ?>" <?php if ( $hidden ) echo 'style="display:none;"'; ?>>
                  <p align="center" ><p>&nbsp;</p>Not enough DIO<p>&nbsp;</p></p>
