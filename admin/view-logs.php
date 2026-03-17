@@ -287,7 +287,10 @@ echo '</tbody></table></div>';
 // Chart containers
 echo '<div style="margin:0 0 1em 0; display:flex; gap:0.5em; align-items:center; flex-wrap:wrap;">';
 echo '<label>Page (single): <select id="ts_page" style="min-width:320px;"></select></label>';
-echo '<label>Compare pages: <select id="ts_pages" multiple size="4" style="min-width:320px;max-width:600px;"></select></label>';
+echo '<label id="ts_pages_wrap" style="position:relative;min-width:420px;max-width:980px;width:min(70vw,980px);display:inline-block;padding-bottom:2.6em;">';
+echo 'Compare pages: ';
+echo '<select id="ts_pages" multiple size="1" style="min-width:420px;max-width:980px;width:100%;position:absolute;left:0;top:1.6em;z-index:50;height:auto;max-height:360px;background:#111;color:#eee;border:1px solid #555;border-radius:4px;"></select>';
+echo '</label>';
 echo '<label>Group: <select id="ts_group"><option value="hour">Hour</option><option value="day" selected>Day</option><option value="week">Week</option></select></label>';
 echo '<label>From: <input type="date" id="ts_start"></label>';
 echo '<label>To: <input type="date" id="ts_end"></label>';
@@ -653,6 +656,21 @@ echo <<<HTML
 <script>
 (function(){
     function qs(id){return document.getElementById(id);} 
+    function setCookie(name, value, days){
+      var d = new Date();
+      d.setTime(d.getTime() + (days*24*60*60*1000));
+      document.cookie = name + '=' + encodeURIComponent(value) + ';expires=' + d.toUTCString() + ';path=/;SameSite=Lax';
+    }
+    function getCookie(name){
+      var key = name + '=';
+      var parts = document.cookie.split(';');
+      for(var i=0;i<parts.length;i++){
+        var c = parts[i].trim();
+        if(c.indexOf(key) === 0) return decodeURIComponent(c.substring(key.length));
+      }
+      return '';
+    }
+
     var pageSelect = qs('ts_page');
     var pagesSelect = qs('ts_pages');
     var groupSelect = qs('ts_group');
@@ -664,8 +682,83 @@ echo <<<HTML
     pageSelect.innerHTML = '<option value="">All pages</option>';
     pages.forEach(function(p){ var opt=document.createElement('option'); opt.value=p; opt.textContent=p; pageSelect.appendChild(opt); });
     var topPages = $top_pages_json || [];
-    pages.forEach(function(p){ var opt=document.createElement('option'); opt.value=p; opt.textContent=p; pagesSelect.appendChild(opt); });
-    Array.from(pagesSelect.options).forEach(function(o){ if(topPages.indexOf(o.value) !== -1) o.selected = true; });
+    pages.forEach(function(p){
+      var opt=document.createElement('option');
+      opt.value=p;
+      opt.textContent=p;
+      opt.style.backgroundColor = '#111';
+      opt.style.color = '#eee';
+      pagesSelect.appendChild(opt);
+    });
+
+    function saveTsPrefs(){
+      var selectedPages = Array.from(pagesSelect.selectedOptions).map(function(o){ return o.value; }).slice(0, 30);
+      setCookie('viewlogs_ts_page', pageSelect.value || '', 60);
+      setCookie('viewlogs_ts_pages', JSON.stringify(selectedPages), 60);
+      setCookie('viewlogs_ts_group', groupSelect.value || 'day', 60);
+      setCookie('viewlogs_ts_start', startInput.value || '', 60);
+      setCookie('viewlogs_ts_end', endInput.value || '', 60);
+    }
+
+    function restoreTsPrefs(){
+      var restoredAny = false;
+      var savedPage = getCookie('viewlogs_ts_page');
+      if(savedPage !== ''){
+        Array.from(pageSelect.options).forEach(function(o){ if(o.value === savedPage) o.selected = true; });
+        restoredAny = true;
+      }
+
+      var savedPagesRaw = getCookie('viewlogs_ts_pages');
+      if(savedPagesRaw){
+        try {
+          var savedPages = JSON.parse(savedPagesRaw);
+          if(Array.isArray(savedPages) && savedPages.length){
+            Array.from(pagesSelect.options).forEach(function(o){ o.selected = savedPages.indexOf(o.value) !== -1; });
+            restoredAny = true;
+          }
+        } catch(e) {}
+      }
+
+      var savedGroup = getCookie('viewlogs_ts_group');
+      if(savedGroup){ groupSelect.value = savedGroup; restoredAny = true; }
+      var savedStart = getCookie('viewlogs_ts_start');
+      if(savedStart){ startInput.value = savedStart; restoredAny = true; }
+      var savedEnd = getCookie('viewlogs_ts_end');
+      if(savedEnd){ endInput.value = savedEnd; restoredAny = true; }
+
+      return restoredAny;
+    }
+
+    var restored = restoreTsPrefs();
+    if(!restored){
+      Array.from(pagesSelect.options).forEach(function(o){ if(topPages.indexOf(o.value) !== -1) o.selected = true; });
+    }
+
+    function collapsePagesSelect(){
+      pagesSelect.size = 1;
+      pagesSelect.style.maxHeight = '42px';
+      pagesSelect.style.overflowY = 'hidden';
+      pagesSelect.style.zIndex = '50';
+    }
+
+    function expandPagesSelect(){
+      var visible = Math.min(Math.max(pagesSelect.options.length, 6), 20);
+      pagesSelect.size = visible;
+      pagesSelect.style.maxHeight = '520px';
+      pagesSelect.style.overflowY = 'auto';
+      pagesSelect.style.zIndex = '200';
+    }
+
+    collapsePagesSelect();
+    pagesSelect.addEventListener('mousedown', function(e){
+      if(pagesSelect.size === 1){
+        e.preventDefault();
+        expandPagesSelect();
+        pagesSelect.focus();
+      }
+    });
+    pagesSelect.addEventListener('focus', expandPagesSelect);
+    pagesSelect.addEventListener('blur', collapsePagesSelect);
 
     function palette(n){ var cols=[]; var base=['#36a2eb','#ffcd56','#ff6384','#4bc0c0','#9966ff','#c9cbcf','#ff9f40','#8dd3c7','#bebada','#fb8072']; for(var i=0;i<n;i++){ cols.push(base[i % base.length]); } return cols; }
 
@@ -675,6 +768,7 @@ echo <<<HTML
         var group = groupSelect.value;
         var start = startInput.value;
         var end = endInput.value;
+      saveTsPrefs();
         var params = new URLSearchParams({ ajax:1, action:'timeseries', group:group });
         if(page) params.set('page', page);
         if(pagesMulti.length) params.set('pages', pagesMulti.join(','));
@@ -688,17 +782,35 @@ echo <<<HTML
               var cols = palette(json.datasets.length);
               var datasets = json.datasets.map(function(ds, idx){ return { label: ds.label, data: ds.data, backgroundColor: cols[idx], borderColor: cols[idx] }; });
               if(window.compareChart){ window.compareChart.data.labels = labels; window.compareChart.data.datasets = datasets; window.compareChart.update(); }
-              if(page && window.tsChart){ window.tsChart.data.labels = json.labels; window.tsChart.data.datasets[0].data = json.datasets[0].data || []; window.tsChart.update(); }
+              if(window.tsChart){
+                window.tsChart.data.labels = labels;
+                if(page){
+                  window.tsChart.data.datasets[0].label = page + ' visits';
+                  window.tsChart.data.datasets[0].data = (json.datasets[0] && json.datasets[0].data) ? json.datasets[0].data : [];
+                } else {
+                  var totals = labels.map(function(_, i){
+                    var sum = 0;
+                    json.datasets.forEach(function(ds){ sum += Number((ds.data && ds.data[i]) || 0); });
+                    return sum;
+                  });
+                  window.tsChart.data.datasets[0].label = 'Visits (selected pages)';
+                  window.tsChart.data.datasets[0].data = totals;
+                }
+                window.tsChart.update();
+              }
             } else {
               var labels = json.labels || [];
               var data = json.data || [];
-              if(window.tsChart){ window.tsChart.data.labels = labels; window.tsChart.data.datasets[0].data = data; window.tsChart.update(); }
+              if(window.tsChart){ window.tsChart.data.labels = labels; window.tsChart.data.datasets[0].label = page ? (page + ' visits') : 'Visits'; window.tsChart.data.datasets[0].data = data; window.tsChart.update(); }
             }
           }).catch(function(err){ console.error('timeseries fetch error', err); });
     }
 
     window.compareChart = new Chart(document.getElementById('compareChart'), { type: 'bar', data: { labels: [], datasets: [] }, options: { responsive:true, plugins:{ legend:{ labels:{ color:'#eee' } } }, scales:{ x:{ ticks:{ color:'#eee' } }, y:{ ticks:{ color:'#eee' } } } } });
 
+    [pageSelect, pagesSelect, groupSelect, startInput, endInput].forEach(function(el){
+      el.addEventListener('change', saveTsPrefs);
+    });
     refresh.addEventListener('click', function(e){ e.preventDefault(); fetchTimeseries(); });
     fetchTimeseries();
 })();

@@ -8,6 +8,11 @@
 	<div class="white_page_span" id="bottom_page_span">
 		<h1 class="header_one">Theory of Change for Sustainability</h1>
 
+		<p class="definition_snippet">
+		A <strong>Theory of Change</strong> explains how systemic transformation can occur by linking economic incentives, institutions and everyday decisions. 
+		In sustainability, this means redesigning value signals so that natural capital becomes economically visible and regenerative choices are structurally supported.
+		</p>
+
 		<h2 class="header_two" style="margin-top: 10px;">Aligning economy and Nature through value signals</h2>
 
 		<span class="span_text_box">
@@ -31,6 +36,20 @@
 			<a href="/blog/nature-is-not-a-charity/" class="link">Nature is Not a Charity—It’s an Economic Imperative</a>,
 			<a href="/blog/what-if-stewardship-was-financially-recognised/" class="link">What if stewardship was financially recognised?</a>,
 			and <a href="/blog/why-the-swiss-said-no-to-free-money/" class="link">Why the Swiss Said No to Free Money</a> (on legitimacy and public acceptance).
+		</span>
+
+		<h2 class="header_two">Why this Theory of Change matters</h2>
+
+		<span class="span_text_box">
+		This theory of change begins with a simple observation: 
+		many sustainability strategies focus on targets, commitments or reporting frameworks. 
+		Yet the everyday decisions of households, businesses and institutions are largely shaped by economic signals — prices, incentives and the distribution of benefits.
+
+		As long as those signals reflect ecological reality only partially, sustainability initiatives remain structurally limited. 
+		The challenge is therefore not simply to persuade individuals to act against dominant incentives, but to rethink how economic value signals are designed.
+
+		The central question becomes:
+		<b>how can economic incentives be structured so that sustainable choices become visible, credible and economically meaningful in everyday life?</b>
 		</span>
 
 		<h2 class="header_two">From Sustainability Commitments to Systemic Change</h2>

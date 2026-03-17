@@ -31,7 +31,9 @@ foreach ($supportedLocales as $supportedLocale) {
     $headerLanguageOptions[$supportedLocale] = localized_url($requestPath, $supportedLocale);
 }
 
-$languageLabel = $headerLocale === 'fr' ? 'Langue' : 'Language';
+$languageLabel = $headerLocale === 'fr'
+    ? 'Langue'
+    : ($headerLocale === 'de' ? 'Sprache' : 'Language');
 ?>
 <style>
 @media (max-width: 560px) {

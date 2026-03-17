@@ -11,28 +11,37 @@ if (isset($form_salt) && $form_salt != "") {
 
 $locale = get_current_locale();
 $isFr = $locale === 'fr';
+$isDe = $locale === 'de';
 
 $pageTitle = $isFr
 	? 'Théorie du changement : aligner l’économie et la nature à grande échelle'
-	: 'Theory of Change: Aligning Economy and Nature at Scale';
+	: ($isDe
+		? 'Theorie des Wandels für Nachhaltigkeit und Naturkapital'
+		: 'Theory of Change: Aligning Economy and Nature at Scale');
 
 $metaDescription = $isFr
 	? 'Une théorie du changement qui aligne les incitations économiques avec les réalités écologiques, afin de rendre le capital naturel visible et opérationnel à grande échelle.'
-	: 'A Theory of Change aligning economic incentives with ecological reality — making natural capital financially legible and structurally scalable.';
+	: ($isDe
+		? 'Warum Naturkapital allein nicht genügt. Wie wirtschaftliche Anreize und eine Bürgerdividende für die Natur nachhaltige Entscheidungen fördern können.'
+		: 'A Theory of Change aligning economic incentives with ecological reality — making natural capital financially legible and structurally scalable.');
 
 $metaKeywords = $isFr
 	? 'théorie du changement, économie et Nature, dividende citoyen pour la Nature, capital naturel, économie écologique, incitations économiques, économie régénérative'
-	: 'theory of change, aligning economy and Nature, citizen’s dividend for Nature, natural capital, ecological economics, economic incentives, regenerative economy';
+	: ($isDe
+		? 'Theorie des Wandels, Theory of Change, Wirkungslogik, Nachhaltigkeit, Naturkapital, wirtschaftliche Anreize, Bürgerdividende für die Natur, regenerative Wirtschaft, ökologische Transformation, nachhaltige Entscheidungen'
+		: 'theory of change, aligning economy and Nature, citizen’s dividend for Nature, natural capital, ecological economics, economic incentives, regenerative economy');
 
 $ogTitle = $isFr
 	? 'Théorie du changement : aligner l’économie et la nature'
-	: 'Theory of Change: Aligning Economy and Nature';
+	: ($isDe
+		? 'Theorie des Wandels: Naturkapital, Anreize und regenerative Wirtschaft'
+		: 'Theory of Change: Aligning Economy and Nature');
 
 $host = $_SERVER['HTTP_HOST'] ?? 'mydropintheoceans.org';
 $requestPath = parse_url($_SERVER['REQUEST_URI'] ?? '/theory-of-change/', PHP_URL_PATH) ?: '/theory-of-change/';
 $requestPath = '/' . ltrim($requestPath, '/');
 
-$pathWithoutLocale = preg_replace('#^/(en|fr)(?=/|$)#i', '', $requestPath);
+$pathWithoutLocale = preg_replace('#^/(en|fr|de)(?=/|$)#i', '', $requestPath);
 if ($pathWithoutLocale === '' || $pathWithoutLocale === false) {
 	$pathWithoutLocale = '/';
 }
@@ -41,15 +50,18 @@ if ($pathWithoutLocale !== '/' && substr($pathWithoutLocale, -1) !== '/') {
 	$pathWithoutLocale .= '/';
 }
 
-$canonicalPath = $isFr ? '/fr' . $pathWithoutLocale : $pathWithoutLocale;
+$canonicalPath = $isFr ? '/fr' . $pathWithoutLocale : ($isDe ? '/de' . $pathWithoutLocale : $pathWithoutLocale);
 $canonicalUrl = 'https://' . $host . $canonicalPath;
 $alternateEnUrl = 'https://' . $host . $pathWithoutLocale;
 $alternateFrUrl = 'https://' . $host . '/fr' . $pathWithoutLocale;
+$alternateDeUrl = 'https://' . $host . '/de' . $pathWithoutLocale;
 $xDefaultUrl = $alternateEnUrl;
 
 $webPageDescription = $isFr
 	? 'Une théorie du changement visant à aligner les incitations économiques avec les réalités écologiques, pour rendre le capital naturel visible dans les décisions quotidiennes.'
-	: 'A Theory of Change for aligning economic incentives with ecological reality — making natural capital economically legible so regeneration is structurally supported at scale.';
+	: ($isDe
+		? 'Eine Theory of Change für Nachhaltigkeit, die zeigt, wie Naturkapital, wirtschaftliche Anreize und eine Bürgerdividende für die Natur nachhaltige Entscheidungen und eine regenerative Wirtschaft unterstützen können.'
+		: 'A Theory of Change for aligning economic incentives with ecological reality — making natural capital economically legible so regeneration is structurally supported at scale.');
 
 $faqSchema = $isFr
 	? [
@@ -74,7 +86,30 @@ $faqSchema = $isFr
 			'answer' => 'Sa légitimité à long terme dépend d’une appropriation démocratique par les citoyens, combinée à des cadres scientifiques et institutionnels capables de mesurer, valider et améliorer dans le temps la reconnaissance de la valeur écologique.'
 		]
 	]
-	: [
+	: ($isDe
+		? [
+		[
+			'question' => 'Was bedeutet eine Theory of Change in der Nachhaltigkeit?',
+			'answer' => 'Eine Theory of Change in der Nachhaltigkeit erklärt, wie systemische Transformation durch die Verbindung von Anreizen, Institutionen und Alltagsentscheidungen entstehen kann. Statt nur Ziele oder Verpflichtungen zu betrachten, zeigt sie, wie wirtschaftliche Wertsignale und Anreizstrukturen weiterentwickelt werden müssen, um langfristige ökologische und soziale Resilienz zu stärken.'
+		],
+		[
+			'question' => 'Was ist eine Bürgerdividende für die Natur?',
+			'answer' => 'Die Bürgerdividende für die Natur ist eine strukturelle Anerkennung, dass natürliche Systeme gemeinsamer Wohlstand sind. Sie beschreibt einen Mechanismus, der ökologische Werte wirtschaftlich lesbar macht und Bürgerinnen und Bürgern einen Anteil am wirtschaftlichen Wert gesunder natürlicher Systeme zugänglich machen soll.'
+		],
+		[
+			'question' => 'Wie setzt mydio.com diese Theory of Change um?',
+			'answer' => 'mydio.com setzt diese Logik in alltäglichen Transaktionen um. Indem nachhaltige Entscheidungen im täglichen Konsum erkennbar gemacht werden, untersucht die Initiative, wie Wertsignale und wirtschaftliche Anreize schrittweise regenerative Prioritäten widerspiegeln können, statt ihnen zu widersprechen.'
+		],
+		[
+			'question' => 'Warum ist die Neugestaltung wirtschaftlicher Anreize für Nachhaltigkeit wichtig?',
+			'answer' => 'Nachhaltigkeitsbemühungen stossen an Grenzen, wenn Systeme vor allem kurzfristige Extraktion belohnen. Die Neugestaltung wirtschaftlicher Anreize hilft, dass regenerative Handlungen strukturell unterstützt und im grossen Massstab wirtschaftlich sichtbar werden.'
+		],
+		[
+			'question' => 'Wie könnte eine Bürgerdividende für die Natur legitimiert werden?',
+			'answer' => 'Ihre langfristige Legitimität hängt von demokratischer Zustimmung durch Bürgerinnen und Bürger ab, ergänzt durch wissenschaftliche und öffentliche Institutionen, die messen, validieren und weiterentwickeln, wie ökologische Werte über die Zeit anerkannt werden.'
+		]
+	]
+		: [
 		[
 			'question' => 'What is a theory of change in sustainability?',
 			'answer' => 'A theory of change in sustainability explains how systemic transformation can occur by identifying the causal links between incentives, institutions, and everyday decisions. Rather than focusing only on targets or commitments, it examines how economic value signals must evolve to support long-term ecological and social resilience.'
@@ -95,7 +130,7 @@ $faqSchema = $isFr
 			'question' => 'How would a Citizen’s Dividend for Nature be legitimised?',
 			'answer' => 'Its long-term legitimacy would depend on democratic adoption by citizens, together with scientific and public-institutional frameworks capable of measuring, validating, and refining how ecological value is recognised over time.'
 		]
-	];
+	]);
 ?>
 <!doctype html>
 <html lang="<?php echo $locale; ?>">
@@ -112,6 +147,7 @@ $faqSchema = $isFr
 	<link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl); ?>" />
 	<link rel="alternate" hreflang="en" href="<?php echo htmlspecialchars($alternateEnUrl); ?>" />
 	<link rel="alternate" hreflang="fr" href="<?php echo htmlspecialchars($alternateFrUrl); ?>" />
+	<link rel="alternate" hreflang="de" href="<?php echo htmlspecialchars($alternateDeUrl); ?>" />
 	<link rel="alternate" hreflang="x-default" href="<?php echo htmlspecialchars($xDefaultUrl); ?>" />
 
 	<!-- Open Graph -->
@@ -303,12 +339,14 @@ $faqSchema = $isFr
 	<div style="border: 0;margin: 0;">
 		<?php if ($isFr): ?>
 			<?php include __DIR__ . '/content-fr.php'; ?>
+		<?php elseif ($isDe): ?>
+			<?php include __DIR__ . '/content-de.php'; ?>
 		<?php else: ?>
 			<?php include __DIR__ . '/content-en.php'; ?>
 		<?php endif; ?>
 
 		<div id="contact_box" style="display:none;">
-			<div id="response_box" class="contact_box"><?php echo $isFr ? 'Contact :' : 'Contact:'; ?>
+			<div id="response_box" class="contact_box"><?php echo $isFr ? 'Contact :' : ($isDe ? 'Kontakt:' : 'Contact:'); ?>
 				<br>
 				<p></p>
 				<form id="fcf-form-id" class="fcf-form-class" method="post" action="../php/contact-form-process.php">
@@ -336,7 +374,7 @@ $faqSchema = $isFr
 						</div>
 
 						<div class="fcf-form-group">
-							<button type="submit" id="contact-button" class="button-contact" disabled><?php echo $isFr ? 'Envoyer' : 'Send'; ?></button>
+							<button type="submit" id="contact-button" class="button-contact" disabled><?php echo $isFr ? 'Envoyer' : ($isDe ? 'Senden' : 'Send'); ?></button>
 						</div>
 					</div>
 				</form>

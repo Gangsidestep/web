@@ -1,26 +1,34 @@
 <p>For decades, major environmental organizations have, as a matter of principle, relied on donations, philanthropy, and goodwill to fund conservation efforts. The overall message has been clear:</p>
 
-<blockquote>“Spare some change for Nature?”</blockquote>
+<blockquote><strong>“Spare some change for Nature?”</strong></blockquote>
 
-<p>Whether by design or as an unintended consequence, this message has shaped, or at the very least, condoned, our mainstream way of seeing Nature—often as something fragile and in need of charity, or, at other times, as a formidable force that will infinitely replenish itself for our benefit, taking care of itself without our active involvement.</p>
+<p>Whether by design or as an unintended consequence, this message has shaped, or at the very least, condoned, our mainstream way of seeing Nature—<strong>often as something fragile and in need of charity</strong>, or, at other times, <strong>as a formidable force that will infinitely replenish itself</strong> for our benefit, taking care of itself without our active involvement.</p>
 
-<p>Both views, however, have served as a pretext for relative inaction. They suggest that minimal gestures—like donations—are sufficient, when in reality, a deeper, systemic approach is needed.</p>
+<p>Both views, however, have served as a pretext for relative inaction. They suggest that minimal gestures<strong>—like donations—</strong>are sufficient, when in reality, a deeper, systemic approach is needed.</p>
 
-<p>In fact, Nature is not a cause—it’s a necessity.</p>
+<p>In fact, <strong>Nature is not a cause—it’s a necessity.</strong></p>
 
 <p>Everything we depend on—our air, water, food, climate stability—flows from thriving ecosystems. Yet, mainstream economic systems continue to treat Nature as an afterthought, often relegating it in boardrooms as a non-financial concern, to be reported on or addressed when popular or convenient, rather than recognizing it as the very foundation of our economy.</p>
 
-<p>At mydio.com, we believe in a different model—one where sustainable choices are valued and incentivised from the bottom up, as part of everyday transactions. A system where taking care of Nature and participating in a regenerative economy isn’t a burden or an extraordinary effort, but inherent in the system, second nature, playful even—embedded into the way we live, move around, and consume.</p>
+<p>At <a href="https://mydio.com">mydio.com</a>, we believe in a <strong>different model</strong>—one where <strong>sustainable choices are valued and incentivised</strong> from the bottom up, as part of everyday transactions. A system where taking care of Nature and participating in a regenerative economy isn’t a burden or an extraordinary effort, but inherent in the system, second nature, playful even—embedded into the way we live, move around, and consume.</p>
 
-<p>We’re not here to ask for donations. We’re here to build an economy that works for both people and Nature—where sustainable choices are accessible, recognized, and incentivised in real time.</p>
+<p>We’re not here to ask for donations. We’re here to <strong>build an economy that works for both people and Nature</strong>—where sustainable choices are accessible, recognized, and incentivised in real time.</p>
 
-<p>Let’s break the cycle and change the mindset. It’s time to integrate sustainability into the way we live, spend, and grow.</p>
+<p><strong>Let’s break the cycle and change the mindset.</strong> It’s time to integrate sustainability into the way we live, spend, and grow.</p>
 
 <div style="margin-top: 2em; font-size: 0.95em; color: #666;">
-  <strong>Originally shared on LinkedIn.</strong>
+  Originally shared on LinkedIn.
   <a href="https://www.linkedin.com/posts/mydiocom_mydiocom-activity-7291447501079937025-vpXU/" class="linkedin-btn" target="_blank" rel="noopener">Join the discussion</a><br>
   <span style="display:block; margin-top: 1.2em; color:#aaa;">#NatureIsNotACharity #RegenerativeEconomy #SustainableChoices #MyDropIntheOceans #mydio #mydioCom</span>
 </div>
+
+<h2 class="header_two">Why this question matters</h2>
+
+<p>The idea that Nature should be treated as a charitable cause reflects a deeper structural issue in modern economies: Nature is not a charity—it is an economic imperative, yet the economic system rarely attributes direct value to the ecosystems that sustain it.</p>
+
+<p>Increasingly, economists, policymakers, and sustainability leaders are exploring how economic incentives could better align with the preservation of natural capital. Initiatives such as natural capital accounting, regenerative economic models, and incentive-based mechanisms are all part of this emerging conversation about why Nature should be treated as an economic imperative.</p>
+
+<p>The broader work of <em>My Drop in the Oceans</em> explores how such ideas could translate into practical economic signals guiding everyday choices.</p>
 
 <div style="font-size: 0.95em; color: #222; margin-top: 2em;">
   <p>For a deeper look at how we can correct the mismatch between value and reward, see our <a class="blog-nav-link" href="<?php echo htmlspecialchars(localized_path('/theory-of-change/', $locale)); ?>">Theory of Change</a>.</p>

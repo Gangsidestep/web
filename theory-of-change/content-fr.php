@@ -6,8 +6,12 @@
 	</div>
 
 	<div class="white_page_span" id="bottom_page_span">
-		<h1 class="header_one">Théorie du changement pour une durabilité à grande échelle</h1>
+		<h1 class="header_one">Théorie du changement pour la durabilité</h1>
 
+		<p class="definition_snippet">
+		Une <strong>théorie du changement</strong> décrit comment une transformation systémique peut émerger en reliant les incitations économiques, les institutions et les décisions du quotidien. 
+		Dans le contexte de la durabilité, cela signifie concevoir des signaux de valeur qui rendent le capital naturel visible dans l’économie et soutiennent structurellement les choix régénératifs.
+		</p>
 		<h2 class="header_two" style="margin-top: 10px;">Réaligner l’économie et la nature par les signaux de valeur</h2>
 
 		<span class="span_text_box">
@@ -31,6 +35,20 @@
 			<a href="<?php echo htmlspecialchars(localized_path('/blog/what-if-stewardship-was-financially-recognised/', $locale)); ?>" class="link">Et si la préservation était reconnue financièrement ?</a>
 			et
 			<a href="<?php echo htmlspecialchars(localized_path('/blog/nature-is-not-a-charity/', $locale)); ?>" class="link">La Nature n’est pas une charité — c’est une nécessité économique</a>.
+		</span>
+
+		<h2 class="header_two">Pourquoi cette théorie du changement est nécessaire</h2>
+
+		<span class="span_text_box">
+		Cette théorie du changement part d’un constat simple : 
+		de nombreuses stratégies de durabilité se concentrent sur des objectifs, des engagements ou des rapports. 
+		Pourtant, les décisions quotidiennes des ménages, des entreprises et des institutions sont largement influencées par des signaux économiques — les prix, les incitations et la distribution des bénéfices.
+
+		Tant que ces signaux reflètent imparfaitement la réalité écologique, les initiatives de durabilité restent structurellement limitées. 
+		L’enjeu n’est donc pas seulement de changer les comportements individuels, mais d’ajuster les mécanismes économiques qui orientent les décisions.
+
+		La question centrale devient alors :
+		<b>comment concevoir des incitations économiques qui rendent les choix durables visibles, crédibles et cohérents dans la vie économique quotidienne ?</b>
 		</span>
 
 		<h2 class="header_two">Reconnaître le capital naturel comme richesse de base</h2>

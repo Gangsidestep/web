@@ -14,11 +14,11 @@ RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Internal locale routing for multilingual URLs
-# /en/... and /fr/... are rewritten to existing paths while exposing locale via APP_LOCALE
-RewriteRule ^(en|fr)/?$ / [QSA,E=APP_LOCALE:$1,L]
+# /en/... /fr/... and /de/... are rewritten to existing paths while exposing locale via APP_LOCALE
+RewriteRule ^(en|fr|de)/?$ / [QSA,E=APP_LOCALE:$1,L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(en|fr)/(.*)$ /$2 [QSA,E=APP_LOCALE:$1,L]
+RewriteRule ^(en|fr|de)/(.*)$ /$2 [QSA,E=APP_LOCALE:$1,L]
 
 <IfModule mod_rewrite.c>
   RewriteEngine On

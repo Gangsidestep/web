@@ -2,7 +2,7 @@
 
 function get_supported_locales(): array
 {
-    return ['en', 'fr'];
+    return ['en', 'fr', 'de'];
 }
 
 function get_current_locale(): string
@@ -56,5 +56,13 @@ function localized_url(string $path, ?string $locale = null): string
 
 function get_alternate_locale(string $locale): string
 {
-    return $locale === 'fr' ? 'en' : 'fr';
+    if ($locale === 'fr') {
+        return 'en';
+    }
+
+    if ($locale === 'de') {
+        return 'en';
+    }
+
+    return 'fr';
 }

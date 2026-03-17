@@ -4,7 +4,7 @@ $locale = get_current_locale();
 $articlePath = '/blog/nature-is-not-a-charity/';
 
 $pageTitle = $locale === 'fr'
-  ? 'La Nature n’est pas une charité — c’est une nécessité économique'
+  ? 'La Nature n’est pas une charité — c’est une nécessité'
   : 'Nature is Not a Charity—It’s an Economic Imperative';
 
 $metaDescriptionEn = 'Why we must move beyond charity and make Nature central to our economy. Nature’s value is an economic imperative for a sustainable future.';
@@ -16,7 +16,34 @@ $metaKeywordsFr = 'Nature, charité, économie régénérative, choix durables, 
 $metaDescription = $locale === 'fr' ? $metaDescriptionFr : $metaDescriptionEn;
 $metaKeywords = $locale === 'fr' ? $metaKeywordsFr : $metaKeywordsEn;
 
-$canonicalUrl = localized_url($articlePath, $locale);
+$canonicalHost = 'mydropintheoceans.org';
+$requestPath = parse_url($_SERVER['REQUEST_URI'] ?? $articlePath, PHP_URL_PATH) ?: $articlePath;
+$requestPath = '/' . ltrim($requestPath, '/');
+
+$pathWithoutLocale = preg_replace('#^/(en|fr)(?=/|$)#i', '', $requestPath);
+if ($pathWithoutLocale === '' || $pathWithoutLocale === false) {
+  $pathWithoutLocale = '/';
+}
+
+if ($pathWithoutLocale !== '/' && substr($pathWithoutLocale, -1) !== '/') {
+  $pathWithoutLocale .= '/';
+}
+
+$queryString = $_SERVER['QUERY_STRING'] ?? '';
+if ($locale === 'en' && preg_match('#^/en(?=/|$)#i', $requestPath)) {
+  $redirectTarget = 'https://' . $canonicalHost . $pathWithoutLocale;
+  if ($queryString !== '') {
+    $redirectTarget .= '?' . $queryString;
+  }
+  header('Location: ' . $redirectTarget, true, 301);
+  exit;
+}
+
+$canonicalPath = $locale === 'fr' ? '/fr' . $pathWithoutLocale : $pathWithoutLocale;
+$canonicalUrl = 'https://' . $canonicalHost . $canonicalPath;
+$alternateEnUrl = 'https://' . $canonicalHost . $pathWithoutLocale;
+$alternateFrUrl = 'https://' . $canonicalHost . '/fr' . $pathWithoutLocale;
+$xDefaultUrl = $alternateEnUrl;
 
 include __DIR__ . '/../../php/analytics.php';
 ?>
@@ -33,9 +60,9 @@ include __DIR__ . '/../../php/analytics.php';
 <meta name="robots" content="index, follow">
 
 <link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl); ?>">
-<link rel="alternate" hreflang="en" href="<?php echo htmlspecialchars(localized_url($articlePath, 'en')); ?>">
-<link rel="alternate" hreflang="fr" href="<?php echo htmlspecialchars(localized_url($articlePath, 'fr')); ?>">
-<link rel="alternate" hreflang="x-default" href="<?php echo htmlspecialchars(localized_url($articlePath, 'en')); ?>">
+<link rel="alternate" hreflang="en" href="<?php echo htmlspecialchars($alternateEnUrl); ?>">
+<link rel="alternate" hreflang="fr" href="<?php echo htmlspecialchars($alternateFrUrl); ?>">
+<link rel="alternate" hreflang="x-default" href="<?php echo htmlspecialchars($xDefaultUrl); ?>">
 
 <!-- Open Graph -->
 <meta property="og:title" content="<?php echo htmlspecialchars($pageTitle); ?>">
@@ -114,19 +141,7 @@ include __DIR__ . '/../../php/analytics.php';
 <body style="border:0;margin:0;padding:0;background-color:#080a23;">
 <div style="max-width:1000px;margin-right:auto;margin-left:auto;">
 
-<div style="height:60px;background-color:white;width:100%;max-width:1000px;
-font-size:18px;padding-top:10px;padding-bottom:10px;
-box-shadow:0 0 20px 8px rgba(60,60,60,.06);
-border-bottom-right-radius:5px;border-bottom-left-radius:5px;
-position:fixed;z-index:2;border-bottom:#8e807687 inset thin;">
-
-<div style="width:80%;
-background-image:url(/images/logo/mydropintheoceans_logo_large_no_drop.png);
-height:40px;background-size:contain;background-repeat:no-repeat;
-margin-left:auto;margin-right:auto;position:relative;
-background-position:center;margin-top:13px;"></div>
-
-</div>
+<?php include __DIR__ . '/../../php/site-header.php'; ?>
 
 <div style="background-size:cover;width:100%;height:120%;
 background-image:url(/images/background/MyDIO_back.jpg);
@@ -152,8 +167,6 @@ background-position-y:74px;position:fixed;max-width:1000px;"></div>
 <p></p>
 
 <h1 class="header_one"><?php echo htmlspecialchars($pageTitle); ?></h1>
-
-<p></p>
 
 <div style="color:#888;font-size:0.95em;margin-bottom:1em;">
 <?php echo $locale === 'fr' ? 'Publié' : 'Published'; ?> 2025-01-01
