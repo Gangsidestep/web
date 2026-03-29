@@ -17,6 +17,56 @@ if (empty($_SESSION['admin_authenticated'])) {
     exit;
 }
 
+function convertDate($d) {
+  if (!$d) return null;
+  if (preg_match('/^(\d{2})\.(\d{2})\.(\d{4})$/', $d, $m)) {
+    return "$m[3]-$m[2]-$m[1]";
+  }
+  if (preg_match('/^(\d{4})-(\d{2})-(\d{2})$/', $d)) {
+    return $d;
+  }
+  return $d;
+}
+
+function get_bot_filter_mode($raw) {
+  $raw = strtolower(trim((string)$raw));
+  if ($raw === 'bots') return 'bots';
+  if ($raw === 'humans') return 'humans';
+  return 'all';
+}
+
+function detect_obvious_bot($visit) {
+  $ua = strtolower(trim((string)($visit['user_agent'] ?? '')));
+  if ($ua === '') {
+    return ['is_bot' => true, 'reason' => 'empty user agent'];
+  }
+
+  $needles = [
+    'googlebot', 'bingbot', 'adsbot', 'duckduckbot', 'yandexbot', 'baiduspider',
+    'mj12bot', 'ahrefsbot', 'semrushbot', 'seobilitybot', 'barkrowler',
+    'petalbot', 'bytespider', 'applebot', 'gptbot', 'chatgpt-user', 'claudebot',
+    'ccbot', 'facebookexternalhit', 'facebot', 'twitterbot', 'slackbot',
+    'whatsapp', 'telegrambot', 'discordbot', 'crawler', 'spider',
+    'headlesschrome', 'phantomjs', 'selenium', 'playwright', 'puppeteer',
+    'curl/', 'wget/', 'python-requests', 'python-urllib', 'python-httpx',
+    'go-http-client', 'axios/', 'node-fetch', 'okhttp', 'scrapy', 'libwww-perl'
+  ];
+  foreach ($needles as $needle) {
+    if (strpos($ua, $needle) !== false) {
+      return ['is_bot' => true, 'reason' => 'user agent: ' . $needle];
+    }
+  }
+
+  return ['is_bot' => false, 'reason' => ''];
+}
+
+function visit_matches_bot_filter($visit, $mode) {
+  $mode = get_bot_filter_mode($mode);
+  if ($mode === 'all') return true;
+  $info = detect_obvious_bot($visit);
+  return $mode === 'bots' ? !empty($info['is_bot']) : empty($info['is_bot']);
+}
+
 // --- AJAX handler for small operations (unique visitors table, timeseries JSON) ---
 if (isset($_GET['ajax']) && $_GET['ajax'] == '1') {
     $log_file = '/home/clients/a87f9485d236547310279906c2e64cab/web/php/analytics/visits.log';
@@ -27,18 +77,7 @@ if (isset($_GET['ajax']) && $_GET['ajax'] == '1') {
         if (!$data) continue;
         $visits[] = $data;
     }
-
-    // Convert dd.mm.yyyy to yyyy-mm-dd for comparison
-    function convertDate($d) {
-        if (!$d) return null;
-        if (preg_match('/^(\d{2})\.(\d{2})\.(\d{4})$/', $d, $m)) {
-            return "$m[3]-$m[2]-$m[1]";
-        }
-        if (preg_match('/^(\d{4})-(\d{2})-(\d{2})$/', $d)) {
-            return $d;
-        }
-        return $d;
-    }
+  $bot_filter = get_bot_filter_mode($_GET['bot_filter'] ?? 'all');
 
     // Timeseries endpoint: return JSON of counts for a specific page grouped by hour/day/week
     if (isset($_GET['action']) && $_GET['action'] === 'timeseries') {
@@ -63,6 +102,7 @@ if (isset($_GET['ajax']) && $_GET['ajax'] == '1') {
             foreach ($visits as $v) {
                 $ts = $v['timestamp'] ?? '';
                 if (!$ts) continue;
+              if (!visit_matches_bot_filter($v, $bot_filter)) continue;
                 $date = substr($ts, 0, 10);
                 if ($start_date && $date < $start_date) continue;
                 if ($end_date && $date > $end_date) continue;
@@ -100,6 +140,7 @@ if (isset($_GET['ajax']) && $_GET['ajax'] == '1') {
         foreach ($visits as $v) {
             $ts = $v['timestamp'] ?? '';
             if (!$ts) continue;
+          if (!visit_matches_bot_filter($v, $bot_filter)) continue;
             $date = substr($ts, 0, 10);
             if ($start_date && $date < $start_date) continue;
             if ($end_date && $date > $end_date) continue;
@@ -137,20 +178,24 @@ if (isset($_GET['ajax']) && $_GET['ajax'] == '1') {
         foreach ($visits as $v) {
             $ts = $v['timestamp'] ?? '';
             if (!$ts) continue;
+          if (!visit_matches_bot_filter($v, $bot_filter)) continue;
             $date = substr($ts, 0, 10);
             if ($start_date && $date < $start_date) continue;
             if ($end_date   && $date > $end_date)   continue;
             $p = $v['page'] ?? '';
             if ($filter_page !== '' && $p !== $filter_page) continue;
-        $visitor_id = $v['visitor_id'] ?? '';
-        if ($filter_visitor !== '' && $visitor_id !== $filter_visitor) continue;
+          $visitor_id = $v['visitor_id'] ?? '';
+          if ($filter_visitor !== '' && $visitor_id !== $filter_visitor) continue;
+          $bot_info = detect_obvious_bot($v);
             $results[] = [
                 'timestamp'  => $ts,
                 'ip'         => $v['ip'] ?? '(not logged)',
                 'page'       => $p,
-          'visitor_id' => $visitor_id,
+            'visitor_id' => $visitor_id,
                 'referer'    => $v['referer'] ?? '',
                 'user_agent' => $v['user_agent'] ?? '',
+            'is_bot'     => !empty($bot_info['is_bot']),
+            'bot_reason' => $bot_info['reason'] ?? '',
             ];
         }
         // Sort newest first
@@ -165,6 +210,7 @@ if (isset($_GET['ajax']) && $_GET['ajax'] == '1') {
     $end_date = isset($_GET['end_date']) && $_GET['end_date'] !== '' ? convertDate($_GET['end_date']) : null;
     $unique_visitors_per_page = [];
     foreach ($visits as $data) {
+      if (!visit_matches_bot_filter($data, $bot_filter)) continue;
         $visit_date = substr($data['timestamp'], 0, 10);
         if ($start_date && $visit_date < $start_date) continue;
         if ($end_date && $visit_date > $end_date) continue;
@@ -175,34 +221,48 @@ if (isset($_GET['ajax']) && $_GET['ajax'] == '1') {
         }
         $unique_visitors_per_page[$page][$visitor_id] = true;
     }
-    echo '<h2>Unique Visitors Per Page</h2>';
-    echo '<table><thead><tr><th>Page</th><th>Unique Visitors</th></tr></thead><tbody>';
+    arsort($unique_visitors_per_page);
+    echo '<h2 id="uvToggle" style="cursor:pointer;user-select:none;">Unique Visitors Per Page <span id="uvArrow" style="font-size:0.75em;color:#aaa;">&#9658;</span></h2>';
+    echo '<div id="uvContent" style="display:none;">';
+    echo '<div id="uvMainWrap" style="display:none;">';
+    echo '<table><thead><tr><th>Page</th><th id="uvSortBtn" style="cursor:pointer;user-select:none;">Unique Visitors <span id="uvSortArrow">&#8597;</span></th></tr></thead><tbody id="uvBody">';
     if (!empty($unique_visitors_per_page)) {
         foreach ($unique_visitors_per_page as $page => $visitors) {
-            echo '<tr><td>' . htmlspecialchars($page) . '</td><td>' . count($visitors) . '</td></tr>';
+            $cnt = count($visitors);
+            echo '<tr data-count="' . $cnt . '"><td>' . htmlspecialchars($page) . '</td><td>' . $cnt . '</td></tr>';
         }
     } else {
         echo '<tr><td colspan="2">No data for selected date range.</td></tr>';
     }
-    echo '</tbody></table>';
+    echo '</tbody></table></div>';
+    echo '<script>if(window.initUvTable)window.initUvTable();</script>';
 
-    $daily_page_views = [];
+    $page_visits_totals = [];
     foreach ($visits as $data) {
+        if (!visit_matches_bot_filter($data, $bot_filter)) continue;
         $date = substr($data['timestamp'], 0, 10);
+      if ($start_date && $date < $start_date) continue;
+      if ($end_date && $date > $end_date) continue;
         $page = $data['page'];
-        if (!isset($daily_page_views[$date])) $daily_page_views[$date] = [];
-        $daily_page_views[$date][$page] = ($daily_page_views[$date][$page] ?? 0) + 1;
+        $page_visits_totals[$page] = ($page_visits_totals[$page] ?? 0) + 1;
     }
-    echo '<h3>Pages Visited Per Day</h3>';
+    arsort($page_visits_totals);
+    echo '<div id="uvPvdWrap" style="display:none;">';
+    echo '<h3>Page Visits (Total in Selected Timeframe)</h3>';
     echo '<div style="overflow-x:auto; max-width:100vw;">';
-    echo '<table style="background:#111;color:#eee;border-radius:6px;padding:1em;width:100%;min-width:400px;">';
-    echo '<tr><th>Date</th><th>Page</th><th>Visits</th></tr>';
-    foreach ($daily_page_views as $date => $pages) {
-        foreach ($pages as $page => $count) {
-            echo '<tr><td>' . htmlspecialchars($date) . '</td><td>' . htmlspecialchars($page) . '</td><td>' . $count . '</td></tr>';
-        }
+    echo '<table id="pvdTable" style="min-width:400px;">';
+    echo '<thead><tr><th id="pvdPageSortBtn" style="cursor:pointer;user-select:none;">Page <span id="pvdPageArrow">&#8597;</span></th><th id="pvdVisitsSortBtn" style="cursor:pointer;user-select:none;">Visits <span id="pvdVisitsArrow">&#8597;</span></th></tr></thead><tbody id="pvdBody">';
+    if (!empty($page_visits_totals)) {
+      foreach ($page_visits_totals as $page => $count) {
+        echo '<tr data-page="' . htmlspecialchars($page) . '" data-visits="' . intval($count) . '"><td>' . htmlspecialchars($page) . '</td><td>' . $count . '</td></tr>';
+      }
+    } else {
+      echo '<tr><td colspan="2">No data for selected date range.</td></tr>';
     }
-    echo '</table></div>';
+    echo '</tbody></table></div>';
+    echo '</div>';
+    echo '</div>';
+    echo '<script>if(window.initPvdTable)window.initPvdTable();</script>';
     exit;
 }
 
@@ -211,13 +271,20 @@ if (isset($_GET['ajax']) && $_GET['ajax'] == '1') {
 <html lang="en">
 <head><meta charset="utf-8"><title>Log Viewer</title>
 <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="/js/chart.js"></script>
 <style>
 body { font-family: Arial, sans-serif; background: #222; color: #eee; }
 .chart-container { background: #111; padding: 1em; border-radius: 6px; margin-bottom: 2em; min-height: 320px; }
 canvas { min-height: 300px; width: 100% !important; display: block; }
 pre { background: #111; padding: 1em; border-radius: 6px; overflow-x: auto; }
 select,button { font-size: 1em; }
+/* Table reset */
+table { border-collapse: collapse; width: 100%; background: #111; border-radius: 6px; }
+th, td { padding: 6px 12px; text-align: left; border-bottom: 1px solid #333; vertical-align: middle; word-break: break-all; }
+th { background: #1a1a1a; color: #4bc0c0; white-space: nowrap; word-break: normal; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: #1e1e1e; }
+div[style*="overflow-x"] { margin-bottom: 1.5em; }
 </style>
 <?php
 // Parse log file and prepare chart data
@@ -228,6 +295,7 @@ $log_files = [
 $selected = $_GET['log'] ?? 'Analytics Log';
 $file = $log_files[$selected] ?? null;
 $lines = $file && file_exists($file) ? @file($file) : [];
+$bot_filter = get_bot_filter_mode($_GET['bot_filter'] ?? 'all');
 $visits = [];
 $page_views = [];
 $referers = [];
@@ -235,6 +303,7 @@ $daily_visits = [];
 foreach ($lines as $line) {
     $data = json_decode($line, true);
     if (!$data) continue;
+  if (!visit_matches_bot_filter($data, $bot_filter)) continue;
     $visits[] = $data;
     $page = $data['page'];
     $page_views[$page] = ($page_views[$page] ?? 0) + 1;
@@ -262,11 +331,19 @@ echo '<form id="dateFilterForm" style="margin-bottom:10px;">';
 echo '<input type="date" name="start_date" value="' . htmlspecialchars($start_date, ENT_QUOTES) . '" style="width:140px;">';
 echo ' to ';
 echo '<input type="date" name="end_date" value="' . htmlspecialchars($end_date, ENT_QUOTES) . '" style="width:140px;">';
+echo ' <label style="margin-left:8px;">Traffic: <select name="bot_filter" id="botFilterSelect">';
+echo '<option value="all"' . ($bot_filter === 'all' ? ' selected' : '') . '>All traffic</option>';
+echo '<option value="humans"' . ($bot_filter === 'humans' ? ' selected' : '') . '>Exclude obvious bots</option>';
+echo '<option value="bots"' . ($bot_filter === 'bots' ? ' selected' : '') . '>Only obvious bots</option>';
+echo '</select></label>';
 echo ' <button type="submit">Filter</button>';
+echo ' <span style="font-size:0.82em;color:#aaa;margin-left:8px;">Bot detection is based on obvious user-agent matches.</span>';
 echo '</form>';
 echo '<div id="uniqueVisitorsTable">';
-echo '<h2>Unique Visitors Per Page</h2>';
-echo '<table><thead><tr><th>Page</th><th>Unique Visitors</th></tr></thead><tbody>';
+echo '<h2 id="uvToggle" style="cursor:pointer;user-select:none;">Unique Visitors Per Page <span id="uvArrow" style="font-size:0.75em;color:#aaa;">&#9658;</span></h2>';
+echo '<div id="uvContent" style="display:none;">';
+echo '<div id="uvMainWrap" style="display:none;">';
+echo '<table><thead><tr><th>Page</th><th id="uvSortBtn" style="cursor:pointer;user-select:none;">Unique Visitors <span id="uvSortArrow">&#8597;</span></th></tr></thead><tbody id="uvBody">';
 $unique_visitors_per_page = [];
 foreach ($visits as $data) {
     $visit_date = substr($data['timestamp'] ?? '', 0, 10);
@@ -279,10 +356,37 @@ foreach ($visits as $data) {
     }
     $unique_visitors_per_page[$page][$visitor_id] = true;
 }
+arsort($unique_visitors_per_page);
 foreach ($unique_visitors_per_page as $page => $visitors) {
-    echo '<tr><td>' . htmlspecialchars($page) . '</td><td>' . count($visitors) . '</td></tr>';
+    $cnt = count($visitors);
+    echo '<tr data-count="' . $cnt . '"><td>' . htmlspecialchars($page) . '</td><td>' . $cnt . '</td></tr>';
 }
 echo '</tbody></table></div>';
+
+$page_visits_totals = [];
+foreach ($visits as $data) {
+  $date = substr($data['timestamp'] ?? '', 0, 10);
+  if ($start_date && $date < $start_date) continue;
+  if ($end_date && $date > $end_date) continue;
+  $page = $data['page'];
+  $page_visits_totals[$page] = ($page_visits_totals[$page] ?? 0) + 1;
+}
+arsort($page_visits_totals);
+echo '<div id="uvPvdWrap" style="display:none;">';
+echo '<h3>Page Visits (Total in Selected Timeframe)</h3>';
+echo '<div style="overflow-x:auto; max-width:100vw;">';
+echo '<table id="pvdTable" style="min-width:400px;">';
+echo '<thead><tr><th id="pvdPageSortBtn" style="cursor:pointer;user-select:none;">Page <span id="pvdPageArrow">&#8597;</span></th><th id="pvdVisitsSortBtn" style="cursor:pointer;user-select:none;">Visits <span id="pvdVisitsArrow">&#8597;</span></th></tr></thead><tbody id="pvdBody">';
+if (!empty($page_visits_totals)) {
+  foreach ($page_visits_totals as $page => $count) {
+    echo '<tr data-page="' . htmlspecialchars($page) . '" data-visits="' . intval($count) . '"><td>' . htmlspecialchars($page) . '</td><td>' . $count . '</td></tr>';
+  }
+} else {
+  echo '<tr><td colspan="2">No data for selected date range.</td></tr>';
+}
+echo '</tbody></table></div>';
+echo '</div>';
+echo '</div></div>';
 
 // Chart containers
 echo '<div style="margin:0 0 1em 0; display:flex; gap:0.5em; align-items:center; flex-wrap:wrap;">';
@@ -341,6 +445,7 @@ echo <<<'IPHTML'
   <thead><tr style="background:#333;">
     <th style="padding:6px 8px;text-align:left;cursor:pointer;" data-col="0">Timestamp &#8597;</th>
     <th style="padding:6px 8px;text-align:left;cursor:pointer;" data-col="1">IP &#8597;</th>
+    <th style="padding:6px 8px;text-align:left;">Country</th>
     <th style="padding:6px 8px;text-align:left;cursor:pointer;" data-col="2">Visitor Hash &#8597;</th>
     <th style="padding:6px 8px;text-align:left;cursor:pointer;" data-col="3">Page &#8597;</th>
     <th style="padding:6px 8px;text-align:left;">Referer</th>
@@ -356,12 +461,12 @@ echo <<<'IPHTML'
 <div style="overflow-x:auto;">
 <table id="journey_table" style="width:100%;border-collapse:collapse;font-size:0.80em;">
   <thead><tr style="background:#2d3a40;">
-    <th style="padding:6px 8px;text-align:left;">Visitor Key</th>
-    <th style="padding:6px 8px;text-align:left;">Mine?</th>
-    <th style="padding:6px 8px;text-align:left;">Visits</th>
-    <th style="padding:6px 8px;text-align:left;">Unique Pages</th>
-    <th style="padding:6px 8px;text-align:left;">First Seen</th>
-    <th style="padding:6px 8px;text-align:left;">Last Seen</th>
+    <th id="journeySortKeyBtn" style="padding:6px 8px;text-align:left;cursor:pointer;user-select:none;">Visitor Key <span id="journeySortKeyArrow">&#8597;</span></th>
+    <th id="journeySortMineBtn" style="padding:6px 8px;text-align:left;cursor:pointer;user-select:none;">Mine? <span id="journeySortMineArrow">&#8597;</span></th>
+    <th id="journeySortVisitsBtn" style="padding:6px 8px;text-align:left;cursor:pointer;user-select:none;">Visits <span id="journeySortVisitsArrow">&#8597;</span></th>
+    <th id="journeySortUniqueBtn" style="padding:6px 8px;text-align:left;cursor:pointer;user-select:none;">Unique Pages <span id="journeySortUniqueArrow">&#8597;</span></th>
+    <th id="journeySortFirstBtn" style="padding:6px 8px;text-align:left;cursor:pointer;user-select:none;">First Seen <span id="journeySortFirstArrow">&#8597;</span></th>
+    <th id="journeySortLastBtn" style="padding:6px 8px;text-align:left;cursor:pointer;user-select:none;">Last Seen <span id="journeySortLastArrow">&#8597;</span></th>
     <th style="padding:6px 8px;text-align:left;">IP(s)</th>
     <th style="padding:6px 8px;text-align:left;">Journey (sample)</th>
   </tr></thead>
@@ -380,6 +485,9 @@ echo <<<'IPJS'
   var lastRows = [];
   var mineIpsKey = "viewLogsOwnIps";
   var mineHashesKey = "viewLogsOwnHashes";
+  var journeySortKey = "viewLogsJourneySort";
+  var journeyRepeatOnlyKey = "viewLogsJourneyRepeatOnly";
+  var journeySort = loadJourneySort();
 
   ipPageLabels.forEach(function(p){
     var o = document.createElement("option"); o.value = p; o.textContent = p; pageSelect.appendChild(o);
@@ -404,6 +512,81 @@ echo <<<'IPJS'
   function addMineHash(v){ if(!v) return; if(mineHashes.indexOf(v) === -1){ mineHashes.push(v); saveMine(); renderMineTags(); } }
   function isMineRow(r){
     return (r.ip && mineIps.indexOf(r.ip) !== -1) || (r.visitor_id && mineHashes.indexOf(r.visitor_id) !== -1);
+  }
+
+  function saveJourneySort(){
+    try { localStorage.setItem(journeySortKey, JSON.stringify(journeySort)); } catch(e) {}
+  }
+  function loadJourneySort(){
+    try {
+      var raw = localStorage.getItem(journeySortKey);
+      if (raw) {
+        var parsed = JSON.parse(raw) || {};
+        var allowedCols = ["key", "mine", "visits", "uniquePages", "firstSeen", "lastSeen"];
+        var col = allowedCols.indexOf(parsed.col) !== -1 ? parsed.col : "visits";
+        var dir = parsed.dir === "asc" ? "asc" : "desc";
+        return { col: col, dir: dir };
+      }
+    } catch(e) {}
+    return { col: "visits", dir: "desc" };
+  }
+  function saveJourneyRepeatOnly(isChecked){
+    try { localStorage.setItem(journeyRepeatOnlyKey, isChecked ? "1" : "0"); } catch(e) {}
+  }
+  function loadJourneyRepeatOnly(){
+    try {
+      var raw = localStorage.getItem(journeyRepeatOnlyKey);
+      if (raw === "1") return true;
+      if (raw === "0") return false;
+    } catch(e) {}
+    return true;
+  }
+  function updateJourneySortArrows(){
+    var arrowMap = {
+      key: document.getElementById("journeySortKeyArrow"),
+      mine: document.getElementById("journeySortMineArrow"),
+      visits: document.getElementById("journeySortVisitsArrow"),
+      uniquePages: document.getElementById("journeySortUniqueArrow"),
+      firstSeen: document.getElementById("journeySortFirstArrow"),
+      lastSeen: document.getElementById("journeySortLastArrow")
+    };
+    Object.keys(arrowMap).forEach(function(k){
+      if (!arrowMap[k]) return;
+      arrowMap[k].innerHTML = (k === journeySort.col) ? (journeySort.dir === "asc" ? "&#9650;" : "&#9660;") : "&#8597;";
+    });
+  }
+  function setJourneySort(col){
+    var defaultDirByCol = {
+      key: "asc",
+      mine: "desc",
+      visits: "desc",
+      uniquePages: "desc",
+      firstSeen: "desc",
+      lastSeen: "desc"
+    };
+    if (journeySort.col === col) {
+      journeySort.dir = journeySort.dir === "desc" ? "asc" : "desc";
+    } else {
+      journeySort.col = col;
+      journeySort.dir = defaultDirByCol[col] || "desc";
+    }
+    saveJourneySort();
+    updateJourneySortArrows();
+    renderFromRows();
+  }
+  function setupJourneySortHandlers(){
+    var bind = function(btnId, col){
+      var btn = document.getElementById(btnId);
+      if (!btn) return;
+      btn.addEventListener("click", function(){ setJourneySort(col); });
+    };
+    bind("journeySortKeyBtn", "key");
+    bind("journeySortMineBtn", "mine");
+    bind("journeySortVisitsBtn", "visits");
+    bind("journeySortUniqueBtn", "uniquePages");
+    bind("journeySortFirstBtn", "firstSeen");
+    bind("journeySortLastBtn", "lastSeen");
+    updateJourneySortArrows();
   }
 
   function padZ(n){return String(n).padStart(2,"0");}
@@ -431,7 +614,10 @@ echo <<<'IPJS'
 
   document.getElementById("ip_load").addEventListener("click", loadIpData);
   document.getElementById("ip_exclude_mine").addEventListener("change", renderFromRows);
-  document.getElementById("journey_repeat_only").addEventListener("change", renderFromRows);
+  document.getElementById("journey_repeat_only").addEventListener("change", function(){
+    saveJourneyRepeatOnly(this.checked);
+    renderFromRows();
+  });
   document.getElementById("mine_add_ip").addEventListener("click", function(e){ e.preventDefault(); addMineIp(document.getElementById("mine_ip_input").value.trim()); renderFromRows(); });
   document.getElementById("mine_add_hash").addEventListener("click", function(e){ e.preventDefault(); addMineHash(document.getElementById("mine_hash_input").value.trim()); renderFromRows(); });
   document.getElementById("mine_tags").addEventListener("click", function(e){
@@ -463,10 +649,12 @@ echo <<<'IPJS'
     var page  = document.getElementById("ip_page").value;
     var visitorHash = document.getElementById("ip_visitor").value.trim();
     var params = new URLSearchParams({ajax:"1", action:"ip_details"});
+    var botFilterSelect = document.getElementById("botFilterSelect");
     if(start) params.set("start_date", start);
     if(end)   params.set("end_date",   end);
     if(page)  params.set("page",       page);
     if(visitorHash) params.set("visitor_id", visitorHash);
+    if(botFilterSelect) params.set("bot_filter", botFilterSelect.value || "all");
     document.getElementById("ip_summary").textContent = "Loading...";
     fetch(window.location.pathname + "?" + params.toString())
       .then(function(r){ return r.json(); })
@@ -487,7 +675,7 @@ echo <<<'IPJS'
     journeyTbody.innerHTML = "";
 
     if(!rows.length){
-      tbody.innerHTML = "<tr><td colspan='6' style='padding:8px;color:#888;'>No results for selected period.</td></tr>";
+      tbody.innerHTML = "<tr><td colspan='7' style='padding:8px;color:#888;'>No results for selected period.</td></tr>";
       journeyTbody.innerHTML = "<tr><td colspan='8' style='padding:8px;color:#888;'>No journeys for selected period.</td></tr>";
       document.getElementById("ip_summary").textContent = "0 visits";
       return;
@@ -497,7 +685,7 @@ echo <<<'IPJS'
     var displayed = excludeMine ? rows.filter(function(r){ return !isMineRow(r); }) : rows.slice();
 
     if(!displayed.length){
-      tbody.innerHTML = "<tr><td colspan='6' style='padding:8px;color:#888;'>All rows are excluded as your own activity.</td></tr>";
+      tbody.innerHTML = "<tr><td colspan='7' style='padding:8px;color:#888;'>All rows are excluded as your own activity.</td></tr>";
       journeyTbody.innerHTML = "<tr><td colspan='8' style='padding:8px;color:#888;'>No journeys after exclusion.</td></tr>";
       document.getElementById("ip_summary").textContent = "0 visits after exclusion";
       return;
@@ -509,6 +697,21 @@ echo <<<'IPJS'
     document.getElementById("ip_summary").textContent =
       displayed.length + " visit(s) · " + Object.keys(ips).length + " unique IP(s) · " + Object.keys(hashes).length + " unique hash(es)" + (excludeMine ? " · mine excluded" : "");
 
+    // Helper to fetch country code for an IP (client-side, free API, with cache)
+    var countryCache = {};
+    function fetchCountry(ip, cb) {
+      if (!ip) { cb(""); return; }
+      if (countryCache[ip]) { cb(countryCache[ip]); return; }
+      fetch("/php/ip_country_lookup.php?ip=" + encodeURIComponent(ip))
+        .then(function(r){ return r.json(); })
+        .then(function(data){
+          var code = (data && data.country && data.country.length === 2) ? data.country : "";
+          countryCache[ip] = code;
+          cb(code);
+        })
+        .catch(function(){ cb(""); });
+    }
+
     displayed.forEach(function(r){
       var tr = document.createElement("tr");
       tr.style.borderBottom = "1px solid #333";
@@ -518,14 +721,20 @@ echo <<<'IPJS'
       var ref = r.referer || "";
       var refShort = ref.length > 40 ? ref.substring(0,40)+"…" : ref;
       var hashCount = hashes[r.visitor_id || "(empty)"] || 0;
+      var countryCellId = "country-" + Math.random().toString(36).substr(2,9);
       tr.innerHTML =
         "<td style='padding:5px 8px;white-space:nowrap;'>" + escHtml(r.timestamp) + "</td>" +
         "<td style='padding:5px 8px;white-space:nowrap;font-family:monospace;cursor:pointer;' data-mark-ip='" + escAttr(r.ip || "") + "' title='Click to mark this IP as mine'>" + escHtml(r.ip) + "</td>" +
+        "<td id='" + countryCellId + "' style='padding:5px 8px;white-space:nowrap;text-align:center;'></td>" +
         "<td style='padding:5px 8px;white-space:nowrap;font-family:monospace;cursor:pointer;' data-mark-hash='" + escAttr(r.visitor_id || "") + "' title='Click to mark this hash as mine'>" + escHtml(r.visitor_id || "") + (hashCount > 1 ? " <span style='color:#ffcd56;'>(" + hashCount + "x)</span>" : "") + "</td>" +
         "<td style='padding:5px 8px;'>" + escHtml(r.page) + "</td>" +
         "<td style='padding:5px 8px;' title='" + escAttr(ref) + "'>" + escHtml(refShort) + "</td>" +
         "<td style='padding:5px 8px;' title='" + escAttr(ua) + "'>" + escHtml(uaShort) + "</td>";
       tbody.appendChild(tr);
+      fetchCountry(r.ip, function(code){
+        var cell = document.getElementById(countryCellId);
+        if(cell) cell.textContent = code;
+      });
     });
 
     var groups = {};
@@ -550,8 +759,25 @@ echo <<<'IPJS'
       return g;
     });
     list.sort(function(a,b){
-      if(b.visitCount !== a.visitCount) return b.visitCount - a.visitCount;
-      return strcmpTime(b.lastSeen, a.lastSeen);
+      var cmp = 0;
+      if (journeySort.col === "key") {
+        cmp = String(a.key || "").localeCompare(String(b.key || ""));
+      } else if (journeySort.col === "mine") {
+        cmp = (a.isMine ? 1 : 0) - (b.isMine ? 1 : 0);
+      } else if (journeySort.col === "uniquePages") {
+        cmp = a.uniquePages - b.uniquePages;
+      } else if (journeySort.col === "firstSeen") {
+        cmp = strcmpTime(a.firstSeen, b.firstSeen);
+      } else if (journeySort.col === "lastSeen") {
+        cmp = strcmpTime(a.lastSeen, b.lastSeen);
+      } else {
+        cmp = a.visitCount - b.visitCount;
+      }
+      if (cmp !== 0) return journeySort.dir === "asc" ? cmp : -cmp;
+      if (b.visitCount !== a.visitCount) return b.visitCount - a.visitCount;
+      cmp = strcmpTime(b.lastSeen, a.lastSeen);
+      if (cmp !== 0) return cmp;
+      return String(a.key || "").localeCompare(String(b.key || ""));
     });
 
     var repeatOnly = document.getElementById("journey_repeat_only").checked;
@@ -604,6 +830,9 @@ echo <<<'IPJS'
   function escAttr(s){ return (s||"").replace(/"/g,"&quot;"); }
 
   loadMine();
+  var repeatOnlyCheckbox = document.getElementById("journey_repeat_only");
+  if (repeatOnlyCheckbox) repeatOnlyCheckbox.checked = loadJourneyRepeatOnly();
+  setupJourneySortHandlers();
   renderMineTags();
 })();
 IPJS;
@@ -611,21 +840,177 @@ echo '</script>';
 
 // Chart.js script
 echo '<script>';
-echo 'document.getElementById("dateFilterForm").addEventListener("submit", function(e) {';
+echo 'var dateFilterForm = document.getElementById("dateFilterForm");';
+echo 'var botFilterSelect = document.getElementById("botFilterSelect");';
+echo 'var currentAppliedBotFilter = ' . json_encode($bot_filter) . ';';
+echo 'var dateFilterKey = "viewLogsDateFilter";';
+echo 'var uvPanelStateKey = "viewLogsUvPanelOpen";';
+echo 'function saveDateFilter(startDate, endDate, botFilter) {';
+echo '  try {';
+echo '    localStorage.setItem(dateFilterKey, JSON.stringify({ start_date: startDate || "", end_date: endDate || "", bot_filter: botFilter || "all" }));';
+echo '  } catch(e) {}';
+echo '}';
+echo 'function loadDateFilter() {';
+echo '  try {';
+echo '    var raw = localStorage.getItem(dateFilterKey);';
+echo '    return raw ? (JSON.parse(raw) || null) : null;';
+echo '  } catch(e) {';
+echo '    return null;';
+echo '  }';
+echo '}';
+echo 'function syncFilterUrl(startDate, endDate, botFilter) {';
+echo '  var urlParams = new URLSearchParams(window.location.search);';
+echo '  if (startDate) urlParams.set("start_date", startDate); else urlParams.delete("start_date");';
+echo '  if (endDate) urlParams.set("end_date", endDate); else urlParams.delete("end_date");';
+echo '  if (botFilter && botFilter !== "all") urlParams.set("bot_filter", botFilter); else urlParams.delete("bot_filter");';
+echo '  urlParams.delete("ajax");';
+echo '  var query = urlParams.toString();';
+echo '  var nextUrl = window.location.pathname + (query ? "?" + query : "");';
+echo '  window.history.replaceState(null, "", nextUrl);';
+echo '  return nextUrl;';
+echo '}';
+echo 'function saveUvPanelOpen(isOpen) {';
+echo '  try { localStorage.setItem(uvPanelStateKey, isOpen ? "1" : "0"); } catch(e) {}';
+echo '}';
+echo 'function loadUvPanelOpen() {';
+echo '  try {';
+echo '    var raw = localStorage.getItem(uvPanelStateKey);';
+echo '    if (raw === "1") return true;';
+echo '    if (raw === "0") return false;';
+echo '  } catch(e) {}';
+echo '  return false;';
+echo '}';
+echo 'if (dateFilterForm) dateFilterForm.addEventListener("submit", function(e) {';
 echo '    e.preventDefault();';
 echo '    const form = e.target;';
 echo '    const startDate = form.start_date.value;';
 echo '    const endDate = form.end_date.value;';
+echo '    const botFilter = botFilterSelect ? (botFilterSelect.value || "all") : "all";';
+echo '    saveDateFilter(startDate, endDate, botFilter);';
+echo '    const nextUrl = syncFilterUrl(startDate, endDate, botFilter);';
+echo '    if (botFilter !== currentAppliedBotFilter) {';
+echo '      window.location.assign(nextUrl);';
+echo '      return;';
+echo '    }';
 echo '    const params = new URLSearchParams(window.location.search);';
 echo '    params.set("start_date", startDate);';
 echo '    params.set("end_date", endDate);';
+echo '    params.set("bot_filter", botFilter);';
 echo '    params.set("ajax", "1");';
 echo '    fetch(window.location.pathname + "?" + params.toString())';
 echo '        .then(response => response.text())';
 echo '        .then(html => {';
 echo '            document.getElementById("uniqueVisitorsTable").innerHTML = html;';
+echo '            if(window.initUvTable) window.initUvTable();';
+echo '            if(window.initPvdTable) window.initPvdTable();';
 echo '        });';
 echo '});';
+echo 'if (dateFilterForm) {';
+echo '  var urlParamsInit = new URLSearchParams(window.location.search);';
+echo '  var hasUrlStart = urlParamsInit.has("start_date") && urlParamsInit.get("start_date") !== "";';
+echo '  var hasUrlEnd = urlParamsInit.has("end_date") && urlParamsInit.get("end_date") !== "";';
+echo '  var hasUrlBot = urlParamsInit.has("bot_filter") && urlParamsInit.get("bot_filter") !== "";';
+echo '  if (hasUrlStart || hasUrlEnd || hasUrlBot) {';
+echo '    saveDateFilter(dateFilterForm.start_date.value, dateFilterForm.end_date.value, botFilterSelect ? botFilterSelect.value : "all");';
+echo '  } else {';
+echo '    var storedFilter = loadDateFilter();';
+echo '    if (storedFilter && (storedFilter.start_date || storedFilter.end_date || storedFilter.bot_filter)) {';
+echo '      dateFilterForm.start_date.value = storedFilter.start_date || "";';
+echo '      dateFilterForm.end_date.value = storedFilter.end_date || "";';
+echo '      if (botFilterSelect) botFilterSelect.value = storedFilter.bot_filter || "all";';
+echo '      dateFilterForm.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));';
+echo '    }';
+echo '  }';
+echo '}';
+echo 'window.initUvTable = function() {';
+echo '  var toggle  = document.getElementById("uvToggle");';
+echo '  var content = document.getElementById("uvContent");';
+echo '  var mainWrap = document.getElementById("uvMainWrap");';
+echo '  var pvdWrap  = document.getElementById("uvPvdWrap");';
+echo '  var arrow   = document.getElementById("uvArrow");';
+echo '  var sortBtn = document.getElementById("uvSortBtn");';
+echo '  var sArrow  = document.getElementById("uvSortArrow");';
+echo '  var tbody   = document.getElementById("uvBody");';
+echo '  if (!toggle || !content) return;';
+echo '  var dir = "desc";';
+echo '  var initiallyOpen = loadUvPanelOpen();';
+echo '  content.style.display = initiallyOpen ? "block" : "none";';
+echo '  if (mainWrap) mainWrap.style.display = "none";';
+echo '  if (pvdWrap) pvdWrap.style.display = initiallyOpen ? "block" : "none";';
+echo '  arrow.innerHTML = initiallyOpen ? "&#9660;" : "&#9658;";';
+echo '  toggle.onclick = function() {';
+echo '    var open = content.style.display === "none";';
+echo '    content.style.display = open ? "block" : "none";';
+echo '    if (mainWrap) mainWrap.style.display = "none";';
+echo '    if (pvdWrap) pvdWrap.style.display = open ? "block" : "none";';
+echo '    arrow.innerHTML = open ? "&#9660;" : "&#9658;";';
+echo '    saveUvPanelOpen(open);';
+echo '  };';
+echo '  if (sortBtn && tbody) {';
+echo '    sortBtn.onclick = function() {';
+echo '      dir = dir === "desc" ? "asc" : "desc";';
+echo '      var rows = Array.from(tbody.querySelectorAll("tr"));';
+echo '      rows.sort(function(a, b) {';
+echo '        var ca = parseInt(a.getAttribute("data-count"), 10) || 0;';
+echo '        var cb = parseInt(b.getAttribute("data-count"), 10) || 0;';
+echo '        return dir === "asc" ? ca - cb : cb - ca;';
+echo '      });';
+echo '      rows.forEach(function(r) { tbody.appendChild(r); });';
+echo '      sArrow.innerHTML = dir === "asc" ? "&#8593;" : "&#8595;";';
+echo '    };';
+echo '  }';
+echo '};';
+echo 'window.initUvTable();';
+echo 'window.initPvdTable = function() {';
+echo '  var table   = document.getElementById("pvdTable");';
+echo '  if (!table) return;';
+echo '  var tbody   = document.getElementById("pvdBody");';
+echo '  var pSortBtn = document.getElementById("pvdPageSortBtn");';
+echo '  var pArrow   = document.getElementById("pvdPageArrow");';
+echo '  if (!tbody) return;';
+echo '  var pageDir = "asc";';
+echo '  var visitsDir = "desc";';
+echo '  function setArrowState(active, dir) {';
+echo '    if (pArrow) pArrow.innerHTML = active === "page" ? (dir === "asc" ? "&#8593;" : "&#8595;") : "&#8597;";';
+echo '    var vArrow = document.getElementById("pvdVisitsArrow");';
+echo '    if (vArrow) vArrow.innerHTML = active === "visits" ? (dir === "asc" ? "&#8593;" : "&#8595;") : "&#8597;";';
+echo '  }';
+echo '  function rebuildRows(rows) {';
+echo '    while (tbody.firstChild) tbody.removeChild(tbody.firstChild);';
+echo '    rows.forEach(function(row) { tbody.appendChild(row); });';
+echo '  }';
+echo '  if (pSortBtn) {';
+echo '    pSortBtn.onclick = function() {';
+echo '      pageDir = pageDir === "asc" ? "desc" : "asc";';
+echo '      visitsDir = "desc";';
+echo '      setArrowState("page", pageDir);';
+echo '      var rows = Array.from(tbody.querySelectorAll("tr[data-page]"));';
+echo '      rows.sort(function(a, b) {';
+echo '        var pa = (a.getAttribute("data-page") || "").toLowerCase();';
+echo '        var pb = (b.getAttribute("data-page") || "").toLowerCase();';
+echo '        if (pa === pb) return 0;';
+echo '        return pageDir === "asc" ? (pa > pb ? 1 : -1) : (pa < pb ? 1 : -1);';
+echo '      });';
+echo '      rebuildRows(rows);';
+echo '    };';
+echo '  }';
+echo '  var vSortBtn = document.getElementById("pvdVisitsSortBtn");';
+echo '  if (vSortBtn) {';
+echo '    vSortBtn.onclick = function() {';
+echo '      visitsDir = visitsDir === "desc" ? "asc" : "desc";';
+echo '      pageDir = "asc";';
+echo '      setArrowState("visits", visitsDir);';
+echo '      var rows = Array.from(tbody.querySelectorAll("tr[data-page]"));';
+echo '      rows.sort(function(a, b) {';
+echo '        var va = parseInt(a.getAttribute("data-visits"), 10) || 0;';
+echo '        var vb = parseInt(b.getAttribute("data-visits"), 10) || 0;';
+echo '        return visitsDir === "asc" ? va - vb : vb - va;';
+echo '      });';
+echo '      rebuildRows(rows);';
+echo '    };';
+echo '  }';
+echo '};';
+echo 'window.initPvdTable();';
 // Render empty chart; populate via AJAX
 echo 'window.tsChart = new Chart(document.getElementById("timelineChart"), {';
 echo '  type: "line",';
@@ -768,12 +1153,14 @@ echo <<<HTML
         var group = groupSelect.value;
         var start = startInput.value;
         var end = endInput.value;
+        var botFilter = botFilterSelect ? (botFilterSelect.value || 'all') : 'all';
       saveTsPrefs();
         var params = new URLSearchParams({ ajax:1, action:'timeseries', group:group });
         if(page) params.set('page', page);
         if(pagesMulti.length) params.set('pages', pagesMulti.join(','));
         if(start) params.set('start_date', start);
         if(end) params.set('end_date', end);
+        params.set('bot_filter', botFilter);
         fetch(window.location.pathname + '?' + params.toString())
           .then(function(r){ return r.json(); })
           .then(function(json){

@@ -1,26 +1,32 @@
 <?php
 include __DIR__ . '/../../php/i18n.php';
 $locale = get_current_locale();
+$isFr = $locale === 'fr';
+$isDe = $locale === 'de';
 $articlePath = '/blog/nature-is-not-a-charity/';
 
-$pageTitle = $locale === 'fr'
-  ? 'La Nature n’est pas une charité — c’est une nécessité'
-  : 'Nature is Not a Charity—It’s an Economic Imperative';
+$pageTitle = $isDe
+  ? 'Natur ist keine Wohltätigkeit — sie ist ein wirtschaftlicher Imperativ'
+  : ($isFr
+    ? "La Nature n'est pas une charité — c'est une nécessité"
+    : 'Nature is Not a Charity—It\'s an Economic Imperative');
 
-$metaDescriptionEn = 'Why we must move beyond charity and make Nature central to our economy. Nature’s value is an economic imperative for a sustainable future.';
-$metaDescriptionFr = 'Pourquoi la Nature ne peut pas dépendre des dons. Vers une économie où les choix durables sont reconnus, valorisés et alignés avec le capital naturel.';
+$metaDescriptionEn = 'Why we must move beyond charity and make Nature central to our economy. Nature\'s value is an economic imperative for a sustainable future.';
+$metaDescriptionFr = "Pourquoi la Nature ne peut pas dépendre des dons. Vers une économie où les choix durables sont reconnus, valorisés et alignés avec le capital naturel.";
+$metaDescriptionDe = 'Warum Natur nicht auf Wohltätigkeit angewiesen sein kann. Hin zu einer Wirtschaft, in der nachhaltige Entscheidungen erkannt, bewertet und am Naturkapital ausgerichtet sind.';
 
 $metaKeywordsEn = 'Nature, charity, economic imperative, regenerative economy, sustainable choices, natural capital, ecological value';
 $metaKeywordsFr = 'Nature, charité, économie régénérative, choix durables, capital naturel, durabilité, valeur écologique';
+$metaKeywordsDe = 'Natur, Wohltätigkeit, wirtschaftlicher Imperativ, regenerative Wirtschaft, nachhaltige Entscheidungen, Naturkapital, ökologischer Wert, Bürgerdividende';
 
-$metaDescription = $locale === 'fr' ? $metaDescriptionFr : $metaDescriptionEn;
-$metaKeywords = $locale === 'fr' ? $metaKeywordsFr : $metaKeywordsEn;
+$metaDescription = $isDe ? $metaDescriptionDe : ($isFr ? $metaDescriptionFr : $metaDescriptionEn);
+$metaKeywords = $isDe ? $metaKeywordsDe : ($isFr ? $metaKeywordsFr : $metaKeywordsEn);
 
 $canonicalHost = 'mydropintheoceans.org';
 $requestPath = parse_url($_SERVER['REQUEST_URI'] ?? $articlePath, PHP_URL_PATH) ?: $articlePath;
 $requestPath = '/' . ltrim($requestPath, '/');
 
-$pathWithoutLocale = preg_replace('#^/(en|fr)(?=/|$)#i', '', $requestPath);
+$pathWithoutLocale = preg_replace('#^/(en|fr|de)(?=/|$)#i', '', $requestPath);
 if ($pathWithoutLocale === '' || $pathWithoutLocale === false) {
   $pathWithoutLocale = '/';
 }
@@ -39,10 +45,11 @@ if ($locale === 'en' && preg_match('#^/en(?=/|$)#i', $requestPath)) {
   exit;
 }
 
-$canonicalPath = $locale === 'fr' ? '/fr' . $pathWithoutLocale : $pathWithoutLocale;
+$canonicalPath = $isDe ? '/de' . $pathWithoutLocale : ($isFr ? '/fr' . $pathWithoutLocale : $pathWithoutLocale);
 $canonicalUrl = 'https://' . $canonicalHost . $canonicalPath;
 $alternateEnUrl = 'https://' . $canonicalHost . $pathWithoutLocale;
 $alternateFrUrl = 'https://' . $canonicalHost . '/fr' . $pathWithoutLocale;
+$alternateDeUrl = 'https://' . $canonicalHost . '/de' . $pathWithoutLocale;
 $xDefaultUrl = $alternateEnUrl;
 
 include __DIR__ . '/../../php/analytics.php';
@@ -62,6 +69,7 @@ include __DIR__ . '/../../php/analytics.php';
 <link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl); ?>">
 <link rel="alternate" hreflang="en" href="<?php echo htmlspecialchars($alternateEnUrl); ?>">
 <link rel="alternate" hreflang="fr" href="<?php echo htmlspecialchars($alternateFrUrl); ?>">
+<link rel="alternate" hreflang="de" href="<?php echo htmlspecialchars($alternateDeUrl); ?>">
 <link rel="alternate" hreflang="x-default" href="<?php echo htmlspecialchars($xDefaultUrl); ?>">
 
 <!-- Open Graph -->
@@ -154,7 +162,7 @@ background-position-y:74px;position:fixed;max-width:1000px;"></div>
 <div style="padding-left:15%;width:85%;top:30%;position:relative;height:5%;"></div>
 
 <div class="intro_box"><br>
-<b><?php echo $locale === 'fr' ? 'La Nature n’est pas une charité' : 'Nature is Not a Charity'; ?></b>
+<b><?php echo $isDe ? 'Natur ist keine Wohltätigkeit' : ($isFr ? "La Nature n'est pas une charité" : 'Nature is Not a Charity'); ?></b>
 </div>
 
 <div class="brown_page_spacer_top">
@@ -169,18 +177,20 @@ background-position-y:74px;position:fixed;max-width:1000px;"></div>
 <h1 class="header_one"><?php echo htmlspecialchars($pageTitle); ?></h1>
 
 <div style="color:#888;font-size:0.95em;margin-bottom:1em;">
-<?php echo $locale === 'fr' ? 'Publié' : 'Published'; ?> 2025-01-01
+<?php echo $isDe ? 'Veröffentlicht' : ($isFr ? 'Publié' : 'Published'); ?> 2025-01-01
 </div>
 
 <span class="span_text_box">
 
-<?php if ($locale === 'fr'): ?>
+<?php if ($isDe): ?>
+
+<?php include __DIR__ . '/content-de.php'; ?>
+
+<?php elseif ($isFr): ?>
 
 <?php include __DIR__ . '/content-fr.php'; ?>
 
 <?php else: ?>
-
-<!-- English content unchanged -->
 
 <?php include __DIR__ . '/content-en.php'; ?>
 

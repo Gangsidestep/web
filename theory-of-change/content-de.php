@@ -1,4 +1,4 @@
-<div id="landing_page">
+<div id="landing_page"> 
 	<div style="padding-left: 15%;width: 85%; top: 30%;position: relative;height: 5%;"> </div>
 
 	<div class="intro_box"><br>
@@ -9,9 +9,54 @@
 		<h1 class="header_one">Theorie des Wandels für Nachhaltigkeit</h1>
 
         <p class="definition_snippet">
-        Eine <strong>Theorie des Wandels</strong> beschreibt, wie systemische Transformation entstehen kann, indem wirtschaftliche Anreize, Institutionen und alltägliche Entscheidungen miteinander verbunden werden. 
-        Im Kontext der Nachhaltigkeit bedeutet dies, Wertsignale so zu gestalten, dass Naturkapital sichtbar wird und regenerative Entscheidungen strukturell unterstützt werden.
+        	Eine <strong>Theorie des Wandels</strong> beschreibt, wie systemische Transformation entstehen kann, indem wirtschaftliche Anreize, Institutionen und alltägliche Entscheidungen miteinander verbunden werden.
+        	Im Kontext der Nachhaltigkeit bedeutet dies, Wertsignale so zu gestalten, dass Naturkapital sichtbar wird und wirtschaftliche Rahmenbedingungen besser mit ökologischer Realität in Einklang kommen.
         </p>
+
+		<div class="framing-box" style="margin-top: 18px;">
+			<h3>Vor dem Lesen</h3>
+			<p>
+				Diese Seite beschreibt eine <strong>Theorie des Wandels</strong> — kein Produkt und kein Dienstleistungsangebot.
+				Sie zeigt, wie wirtschaftliche Anreize so weiterentwickelt werden könnten, dass Natur im Alltag wirtschaftlich sinnvoller anerkannt wird.
+			</p>
+			<p>
+				<strong>mydropintheoceans.org</strong> ist ein Raum für das zugrunde liegende Denken und die Theory of Change, während
+				<a href="https://mydio.com/" class="link" target="_blank" rel="noopener noreferrer">mydio.com</a>
+				eine kommerzielle Umsetzung dieser Ideen ist.
+			</p>
+		</div>
+
+		<div class="cta-box" style="margin-top: 18px;">
+			<h3>Kurz zusammengefasst schlägt diese Theorie des Wandels vor:</h3>
+			<p style="margin-bottom: 0;">
+				— Nachhaltigkeit stösst oft an Grenzen, weil wirtschaftliche Anreize noch nicht mit ökologischer Realität im Einklang stehen<br>
+				— der Wert der Natur ist in alltäglichen Transaktionen und Entscheidungen noch immer nur teilweise sichtbar<br>
+				— praktische Mechanismen können helfen, Naturkapital wirtschaftlich lesbarer zu machen<br>
+				— Veränderung kann aus alltäglicher Teilhabe entstehen, nicht nur aus top-down Vorgaben<br>
+				— Governance, Legitimität und Messbarkeit müssen sich parallel zur Umsetzung weiterentwickeln
+			</p>
+		</div>
+
+		<div class="framing-box" style="margin-top: 18px;">
+			<h3>Wie das zusammenhängt</h3>
+			<p><strong>Theory of Change</strong><br>
+			Der konzeptionelle Rahmen: wie systemischer Wandel entstehen könnte.</p>
+
+			<p><strong>Think Tank / Governance-Ebene</strong><br>
+			Der Raum für Weiterentwicklung, kritische Prüfung, institutionellen Dialog und langfristige Legitimität.</p>
+
+			<p><strong><a href="https://mydio.com/" class="link" target="_blank" rel="noopener noreferrer">mydio.com</a></strong><br>
+			Eine kommerzielle Umsetzung, die einige dieser Ideen unter realen Bedingungen erprobt.</p>
+		</div>
+
+		<div class="related-links" style="margin: 1.25em 0; padding: 1em; background: #f6f6f6; border-radius: 4px;">
+			<strong>Für wen diese Seite relevant sein kann</strong>
+			<ul style="font-size: 0.92em;list-style:none;padding:0;margin:0.5em 0 0 0;">
+				<li>— für Menschen, die neue wirtschaftliche Ansätze für Nachhaltigkeit erkunden</li>
+				<li>— für Unternehmen, Institutionen und Innovator:innen, die sich mit Anreizen und systemischem Wandel befassen</li>
+				<li>— für Leser:innen, die die Logik hinter Initiativen wie mydio.com besser verstehen möchten</li>
+			</ul>
+		</div>
 
 		<h2 class="header_two" style="margin-top: 10px;">Wirtschaft und Natur durch Wertsignale und Anreizstrukturen in Einklang bringen</h2>
 
@@ -23,9 +68,16 @@
 		</span>
 		<p></p>
 
+		<div class="cta-box">
+			<h3>Zentrale Idee</h3>
+			<p>
+				Die Herausforderung ist nicht nur fehlendes Bewusstsein. Das eigentliche Problem ist, dass ökologische Werte noch zu wenig in jene wirtschaftlichen Signale übersetzt werden, die alltägliche Entscheidungen prägen.
+			</p>
+		</div>
+
 		<span class="span_text_box">
 			Nachhaltigkeit und Naturkapital werden heute zunehmend anerkannt — in Berichten, Strategien und politischen Debatten.
-			Doch diese Anerkennung verändert noch nicht automatisch die wirtschaftlichen Anreizstrukturen, die unsere täglichen Entscheidungen prägen.
+			Doch diese Anerkennung verändert noch nicht automatisch die wirtschaftlichen Anreizstrukturen, die unsere täglichen Entscheidungen strukturieren.
 			Entscheidend ist, wie ökologische Werte in ökonomische Signale übersetzt werden, die im Alltag wirksam werden.<br><br>
 
 			Eine hilfreiche Beschreibung der Herausforderung ist die Reihenfolge: In der heutigen Wirtschaft lautet die implizite Logik oft
@@ -36,28 +88,37 @@
 		</span>
 
 		<p></p>
+
+		<div class="framing-box">
+			<h3>Zentrale Spannung</h3>
+			<p>
+				In weiten Teilen der heutigen Wirtschaft sind die Kosten verantwortlichen Handelns oft unmittelbar und konzentriert, während die Vorteile verzögert, kollektiv und häufig zu stark verteilt sind, um für einzelne Akteure wirtschaftlich wirklich spürbar zu werden.
+			</p>
+		</div>
+
+		<p></p>
 		<span class="span_text_box">
-			Für zusätzlichen Kontext siehe auch verwandte Beiträge,
-			<a href="<?php echo htmlspecialchars(localized_path('/blog/nature-is-not-a-charity/', $locale)); ?>" class="link">Warum Natur kein Wohltätigkeitsprojekt ist — sondern ein wirtschaftlicher Imperativ</a>,
-			<a href="<?php echo htmlspecialchars(localized_path('/blog/what-if-stewardship-was-financially-recognised/', $locale)); ?>" class="link">Was wäre, wenn Sorge für Natur finanziell anerkannt würde?</a>
-			und <a href="<?php echo htmlspecialchars(localized_path('/blog/why-the-swiss-said-no-to-free-money/', $locale)); ?>" class="link">Warum die Schweiz Nein zum freien Geld sagte</a> (zur Frage von Legitimität und gesellschaftlicher Akzeptanz).
+			Für zusätzlichen Kontext siehe auch verwandte Beiträge:<br>
+			— <a href="<?php echo htmlspecialchars(localized_path('/blog/nature-is-not-a-charity/', $locale)); ?>" class="link">Warum Natur kein Wohltätigkeitsprojekt ist — sondern ein wirtschaftlicher Imperativ</a><br>
+			— <a href="<?php echo htmlspecialchars(localized_path('/blog/what-if-stewardship-was-financially-recognised/', $locale)); ?>" class="link">Was wäre, wenn Sorge für Natur finanziell anerkannt würde?</a><br>
+			— <a href="<?php echo htmlspecialchars(localized_path('/blog/why-the-swiss-said-no-to-free-money/', $locale)); ?>" class="link">Warum die Schweiz Nein zum freien Geld sagte</a> (zur Frage von Legitimität und gesellschaftlicher Akzeptanz)
 		</span>
 
         <h2 class="header_two">Warum diese Theorie des Wandels wichtig ist</h2>
         
         <span class="span_text_box">
-        Diese Theorie des Wandels geht von einer einfachen Beobachtung aus: 
-        Viele Nachhaltigkeitsstrategien konzentrieren sich auf Ziele, Verpflichtungen oder Berichterstattung. 
-        Doch die alltäglichen Entscheidungen von Haushalten, Unternehmen und Institutionen werden vor allem durch wirtschaftliche Signale geprägt — durch Preise, Anreize und die Verteilung von Nutzen.
+        	Diese Theorie des Wandels geht von einer einfachen Beobachtung aus:
+        	Viele Nachhaltigkeitsstrategien konzentrieren sich auf Ziele, Verpflichtungen oder Berichterstattung.
+        	Doch die alltäglichen Entscheidungen von Haushalten, Unternehmen und Institutionen werden vor allem durch wirtschaftliche Signale strukturiert — durch Preise, Anreize und die Verteilung von Nutzen.<br><br>
 
-        Solange diese Signale ökologische Realität nur teilweise widerspiegeln, bleiben Nachhaltigkeitsinitiativen strukturell begrenzt. 
-        Die hier vorgeschlagene Theorie des Wandels richtet den Blick deshalb auf eine zentrale Frage der Systemgestaltung:
+        	Solange diese Signale ökologische Realität nur teilweise widerspiegeln, bleiben Nachhaltigkeitsinitiativen strukturell begrenzt.
+        	Die hier vorgeschlagene Theorie des Wandels richtet den Blick deshalb auf eine zentrale Frage der Systemgestaltung:<br><br>
 
-        <b>Wie können wirtschaftliche Anreizstrukturen so gestaltet werden, dass nachhaltige Entscheidungen im Alltag sichtbar, nachvollziehbar und wirtschaftlich sinnvoll werden?</b>
+        	<b>Wie können wirtschaftliche Mechanismen so gestaltet werden, dass nachhaltige Entscheidungen im Alltag sichtbar, nachvollziehbar und wirtschaftlich sinnvoll werden?</b><br><br>
 
-        In diesem Sinn geht es weniger darum, individuelles Verhalten moralisch zu verändern, 
-        sondern darum, wirtschaftliche Rahmenbedingungen so weiterzuentwickeln, 
-        dass Regeneration und langfristige Resilienz systematisch unterstützt werden.
+        	In diesem Sinn geht es weniger darum, individuelle Veränderungen einzufordern,
+        	sondern darum, wirtschaftliche Rahmenbedingungen so weiterzuentwickeln,
+        	dass Regeneration und langfristige Resilienz systematisch getragen werden.
         </span>
 
 		<h2 class="header_two">Von Nachhaltigkeitszusagen zu systemischem Wandel</h2>
@@ -66,7 +127,7 @@
 			Regierungen setzen Ziele, Unternehmen veröffentlichen Verpflichtungen, und viele Menschen zeigen wachsende Sorge. Dennoch bleibt der Fortschritt hin zu dauerhaftem systemischem Wandel ungleichmässig.<br><br>
 
 			Das ist primär keine Frage von Bewusstsein oder Absicht. Es spiegelt eine tiefere strukturelle Spannung:
-			die Wirtschaftssysteme, die Alltagsentscheidungen prägen, belohnen in vielen Fällen kurzfristige Extraktion verlässlicher als langfristige Regeneration.<br><br>
+			die Wirtschaftssysteme, die Alltagsentscheidungen strukturieren, belohnen in vielen Fällen kurzfristige Extraktion verlässlicher als langfristige Regeneration.<br><br>
 
 			Solange ökologische und soziale Werte nur teilweise in Markt-, Preis- und institutionellen Signalen sichtbar sind, bleiben Nachhaltigkeitsinitiativen strukturell begrenzt.
 			Verbesserungsbemühungen operieren innerhalb von Systemen, deren Anreize nicht für ökologische Grenzen oder soziale Resilienz entworfen wurden.<br><br>
@@ -75,7 +136,7 @@
 			oder ausschliesslich auf freiwillige Zusagen zu setzen. Entscheidend ist, die zugrunde liegenden Wertsignale wirtschaftlicher Entscheidungen neu auszurichten — konsistent, glaubwürdig und skalierbar.<br><br>
 
 			Transformation bedeutet in diesem Kontext, neu zu definieren, wie Wert entsteht, anerkannt und verteilt wird,
-			damit Regeneration und Resilienz nicht Ausnahme, sondern strukturell unterstützte Norm werden.
+			damit Regeneration und Resilienz nicht Ausnahme, sondern strukturell kohärente Realität werden.
 			Ziel ist eine regenerative Wirtschaft, in der wirtschaftlicher Erfolg nicht im Widerspruch zur Gesundheit natürlicher Systeme steht.
 		</span>
 
@@ -97,6 +158,13 @@
 			Die Debatte verschiebt sich von nachträglicher Schadensbegrenzung hin zur Gestaltung wirtschaftlicher Teilhabe entlang langfristiger Systemgesundheit.
 		</span>
 
+		<div class="cta-box">
+			<h3>Perspektivwechsel</h3>
+			<p>
+				Natur ist kein Randthema, das erst im Nachhinein eingepreist werden sollte. Sie ist grundlegender Wohlstand, von dem jede andere Form von Wohlstand abhängt.
+			</p>
+		</div>
+
 		<h2 class="header_two">Bürgerdividende für die Natur: eine strukturelle Anerkennung</h2>
 		<span class="span_text_box">
 			Aus dieser Neuorientierung entsteht das Konzept einer Bürgerdividende für die Natur.<br><br>
@@ -112,11 +180,11 @@
 			Als Bürgerdividende für die Natur bezeichnet sie einen Mechanismus, der Bürgerinnen und Bürgern einen Anteil am wirtschaftlichen Wert gesunder natürlicher Systeme zugänglich macht.<br><br>
 
 			Entscheidend ist: Das ist kein moralischer Appell. Es ist eine Designfrage:
-			Wie machen wir ökologische Werte wirtschaftlich so lesbar, dass sie mit den konventionellen Signalen konkurrieren und sie ergänzen können,
+			Wie machen wir ökologische Werte wirtschaftlich so lesbar, dass sie mit den konventionellen Signalen in einen sinnvollen Zusammenhang treten und sie ergänzen können,
 			durch die gute Steuerung im Privatsektor anerkannt wird (Löhne, Gewinne, Dividenden, Investitionsvertrauen)?<br><br>
 
 			Nachhaltige Entscheidungen sollten nicht länger wirtschaftliche Nachteile bedeuten.
-			Stattdessen sollten wirtschaftliche Anreize so gestaltet sein, dass sie Regeneration und verantwortungsvolle Nutzung natürlicher Ressourcen fördern.<br><br>
+			Stattdessen sollten wirtschaftliche Mechanismen so gestaltet sein, dass Regeneration und verantwortungsvolle Nutzung natürlicher Ressourcen wirtschaftlich kohärenter werden.<br><br>
 
 			Aus Governance-Perspektive hängt die langfristige Legitimität eines solchen Mechanismus von mehr als privater Adoption ab.
 			Öffentliche Legitimität entsteht letztlich durch Bürgerinnen und Bürger sowie demokratische Prozesse,
@@ -142,10 +210,10 @@
 			Damit systemische Ausrichtung entsteht, müssen diese Signale regenerative Prioritäten abbilden, statt ihnen entgegenzuwirken.<br><br>
 
 			In diesem Kontext entstehen praktische Instrumente — Instrumente, die die Anerkennung gemeinsamen Naturvermögens direkt in Transaktionen einbetten.
-			Solche Mechanismen können in bestehende wirtschaftliche Systeme und digitale Infrastrukturen integriert werden und nachhaltige Entscheidungen im Alltag sichtbar und wirtschaftlich relevant machen.<br><br>
+			Solche Mechanismen können in bestehende wirtschaftliche Systeme und digitale Infrastrukturen integriert werden und im Alltag ökologisch kohärentere Entscheidungen wirtschaftlich sichtbarer machen.<br><br>
 
 			Initiativen wie <a href="https://mydio.com/" class="link" target="_blank" rel="noopener noreferrer">mydio.com</a> sind ein Beispiel dafür,
-			wie Wertsignale und wirtschaftliche Anreize auf Ebene täglicher Teilnahme neu kalibriert werden können:
+			wie Wertsignale und wirtschaftliche Mechanismen auf Ebene täglicher Teilnahme neu kalibriert werden können:
 			so, dass unmittelbarer wirtschaftlicher Nutzen mit langfristiger ökologischer und sozialer Resilienz zusammenwirkt,
 			und Wertschöpfung sich von Extraktion in Richtung Regeneration verschiebt.<br><br>
 
@@ -162,23 +230,30 @@
 			Die Theorie des Wandels ist daher nicht statisch. Sie wird in Bewegung geprüft.<br><br>
 
 			<b>Zusammengefasst ist die Logik des Wandels:</b> Wenn wirtschaftliche Mechanismen den Wert von Naturkapital sichtbar und teilbar machen,
-			verschieben sich die Wertsignale, die Alltagsentscheidungen steuern.
-			Individuelles und organisatorisches Verhalten integriert die Vorteile von Regeneration schrittweise konsequenter.
+			entwickeln sich die Wertsignale weiter, die Alltagsentscheidungen strukturieren.
+			Haushalte, Organisationen und Institutionen können die Vorteile von Regeneration dadurch schrittweise konsequenter in reale Abwägungen integrieren.
 			Je kohärenter diese Signale werden und je breiter sie in der Realwirtschaft verankert sind,
 			desto stärker bewegt sich das wirtschaftliche Gleichgewicht von profitabler Extraktion hin zu tragfähiger Regeneration.
 		</span>
 
+		<div class="framing-box">
+			<h3>Prinzip der Umsetzung</h3>
+			<p>
+				Praktische Umsetzung soll den Rahmen nicht ersetzen, sondern ihn unter realen Bedingungen testen — damit sich die Theorie durch Teilhabe, Rechenschaft und Lernen weiterentwickeln kann.
+			</p>
+		</div>
+
 		<h2 class="header_two">Systemischen Fortschritt messen</h2>
 		<span class="span_text_box">
 			Eine Theorie des Wandels muss überprüfbar sein.
-			Wenn wirtschaftliche Anreize neu ausgerichtet werden, sollte sich diese Verschiebung in messbaren Mustern von Teilhabe und Wertzirkulation zeigen.<br><br>
+			Wenn wirtschaftliche Mechanismen neu ausgerichtet werden, sollte sich diese Verschiebung in messbaren Mustern von Teilhabe und Wertzirkulation zeigen.<br><br>
 
 			Ein zentraler Indikator ist Gesamtwert und Volumen von Transaktionen,
 			die über Mechanismen laufen, welche Naturkapital anerkennen.
 			Das zeigt nicht nur Adoption, sondern auch, wie stark ökologische Werte in alltäglicher Aktivität wirtschaftlich lesbar werden.<br><br>
 
 			Ergänzende Indikatoren sind Wachstum aktiver Teilnahme (Bürgerinnen/Bürger und Unternehmen),
-			der Anteil von Ausgaben unter regenerativen Anreizen sowie beobachtbare Verschiebungen im Konsum hin zu Gütern und Dienstleistungen,
+			der Anteil von Ausgaben unter regenerativen Anreizen sowie beobachtbare Veränderungen realer Konsumabwägungen hin zu Gütern und Dienstleistungen,
 			die mit langfristiger ökologischer Resilienz vereinbar sind.<br><br>
 
 			Auch Umweltresultate sind zentral.
@@ -209,24 +284,24 @@
 			um die Zukunft zu tragen, die erhalten werden soll.
 		</span>
 
+		<div class="cta-box">
+			<h3>Vom Rahmen zur Teilhabe</h3>
+			<p>Diese Theorie des Wandels ist bewusst praxisorientiert. Sie zeigt den Weg zu einer Wirtschaft, in der ökologische Grundlagen als gemeinsamer Wohlstand behandelt werden und in der alltägliche Wertsignale diese Realität abbilden. Wenn Sie einen zugänglichen Einstieg in das Sequenzierungsproblem dieses Rahmens suchen, lesen Sie <a href="<?php echo htmlspecialchars(localized_path('/blog/make-money-first-then-think-of-nature/', $locale)); ?>" class="link">Make Money First, Then (Maybe) Think of Nature</a>, entdecken Sie <a href="<?php echo htmlspecialchars(localized_path('/blog/nature-is-not-a-charity/', $locale)); ?>" class="link">Warum Natur kein Wohltätigkeitsprojekt ist</a> und sehen Sie, wie Initiativen wie <a href="https://mydio.com/" class="link" target="_blank" rel="noopener noreferrer">mydio.com</a> diese Ideen in realen Transaktionen prüfen.</p>
+		</div>
+
 		<div class="framing-box">
 			<h3>Schlüsselbegriffe</h3>
 			<p><strong>Naturkapital</strong><br>
 			Die ökologischen Systeme — Klimastabilität, Biodiversität, Böden, Ozeane, Wasserkreisläufe —, die alle wirtschaftlichen und sozialen Aktivitäten tragen.</p>
 
 			<p><strong>Wertsignale</strong><br>
-			Die Hinweise, die Alltagsentscheidungen steuern (Preise, Anreize, Renditen, Regeln) und anzeigen, was das System belohnt und was es als zweitrangig behandelt.</p>
+			Die Hinweise, die Alltagsentscheidungen strukturieren (Preise, Anreize, Renditen, Regeln) und anzeigen, was das System anerkennt, trägt und als zweitrangig behandelt.</p>
 
 			<p><strong>Wirtschaftliche Lesbarkeit</strong><br>
 			Der Grad, in dem ökologische Beiträge und Verantwortung in der Wirtschaft sichtbar sind — nicht nur im Prinzip, sondern in der Art, wie Nutzen und Kosten erfasst werden.</p>
 
 			<p><strong>Regenerative Wirtschaft</strong><br>
 			Eine Wirtschaft, in der langfristiger Wohlstand auf der Regeneration statt auf der fortgesetzten Erschöpfung natürlicher und sozialer Systeme beruht.</p>
-		</div>
-
-		<div class="cta-box">
-			<h3>Vom Rahmen zur Teilhabe</h3>
-			<p>Diese Theorie des Wandels ist bewusst praxisorientiert. Sie zeigt den Weg zu einer Wirtschaft, in der ökologische Grundlagen als gemeinsamer Wohlstand behandelt werden und in der alltägliche Wertsignale diese Realität abbilden. Wenn Sie einen zugänglichen Einstieg in das Sequenzierungsproblem dieses Rahmens suchen, lesen Sie <a href="<?php echo htmlspecialchars(localized_path('/blog/make-money-first-then-think-of-nature/', $locale)); ?>" class="link">Make Money First, Then (Maybe) Think of Nature</a>, entdecken Sie <a href="<?php echo htmlspecialchars(localized_path('/blog/nature-is-not-a-charity/', $locale)); ?>" class="link">Warum Natur kein Wohltätigkeitsprojekt ist</a> und sehen Sie, wie Initiativen wie <a href="https://mydio.com/" class="link" target="_blank" rel="noopener noreferrer">mydio.com</a> diese Ideen in realen Transaktionen prüfen.</p>
 		</div>
 
 		<div class="social-share-bar">
@@ -261,22 +336,32 @@
 
 		<div class="faq-item">
 			<h3 class="header_three">Was bedeutet eine Theory of Change in der Nachhaltigkeit?</h3>
-			<span>Eine Theory of Change in der Nachhaltigkeit erklärt, wie systemische Transformation durch die Verbindung von Anreizen, Institutionen und Alltagsentscheidungen entstehen kann. Statt nur Ziele oder Verpflichtungen zu betrachten, zeigt sie, wie wirtschaftliche Wertsignale und Anreizstrukturen weiterentwickelt werden müssen, um langfristige ökologische und soziale Resilienz zu stärken.</span>
+			<span>Eine Theory of Change in der Nachhaltigkeit erklärt, wie systemische Transformation durch die Verbindung von Anreizen, Institutionen und Alltagsentscheidungen entstehen kann. Statt nur Ziele oder Verpflichtungen zu betrachten, zeigt sie, wie wirtschaftliche Wertsignale und Mechanismen weiterentwickelt werden müssen, um langfristige ökologische und soziale Resilienz zu stärken.</span>
+		</div>
+
+		<div class="faq-item" style="margin-top: 18px;">
+			<h3 class="header_three">Geht es auf dieser Seite um mydio.com?</h3>
+			<span>Nicht direkt. Diese Seite stellt die zugrunde liegende Theory of Change und den breiteren konzeptionellen Rahmen vor. <a href="https://mydio.com/" class="link" target="_blank" rel="noopener noreferrer">mydio.com</a> ist eine kommerzielle Umsetzung, die einige dieser Ideen praktisch erprobt.</span>
+		</div>
+
+		<div class="faq-item" style="margin-top: 18px;">
+			<h3 class="header_three">Für wen ist diese Seite gedacht?</h3>
+			<span>Diese Seite richtet sich an Menschen, die sich für systemischen Wandel, Nachhaltigkeit, wirtschaftliche Anreize, Naturkapital und die Frage interessieren, wie praktische Mechanismen helfen könnten, alltägliches wirtschaftliches Verhalten stärker mit langfristiger ökologischer Resilienz in Einklang zu bringen.</span>
 		</div>
 
 		<div class="faq-item" style="margin-top: 18px;">
 			<h3 class="header_three">Was ist eine Bürgerdividende für die Natur?</h3>
-			<span>Die Bürgerdividende für die Natur ist eine strukturelle Anerkennung, dass natürliche Systeme gemeinsamer Wohlstand sind. Sie richtet den Blick auf ein Systemdesign, das ökologische Werte wirtschaftlich lesbar macht — damit Verantwortung für Natur nicht von freiwilligem Verzicht abhängt, sondern strukturell unterstützt wird.</span>
+			<span>Die Bürgerdividende für die Natur ist eine strukturelle Anerkennung, dass natürliche Systeme gemeinsamer Wohlstand sind. Sie richtet den Blick auf ein Systemdesign, das ökologische Werte wirtschaftlich lesbar macht — damit Verantwortung für Natur nicht von freiwilligem Verzicht abhängt, sondern wirtschaftlich kohärenter getragen werden kann.</span>
 		</div>
 
 		<div class="faq-item" style="margin-top: 18px;">
 			<h3 class="header_three">Wie setzt mydio.com diese Theory of Change um?</h3>
-			<span>mydio.com setzt diese Logik in alltäglichen Transaktionen um. Indem nachhaltige Entscheidungen im täglichen Konsum erkennbar gemacht werden, untersucht die Initiative, wie Wertsignale schrittweise regenerative Prioritäten widerspiegeln können, statt ihnen zu widersprechen.</span>
+			<span>mydio.com setzt diese Logik in alltäglichen Transaktionen um. Indem nachhaltige Entscheidungen im täglichen Konsum erkennbar gemacht werden, untersucht die Initiative, wie Wertsignale schrittweise stärker mit regenerativen Prioritäten in Einklang kommen können, statt ihnen zu widersprechen.</span>
 		</div>
 
 		<div class="faq-item" style="margin-top: 18px;">
 			<h3 class="header_three">Warum ist die Neugestaltung wirtschaftlicher Anreize für Nachhaltigkeit wichtig?</h3>
-			<span>Nachhaltigkeitsbemühungen stossen an Grenzen, wenn Systeme vor allem kurzfristige Extraktion belohnen. Die Neugestaltung wirtschaftlicher Anreize hilft, dass regenerative Handlungen strukturell unterstützt und im grossen Massstab wirtschaftlich sichtbar werden.</span>
+			<span>Nachhaltigkeitsbemühungen stossen an Grenzen, wenn Systeme vor allem kurzfristige Extraktion belohnen. Die Neugestaltung wirtschaftlicher Anreize hilft, dass regenerative Prioritäten strukturell kohärenter und im grossen Massstab wirtschaftlich lesbar werden.</span>
 		</div>
 
 		<div class="faq-item" style="margin-top: 18px;">

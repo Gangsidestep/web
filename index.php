@@ -1,41 +1,74 @@
 <?php
-include __DIR__ . "/php/analytics.php";
+include_once __DIR__ . '/php/i18n.php';
+include __DIR__ . '/php/analytics.php';
+
+$locale = get_current_locale();
+$isFr = ($locale === 'fr');
+$isDe = ($locale === 'de');
+
+// Canonical URL for this locale
+$canonicalBase = 'https://mydropintheoceans.org';
+$canonicalUrl = $isDe ? $canonicalBase . '/de/' : ($isFr ? $canonicalBase . '/fr/' : $canonicalBase . '/');
+
+// Locale-specific metadata
+if ($isDe) {
+	$pageTitle    = "Eine Wirtschaft, die fuer die Natur funktioniert — My Drop In the Oceans";
+	$pageDesc     = "Ein Rahmen zur Ausrichtung wirtschaftlicher Anreize an der oekologischen Realitaet. Wie eine Buergerdividende fuer die Natur Naturkapital messbar und skalierbar macht.";
+	$pageKeywords = "Buergerdividende fuer die Natur, Naturkapital, oekologische Oekonomie, wirtschaftliche Anreize, Stewardship, naturpositive Wirtschaft";
+	$htmlLang     = 'de';
+} elseif ($isFr) {
+	$pageTitle    = "Une economie qui fonctionne pour la Nature — My Drop In the Oceans";
+	$pageDesc     = "Un cadre pour aligner les incitations economiques sur la realite ecologique. Comment une Dividende pour la Nature rend le capital naturel lisible et a l'echelle.";
+	$pageKeywords = "Dividende citoyenne pour la Nature, capital naturel, economie ecologique, incitations economiques, intendance, economie regeneratrice";
+	$htmlLang     = 'fr';
+} else {
+	$pageTitle    = "Aligning Economy and Nature: A Dividend for Natural Capital — My Drop In the Oceans";
+	$pageDesc     = "A framework to align economic incentives with ecological reality. See how a Dividend for Nature makes natural capital legible and scalable.";
+	$pageKeywords = "Citizen's Dividend for Nature, natural capital, ecological economics, economic incentives, stewardship, nature-positive economy";
+	$htmlLang     = 'en';
+}
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="<?php echo $htmlLang; ?>">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>Aligning Economy and Nature: A dividend for Natural Capital</title>
+	<title><?php echo htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8'); ?></title>
 
-	<meta name="description" content="A framework to align economic incentives with ecological reality. See how a Dividend for Nature makes natural capital legible and scalable.">
-	<meta name="keywords" content="Citizen’s Dividend for Nature, natsural capital, ecological economics, economic incentives, stewardship, nature-positive economy">
+	<meta name="description" content="<?php echo htmlspecialchars($pageDesc, ENT_QUOTES, 'UTF-8'); ?>">
+	<meta name="keywords"    content="<?php echo htmlspecialchars($pageKeywords, ENT_QUOTES, 'UTF-8'); ?>">
 	<meta name="author" content="My Drop In The Oceans">
 	<meta name="robots" content="index, follow">
 
-	<link rel="canonical" href="https://mydropintheoceans.org/">
+	<link rel="canonical" href="<?php echo $canonicalUrl; ?>">
+
+	<!-- hreflang -->
+	<link rel="alternate" hreflang="en"        href="https://mydropintheoceans.org/">
+	<link rel="alternate" hreflang="fr"        href="https://mydropintheoceans.org/fr/">
+	<link rel="alternate" hreflang="de"        href="https://mydropintheoceans.org/de/">
+	<link rel="alternate" hreflang="x-default" href="https://mydropintheoceans.org/">
 
 	<!-- Open Graph -->
-	<meta property="og:title" content="Aligning Economy and Nature: A dividend for Natural Capital">
-	<meta property="og:description" content="A framework to align economic incentives with ecological reality. See how a Dividend for Nature makes natural capital legible and scalable.">
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://mydropintheoceans.org/">
-	<meta property="og:image" content="https://mydropintheoceans.org/images/social-preview.jpg">
-	<meta property="og:image:type" content="image/jpeg">
-	<meta property="og:image:width" content="1200">
+	<meta property="og:title"        content="<?php echo htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8'); ?>">
+	<meta property="og:description"  content="<?php echo htmlspecialchars($pageDesc, ENT_QUOTES, 'UTF-8'); ?>">
+	<meta property="og:type"         content="website">
+	<meta property="og:url"          content="<?php echo $canonicalUrl; ?>">
+	<meta property="og:image"        content="https://mydropintheoceans.org/images/social-preview.jpg">
+	<meta property="og:image:type"   content="image/jpeg">
+	<meta property="og:image:width"  content="1200">
 	<meta property="og:image:height" content="630">
 
 	<!-- Twitter Card -->
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="Aligning Economy and Nature: A dividend for Natural Capital">
-	<meta name="twitter:description" content="A framework to align economic incentives with ecological reality. See how a Dividend for Nature makes natural capital legible and scalable.">
-	<meta name="twitter:image" content="https://mydropintheoceans.org/images/social-preview.jpg">
+	<meta name="twitter:card"        content="summary_large_image">
+	<meta name="twitter:title"       content="<?php echo htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8'); ?>">
+	<meta name="twitter:description" content="<?php echo htmlspecialchars($pageDesc, ENT_QUOTES, 'UTF-8'); ?>">
+	<meta name="twitter:image"       content="https://mydropintheoceans.org/images/social-preview.jpg">
 
 	<link rel="icon" href="https://mydropintheoceans.org/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="https://mydropintheoceans.org/images/favicon.ico" type="image/x-icon">
 	<link rel="apple-touch-icon" sizes="180x180" href="/images/connect-icons/apple-touch-icon.png">
-	<link rel="stylesheet" type="text/css" href="css/mydropintheoceans-style.css?v=<?php echo time(); ?>">
+	<link rel="stylesheet" type="text/css" href="/css/mydropintheoceans-style.css?v=<?php echo time(); ?>">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js?v=<?php echo date('Ymd'); ?>"></script>
 
 	<script type="application/ld+json">
@@ -103,289 +136,33 @@ include __DIR__ . "/php/analytics.php";
 </head>
 <body style="border: 0;margin: 0;padding: 0;background-color: #080a23;">
   <div style="max-width: 1000px !important;margin-right: auto;margin-left: auto;">
-		<header role="banner" style="position:fixed; left:0; right:0; z-index:2;">
-			<div style="height:60px;background-color: white;width:100%;max-width:1000px;margin:0 auto;color: #fff!important;font-size: 18px!important;padding-top: 10px!important;padding-bottom: 10px!important;box-shadow: 0 0 20px 8px rgba(60,60,60,.06)!important;border-bottom-right-radius: 5px;border-bottom-left-radius: 5px;border-bottom: thin inset #8e807687;">
-				<a href="/" aria-label="My Drop In the Oceans home" title="My Drop In the Oceans" style="display:block;">
-					<div style="
-			width: 80%;
-			background-image: url(../images/logo/mydropintheoceans_logo_large_no_drop.png);
-			height: 40px;
-			background-size: contain;
-			background-repeat: no-repeat;
-			margin-left: auto;
-			margin-right: auto;
-			position: relative;
-			background-position: center;
-			margin-top: 13px;
-			"></div>
-				</a>
-			</div>
-		</header>
-	<div style="background-size: cover; width:100%;height:120%;background-image: url(images/background/MyDIO_back.jpg);background-repeat: no-repeat;background-position-x: center;background-position-y: 74px;position:fixed;max-width:1000px;">
+		<?php include __DIR__ . '/php/site-header.php'; ?>
+	<div style="background-size: cover; width:100%;height:120%;background-image: url(/images/background/MyDIO_back.jpg);background-repeat: no-repeat;background-position-x: center;background-position-y: 74px;position:fixed;max-width:1000px;">
 	</div>
 	
 	
 	<main id="main" style="border: 0;margin: 0;">
-		<div id="landing_page" >
-		<div style="padding-left: 15%;width: 85%; top: 30%;position: relative;height: 5%;">	</div>
+		<div id="landing_page">
+		<div style="padding-left: 15%;width: 85%; top: 30%;position: relative;height: 5%;"></div>
 		<div class="intro_box"><br>
 			<b>NATURE. <br>PEOPLE. <br>MONEY.</b>
 		</div>
 			
 		<div class="brown_page_spacer_top">
 		<p></p>
-
-		<p></p>
-	</div>
-	<div class="white_page_span">
-		<p></p>
-		<h1 class="header_one">An economy that works for Nature</h1>
-		<p></p>
-
-		<span class="span_text_box">
-			Our ecological crisis is not only environmental — it is economic. This site is about <strong>aligning economy and Nature</strong>:
-			how a <strong>Citizen’s Dividend for Nature</strong> can reframe incentives, strengthen natural capital accounting, and bring
-			ecological value into everyday decisions.
-		</span>
-
-		<p></p>
-
-		<span class="span_text_box">
-			Markets are excellent at pricing extraction, yet often fail to recognise stewardship. If Nature underpins all wealth,
-			why is it largely absent from how wealth is measured, distributed and incentivised? If we want economic systems that are
-			resilient and fair, we need better value signals — and we need them where choices are made: in policy, finance, and daily exchange.
-		</span>
-
-		<p></p>
-
-		<span class="span_text_box">
-			<i>My Drop In the Oceans</i> explores a systemic response: a framework designed to align economic incentives with ecological reality
-			by embedding Nature into accounting, institutions, and forms of financial recognition that help normalise stewardship as a rational economic choice.
-		</span>
-
-		<p></p>
-
-		<span class="span_text_box">
-			To go deeper, read the <a href="/theory-of-change/" style="text-decoration:underline;">Theory of Change framework for aligning incentives</a>.
-			If you want to explore research, pilots, or partnerships, <a href="/contact/" style="text-decoration:underline;">contact My Drop In the Oceans</a>.
-		</span>
-
-		<p></p>
-		</div>
-
-		<div class="brown_page_spacer brown_page_spacer_with_content">
-		<p></p>
-		
-		<div style="margin:auto; width:80%;padding:1em; background:#f7f7f7; border-radius:8px;">
-			<h2 style="color:#2a5d84; font-size:1.2em; margin-bottom:0.5em;">Latest insights</h2>
-			<ul style="list-style:none; padding:0; margin:0;">
-				<li style="margin-bottom:0.7em;"><a href="/blog/nature-is-not-a-charity/" style="color:#2a5d84; text-decoration:underline;">Nature is Not a Charity—It’s an Economic Imperative</a></li>
-				<li style="margin-bottom:0.7em;"><a href="/blog/why-the-swiss-said-no-to-free-money/" style="color:#2a5d84; text-decoration:underline;">Why the Swiss Said No to Free Money</a></li>
-				<li style="margin-bottom:0.7em;"><a href="/blog/money-work-worth/" style="color:#2a5d84; text-decoration:underline;">Money = Work = Worth: A Story We’ve All Inherited</a></li>
-				<li style="margin-bottom:0.7em;"><a href="/blog/what-if-stewardship-was-financially-recognised/" style="color:#2a5d84; text-decoration:underline;">What if Stewardship Was Financially Recognised?</a></li>
-				<li style="margin-bottom:0.7em;"><a href="/blog/" style="color:#2a5d84; text-decoration:underline;">Browse all essays on economy and Nature</a></li>
-			</ul>
-		</div>
-		<p></p>
 		<p></p>
 		</div>
 
 		<div class="white_page_span">
-		<p></p>
-		<h2 class="header_two">Dividends for Nature</h2>
-		<p></p>
-
-		<span class="span_text_box">
-			A Citizen’s Dividend for Nature is not a charitable gesture. It is a structural adjustment to how value is accounted for.
-			If ecosystems generate measurable public wealth — stability, resilience, productivity — then that value should be reflected
-			in economic flows and in how benefits are shared.
-		</span>
-
-		<p></p>
-
-		<span class="span_text_box">
-			This thinking builds on a longer intellectual and practical lineage. Early efforts such as
-			<a href="https://www.teebweb.org/" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;">TEEB (The Economics of Ecosystems and Biodiversity)</a>
-			helped articulate ecosystems in economic terms. In the private sector, initiatives such as
-			Puma’s Environmental Profit & Loss (EP&amp;L) accounting demonstrated that environmental externalities could be measured and priced.
-			Civil society contributions — including the work of the
-			<a href="https://www.footprintnetwork.org/" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;">Global Footprint Network</a>
-			and Earth Overshoot Day — translated planetary limits into tangible metrics.
-		</span>
-
-		<p></p>
-
-		<span class="span_text_box">
-			More recently, frameworks such as the
-			<a href="https://www.gov.uk/government/publications/final-report-the-economics-of-biodiversity-the-dasgupta-review" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;">Dasgupta Review</a>,
-			the <a href="https://seea.un.org/" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;">UN SEEA framework</a>,
-			and the <a href="https://www.ipbes.net/node/35274" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;">IPBES Global Assessment</a>
-			have reinforced and institutionalised this direction of travel.
-			Together, they converge on the same conclusion: natural capital is foundational to prosperity, yet remains structurally undervalued in economic decision-making.
-		</span>
-
-		<p></p>
-
-		<span class="span_text_box">
-			The dividend concept is less about “sharing” what Nature already gives us, and more about ensuring Nature’s value is recognised
-			in economic terms that can compete with conventional measures of performance. In other words: institutional design that makes
-			stewardship financially legible — comparable to how good company stewardship can translate into higher wages, profits and dividends.
-		</span>
-
-		<p></p>
-
-		<span class="span_text_box">
-			The key is legitimacy at scale: shared standards for measurement and valuation, governance that earns public trust, and
-			mechanisms that translate ecological outcomes into tangible economic value. Without that, “natural capital” remains abstract
-			and cannot compete with the financial signals that currently drive decision-making.
-		</span>
-		<p></p>
-		</div>
-
-		<div class="brown_page_spacer">
-		<p></p>
-		<p></p>
-		</div>
-
-		<div class="white_page_span">
-		<p></p>
-		<h2 class="header_two">Aligning incentives in everyday life</h2>
-		<p></p>
-
-		<span class="span_text_box">
-			The hardest part of systemic change is not persuading people to behave differently; it is redesigning the signals that determine
-			what the economy rewards — in prices, wages, investment and accounting. When the costs of ecological loss are externalised,
-			rational decisions can still generate harmful outcomes. When stewardship is economically invisible, it is treated as optional.
-		</span>
-
-		<p></p>
-
-		<span class="span_text_box">
-			Aligning economy and Nature therefore means making ecological value financially legible at the same level as other forms of performance —
-			so that ordinary economic behaviour, operating within better-designed systems, naturally supports long-term resilience.
-		</span>
-
-		<p></p>
-
-		<span class="span_text_box">
-			A practical problem is a timing mismatch: the long-term benefits of stewardship rarely translate into immediate recognition today.
-			A Citizen’s Dividend for Nature aims to close that gap — attributing present value to actions that generate long-term resilience,
-			and helping to normalise stewardship as a rational economic choice.
-		</span>
-
-		<p></p>
-
-		<span class="span_text_box">
-			This is not about “rewarding” people for behaving well. Fact is, it is about correcting the signals the economy sends.
-			What is measured is managed — and what is valued shapes behaviour, investment, and policy.
-		</span>
-
-		<p></p>
-
-		<span class="span_text_box">
-			One operational expression of these principles is <a href="https://mydio.com/" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;">mydio.com</a> —
-			a closed-loop approach that attributes immediate value to sustainable public services and everyday spending. Rather than relying on subsidies
-			or moral appeals, it embeds financial recognition directly into exchange to <strong>incentivise sustainable choices</strong>.
-			If you’d like context, see <a href="https://mydio.com/about-us" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;">how mydio.com works</a>
-			and the <a href="https://mydio.com/story" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;">thinking behind mydio.com</a>.
-		</span>
-
-		<p></p>
-
-		<span class="span_text_box">
-			For more background on the narrative we inherit, read
-			<a href="/blog/money-work-worth/" style="text-decoration:underline;">Money = Work = Worth</a>,
-			and for a practical entry point into the concept of recognition, see
-			<a href="/blog/what-if-stewardship-was-financially-recognised/" style="text-decoration:underline;">the stewardship recognition essay</a>.
-		</span>
-
-		<p></p>
-		</div>
-
-		<div class="brown_page_spacer">
-		<p></p>
-		<p></p>
-		</div>
-
-		<div class="white_page_span">
-		<p></p>
-		<h2 class="header_two">How a Citizen’s Dividend for Nature could work</h2>
-		<p></p>
-
-		<span class="span_text_box">
-			The dividend idea can be approached as institutional design rather than a slogan. In practice, it could combine:
-			(1) credible ecological measurement, (2) transparent accounting of natural capital changes, (3) a governance layer that protects legitimacy,
-			and (4) a distribution mechanism that shares recognised value back to people and communities.
-		</span>
-
-		<p></p>
-
-		<span class="span_text_box">
-			A simple way to think about it is this: when stewardship measurably improves ecological assets — biodiversity resilience, watershed health,
-			flood protection, soil fertility — the economy benefits. A dividend framework asks how those benefits can be made visible and shared,
-			so that the incentives in the system point away from short-term depletion and toward long-term prosperity.
-		</span>
-
-		<p></p>
-
-		<span class="span_text_box">
-			If you’re looking for a structured overview of the pathway from principles to mechanisms, start with
-			<a href="/theory-of-change/" style="text-decoration:underline;">the Theory of Change for implementation</a>,
-			and explore the argument that <a href="/blog/nature-is-not-a-charity/" style="text-decoration:underline;">Nature is an economic imperative</a>.
-		</span>
-
-		<p></p>
-		</div>
-
-		<div class="brown_page_spacer">
-		<p></p>
-		<p></p>
-		</div>
-
-		<div class="white_page_span">
-		<p></p>
-		<h2 class="header_two">Frequently asked questions</h2>
-		<p></p>
-
-		<span class="span_text_box">
-			<strong>Is this a universal basic income?</strong><br>
-			No. While it uses the language of a dividend, the focus is ecological accounting and incentive design:
-			aligning economic signals with the value of natural capital and stewardship.
-		</span>
-
-		<p></p>
-
-		<span class="span_text_box">
-			<strong>How is this different from carbon pricing?</strong><br>
-			Carbon pricing addresses a specific externality. A Citizen’s Dividend for Nature addresses the broader question of how ecological wealth
-			is recognised, measured and distributed within economic structures.
-		</span>
-
-		<p></p>
-
-		<span class="span_text_box">
-			<strong>Why link this to everyday transactions?</strong><br>
-			Because incentives work where people and organisations make decisions. Bringing ecological value into day-to-day exchange helps close the gap
-			between long-term benefits and immediate financial recognition.
-		</span>
-
-		<p></p>
-
-		<span class="span_text_box">
-			Want to explore a collaboration or share relevant work? <a href="/contact/" style="text-decoration:underline;">Send a message via our contact page</a>.
-			Privacy matters — see the <a href="/privacy/" style="text-decoration:underline;">privacy policy</a>.
-		</span>
-
-		<p></p>
-
-		<p></p>
-			<div class="social-share-bar">
-				<div class="share-label">Share:</div>
-				<a href="https://www.linkedin.com/shareArticle?mini=true&url=https://mydropintheoceans.org/" target="_blank" rel="noopener noreferrer" class="social-link"><img src="/images/social/linkedin.svg" alt="LinkedIn" style="width:28px;height:28px;vertical-align:middle;"></a>
-				<a href="https://twitter.com/intent/tweet?url=https://mydropintheoceans.org/&text=Aligning%20Economy%20and%20Nature%3A%20A%20Citizen%E2%80%99s%20Dividend" target="_blank" rel="noopener noreferrer" class="social-link"><img src="/images/social/twitter.svg" alt="Twitter" style="width:28px;height:28px;vertical-align:middle;"></a>
-				<a href="https://www.facebook.com/sharer/sharer.php?u=https://mydropintheoceans.org/" target="_blank" rel="noopener noreferrer" class="social-link"><img src="/images/social/facebook.svg" alt="Facebook" style="width:28px;height:28px;vertical-align:middle;"></a>
-				<a href="https://wa.me/?text=Aligning%20Economy%20and%20Nature%3A%20A%20Citizen%E2%80%99s%20Dividend%20https://mydropintheoceans.org/" target="_blank" rel="noopener noreferrer" class="social-link"><img src="/images/social/whatsapp.svg" alt="WhatsApp" style="width:28px;height:28px;vertical-align:middle;"></a>
-			</div>
+		<?php
+		if ($isDe) {
+			include __DIR__ . '/php/home-de.php';
+		} elseif ($isFr) {
+			include __DIR__ . '/php/home-fr.php';
+		} else {
+			include __DIR__ . '/php/home-en.php';
+		}
+		?>
 		</div>
 
 		<div class="brown_page_spacer_bottom">

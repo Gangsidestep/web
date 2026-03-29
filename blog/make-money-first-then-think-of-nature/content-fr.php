@@ -231,6 +231,11 @@ et laisser l’économie refléter cette réalité.</blockquote>
 <p>C’est une proposition structurelle.</p>
 <p>Et c’est dans la structure que commence le changement durable.</p>
 
+<div class="cta-box">
+  <h3>Du cadre à la participation</h3>
+  <p>Le changement systémique ne commence pas par des déclarations — il commence là où se prennent les décisions économiques du quotidien. Le dividende citoyen pour la Nature est une expression pratique de cette direction, en explorant comment la valeur écologique peut devenir visible dans les transactions ordinaires. Participation, amélioration continue et apprentissage collectif sont essentiels pour façonner des signaux de valeur alignés avec les réalités écologiques dont dépend toute prospérité.</p>
+</div>
+
 <div class="framing-box">
   <h3>Concepts clés</h3>
   <p><strong>Capital naturel</strong><br>
@@ -241,11 +246,6 @@ et laisser l’économie refléter cette réalité.</blockquote>
 
   <p><strong>Lisibilité économique</strong><br>
   Le degré auquel une contribution devient visible et reconnue dans l’économie — non seulement moralement, mais dans la façon dont coûts et bénéfices sont comptabilisés, valorisés et redistribués.</p>
-</div>
-
-<div class="cta-box">
-  <h3>Du cadre à la participation</h3>
-  <p>Le changement systémique ne commence pas par des déclarations — il commence là où se prennent les décisions économiques du quotidien. Le dividende citoyen pour la Nature est une expression pratique de cette direction, en explorant comment la valeur écologique peut devenir visible dans les transactions ordinaires. Participation, amélioration continue et apprentissage collectif sont essentiels pour façonner des signaux de valeur alignés avec les réalités écologiques dont dépend toute prospérité.</p>
 </div>
 
 <div class="social-share-bar">

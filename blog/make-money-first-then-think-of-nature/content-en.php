@@ -233,6 +233,11 @@ and let the economy reflect that reality.</blockquote>
 <p>It is a structural proposition.</p>
 <p>And structure is where lasting change begins.</p>
 
+<div class="cta-box">
+  <h3>From framework to participation</h3>
+  <p>Systemic change does not begin with declarations — it begins where everyday economic choices are made. The Citizen’s Dividend for Nature is one practical expression of this direction, exploring how ecological value can become visible within ordinary transactions. Participation, refinement, and shared learning are part of shaping value signals that reflect the realities upon which all prosperity depends.</p>
+</div>
+
 <div class="framing-box">
   <h3>Key concepts</h3>
   <p><strong>Natural capital</strong><br>
@@ -243,11 +248,6 @@ and let the economy reflect that reality.</blockquote>
 
   <p><strong>Economic legibility</strong><br>
   The extent to which a contribution is visible and recognised within the economic system — not only morally, but in the way benefits and costs are accounted for.</p>
-</div>
-
-<div class="cta-box">
-  <h3>From framework to participation</h3>
-  <p>Systemic change does not begin with declarations — it begins where everyday economic choices are made. The Citizen’s Dividend for Nature is one practical expression of this direction, exploring how ecological value can become visible within ordinary transactions. Participation, refinement, and shared learning are part of shaping value signals that reflect the realities upon which all prosperity depends.</p>
 </div>
 
 <div class="social-share-bar">

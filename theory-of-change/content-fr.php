@@ -9,9 +9,55 @@
 		<h1 class="header_one">Théorie du changement pour la durabilité</h1>
 
 		<p class="definition_snippet">
-		Une <strong>théorie du changement</strong> décrit comment une transformation systémique peut émerger en reliant les incitations économiques, les institutions et les décisions du quotidien. 
-		Dans le contexte de la durabilité, cela signifie concevoir des signaux de valeur qui rendent le capital naturel visible dans l’économie et soutiennent structurellement les choix régénératifs.
+			Une <strong>théorie du changement</strong> décrit comment une transformation systémique peut émerger en reliant les incitations économiques, les institutions et les décisions du quotidien.
+			Dans le contexte de la durabilité, cela signifie concevoir des signaux de valeur qui rendent le capital naturel visible dans l’économie et permettent de mieux aligner les conditions économiques avec les réalités écologiques.
 		</p>
+
+		<div class="framing-box" style="margin-top: 18px;">
+			<h3>Avant de lire</h3>
+			<p>
+				Cette page présente une <strong>théorie du changement</strong> — et non un produit ou une offre de service.
+				Elle explique comment les incitations économiques pourraient évoluer afin que la Nature soit reconnue de manière plus cohérente dans la vie économique quotidienne.
+			</p>
+			<p>
+				<strong>mydropintheoceans.org</strong> est un espace consacré à la réflexion de fond et à la théorie du changement, tandis que
+				<a href="https://mydio.com/" class="link" target="_blank" rel="noopener noreferrer">mydio.com</a>
+				est une mise en œuvre commerciale de ces idées.
+			</p>
+		</div>
+
+		<div class="cta-box" style="margin-top: 18px;">
+			<h3>En bref, cette théorie du changement propose que :</h3>
+			<p style="margin-bottom: 0;">
+				— la durabilité reste souvent limitée parce que les incitations économiques demeurent insuffisamment alignées avec la réalité écologique<br>
+				— la valeur de la Nature est encore trop peu visible dans les transactions et arbitrages du quotidien<br>
+				— des mécanismes concrets peuvent aider à rendre le capital naturel plus lisible économiquement<br>
+				— le changement peut émerger de la participation quotidienne, et pas seulement d’engagements top-down<br>
+				— la gouvernance, la légitimité et la mesure doivent évoluer en parallèle de la mise en œuvre
+			</p>
+		</div>
+
+		<div class="framing-box" style="margin-top: 18px;">
+			<h3>Comment cela s’articule</h3>
+			<p><strong>Théorie du changement</strong><br>
+			Le cadre conceptuel : comment un changement systémique pourrait émerger.</p>
+
+			<p><strong>Think tank / couche de gouvernance</strong><br>
+			L’espace de développement, de mise à l’épreuve, de dialogue institutionnel et de légitimité à long terme.</p>
+
+			<p><strong><a href="https://mydio.com/" class="link" target="_blank" rel="noopener noreferrer">mydio.com</a></strong><br>
+			Une mise en œuvre commerciale qui teste certaines de ces idées dans des conditions réelles.</p>
+		</div>
+
+		<div class="related-links" style="margin: 1.25em 0; padding: 1em; background: #f6f6f6; border-radius: 4px;">
+			<strong>Cette page peut être pertinente pour</strong>
+			<ul style="font-size: 0.92em;list-style:none;padding:0;margin:0.5em 0 0 0;">
+				<li>— les personnes qui explorent de nouvelles approches économiques de la durabilité</li>
+				<li>— les entreprises, institutions et innovateurs intéressés par les incitations et le changement systémique</li>
+				<li>— les lecteurs qui souhaitent mieux comprendre la logique qui sous-tend des initiatives comme mydio.com</li>
+			</ul>
+		</div>
+
 		<h2 class="header_two" style="margin-top: 10px;">Réaligner l’économie et la nature par les signaux de valeur</h2>
 
 		<span class="span_text_box">
@@ -19,6 +65,13 @@
 			L’enjeu n’est pas d’ajouter une couche verte à l’économie existante, mais de corriger la manière dont la valeur écologique est reconnue, mesurée et rendue actionnable dans la vie économique quotidienne.
 		</span>
 		<p></p>
+
+		<div class="cta-box">
+			<h3>Idée centrale</h3>
+			<p>
+				Le problème n’est pas seulement un manque de sensibilisation. Il tient surtout au fait que la valeur écologique reste encore trop faiblement traduite dans les signaux économiques qui structurent les décisions du quotidien.
+			</p>
+		</div>
 
 		<span class="span_text_box">
 			Le problème central est un problème de séquence : notre économie dit souvent, en pratique, « d’abord la rentabilité, ensuite — peut-être — la nature ».
@@ -28,27 +81,35 @@
 		</span>
 
 		<p></p>
+
+		<div class="framing-box">
+			<h3>Tension de fond</h3>
+			<p>
+				Dans une grande partie de l’économie actuelle, les coûts d’une action responsable sont souvent immédiats et concentrés, tandis que les bénéfices sont différés, collectifs et fréquemment trop dispersés pour être économiquement significatifs pour un acteur isolé.
+			</p>
+		</div>
+
+		<p></p>
 		<span class="span_text_box">
-			Pour approfondir le contexte, vous pouvez aussi consulter les essais connexes :
-			<a href="<?php echo htmlspecialchars(localized_path('/blog/why-the-swiss-said-no-to-free-money/', $locale)); ?>" class="link">Pourquoi les Suisses ont dit non à l’argent gratuit</a>,
-			<a href="<?php echo htmlspecialchars(localized_path('/blog/money-work-worth/', $locale)); ?>" class="link">Argent = Travail = Valeur</a>,
-			<a href="<?php echo htmlspecialchars(localized_path('/blog/what-if-stewardship-was-financially-recognised/', $locale)); ?>" class="link">Et si la préservation était reconnue financièrement ?</a>
-			et
-			<a href="<?php echo htmlspecialchars(localized_path('/blog/nature-is-not-a-charity/', $locale)); ?>" class="link">La Nature n’est pas une charité — c’est une nécessité économique</a>.
+			Pour approfondir le contexte, vous pouvez aussi consulter les essais connexes :<br>
+			— <a href="<?php echo htmlspecialchars(localized_path('/blog/why-the-swiss-said-no-to-free-money/', $locale)); ?>" class="link">Pourquoi les Suisses ont dit non à l’argent gratuit</a><br>
+			— <a href="<?php echo htmlspecialchars(localized_path('/blog/money-work-worth/', $locale)); ?>" class="link">Argent = Travail = Valeur</a><br>
+			— <a href="<?php echo htmlspecialchars(localized_path('/blog/what-if-stewardship-was-financially-recognised/', $locale)); ?>" class="link">Et si la préservation était reconnue financièrement ?</a><br>
+			— <a href="<?php echo htmlspecialchars(localized_path('/blog/nature-is-not-a-charity/', $locale)); ?>" class="link">La Nature n’est pas une charité — c’est une nécessité économique</a>
 		</span>
 
 		<h2 class="header_two">Pourquoi cette théorie du changement est nécessaire</h2>
 
 		<span class="span_text_box">
-		Cette théorie du changement part d’un constat simple : 
-		de nombreuses stratégies de durabilité se concentrent sur des objectifs, des engagements ou des rapports. 
-		Pourtant, les décisions quotidiennes des ménages, des entreprises et des institutions sont largement influencées par des signaux économiques — les prix, les incitations et la distribution des bénéfices.
+			Cette théorie du changement part d’un constat simple :
+			de nombreuses stratégies de durabilité se concentrent sur des objectifs, des engagements ou des rapports.
+			Pourtant, les décisions quotidiennes des ménages, des entreprises et des institutions sont largement influencées par des signaux économiques — les prix, les incitations et la distribution des bénéfices.<br><br>
 
-		Tant que ces signaux reflètent imparfaitement la réalité écologique, les initiatives de durabilité restent structurellement limitées. 
-		L’enjeu n’est donc pas seulement de changer les comportements individuels, mais d’ajuster les mécanismes économiques qui orientent les décisions.
+			Tant que ces signaux reflètent imparfaitement la réalité écologique, les initiatives de durabilité restent structurellement limitées.
+			L’enjeu n’est donc pas seulement de demander des changements individuels, mais d’ajuster les mécanismes économiques qui structurent les décisions du quotidien.<br><br>
 
-		La question centrale devient alors :
-		<b>comment concevoir des incitations économiques qui rendent les choix durables visibles, crédibles et cohérents dans la vie économique quotidienne ?</b>
+			La question centrale devient alors :
+			<b>comment concevoir des incitations économiques qui rendent les choix durables visibles, crédibles et cohérents dans la vie économique quotidienne ?</b>
 		</span>
 
 		<h2 class="header_two">Reconnaître le capital naturel comme richesse de base</h2>
@@ -64,6 +125,13 @@
 
 			Reconnaître la nature comme patrimoine de base change donc la logique : on passe de la correction a posteriori des dommages à une organisation économique orientée vers la santé du système dans la durée.
 		</span>
+
+		<div class="cta-box">
+			<h3>Changement de perspective</h3>
+			<p>
+				La Nature n’est pas un sujet périphérique à intégrer après coup. Elle constitue une richesse fondatrice dont dépendent toutes les autres formes de richesse.
+			</p>
+		</div>
 
 		<h2 class="header_two">Dividende citoyen pour la Nature : une reconnaissance structurelle</h2>
 		<span class="span_text_box">
@@ -86,7 +154,7 @@
 
 			Si le capital naturel est une richesse fondatrice, sa valeur doit apparaître non seulement dans les textes réglementaires,
 			mais aussi dans les décisions courantes des ménages, des entreprises et des communautés.
-			Ce sont les prix, incitations et circuits de bénéfices qui orientent les comportements réels.<br><br>
+			Ce sont les prix, incitations et circuits de bénéfices qui structurent les décisions réelles.<br><br>
 
 			L’alignement systémique suppose donc une transformation progressive de ces signaux :
 			moins de prime implicite à l’extraction, plus de cohérence économique en faveur de la régénération.<br><br>
@@ -101,8 +169,15 @@
 
 			La mise en œuvre ne remplace pas la théorie : elle la met à l’épreuve, permet l’apprentissage continu et renforce la redevabilité.<br><br>
 
-            <b>En résumé, la logique du changement est la suivante :</b> lorsque les mécanismes économiques rendent visible et partageable la valeur du capital naturel, les signaux de valeur qui orientent les décisions quotidiennes évoluent. Les comportements individuels et organisationnels commencent alors à intégrer plus systématiquement les bénéfices de la régénération. À mesure que ces signaux deviennent plus cohérents et plus répandus dans l’économie réelle, l’équilibre économique lui-même se déplace progressivement d’une logique d’extraction rentable vers une logique de régénération viable.
+            <b>En résumé, la logique du changement est la suivante :</b> lorsque les mécanismes économiques rendent visible et partageable la valeur du capital naturel, les signaux de valeur qui structurent les décisions quotidiennes évoluent. Les ménages, les entreprises et les institutions peuvent alors intégrer plus systématiquement les bénéfices de la régénération dans leurs arbitrages réels. À mesure que ces signaux deviennent plus cohérents et plus répandus dans l’économie réelle, l’équilibre économique lui-même se déplace progressivement d’une logique d’extraction rentable vers une logique de régénération viable.
 		</span>
+
+		<div class="framing-box">
+			<h3>Principe de mise en œuvre</h3>
+			<p>
+				La mise en pratique n’a pas vocation à remplacer le cadre théorique, mais à le tester dans des conditions réelles — afin que la théorie puisse évoluer à travers la participation, la redevabilité et l’apprentissage.
+			</p>
+		</div>
 
 		<h2 class="header_two">Mesurer les progrès systémiques</h2>
 		<span class="span_text_box">
@@ -112,7 +187,7 @@
 			Cet indicateur mesure à la fois l’adoption et la lisibilité économique croissante de la valeur écologique.<br><br>
 
 			D’autres indicateurs complètent l’analyse : progression de la participation active (citoyens et entreprises),
-			part des dépenses influencées par des incitations régénératives, et évolution observable des choix de consommation.
+			part des dépenses influencées par des incitations régénératives, et évolution observable des arbitrages de consommation.
 			L’idée est d’observer une bascule graduelle de la logique « extraction rentable » vers la logique « régénération viable ». <br><br>
 
 			Les résultats environnementaux comptent aussi : émissions carbone, indicateurs biodiversité, et méthodes de comptabilité du capital naturel.
@@ -133,21 +208,21 @@
 			et où la valeur est définie de manière assez large pour préserver l’avenir qu’elle prétend servir.
 		</span>
 
+		<div class="cta-box">
+			<h3>Du cadre à la participation</h3>
+			<p>Cette théorie du changement se veut opérationnelle. Elle propose une trajectoire où les fondations écologiques sont traitées comme une richesse commune et où les signaux de valeur du quotidien reflètent progressivement cette réalité. Pour une entrée plus directe dans ce problème de séquencement, lire <a href="<?php echo htmlspecialchars(localized_path('/blog/make-money-first-then-think-of-nature/', $locale)); ?>" class="link">Gagner de l’argent d’abord, puis (peut-être) penser à la nature</a>, puis observer comment <a href="https://mydio.com/" class="link" target="_blank" rel="noopener noreferrer">mydio.com</a> teste ces principes dans des transactions réelles.</p>
+		</div>
+
 		<div class="framing-box">
 			<h3>Concepts clés</h3>
 			<p><strong>Capital naturel</strong><br>
 			Les systèmes écologiques — stabilité climatique, biodiversité, sols, océans, cycles de l’eau — qui rendent possible l’activité économique et sociale.</p>
 
 			<p><strong>Signaux de valeur</strong><br>
-			Les repères qui orientent les décisions quotidiennes (prix, incitations, rendements, règles) et indiquent ce que le système récompense réellement.</p>
+			Les repères qui structurent les décisions quotidiennes (prix, incitations, rendements, règles) et indiquent ce que le système reconnaît et soutient réellement.</p>
 
 			<p><strong>Lisibilité économique</strong><br>
 			Le degré auquel la contribution écologique et la responsabilité associée deviennent visibles dans les mécanismes économiques concrets.</p>
-		</div>
-
-		<div class="cta-box">
-			<h3>Du cadre à la participation</h3>
-			<p>Cette théorie du changement se veut opérationnelle. Elle propose une trajectoire où les fondations écologiques sont traitées comme une richesse commune et où les signaux de valeur du quotidien reflètent progressivement cette réalité. Pour une entrée plus directe dans ce problème de séquencement, lire <a href="<?php echo htmlspecialchars(localized_path('/blog/make-money-first-then-think-of-nature/', $locale)); ?>" class="link">Gagner de l’argent d’abord, puis (peut-être) penser à la nature</a>, puis observer comment <a href="https://mydio.com/" class="link" target="_blank" rel="noopener noreferrer">mydio.com</a> teste ces principes dans des transactions réelles.</p>
 		</div>
 
 		<div class="social-share-bar">
@@ -186,13 +261,23 @@
 		</div>
 
 		<div class="faq-item" style="margin-top: 18px;">
+			<h3 class="header_three">Cette page parle-t-elle de mydio.com ?</h3>
+			<span>Pas directement. Cette page présente la théorie du changement sous-jacente et le cadre conceptuel plus large. <a href="https://mydio.com/" class="link" target="_blank" rel="noopener noreferrer">mydio.com</a> est une mise en œuvre commerciale qui teste certaines de ces idées dans la pratique.</span>
+		</div>
+
+		<div class="faq-item" style="margin-top: 18px;">
+			<h3 class="header_three">À qui s’adresse cette page ?</h3>
+			<span>Cette page s’adresse aux personnes intéressées par le changement systémique, la durabilité, les incitations économiques, le capital naturel et la manière dont des mécanismes concrets pourraient mieux aligner les comportements économiques du quotidien avec la résilience écologique à long terme.</span>
+		</div>
+
+		<div class="faq-item" style="margin-top: 18px;">
 			<h3 class="header_three">Qu’est-ce qu’un dividende citoyen pour la Nature ?</h3>
 			<span>C’est une reconnaissance structurelle : les systèmes naturels sont une richesse commune. Le mécanisme vise à rendre la valeur écologique lisible dans l’économie afin que la préservation ne repose pas seulement sur le volontariat.</span>
 		</div>
 
 		<div class="faq-item" style="margin-top: 18px;">
 			<h3 class="header_three">Comment mydio.com applique-t-il cette théorie du changement ?</h3>
-			<span>mydio.com teste ces principes dans des transactions ordinaires, en intégrant des signaux qui valorisent des choix plus durables au niveau du quotidien.</span>
+			<span>mydio.com teste ces principes dans des transactions ordinaires, en intégrant des signaux qui rendent des choix plus durables économiquement plus cohérents au quotidien.</span>
 		</div>
 
 		<div class="faq-item" style="margin-top: 18px;">
