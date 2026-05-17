@@ -8,15 +8,15 @@ include __DIR__ . '/../../php/analytics.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
     <!-- SEO -->
-    <meta name="description" content="Swiss UBI vote: what it revealed about work, worth and our relationship with Nature — and why an ecological dividend is different from a basic allowance.">
+    <meta name="description" content="Swiss UBI referendum: what the 2016 vote revealed about work, value, and nature — and why a Dividend for Nature differs from basic income.">
     <meta name="keywords" content="Universal Basic Income, Switzerland, Stewardship, Economy, Blog, Sustainability">
     <meta name="author" content="My Drop In The Oceans">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://mydropintheoceans.org/blog/why-the-swiss-said-no-to-free-money/" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Why the Swiss Said No to Free Money">
-    <meta property="og:description" content="What a historic vote revealed about our emotional relationship with Nature, work, money, and worth.">
+    <meta property="og:title" content="Why the Swiss Said No to Free Money (Swiss UBI Referendum)">
+    <meta property="og:description" content="What the 2016 Swiss UBI referendum revealed about work, value, nature, and economic incentives.">
     <meta property="og:url" content="https://mydropintheoceans.org/blog/why-the-swiss-said-no-to-free-money/">
     <meta property="og:type" content="article">
     <meta property="og:image" content="https://mydropintheoceans.org/images/backdrop_an_economy_linkedin.jpg">
@@ -26,11 +26,11 @@ include __DIR__ . '/../../php/analytics.php';
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Why the Swiss Said No to Free Money">
-    <meta name="twitter:description" content="What a historic vote revealed about our emotional relationship with Nature, work, money, and worth.">
+    <meta name="twitter:title" content="Why the Swiss Said No to Free Money (Swiss UBI Referendum)">
+    <meta name="twitter:description" content="What the 2016 Swiss UBI referendum revealed about work, value, nature, and economic incentives.">
     <meta name="twitter:image" content="https://mydropintheoceans.org/images/backdrop_an_economy_linkedin.jpg">
 
-    <title>Why the Swiss Said No to Free Money</title>
+    <title>Why the Swiss Said No to Free Money | Swiss UBI Referendum</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/connect-icons/apple-touch-icon.png">
     <link rel="stylesheet" type="text/css" href="/css/mydropintheoceans-style.css?v=<?php echo time(); ?>">

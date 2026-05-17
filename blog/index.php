@@ -65,6 +65,16 @@ $blog_posts = [
       'excerpt_fr' => "Pourquoi notre économie place le profit avant la nature — et comment un dividende citoyen pour la nature pourrait aligner les incitations et reconnaître le capital naturel dans une économie de marché.",
       'excerpt_de' => 'Warum unsere Wirtschaft Profit vor Natur stellt — wie eine Bürgerdividende für die Natur Anreize ausrichten und Naturkapital in einer Marktwirtschaft anerkennen könnte.',
     ],
+    [
+      'title' => 'From Central Bank Mandates to Everyday Transactions',
+      'title_fr' => 'Des mandats de banque centrale aux transactions quotidiennes',
+      'title_de' => 'Von Zentralbankmandaten zu alltäglichen Transaktionen',
+      'slug' => 'making-natural-capital-visible-in-everyday-transactions/',
+      'date' => '2026-05-08',
+      'excerpt' => 'Why sustainability must become visible in everyday transactions, not only in central bank mandates and institutional finance.',
+      'excerpt_fr' => 'Pourquoi la durabilité doit devenir visible dans les transactions quotidiennes, et pas seulement dans les mandats institutionnels.',
+      'excerpt_de' => 'Warum Nachhaltigkeit nicht nur in Zentralbankmandaten, sondern in alltäglichen Entscheidungen wirtschaftlich sichtbar werden muss.',
+    ],
     // Add more posts here as you publish them
 ];
 

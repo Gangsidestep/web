@@ -1,5 +1,13 @@
 User-agent: *
-Disallow: /login/
+Allow: /
 Disallow: /admin/
+Disallow: /login/
+Disallow: /archive/
+Disallow: /.git/
+Disallow: /.venv/
+Disallow: /php/
+Disallow: /scripts/
+Disallow: /sql/
+Disallow: /analytics/
 
 Sitemap: https://mydropintheoceans.org/sitemap.xml

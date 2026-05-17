@@ -3,18 +3,29 @@ include __DIR__ . '/../../php/i18n.php';
 $locale = get_current_locale();
 $alternateLocale = get_alternate_locale($locale);
 $articlePath = '/blog/make-money-first-then-think-of-nature/';
+$deContentPath = __DIR__ . '/content-de.php';
+$hasDeContent = is_readable($deContentPath);
 
-$metaDescriptionEn = 'Why our economy puts profit before Nature — how a Citizen’s Dividend for Nature could align incentives and recognise natural capital in a market economy';
+$metaDescriptionEn = 'Why profit comes first in today\'s economy, and how a Citizen\'s Dividend for Nature can make natural capital visible and economically rewarded.';
 $metaDescriptionFr = 'Pourquoi notre économie pousse à gagner de l’argent avant de penser à la Nature. Comment un dividende citoyen peut aligner l’économie avec le capital naturel.';
+$metaDescriptionDe = 'Warum unsere Wirtschaft zuerst Gewinn priorisiert und wie eine Bürgerdividende für die Natur Naturkapital sichtbar und wirtschaftlich wirksam machen kann.';
 
-$pageTitle = $locale === 'fr'
+$displayTitle = $locale === 'fr'
   ? 'Gagner de l\'argent d\'abord, puis (peut-être) penser à la Nature'
-  : 'Make Money First, Then (Maybe) Think of Nature';
+  : ($locale === 'de'
+      ? 'Zuerst Geld verdienen, dann (vielleicht) an Natur denken'
+      : 'Make Money First, Then (Maybe) Think of Nature');
+
+$metaTitle = $locale === 'fr'
+  ? $displayTitle
+  : ($locale === 'de' ? 'Naturkapital statt Nachgedanke | My Drop In The Oceans' : $displayTitle . ' | Natural Capital');
 
 $metaKeywordsEn = 'Nature, natural capital, Citizen’s Dividend for Nature, economy, incentives, stewardship, sustainability, ecological value, My Drop In The Oceans';
 $metaKeywordsFr = 'Nature, capital naturel, dividende citoyen pour la Nature, économie, incitations économiques, durabilité, biodiversité, valeur écologique, My Drop In The Oceans';
-$metaKeywords = $locale === 'fr' ? $metaKeywordsFr : $metaKeywordsEn;
-$metaDescription = $locale === 'fr' ? $metaDescriptionFr : $metaDescriptionEn;
+$metaKeywordsDe = 'Natur, Naturkapital, Bürgerdividende für die Natur, Wirtschaft, Anreize, Nachhaltigkeit, ökologischer Wert, My Drop In The Oceans';
+$metaKeywords = $locale === 'fr' ? $metaKeywordsFr : ($locale === 'de' ? $metaKeywordsDe : $metaKeywordsEn);
+$metaDescription = $locale === 'fr' ? $metaDescriptionFr : ($locale === 'de' ? $metaDescriptionDe : $metaDescriptionEn);
+$pageTitle = $displayTitle;
 $canonicalUrl = localized_url($articlePath, $locale);
 
 include __DIR__ . '/../../php/analytics.php';
@@ -33,10 +44,11 @@ include __DIR__ . '/../../php/analytics.php';
     <link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl); ?>" />
     <link rel="alternate" hreflang="en" href="<?php echo htmlspecialchars(localized_url($articlePath, 'en')); ?>" />
     <link rel="alternate" hreflang="fr" href="<?php echo htmlspecialchars(localized_url($articlePath, 'fr')); ?>" />
+    <link rel="alternate" hreflang="de" href="<?php echo htmlspecialchars(localized_url($articlePath, 'de')); ?>" />
     <link rel="alternate" hreflang="x-default" href="<?php echo htmlspecialchars(localized_url($articlePath, 'en')); ?>" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="<?php echo htmlspecialchars($pageTitle); ?>">
+    <meta property="og:title" content="<?php echo htmlspecialchars($metaTitle); ?>">
     <meta property="og:description" content="<?php echo htmlspecialchars($metaDescription); ?>">
     <meta property="og:url" content="<?php echo htmlspecialchars($canonicalUrl); ?>">
     <meta property="og:type" content="article">
@@ -44,16 +56,16 @@ include __DIR__ . '/../../php/analytics.php';
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="812">
     <meta property="og:image:height" content="424">
-    <meta property="og:image:alt" content="<?php echo htmlspecialchars($pageTitle); ?>">
+    <meta property="og:image:alt" content="<?php echo htmlspecialchars($displayTitle); ?>">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="<?php echo htmlspecialchars($pageTitle); ?>">
+    <meta name="twitter:title" content="<?php echo htmlspecialchars($metaTitle); ?>">
     <meta name="twitter:description" content="<?php echo htmlspecialchars($metaDescription); ?>">
     <meta name="twitter:image" content="https://mydropintheoceans.org/images/backdrop_an_economy_linkedin.jpg">
-    <meta name="twitter:image:alt" content="<?php echo htmlspecialchars($pageTitle); ?>">
+    <meta name="twitter:image:alt" content="<?php echo htmlspecialchars($displayTitle); ?>">
 
-    <title><?php echo htmlspecialchars($pageTitle); ?></title>
+    <title><?php echo htmlspecialchars($metaTitle); ?></title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/connect-icons/apple-touch-icon.png">
     <link rel="stylesheet" type="text/css" href="/css/mydropintheoceans-style.css?v=<?php echo time(); ?>">
@@ -63,7 +75,7 @@ include __DIR__ . '/../../php/analytics.php';
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      "headline": "<?php echo htmlspecialchars($pageTitle, ENT_QUOTES); ?>",
+      "headline": "<?php echo htmlspecialchars($displayTitle, ENT_QUOTES); ?>",
       "description": "<?php echo htmlspecialchars($metaDescription, ENT_QUOTES); ?>",
       "image": "https://mydropintheoceans.org/images/backdrop_an_economy_linkedin.jpg",
       "author": {
@@ -157,7 +169,7 @@ include __DIR__ . '/../../php/analytics.php';
         <div style="padding-left: 15%;width: 85%; top: 30%;position: relative;height: 5%;"></div>
 
         <div class="intro_box"><br>
-          <b><?php echo $locale === 'fr' ? 'Blog' : 'Blog'; ?></b><br><?php echo htmlspecialchars($pageTitle); ?>
+          <b><?php echo $locale === 'fr' ? 'Blog' : 'Blog'; ?></b><br><?php echo htmlspecialchars($displayTitle); ?>
         </div>
 
         <div class="brown_page_spacer_top">
@@ -167,13 +179,18 @@ include __DIR__ . '/../../php/analytics.php';
 
         <div class="white_page_span">
           <p></p>
-          <h1 class="header_one"><?php echo htmlspecialchars($pageTitle); ?></h1>
+          <h1 class="header_one"><?php echo htmlspecialchars($displayTitle); ?></h1>
           <p></p>
-          <div class="published-date"><?php echo $locale === 'fr' ? 'Publié' : 'Published'; ?> 2026-02-28</div>
+          <div class="published-date"><?php echo $locale === 'fr' ? 'Publié' : ($locale === 'de' ? 'Veröffentlicht' : 'Published'); ?> 2026-02-28</div>
 
           <span class="span_text_box">
             <?php if ($locale === 'fr'): ?>
               <?php include __DIR__ . '/content-fr.php'; ?>
+            <?php elseif ($locale === 'de' && $hasDeContent): ?>
+              <?php include $deContentPath; ?>
+            <?php elseif ($locale === 'de'): ?>
+              <p><em>Hinweis: Eine vollstaendige deutsche Version dieser Seite folgt bald. Derzeit wird die englische Fassung angezeigt.</em></p>
+              <?php include __DIR__ . '/content-en.php'; ?>
             <?php else: ?>
 							<?php include __DIR__ . '/content-en.php'; ?>
 

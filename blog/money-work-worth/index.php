@@ -2,19 +2,25 @@
 include __DIR__ . '/../../php/i18n.php';
 $locale = get_current_locale();
 $articlePath = '/blog/money-work-worth/';
+$deContentPath = __DIR__ . '/content-de.php';
+$hasDeContent = is_readable($deContentPath);
 
 $pageTitle = $locale === 'fr'
 	? 'Argent = Travail = Valeur : une histoire que nous avons tous héritée'
-	: 'Money = Work = Worth: A Story We’ve All Inherited';
+	: ($locale === 'de'
+		? 'Geld = Arbeit = Wert: Eine Geschichte, die wir alle geerbt haben'
+		: 'Money = Work = Worth: A Story We’ve All Inherited');
 
 $metaDescriptionEn = 'How the equation of "work = worth" drives overproduction, overconsumption, and hides real contribution. Rethink value in a sustainable, regenerative economy.';
 $metaDescriptionFr = 'Comment l’équation « travail = valeur » alimente la surproduction et la surconsommation, tout en invisibilisant des contributions essentielles. Repenser la valeur dans une économie régénérative.';
+$metaDescriptionDe = 'Wie die Gleichung "Arbeit = Wert" Ueberproduktion und Ueberkonsum antreibt und echte Beitraege unsichtbar macht. Wert in einer regenerativen Wirtschaft neu denken.';
 
 $metaKeywordsEn = 'Money, Work, Worth, Economy, Sustainability, Regenerative, Blog';
 $metaKeywordsFr = 'Argent, Travail, Valeur, Économie, Durabilité, Régénératif, Blog';
+$metaKeywordsDe = 'Geld, Arbeit, Wert, Wirtschaft, Nachhaltigkeit, regenerativ, Blog';
 
-$metaDescription = $locale === 'fr' ? $metaDescriptionFr : $metaDescriptionEn;
-$metaKeywords = $locale === 'fr' ? $metaKeywordsFr : $metaKeywordsEn;
+$metaDescription = $locale === 'fr' ? $metaDescriptionFr : ($locale === 'de' ? $metaDescriptionDe : $metaDescriptionEn);
+$metaKeywords = $locale === 'fr' ? $metaKeywordsFr : ($locale === 'de' ? $metaKeywordsDe : $metaKeywordsEn);
 
 $canonicalUrl = localized_url($articlePath, $locale);
 
@@ -36,6 +42,7 @@ include __DIR__ . '/../../php/analytics.php';
 		<link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl); ?>" />
 		<link rel="alternate" hreflang="en" href="<?php echo htmlspecialchars(localized_url($articlePath, 'en')); ?>" />
 		<link rel="alternate" hreflang="fr" href="<?php echo htmlspecialchars(localized_url($articlePath, 'fr')); ?>" />
+		<link rel="alternate" hreflang="de" href="<?php echo htmlspecialchars(localized_url($articlePath, 'de')); ?>" />
 		<link rel="alternate" hreflang="x-default" href="<?php echo htmlspecialchars(localized_url($articlePath, 'en')); ?>" />
 		<title><?php echo htmlspecialchars($pageTitle); ?></title>
 		<meta property="og:title" content="<?php echo htmlspecialchars($pageTitle); ?>">
@@ -107,7 +114,7 @@ include __DIR__ . '/../../php/analytics.php';
 			<div id="landing_page" >
 				<div style="padding-left: 15%;width: 85%; top: 30%;position: relative;height: 5%;"></div>
 				<div class="intro_box"><br>
-					<b><?php echo $locale === 'fr' ? 'Partie 2/7' : 'Part 2/7'; ?></b><br><?php echo htmlspecialchars($pageTitle); ?>
+					<b><?php echo $locale === 'fr' ? 'Partie 2/7' : ($locale === 'de' ? 'Teil 2/7' : 'Part 2/7'); ?></b><br><?php echo htmlspecialchars($pageTitle); ?>
 				</div>
 				<div class="brown_page_spacer_top">
 					<p></p>
@@ -117,10 +124,15 @@ include __DIR__ . '/../../php/analytics.php';
 					<p></p>
 					<h1 class="header_one"><?php echo htmlspecialchars($pageTitle); ?></h1>
 					<p></p>
-					<div style="color: #888; font-size: 0.95em; margin-bottom: 1em;"><?php echo $locale === 'fr' ? 'Publié' : 'Published'; ?> 2025-06-24</div>
+					<div style="color: #888; font-size: 0.95em; margin-bottom: 1em;"><?php echo $locale === 'fr' ? 'Publié' : ($locale === 'de' ? 'Veröffentlicht' : 'Published'); ?> 2025-06-24</div>
 					<span class="span_text_box">
 						<?php if ($locale === 'fr'): ?>
 							<?php include __DIR__ . '/content-fr.php'; ?>
+						<?php elseif ($locale === 'de' && $hasDeContent): ?>
+							<?php include $deContentPath; ?>
+						<?php elseif ($locale === 'de'): ?>
+							<p><em>Hinweis: Eine vollständige deutsche Version folgt bald. Derzeit wird die englische Fassung angezeigt.</em></p>
+							<?php include __DIR__ . '/content-en.php'; ?>
 						<?php else: ?>
 							<?php include __DIR__ . '/content-en.php'; ?>
 						<?php endif; ?>

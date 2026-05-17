@@ -38,6 +38,23 @@
 		</div>
 
 		<div class="framing-box" style="margin-top: 18px;">
+			<h3>Théorie du changement en pratique</h3>
+			<p style="margin-bottom: 0;">
+				<strong>Activités</strong><br>
+				Mécanismes qui attribuent une valeur à la Nature au sein des transactions<br><br>
+
+				<strong>Résultats directs</strong><br>
+				Augmentation de la participation et circulation des incitations<br><br>
+
+				<strong>Résultats</strong><br>
+				Évolution des décisions du quotidien et de l’allocation des dépenses<br><br>
+
+				<strong>Impact</strong><br>
+				Réduction de la pression sur les écosystèmes et renforcement de la régénération
+			</p>
+		</div>
+		
+		<div class="framing-box" style="margin-top: 18px;">
 			<h3>Comment cela s’articule</h3>
 			<p><strong>Théorie du changement</strong><br>
 			Le cadre conceptuel : comment un changement systémique pourrait émerger.</p>
@@ -243,6 +260,7 @@
 				<li><a class="link" href="<?php echo htmlspecialchars(localized_path('/blog/money-work-worth/', $locale)); ?>">Argent = Travail = Valeur — essai</a></li>|
 				<li><a class="link" href="<?php echo htmlspecialchars(localized_path('/blog/what-if-stewardship-was-financially-recognised/', $locale)); ?>">Préservation reconnue — essai</a></li>|
 				<li><a class="link" href="<?php echo htmlspecialchars(localized_path('/blog/why-the-swiss-said-no-to-free-money/', $locale)); ?>">Pourquoi les Suisses ont dit non — essai</a></li>|
+				<li><a class="link" href="<?php echo htmlspecialchars(localized_path('/blog/making-natural-capital-visible-in-everyday-transactions/', $locale)); ?>">Des mandats de banque centrale aux transactions quotidiennes — essai</a></li>|
 				<li><a class="link" href="<?php echo htmlspecialchars(localized_path('/contact/', $locale)); ?>">Contacter l’équipe</a></li>
 			</ul>
 		</div>

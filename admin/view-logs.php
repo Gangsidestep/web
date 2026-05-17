@@ -1,6 +1,7 @@
 <?php
 // Session-based admin authentication (avoids browser basic-auth popups).
 session_start();
+header('X-Robots-Tag: noindex, nofollow, noarchive', true);
 $creds_file = __DIR__ . '/../../php_private/admin_credentials.php';
 $creds = is_readable($creds_file) ? include $creds_file : null;
 if (!is_array($creds) || !isset($creds['user'], $creds['pass_hash'])) {
@@ -57,6 +58,15 @@ function detect_obvious_bot($visit) {
     }
   }
 
+  // Also consider server-side computed suspicious visitors (rate/ASN)
+  global $SUSPICIOUS_VISITORS;
+  if (!empty($SUSPICIOUS_VISITORS)) {
+    $key = isset($visit['visitor_id']) && $visit['visitor_id'] !== '' ? $visit['visitor_id'] : ('ip:' . ($visit['ip'] ?? ''));
+    if (isset($SUSPICIOUS_VISITORS[$key])) {
+      return ['is_bot' => true, 'reason' => 'suspicious (rate/asn)'];
+    }
+  }
+
   return ['is_bot' => false, 'reason' => ''];
 }
 
@@ -65,6 +75,98 @@ function visit_matches_bot_filter($visit, $mode) {
   if ($mode === 'all') return true;
   $info = detect_obvious_bot($visit);
   return $mode === 'bots' ? !empty($info['is_bot']) : empty($info['is_bot']);
+}
+
+// --- CSV Export endpoint ---
+if (isset($_GET['action']) && $_GET['action'] === 'export_csv') {
+    $log_file = '/home/clients/a87f9485d236547310279906c2e64cab/web/php/analytics/visits.log';
+    $raw_lines = (file_exists($log_file) ? @file($log_file) : []) ?: [];
+    $all_export_visits = [];
+    foreach ($raw_lines as $line) {
+        $d = json_decode($line, true);
+        if (!$d) continue;
+        $all_export_visits[] = $d;
+    }
+
+    // Populate SUSPICIOUS_VISITORS for rate/ASN-based bot detection
+    $SUSPICIOUS_VISITORS = [];
+    $by_key = [];
+    foreach ($all_export_visits as $v) {
+        $key = isset($v['visitor_id']) && $v['visitor_id'] !== '' ? $v['visitor_id'] : ('ip:' . ($v['ip'] ?? ''));
+        $ts  = strtotime($v['timestamp'] ?? '');
+        if ($ts === false) continue;
+        $by_key[$key][] = $ts;
+    }
+    foreach ($by_key as $key => $times) {
+        sort($times);
+        $n = count($times);
+        for ($i = 0; $i < $n; $i++) {
+            $j = $i;
+            while ($j < $n && $times[$j] <= $times[$i] + 5) $j++;
+            if ($j - $i >= 10) { $SUSPICIOUS_VISITORS[$key] = true; break; }
+        }
+    }
+    $ip_cache_file = __DIR__ . '/../api/ip_country.json';
+    if (file_exists($ip_cache_file)) {
+        $raw_cache = @file_get_contents($ip_cache_file);
+        $ip_cache = $raw_cache ? json_decode($raw_cache, true) : [];
+        if (is_array($ip_cache)) {
+            $suspicious_asns = ['AS204770'];
+            foreach ($all_export_visits as $v) {
+                $ip = $v['ip'] ?? '';
+                if (!$ip) continue;
+                if (isset($ip_cache[$ip]['asn']) && in_array($ip_cache[$ip]['asn'], $suspicious_asns, true)) {
+                    $key = isset($v['visitor_id']) && $v['visitor_id'] !== '' ? $v['visitor_id'] : ('ip:' . $ip);
+                    $SUSPICIOUS_VISITORS[$key] = true;
+                }
+            }
+        }
+    }
+
+    $bot_filter     = get_bot_filter_mode($_GET['bot_filter'] ?? 'all');
+    $start_date     = isset($_GET['start_date']) && $_GET['start_date'] !== '' ? convertDate($_GET['start_date']) : null;
+    $end_date       = isset($_GET['end_date'])   && $_GET['end_date']   !== '' ? convertDate($_GET['end_date'])   : null;
+    $filter_page    = isset($_GET['page'])        ? trim($_GET['page'])        : '';
+    $filter_visitor = isset($_GET['visitor_id'])  ? trim($_GET['visitor_id'])  : '';
+
+    $results = [];
+    foreach ($all_export_visits as $v) {
+        $ts = $v['timestamp'] ?? '';
+        if (!$ts) continue;
+        if (!visit_matches_bot_filter($v, $bot_filter)) continue;
+        $date = substr($ts, 0, 10);
+        if ($start_date && $date < $start_date) continue;
+        if ($end_date   && $date > $end_date)   continue;
+        $p   = $v['page'] ?? '';
+        if ($filter_page !== '' && $p !== $filter_page) continue;
+        $vid = $v['visitor_id'] ?? '';
+        if ($filter_visitor !== '' && $vid !== $filter_visitor) continue;
+        $bot_info = detect_obvious_bot($v);
+        $results[] = [
+            $ts,
+            $v['ip'] ?? '',
+            $vid,
+            $p,
+            $v['referer'] ?? '',
+            $v['user_agent'] ?? '',
+            !empty($bot_info['is_bot']) ? 'true' : 'false',
+            $bot_info['reason'] ?? '',
+        ];
+    }
+    usort($results, function($a, $b) { return strcmp($a[0], $b[0]); });
+
+    $filename = 'visits_export_' . date('Ymd_His') . '.csv';
+    header('Content-Type: text/csv; charset=utf-8');
+    header('Content-Disposition: attachment; filename="' . $filename . '"');
+    header('Cache-Control: no-cache, no-store');
+    header('Pragma: no-cache');
+    $out = fopen('php://output', 'w');
+    fputcsv($out, ['timestamp', 'ip', 'visitor_id', 'page', 'referer', 'user_agent', 'is_bot', 'bot_reason']);
+    foreach ($results as $row) {
+        fputcsv($out, $row);
+    }
+    fclose($out);
+    exit;
 }
 
 // --- AJAX handler for small operations (unique visitors table, timeseries JSON) ---
@@ -296,24 +398,81 @@ $selected = $_GET['log'] ?? 'Analytics Log';
 $file = $log_files[$selected] ?? null;
 $lines = $file && file_exists($file) ? @file($file) : [];
 $bot_filter = get_bot_filter_mode($_GET['bot_filter'] ?? 'all');
-$visits = [];
+$all_visits = [];
 $page_views = [];
 $referers = [];
 $daily_visits = [];
+// --- server-side heuristics: rate + ASN
+$SUSPICIOUS_VISITORS = []; // will be populated below
+$RATE_THRESHOLD = 10; // requests
+$RATE_WINDOW = 5; // seconds
+$SUSPICIOUS_ASNS = [
+  'AS204770', // Cherry Servers (example)
+];
+
+// First, parse all log lines into $all_visits without filtering so heuristics can run
 foreach ($lines as $line) {
-    $data = json_decode($line, true);
-    if (!$data) continue;
-  if (!visit_matches_bot_filter($data, $bot_filter)) continue;
-    $visits[] = $data;
-    $page = $data['page'];
-    $page_views[$page] = ($page_views[$page] ?? 0) + 1;
-    $referer = $data['referer'] ?? 'direct';
-    if ($referer !== 'direct') {
-        $referer_host = parse_url($referer, PHP_URL_HOST) ?? $referer;
-        $referers[$referer_host] = ($referers[$referer_host] ?? 0) + 1;
+  $data = json_decode($line, true);
+  if (!$data) continue;
+  $all_visits[] = $data;
+}
+
+// Build rate-window index per visitor (visitor_id preferred, else ip)
+$by_key = [];
+foreach ($all_visits as $v) {
+  $key = isset($v['visitor_id']) && $v['visitor_id'] !== '' ? $v['visitor_id'] : ('ip:' . ($v['ip'] ?? ''));
+  $ts = strtotime($v['timestamp'] ?? '');
+  if ($ts === false) continue;
+  $by_key[$key][] = $ts;
+}
+foreach ($by_key as $key => $times) {
+  sort($times);
+  $n = count($times);
+  for ($i = 0; $i < $n; $i++) {
+    $start = $times[$i];
+    $j = $i;
+    while ($j < $n && $times[$j] <= $start + $RATE_WINDOW) $j++;
+    $cnt = $j - $i;
+    if ($cnt >= $RATE_THRESHOLD) { // mark suspicious
+      $SUSPICIOUS_VISITORS[$key] = true;
+      break;
     }
-    $date = substr($data['timestamp'] ?? '', 0, 10);
-    if ($date) $daily_visits[$date] = ($daily_visits[$date] ?? 0) + 1;
+  }
+}
+// ASN-based marking using API cache when available
+$ip_cache_file = __DIR__ . '/../api/ip_country.json';
+if (file_exists($ip_cache_file)) {
+  $raw = @file_get_contents($ip_cache_file);
+  $ip_cache = $raw ? json_decode($raw, true) : [];
+  if (is_array($ip_cache)) {
+    foreach ($all_visits as $v) {
+      $ip = $v['ip'] ?? '';
+      if (!$ip) continue;
+      if (isset($ip_cache[$ip]['asn'])) {
+        $asn = $ip_cache[$ip]['asn'];
+        if (in_array($asn, $SUSPICIOUS_ASNS, true)) {
+          $key = isset($v['visitor_id']) && $v['visitor_id'] !== '' ? $v['visitor_id'] : ('ip:' . $ip);
+          $SUSPICIOUS_VISITORS[$key] = true;
+        }
+      }
+    }
+  }
+}
+
+// Now apply the bot filter to produce the $visits list used by the UI
+$visits = [];
+foreach ($all_visits as $data) {
+  if (!visit_matches_bot_filter($data, $bot_filter)) continue;
+  $visits[] = $data;
+  $page = $data['page'];
+  $page_views[$page] = ($page_views[$page] ?? 0) + 1;
+  $referer = $data['referer'] ?? 'direct';
+  if ($referer !== 'direct') {
+    $referer_host = parse_url($referer, PHP_URL_HOST) ?? $referer;
+    $referers[$referer_host] = ($referers[$referer_host] ?? 0) + 1;
+  }
+  $date = substr($data['timestamp'] ?? '', 0, 10);
+  if ($date) $daily_visits[$date] = ($daily_visits[$date] ?? 0) + 1;
 }
 $timeline_labels = array_keys($daily_visits);
 $timeline_data = array_values($daily_visits);
@@ -339,6 +498,29 @@ echo '</select></label>';
 echo ' <button type="submit">Filter</button>';
 echo ' <span style="font-size:0.82em;color:#aaa;margin-left:8px;">Bot detection is based on obvious user-agent matches.</span>';
 echo '</form>';
+echo '<div style="margin-bottom:10px;">';
+echo '<button id="export_period_btn" style="font-size:0.85em;background:#1a3a2a;color:#7fcfa0;border:1px solid #4bc08a;border-radius:4px;padding:4px 10px;cursor:pointer;">&#8595; Export period data (CSV)</button>';
+echo ' <span style="font-size:0.78em;color:#aaa;margin-left:6px;">Exports all visits matching current date range &amp; traffic filter (no page/hash filter).</span>';
+echo '</div>';
+echo '<script>';
+echo '(function(){';
+echo '  var btn = document.getElementById("export_period_btn");';
+echo '  if (!btn) return;';
+echo '  btn.addEventListener("click", function(){';
+echo '    var form = document.getElementById("dateFilterForm");';
+echo '    var params = new URLSearchParams({ action: "export_csv" });';
+echo '    if (form) {';
+echo '      var sd = form.start_date ? form.start_date.value : "";';
+echo '      var ed = form.end_date   ? form.end_date.value   : "";';
+echo '      if (sd) params.set("start_date", sd);';
+echo '      if (ed) params.set("end_date",   ed);';
+echo '    }';
+echo '    var bfSel = document.getElementById("botFilterSelect");';
+echo '    params.set("bot_filter", bfSel ? (bfSel.value || "all") : "all");';
+echo '    window.open(window.location.pathname + "?" + params.toString(), "_blank");';
+echo '  });';
+echo '})();';
+echo '</script>';
 echo '<div id="uniqueVisitorsTable">';
 echo '<h2 id="uvToggle" style="cursor:pointer;user-select:none;">Unique Visitors Per Page <span id="uvArrow" style="font-size:0.75em;color:#aaa;">&#9658;</span></h2>';
 echo '<div id="uvContent" style="display:none;">';
@@ -430,6 +612,8 @@ echo <<<'IPHTML'
   <label style="font-size:0.85em;">Page filter: <select id="ip_page" style="font-size:0.9em;min-width:200px;"><option value="">All pages</option></select></label>
   <label style="font-size:0.85em;">Visitor hash: <input type="text" id="ip_visitor" placeholder="e.g. 9d2f..." style="font-size:0.9em;min-width:180px;"></label>
   <button id="ip_load" style="font-size:0.85em;">Load</button>
+  <button id="export_filtered_btn" style="font-size:0.85em;background:#1a2a3a;color:#7fc0f0;border:1px solid #4b90c0;border-radius:4px;padding:4px 10px;cursor:pointer;margin-left:6px;">&#8595; Export filtered (CSV)</button>
+  <span style="font-size:0.78em;color:#aaa;margin-left:6px;">Exports all rows matching every filter above.</span>
 </div>
 <div style="display:flex;gap:0.5em;align-items:center;flex-wrap:wrap;margin-bottom:0.75em;">
   <label style="font-size:0.85em;"><input type="checkbox" id="ip_exclude_mine"> Exclude my activity</label>
@@ -467,10 +651,11 @@ echo <<<'IPHTML'
     <th id="journeySortUniqueBtn" style="padding:6px 8px;text-align:left;cursor:pointer;user-select:none;">Unique Pages <span id="journeySortUniqueArrow">&#8597;</span></th>
     <th id="journeySortFirstBtn" style="padding:6px 8px;text-align:left;cursor:pointer;user-select:none;">First Seen <span id="journeySortFirstArrow">&#8597;</span></th>
     <th id="journeySortLastBtn" style="padding:6px 8px;text-align:left;cursor:pointer;user-select:none;">Last Seen <span id="journeySortLastArrow">&#8597;</span></th>
+    <th style="padding:6px 8px;text-align:left;">Country</th>
     <th style="padding:6px 8px;text-align:left;">IP(s)</th>
     <th style="padding:6px 8px;text-align:left;">Journey (sample)</th>
   </tr></thead>
-  <tbody id="journey_tbody"><tr><td colspan="8" style="padding:8px;color:#888;">Load visit data to build journeys.</td></tr></tbody>
+  <tbody id="journey_tbody"><tr><td colspan="9" style="padding:8px;color:#888;">Load visit data to build journeys.</td></tr></tbody>
 </table>
 </div>
 IPHTML;
@@ -613,6 +798,21 @@ echo <<<'IPJS'
   });
 
   document.getElementById("ip_load").addEventListener("click", loadIpData);
+
+  document.getElementById("export_filtered_btn").addEventListener("click", function(){
+    var start = document.getElementById("ip_start").value;
+    var end   = document.getElementById("ip_end").value;
+    var page  = document.getElementById("ip_page").value;
+    var visitorHash = document.getElementById("ip_visitor").value.trim();
+    var botFilterSelect = document.getElementById("botFilterSelect");
+    var params = new URLSearchParams({ action: "export_csv" });
+    if (start) params.set("start_date", start);
+    if (end)   params.set("end_date",   end);
+    if (page)  params.set("page",       page);
+    if (visitorHash) params.set("visitor_id", visitorHash);
+    params.set("bot_filter", botFilterSelect ? (botFilterSelect.value || "all") : "all");
+    window.open(window.location.pathname + "?" + params.toString(), "_blank");
+  });
   document.getElementById("ip_exclude_mine").addEventListener("change", renderFromRows);
   document.getElementById("journey_repeat_only").addEventListener("change", function(){
     saveJourneyRepeatOnly(this.checked);
@@ -676,7 +876,7 @@ echo <<<'IPJS'
 
     if(!rows.length){
       tbody.innerHTML = "<tr><td colspan='7' style='padding:8px;color:#888;'>No results for selected period.</td></tr>";
-      journeyTbody.innerHTML = "<tr><td colspan='8' style='padding:8px;color:#888;'>No journeys for selected period.</td></tr>";
+      journeyTbody.innerHTML = "<tr><td colspan='9' style='padding:8px;color:#888;'>No journeys for selected period.</td></tr>";
       document.getElementById("ip_summary").textContent = "0 visits";
       return;
     }
@@ -686,7 +886,7 @@ echo <<<'IPJS'
 
     if(!displayed.length){
       tbody.innerHTML = "<tr><td colspan='7' style='padding:8px;color:#888;'>All rows are excluded as your own activity.</td></tr>";
-      journeyTbody.innerHTML = "<tr><td colspan='8' style='padding:8px;color:#888;'>No journeys after exclusion.</td></tr>";
+      journeyTbody.innerHTML = "<tr><td colspan='9' style='padding:8px;color:#888;'>No journeys after exclusion.</td></tr>";
       document.getElementById("ip_summary").textContent = "0 visits after exclusion";
       return;
     }
@@ -697,19 +897,50 @@ echo <<<'IPJS'
     document.getElementById("ip_summary").textContent =
       displayed.length + " visit(s) · " + Object.keys(ips).length + " unique IP(s) · " + Object.keys(hashes).length + " unique hash(es)" + (excludeMine ? " · mine excluded" : "");
 
-    // Helper to fetch country code for an IP (client-side, free API, with cache)
+    // Helper to fetch country info for an IP (client-side, cached).
+    // Returns an object { code: 'US', name: 'United States' } via callback.
     var countryCache = {};
-    function fetchCountry(ip, cb) {
-      if (!ip) { cb(""); return; }
+    function fetchCountryRaw(ip, cb) {
+      if (!ip) { cb(null); return; }
       if (countryCache[ip]) { cb(countryCache[ip]); return; }
-      fetch("/php/ip_country_lookup.php?ip=" + encodeURIComponent(ip))
+      fetch("/api/ip_country_lookup.php?ip=" + encodeURIComponent(ip))
         .then(function(r){ return r.json(); })
         .then(function(data){
-          var code = (data && data.country && data.country.length === 2) ? data.country : "";
-          countryCache[ip] = code;
-          cb(code);
+          var out = { code: '', name: '' };
+          if (data && data.country) {
+            var c = String(data.country).trim();
+            if (c.length === 2) {
+              out.code = c.toUpperCase();
+              try {
+                if (typeof Intl !== 'undefined' && Intl.DisplayNames) {
+                  var dn = new Intl.DisplayNames(['en'], {type: 'region'});
+                  out.name = dn.of(out.code) || out.code;
+                } else {
+                  out.name = out.code;
+                }
+              } catch(e){ out.name = out.code; }
+            } else {
+              // API returned a longer name (use as name)
+              out.name = c;
+              // attempt to extract a code if available in data.code or country_code
+              if (data.country_code && String(data.country_code).trim().length === 2) out.code = String(data.country_code).trim().toUpperCase();
+            }
+          } else if (data && data.country_code) {
+            out.code = String(data.country_code).trim().toUpperCase();
+            try { if (typeof Intl !== 'undefined' && Intl.DisplayNames) out.name = new Intl.DisplayNames(['en'], {type:'region'}).of(out.code) || out.code; else out.name = out.code; } catch(e){ out.name = out.code; }
+          }
+          countryCache[ip] = out;
+          cb(out);
         })
-        .catch(function(){ cb(""); });
+        .catch(function(){ cb(null); });
+    }
+
+    function getCountryCode(ip, cb) {
+      fetchCountryRaw(ip, function(o){ cb(o && o.code ? o.code : ''); });
+    }
+
+    function getCountryName(ip, cb) {
+      fetchCountryRaw(ip, function(o){ if (o) cb(o.name || o.code || ''); else cb(''); });
     }
 
     displayed.forEach(function(r){
@@ -731,7 +962,7 @@ echo <<<'IPJS'
         "<td style='padding:5px 8px;' title='" + escAttr(ref) + "'>" + escHtml(refShort) + "</td>" +
         "<td style='padding:5px 8px;' title='" + escAttr(ua) + "'>" + escHtml(uaShort) + "</td>";
       tbody.appendChild(tr);
-      fetchCountry(r.ip, function(code){
+      getCountryCode(r.ip, function(code){
         var cell = document.getElementById(countryCellId);
         if(cell) cell.textContent = code;
       });
@@ -800,9 +1031,20 @@ echo <<<'IPJS'
         "<td style='padding:5px 8px;'>" + g.uniquePages + "</td>" +
         "<td style='padding:5px 8px;white-space:nowrap;'>" + escHtml(g.firstSeen) + "</td>" +
         "<td style='padding:5px 8px;white-space:nowrap;'>" + escHtml(g.lastSeen) + "</td>" +
+        "<td id='country-group-" + escAttr(g.key) + "' style='padding:5px 8px;white-space:nowrap;text-align:left;'></td>" +
         "<td style='padding:5px 8px;font-family:monospace;'>" + escHtml(g.ipList.join(", ")) + "</td>" +
         "<td style='padding:5px 8px;'>" + escHtml(g.samplePath) + "</td>";
       journeyTbody.appendChild(tr);
+      // populate country for the group's first IP (if any)
+      (function(firstIp, key){
+        if (!firstIp) return;
+        getCountryName(firstIp, function(name){
+          try {
+            var el = document.getElementById('country-group-' + key);
+            if (el) el.textContent = name || '';
+          } catch(e){}
+        });
+      })(g.ipList && g.ipList.length ? g.ipList[0] : '', encodeURIComponent(String(g.key)));
     });
   }
 

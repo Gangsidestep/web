@@ -6,14 +6,14 @@ $isDe = $locale === 'de';
 $articlePath = '/blog/nature-is-not-a-charity/';
 
 $pageTitle = $isDe
-  ? 'Natur ist keine Wohltätigkeit — sie ist ein wirtschaftlicher Imperativ'
+  ? 'Natur ist keine Wohltätigkeit — ein wirtschaftlicher Imperativ'
   : ($isFr
-    ? "La Nature n'est pas une charité — c'est une nécessité"
-    : 'Nature is Not a Charity—It\'s an Economic Imperative');
+    ? "La Nature n'est pas une charité — c'est un impératif économique"
+    : 'Nature Is Not a Charity: An Economic Imperative');
 
-$metaDescriptionEn = 'Why we must move beyond charity and make Nature central to our economy. Nature\'s value is an economic imperative for a sustainable future.';
+$metaDescriptionEn = 'Why Nature cannot be treated as charity and must be recognized as economic infrastructure in a sustainable, resilient economy.';
 $metaDescriptionFr = "Pourquoi la Nature ne peut pas dépendre des dons. Vers une économie où les choix durables sont reconnus, valorisés et alignés avec le capital naturel.";
-$metaDescriptionDe = 'Warum Natur nicht auf Wohltätigkeit angewiesen sein kann. Hin zu einer Wirtschaft, in der nachhaltige Entscheidungen erkannt, bewertet und am Naturkapital ausgerichtet sind.';
+$metaDescriptionDe = 'Warum Natur nicht als Wohltätigkeit behandelt werden darf, sondern als wirtschaftliche Grundlage einer nachhaltigen und resilienten Zukunft.';
 
 $metaKeywordsEn = 'Nature, charity, economic imperative, regenerative economy, sustainable choices, natural capital, ecological value';
 $metaKeywordsFr = 'Nature, charité, économie régénérative, choix durables, capital naturel, durabilité, valeur écologique';

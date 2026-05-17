@@ -1,3 +1,9 @@
+<?php
+$canonicalUrl = $canonicalUrl ?? 'https://mydropintheoceans.org/blog/make-money-first-then-think-of-nature/';
+$pageTitle = $pageTitle ?? 'Make Money First, Then (Maybe) Think of Nature';
+$locale = $locale ?? 'en';
+?>
+
 <p>There is a phrase that quietly governs much of our modern economy:</p>
 
 <blockquote>First make money.<br>

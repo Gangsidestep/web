@@ -1,5 +1,6 @@
 <?php
 session_start();
+header('X-Robots-Tag: noindex, nofollow, noarchive', true);
 $creds_file = __DIR__ . '/../../php_private/admin_credentials.php';
 $creds = is_readable($creds_file) ? include $creds_file : null;
 if (!is_array($creds) || !isset($creds['user'], $creds['pass_hash'])) {
@@ -28,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
   <meta charset="utf-8">
   <title>Admin Login</title>
+  <meta name="robots" content="noindex, nofollow, noarchive">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>body{font-family:Arial,Helvetica,sans-serif;background:#f5f6f7;color:#111;padding:2em}form{max-width:360px;margin:1em auto;padding:1em;background:#fff;border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,.08)}label{display:block;margin:0.5em 0 0.2em}input{width:100%;padding:.5em;margin-bottom:.5em}button{padding:.6em 1em}</style>
 </head>

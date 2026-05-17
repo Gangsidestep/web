@@ -1,6 +1,11 @@
 <?php
-// German home page body content — Swiss German interpretation
-// Variables available: $locale, $canonicalUrl
+// DISABLED: German content file removed to fix search indexation
+// All content now served in English only
+// If called directly as a page, redirect to English home
+if (basename($_SERVER['PHP_SELF']) === 'home-de.php') {
+    header('Location: https://mydropintheoceans.org/', true, 301);
+    exit;
+}
 ?>
 <h1 class="header_one">Eine Wirtschaft, die für die Natur funktioniert</h1>
 <p></p>

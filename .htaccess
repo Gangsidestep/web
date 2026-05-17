@@ -1,4 +1,39 @@
+# Core rewrite engine
 RewriteEngine On
+
+# ---------------- Security: managed blocklist (auto-generated) ----------------
+# MANAGED_BLOCK_START
+# Managed block inserted by scripts/update_htaccess_blocklist.sh
+# Do not edit between MANAGED_BLOCK_START and MANAGED_BLOCK_END
+# To update, edit blocked_ips.txt and run scripts/update_htaccess_blocklist.sh
+
+# Block IP 134.185.89.90
+RewriteCond %{REMOTE_ADDR} ^134.185.89.90$
+RewriteRule .* - [F,L]
+
+# Block requests attempting PHP -d overrides or referencing known attacker domains
+RewriteCond %{QUERY_STRING} (?:-dauto_prepend_file|-ddisable_functions|-dallow_url_include|-dallow_url_fopen|happymatures\.com) [NC]
+RewriteRule .* - [F,L]
+
+# Block suspicious automated User-Agent signatures
+RewriteCond %{HTTP_USER_AGENT} PrivateMonitor [NC]
+RewriteRule .* - [F,L]
+
+# Block WordPress REST API probes (this is not a WordPress site)
+RewriteCond %{QUERY_STRING} rest_route= [NC]
+RewriteRule .* - [F,L]
+
+# Block WordPress author enumeration scans
+RewriteCond %{QUERY_STRING} ^author=\d [NC]
+RewriteRule .* - [F,L]
+
+# Mark internal utility areas as non-indexable
+RewriteRule ^login/ - [E=NOINDEX:1]
+RewriteRule ^HR/ - [E=NOINDEX:1]
+RewriteRule ^community/action\.php$ - [E=NOINDEX:1]
+
+# MANAGED_BLOCK_END
+# -------------------------------------------------------------------------
 # Canonical host: force www -> non-www in one hop
 RewriteCond %{HTTP_HOST} ^www\.mydropintheoceans\.org$ [NC]
 RewriteRule ^ https://mydropintheoceans.org%{REQUEST_URI} [R=301,L]
@@ -9,19 +44,42 @@ RewriteRule ^favicon\.ico$ https://%{HTTP_HOST}/images/favicon.ico [L,R=301]
 
 # Retire old page: return 410 Gone to accelerate de-indexing
 RewriteRule ^about-mydio(/.*)?$ - [G,L,NC]
+RewriteRule ^index\.php/login$ - [G,L,NC]
+
+# Coverage cleanup: map legacy public URLs to current equivalents
+RewriteRule ^index_fr\.php$ /fr/ [R=301,L,NC]
+RewriteRule ^about/?$ /theory-of-change/ [R=301,L,NC]
+RewriteRule ^how-dio-works/?$ /theory-of-change/ [R=301,L,NC]
+RewriteRule ^blog/nature-is-not-a-$ /blog/nature-is-not-a-charity/ [R=301,L,NC]
+
+# Coverage cleanup: retire private/defunct endpoints so Google drops them faster
+RewriteRule ^community/action\.php$ - [G,L,NC]
+RewriteRule ^community/action-page\.php$ - [G,L,NC]
+RewriteRule ^reward/category\.php$ - [G,L,NC]
+RewriteRule ^login/loggedin/aboutmydio/(about|animation)\.php$ - [G,L,NC]
 
 # Redirect old blog post URLs (blog/post-name.php) to new directory format (blog/post-name/)
+# Specific corrections for old slugs that differ from current directory names
+RewriteRule ^blog/money-work-worth-story-inherited\.php$ /blog/money-work-worth/ [R=301,L,NC]
+RewriteRule ^blog/make-money-first-then-maybe-think-of-nature/?$ https://mydropintheoceans.org/blog/make-money-first-then-think-of-nature/ [R=301,L,NC]
+# Generic rule for remaining .php -> directory redirects
 RewriteRule ^blog/([a-z-]+)\.php$ /blog/$1/ [R=301,L,NC]
 
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Internal locale routing for multilingual URLs
-# /en/... /fr/... and /de/... are rewritten to existing paths while exposing locale via APP_LOCALE
-RewriteRule ^(en|fr|de)/?$ / [QSA,E=APP_LOCALE:$1,L]
+# /en/... redirects to canonical non-prefixed URL (English is default, no prefix needed)
+RewriteRule ^en/?$ https://mydropintheoceans.org/ [R=301,L]
+RewriteRule ^en/(.*)$ https://mydropintheoceans.org/$1 [R=301,L]
+# Canonical locale roots with trailing slash
+RewriteRule ^fr$ /fr/ [R=301,L]
+RewriteRule ^de$ /de/ [R=301,L]
+# /fr/... and /de/... are rewritten to existing paths while exposing locale via APP_LOCALE
+RewriteRule ^(fr|de)/$ / [QSA,E=APP_LOCALE:$1,L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(en|fr|de)/(.*)$ /$2 [QSA,E=APP_LOCALE:$1,L]
+RewriteRule ^(fr|de)/(.*)$ /$2 [QSA,E=APP_LOCALE:$1,L]
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
@@ -35,6 +93,10 @@ RewriteRule ^(en|fr|de)/(.*)$ /$2 [QSA,E=APP_LOCALE:$1,L]
 # Ensure favicon requests are served (avoid 404s)
 Redirect 301 /favicon.ico /images/favicon.ico
 Options -Indexes
+
+<IfModule mod_headers.c>
+Header always set X-Robots-Tag "noindex, nofollow, noarchive" env=NOINDEX
+</IfModule>
 
 SetOutputFilter DEFLATE
 AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml
@@ -85,6 +147,7 @@ RewriteEngine On
 Redirect 301 /home/ https://mydropintheoceans.org/
 Redirect 301 /home https://mydropintheoceans.org/
 Redirect 301 /business/ https://mydropintheoceans.org/
+Redirect 301 /blog/make-money-first/ /blog/make-money-first-then-think-of-nature/
 ################################################################################
 
 ######################### Howto map /~user to /user ############################

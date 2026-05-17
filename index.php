@@ -1,35 +1,14 @@
 <?php
-include_once __DIR__ . '/php/i18n.php';
 include __DIR__ . '/php/analytics.php';
 
-$locale = get_current_locale();
-$isFr = ($locale === 'fr');
-$isDe = ($locale === 'de');
-
-// Canonical URL for this locale
-$canonicalBase = 'https://mydropintheoceans.org';
-$canonicalUrl = $isDe ? $canonicalBase . '/de/' : ($isFr ? $canonicalBase . '/fr/' : $canonicalBase . '/');
-
-// Locale-specific metadata
-if ($isDe) {
-	$pageTitle    = "Eine Wirtschaft, die fuer die Natur funktioniert — My Drop In the Oceans";
-	$pageDesc     = "Ein Rahmen zur Ausrichtung wirtschaftlicher Anreize an der oekologischen Realitaet. Wie eine Buergerdividende fuer die Natur Naturkapital messbar und skalierbar macht.";
-	$pageKeywords = "Buergerdividende fuer die Natur, Naturkapital, oekologische Oekonomie, wirtschaftliche Anreize, Stewardship, naturpositive Wirtschaft";
-	$htmlLang     = 'de';
-} elseif ($isFr) {
-	$pageTitle    = "Une economie qui fonctionne pour la Nature — My Drop In the Oceans";
-	$pageDesc     = "Un cadre pour aligner les incitations economiques sur la realite ecologique. Comment une Dividende pour la Nature rend le capital naturel lisible et a l'echelle.";
-	$pageKeywords = "Dividende citoyenne pour la Nature, capital naturel, economie ecologique, incitations economiques, intendance, economie regeneratrice";
-	$htmlLang     = 'fr';
-} else {
-	$pageTitle    = "Aligning Economy and Nature: A Dividend for Natural Capital — My Drop In the Oceans";
-	$pageDesc     = "A framework to align economic incentives with ecological reality. See how a Dividend for Nature makes natural capital legible and scalable.";
-	$pageKeywords = "Citizen's Dividend for Nature, natural capital, ecological economics, economic incentives, stewardship, nature-positive economy";
-	$htmlLang     = 'en';
-}
+// English-only content (no language variations to prevent phantom URLs)
+$pageTitle    = "Dividend for Nature and Natural Capital | My Drop In The Oceans";
+$pageDesc     = "Explore a practical framework that rewards stewardship, makes natural capital visible, and aligns economic incentives with ecological reality.";
+$pageKeywords = "Citizen's Dividend for Nature, natural capital, ecological economics, economic incentives, stewardship, nature-positive economy";
+$canonicalUrl = "https://mydropintheoceans.org/";
 ?>
 <!doctype html>
-<html lang="<?php echo $htmlLang; ?>">
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,20 +20,14 @@ if ($isDe) {
 	<meta name="author" content="My Drop In The Oceans">
 	<meta name="robots" content="index, follow">
 
-	<link rel="canonical" href="<?php echo $canonicalUrl; ?>">
-
-	<!-- hreflang -->
-	<link rel="alternate" hreflang="en"        href="https://mydropintheoceans.org/">
-	<link rel="alternate" hreflang="fr"        href="https://mydropintheoceans.org/fr/">
-	<link rel="alternate" hreflang="de"        href="https://mydropintheoceans.org/de/">
-	<link rel="alternate" hreflang="x-default" href="https://mydropintheoceans.org/">
+	<link rel="canonical" href="https://mydropintheoceans.org/">
 
 	<!-- Open Graph -->
 	<meta property="og:title"        content="<?php echo htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8'); ?>">
 	<meta property="og:description"  content="<?php echo htmlspecialchars($pageDesc, ENT_QUOTES, 'UTF-8'); ?>">
 	<meta property="og:type"         content="website">
-	<meta property="og:url"          content="<?php echo $canonicalUrl; ?>">
-	<meta property="og:image"        content="https://mydropintheoceans.org/images/social-preview.jpg">
+	<meta property="og:url"          content="https://mydropintheoceans.org/">
+	<meta property="og:image"        content="https://mydropintheoceans.org/images/backdrop_an_economy_linkedin.jpg">
 	<meta property="og:image:type"   content="image/jpeg">
 	<meta property="og:image:width"  content="1200">
 	<meta property="og:image:height" content="630">
@@ -63,7 +36,7 @@ if ($isDe) {
 	<meta name="twitter:card"        content="summary_large_image">
 	<meta name="twitter:title"       content="<?php echo htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8'); ?>">
 	<meta name="twitter:description" content="<?php echo htmlspecialchars($pageDesc, ENT_QUOTES, 'UTF-8'); ?>">
-	<meta name="twitter:image"       content="https://mydropintheoceans.org/images/social-preview.jpg">
+	<meta name="twitter:image"       content="https://mydropintheoceans.org/images/backdrop_an_economy_linkedin.jpg">
 
 	<link rel="icon" href="https://mydropintheoceans.org/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="https://mydropintheoceans.org/images/favicon.ico" type="image/x-icon">

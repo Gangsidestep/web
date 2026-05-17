@@ -1,3 +1,9 @@
+<?php
+$canonicalUrl = $canonicalUrl ?? 'https://mydropintheoceans.org/blog/money-work-worth/';
+$pageTitle = $pageTitle ?? 'Money = Work = Worth: A Story We\'ve All Inherited';
+$locale = $locale ?? 'en';
+?>
+
 <p>How the equation of “work = worth” drives overproduction, overconsumption — and hides real contribution.</p>
 <p>💼 In the dominant economic model, value is produced through work, measured in wages, and expressed in consumption.</p>
 <p>This logic shapes our societies — from self-worth to national policy.<br>📈 At macro levels, GDP — Gross Domestic Product — is the global benchmark of success.</p>
@@ -22,7 +28,7 @@
 <p>In fact: 📌 Market value supersedes moral value.</p>
 <p>🌱 It’s time to break the equation.</p>
 <p>While some consumption is needed to sustains us, stewardship, experience, and care define us.<br>Our economies should reflect that balance, not obscure it.</p>
-<p>🔗 Missed Part 1/7? Read here:</span> <a class="blog-nav-link" href="<?php echo htmlspecialchars(localized_path('/blog/why-the-swiss-said-no-to-free-money/', $locale)); ?>">Why the Swiss Said No to Free Money</a></p>
+<p>🔗 Missed Part 1/7? Read here: <a class="blog-nav-link" href="<?php echo htmlspecialchars(localized_path('/blog/why-the-swiss-said-no-to-free-money/', $locale)); ?>">Why the Swiss Said No to Free Money</a></p>
 <p><span class="blog-nav-label">▶️ Up next:</span> <a class="blog-nav-link" href="<?php echo htmlspecialchars(localized_path('/blog/what-if-stewardship-was-financially-recognised/', $locale)); ?>">What if Stewardship Was Financially Recognised?</a></p>
 <p>💬 Question: If GDP measures only what can be sold, what measures what truly matters?</p>
 <div style="margin-top: 2em; font-size: 0.95em; color: #666;">

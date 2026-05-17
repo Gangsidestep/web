@@ -1,0 +1,15 @@
+# Conservative low-value blocklist (excludes search engines, AI platforms, SEO/intel crawlers)
+# Generated from analytics/visits_export_20260512_165246.csv
+183.207.45.104 # unknown_automated 59 hits
+108.141.166.46 # unknown_automated 55 hits
+3.249.190.146 # automation 45 hits
+2600:1900:0:4003::1a01 # automation 42 hits
+45.148.10.62 # unknown_automated 30 hits
+162.55.167.47 # automation 27 hits
+168.119.25.24 # unknown_automated 26 hits
+3.85.45.96 # unknown_automated 23 hits
+100.24.59.123 # unknown_automated 23 hits
+93.123.109.165 # unknown_automated 20 hits
+65.109.124.105 # automation 16 hits
+4.175.240.139 # unknown_automated 16 hits
+3.71.225.243 # automation 16 hits

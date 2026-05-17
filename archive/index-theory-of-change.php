@@ -1,6 +1,5 @@
 <?php
 echo "<!-- My Drop In The Oceans - Theory of Change -->\n";
-include "/home/clients/a87f9485d236547310279906c2e64cab/php/form_salt.php";
 include __DIR__ . "/../php/analytics.php";
 $form_token="";
 $rand=time();

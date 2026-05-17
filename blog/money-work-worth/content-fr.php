@@ -1,3 +1,9 @@
+<?php
+$canonicalUrl = $canonicalUrl ?? 'https://mydropintheoceans.org/fr/blog/money-work-worth/';
+$pageTitle = $pageTitle ?? 'Argent = Travail = Valeur : une histoire que nous avons tous héritée';
+$locale = $locale ?? 'fr';
+?>
+
 <p>Comment l’équation « travail = valeur » alimente la surproduction, la surconsommation — et invisibilise les contributions essentielles.</p>
 <p>💼 Dans le modèle économique dominant, la valeur est produite par le travail, mesurée par les revenus, puis exprimée par la consommation.</p>
 <p>Cette logique façonne nos sociétés — de l’estime de soi aux politiques publiques.<br>📈 À grande échelle, le PIB — Produit Intérieur Brut — reste l’indicateur global de référence.</p>

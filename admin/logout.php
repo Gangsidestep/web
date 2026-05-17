@@ -1,5 +1,6 @@
 <?php
 session_start();
+header('X-Robots-Tag: noindex, nofollow, noarchive', true);
 $_SESSION = [];
 if (ini_get('session.use_cookies')) {
     $params = session_get_cookie_params();

@@ -5,7 +5,7 @@ include __DIR__ . "/../php/analytics.php";
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<meta name="robots" content="noindex, follow">
+	<meta name="robots" content="index, follow">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 	<meta name="Description" content="Privacy and Cookie Policy for My Drop in The Oceans">
 	<meta name="keywords" content="Privacy Policy, Cookie Policy, Data Protection" />

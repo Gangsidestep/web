@@ -140,9 +140,9 @@
 			}
 		.intro_box{
 					margin-left: 15%;
-					width: 18%;
+					width: fit-content;
 					min-width: 180px;
-					max-width: 600px;
+					max-width: 300px;
 					color: white;
 					position: relative;
 					font-size: 30px;

@@ -6,12 +6,12 @@ include __DIR__ . "/../php/analytics.php";
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<meta name="robots" content="noindex, follow">
+	<meta name="robots" content="index, follow">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-	<meta name="Description" content="My Drop in The Oceans envisions a world in which value for Nature is guaranteed with every consumer choice by virtue of a Global Citizens Dividend for Nature.">
+	<meta name="Description" content="Contact My Drop In The Oceans about partnerships, media requests, and the Dividend for Nature framework that aligns economy and natural capital.">
 	<meta name="keywords" content="Sustainability, Dividend for Nature, Natural Capital," />
 	<link rel="canonical" href="https://mydropintheoceans.org/contact/" />
-	<title>Contact | My Drop in The Oceans</title>
+	<title>Contact My Drop In The Oceans | Partnerships, Media, Questions</title>
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
 	<link rel="stylesheet" type="text/css" href="/css/mydropintheoceans-style.css?v=<?php echo time(); ?>">
 	

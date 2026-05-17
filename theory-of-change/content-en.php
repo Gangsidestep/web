@@ -38,6 +38,23 @@
 		</div>
 
 		<div class="framing-box" style="margin-top: 18px;">
+			<h3>Theory of Change in practice</h3>
+			<p style="margin-bottom: 0;">
+				<strong>Activities</strong><br>
+				Mechanisms that assign value to Nature within transactions<br><br>
+
+				<strong>Outputs</strong><br>
+				Increased participation and circulation of incentives<br><br>
+
+				<strong>Outcomes</strong><br>
+				Shifts in everyday decision-making and allocation of spending<br><br>
+
+				<strong>Impact</strong><br>
+				Reduced pressure on ecosystems and increased regeneration
+			</p>
+		</div>
+
+		<div class="framing-box" style="margin-top: 18px;">
 			<h3>How this fits together</h3>
 			<p><strong>Theory of Change</strong><br>
 			The conceptual framework: how systemic change could happen.</p>
@@ -262,6 +279,7 @@
 				<li><a class="link" href="/blog/money-work-worth/">Money = Work = Worth — essay</a></li>|
 				<li><a class="link" href="/blog/what-if-stewardship-was-financially-recognised/">Stewardship recognised — essay</a></li>|
 				<li><a class="link" href="/blog/why-the-swiss-said-no-to-free-money/">Why the Swiss Said No to Free Money — essay</a></li>|
+				<li><a class="link" href="/blog/making-natural-capital-visible-in-everyday-transactions/">From Central Bank Mandates to Everyday Transactions — essay</a></li>|
 				<li><a class="link" href="/contact/">Contact the team</a></li>
 			</ul>
 		</div>

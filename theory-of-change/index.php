@@ -1,6 +1,5 @@
 <?php
-echo "<!-- My Drop In The Oceans - Theory of Change -->\n";
-include "/home/clients/a87f9485d236547310279906c2e64cab/php/form_salt.php";
+//echo "<!-- My Drop In The Oceans - Theory of Change -->\n"
 include __DIR__ . "/../php/i18n.php";
 include __DIR__ . "/../php/analytics.php";
 $form_token = "";
@@ -14,16 +13,16 @@ $isFr = $locale === 'fr';
 $isDe = $locale === 'de';
 
 $pageTitle = $isFr
-	? 'Théorie du changement : aligner l’économie et la nature à grande échelle'
+	? 'Théorie du changement : capital naturel, incitations et économie régénérative'
 	: ($isDe
-		? 'Theorie des Wandels für Nachhaltigkeit und Naturkapital'
-		: 'Theory of Change: Aligning Economy and Nature at Scale');
+		? 'Theorie des Wandels: Naturkapital, Anreize und Buergerdividende'
+		: 'Theory of Change for Natural Capital: Aligning Economy and Nature');
 
 $metaDescription = $isFr
-	? 'Une théorie du changement qui aligne les incitations économiques avec les réalités écologiques, afin de rendre le capital naturel visible et opérationnel à grande échelle.'
+	? 'Une théorie du changement qui aligne les incitations économiques avec les réalités écologiques pour rendre le capital naturel visible, mesurable et actionnable.'
 	: ($isDe
-		? 'Warum Naturkapital allein nicht genügt. Wie wirtschaftliche Anreize und eine Bürgerdividende für die Natur nachhaltige Entscheidungen fördern können.'
-		: 'A Theory of Change aligning economic incentives with ecological reality — making natural capital financially legible and structurally scalable.');
+		? 'Warum Naturkapital allein nicht reicht und wie wirtschaftliche Anreize plus Buergerdividende fuer die Natur nachhaltige Entscheidungen foerdern.'
+		: 'A practical theory of change showing how economic incentives can make natural capital visible, measurable, and scalable in real markets.');
 
 $metaKeywords = $isFr
 	? 'théorie du changement, économie et Nature, dividende citoyen pour la Nature, capital naturel, économie écologique, incitations économiques, économie régénérative'
@@ -352,25 +351,7 @@ $faqSchema = $isFr
 				<form id="fcf-form-id" class="fcf-form-class" method="post" action="../php/contact-form-process.php">
 					<div class="fcf-form-group">
 						<div class="form-input-group">
-							<?php
-							// Generate random honeypot field name
-							$honeypot_name = 'field_' . substr(md5(date('Ymd') . 'salt123'), 0, 8);
-							$honeypot_hash = hash('sha256', $honeypot_name);
-							$hp_left = rand(-9876, -8765);
-							$hp_top = rand(-9876, -8765);
-							?>
-							<input type="text" name="<?php echo $honeypot_name; ?>" id="company_name" style="position: absolute; left: <?php echo $hp_left; ?>px; top: <?php echo $hp_top; ?>px; width: 1px; height: 1px;" tabindex="-1" autocomplete="off" aria-hidden="true">
-							<input type="hidden" name="hp_hash" value="<?php echo $honeypot_hash; ?>">
-							<input type="hidden" name="form_timestamp" value="<?php echo time(); ?>">
-							<input type="hidden" name="form_key" value="<?php echo hash('sha256', time() . 'form_salt_key'); ?>">
-
-							<label for="Email" class="form-label">Email</label><br>
-							<input type="email" id="Email" name="Email" class="form-input" autocomplete="email" required>
-
-							<label for="Message" class="fcf-label"><?php echo $isFr ? 'Message' : 'Message'; ?></label>
-							<div class="fcf-input-group">
-								<textarea id="Message" name="Message" class="fcf-form-control message-contact" rows="6" maxlength="3000" required></textarea>
-							</div>
+	
 						</div>
 
 						<div class="fcf-form-group">

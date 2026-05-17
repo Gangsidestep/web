@@ -1,5 +1,6 @@
 <?php
 session_start();
+header('X-Robots-Tag: noindex, nofollow, noarchive', true);
 $creds_file = __DIR__ . '/../../php_private/admin_credentials.php';
 $creds = is_readable($creds_file) ? include $creds_file : null;
 if (empty($_SESSION['admin_authenticated'])) {
@@ -32,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Change Admin Password</title></head><body>
+<html><head><meta charset="utf-8"><title>Change Admin Password</title><meta name="robots" content="noindex, nofollow, noarchive"></head><body>
 <h2>Change Admin Password</h2>
 <?php if ($msg): ?><div><?php echo htmlspecialchars($msg); ?></div><?php endif; ?>
 <form method="post">

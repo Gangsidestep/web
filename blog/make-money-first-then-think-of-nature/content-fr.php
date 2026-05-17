@@ -1,3 +1,9 @@
+<?php
+$canonicalUrl = $canonicalUrl ?? 'https://mydropintheoceans.org/fr/blog/make-money-first-then-think-of-nature/';
+$pageTitle = $pageTitle ?? 'Gagner de l\'argent d\'abord, puis (peut-être) penser à la Nature';
+$locale = $locale ?? 'fr';
+?>
+
 <p>Une phrase gouverne silencieusement une grande partie de notre économie moderne :</p>
 
 <blockquote>D’abord gagner de l’argent.<br>

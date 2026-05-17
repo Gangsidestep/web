@@ -1,5 +1,8 @@
 <?php
 
+// Language auto-redirects remain disabled to avoid phantom URL issues,
+// but localized URLs (/fr/... and /de/...) are fully supported.
+
 function get_supported_locales(): array
 {
     return ['en', 'fr', 'de'];
@@ -45,8 +48,10 @@ function get_browser_locale(): string
 /**
  * Return the user's preferred locale.
  *
- * English remains the default unless the user has explicitly selected
- * another supported locale (stored in cookie).
+ * Priority:
+ * 1) Explicit locale cookie set by the language switcher.
+ * 2) Browser Accept-Language best match.
+ * 3) English fallback.
  */
 function get_preferred_locale(): string
 {
@@ -56,27 +61,34 @@ function get_preferred_locale(): string
         return $_COOKIE['user_locale'];
     }
 
-    return 'en';
+    return get_browser_locale();
 }
 
 function get_current_locale(): string
 {
-    $defaultLocale = 'en';
-    $supportedLocales = get_supported_locales();
+    $supported = get_supported_locales();
+    $path = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/';
+    $path = '/' . ltrim($path, '/');
 
-    if (!empty($_SERVER['REDIRECT_APP_LOCALE']) && in_array($_SERVER['REDIRECT_APP_LOCALE'], $supportedLocales, true)) {
+    // 1) Explicit locale from URL prefix (/fr/... or /de/...)
+    foreach ($supported as $loc) {
+        if ($path === '/' . $loc || strpos($path, '/' . $loc . '/') === 0) {
+            return $loc;
+        }
+    }
+
+    // 2) Explicit locale from rewrite environment (set in .htaccess)
+    if (!empty($_SERVER['REDIRECT_APP_LOCALE']) && in_array($_SERVER['REDIRECT_APP_LOCALE'], $supported, true)) {
         return $_SERVER['REDIRECT_APP_LOCALE'];
     }
 
-    $requestUri = $_SERVER['REQUEST_URI'] ?? '/';
-    $path = parse_url($requestUri, PHP_URL_PATH) ?: '/';
-    $segments = array_values(array_filter(explode('/', trim($path, '/'))));
-
-    if (!empty($segments[0]) && in_array($segments[0], $supportedLocales, true)) {
-        return $segments[0];
+    // 3) User preference (cookie or browser)
+    $preferred = get_preferred_locale();
+    if (in_array($preferred, $supported, true)) {
+        return $preferred;
     }
 
-    return $defaultLocale;
+    return 'en';
 }
 
 /**
@@ -88,8 +100,8 @@ function get_current_locale(): string
  *   only by the manual language switcher.
  *
  * - If there is NO locale prefix (bare /blog/, /theory-of-change/, …),
- *   read the preferred locale from cookie and redirect only when the user
- *   has explicitly chosen a non-English locale.
+ *   read the preferred locale (cookie first, then browser language) and
+ *   redirect only when it resolves to a non-English locale.
  *   English is the default, so no redirect for 'en'.
  */
 (function () {
@@ -123,19 +135,8 @@ function get_current_locale(): string
 
     $explicitLocale = $urlLocale ?? $envLocale;
 
-    if ($explicitLocale === null) {
-        // No locale in URL — redirect to preferred locale (cookie) if not English
-        $preferred = get_preferred_locale();
-        if ($preferred !== 'en') {
-            $host        = $_SERVER['HTTP_HOST'] ?? 'mydropintheoceans.org';
-            $redirectUrl = 'https://' . $host . '/' . $preferred . $path;
-            if ($queryString !== '') {
-                $redirectUrl .= '?' . $queryString;
-            }
-            header('Location: ' . $redirectUrl, true, 302);
-            exit;
-        }
-    }
+    // Intentionally no auto-redirect logic: keep canonical URL behavior stable
+    // and avoid generating phantom locale URLs from user-agent preference.
 })();
 
 function localized_path(string $path, ?string $locale = null): string
@@ -143,19 +144,42 @@ function localized_path(string $path, ?string $locale = null): string
     $activeLocale = $locale ?? get_current_locale();
     $cleanPath = '/' . ltrim($path, '/');
 
+    // English is canonical without a locale prefix.
+    if ($activeLocale === 'en') {
+        if ($cleanPath === '/en') {
+            return '/';
+        }
+        if (strpos($cleanPath, '/en/') === 0) {
+            return substr($cleanPath, 3) ?: '/';
+        }
+    }
+
     foreach (get_supported_locales() as $supportedLocale) {
         $prefix = '/' . $supportedLocale . '/';
         if (strpos($cleanPath, $prefix) === 0) {
+            if ($supportedLocale === 'en') {
+                return substr($cleanPath, 3) ?: '/';
+            }
             return $cleanPath;
         }
 
         if ($cleanPath === '/' . $supportedLocale) {
+            if ($supportedLocale === 'en') {
+                return '/';
+            }
             return $cleanPath;
         }
     }
 
     if ($cleanPath === '/') {
+        if ($activeLocale === 'en') {
+            return '/';
+        }
         return '/' . $activeLocale . '/';
+    }
+
+    if ($activeLocale === 'en') {
+        return $cleanPath;
     }
 
     return '/' . $activeLocale . $cleanPath;

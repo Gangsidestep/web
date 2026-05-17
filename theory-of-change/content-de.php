@@ -1,17 +1,9 @@
-<div id="landing_page"> 
-	<div style="padding-left: 15%;width: 85%; top: 30%;position: relative;height: 5%;"> </div>
-
-	<div class="intro_box"><br>
-		<b>Theory of Change</b>
-	</div>
-
-	<div class="white_page_span" id="bottom_page_span">
-		<h1 class="header_one">Theorie des Wandels für Nachhaltigkeit</h1>
-
-        <p class="definition_snippet">
-        	Eine <strong>Theorie des Wandels</strong> beschreibt, wie systemische Transformation entstehen kann, indem wirtschaftliche Anreize, Institutionen und alltägliche Entscheidungen miteinander verbunden werden.
-        	Im Kontext der Nachhaltigkeit bedeutet dies, Wertsignale so zu gestalten, dass Naturkapital sichtbar wird und wirtschaftliche Rahmenbedingungen besser mit ökologischer Realität in Einklang kommen.
-        </p>
+<?php
+// DISABLED: German language content file removed to fix search indexation
+// All content now served in English only
+header('Location: https://mydropintheoceans.org/theory-of-change/', true, 301);
+exit;
+?>
 
 		<div class="framing-box" style="margin-top: 18px;">
 			<h3>Vor dem Lesen</h3>
@@ -37,6 +29,23 @@
 			</p>
 		</div>
 
+		<div class="framing-box" style="margin-top: 18px;">
+			<h3>Theorie des Wandels in der Praxis</h3>
+			<p style="margin-bottom: 0;">
+				<strong>Aktivitäten</strong><br>
+				Mechanismen, die den Wert der Natur in Transaktionen sichtbar machen<br><br>
+
+				<strong>Outputs</strong><br>
+				Zunehmende Beteiligung und Zirkulation von Anreizen<br><br>
+
+				<strong>Outcomes</strong><br>
+				Veränderungen in alltäglichen Entscheidungen und der Mittelverwendung<br><br>
+
+				<strong>Impact</strong><br>
+				Verringerung des Drucks auf Ökosysteme und Förderung der Regeneration
+			</p>
+		</div>
+		
 		<div class="framing-box" style="margin-top: 18px;">
 			<h3>Wie das zusammenhängt</h3>
 			<p><strong>Theory of Change</strong><br>
@@ -322,6 +331,7 @@
 				<li><a class="link" href="<?php echo htmlspecialchars(localized_path('/blog/money-work-worth/', $locale)); ?>">Money = Work = Worth — Essay</a></li>|
 				<li><a class="link" href="<?php echo htmlspecialchars(localized_path('/blog/what-if-stewardship-was-financially-recognised/', $locale)); ?>">Sorge für Natur finanziell anerkennen — Essay</a></li>|
 				<li><a class="link" href="<?php echo htmlspecialchars(localized_path('/blog/why-the-swiss-said-no-to-free-money/', $locale)); ?>">Warum die Schweiz Nein zum freien Geld sagte — Essay</a></li>|
+				<li><a class="link" href="<?php echo htmlspecialchars(localized_path('/blog/making-natural-capital-visible-in-everyday-transactions/', $locale)); ?>">Von Zentralbankmandaten zu alltäglichen Transaktionen — Essay</a></li>|
 				<li><a class="link" href="<?php echo htmlspecialchars(localized_path('/contact/', $locale)); ?>">Team kontaktieren</a></li>
 			</ul>
 		</div>
