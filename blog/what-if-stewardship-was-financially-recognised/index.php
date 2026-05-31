@@ -19,7 +19,7 @@ $pageTitle = $locale === 'fr'
   : ($locale === 'de' ? 'Was wäre, wenn Fürsorge finanziell anerkannt würde?' : 'What if Stewardship Was Financially Recognised?');
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="<?php echo $locale; ?>">
 <head>
   <?php include __DIR__ . '/../../php/seo_tags.php'; ?>
     <meta charset="utf-8">
@@ -98,27 +98,7 @@ $pageTitle = $locale === 'fr'
 </head>
 <body style="border: 0;margin: 0;padding: 0;background-color: #080a23;">
   <div style="max-width: 1000px !important;margin-right: auto;margin-left: auto;">
-    <div style="height:60px;background-color: white;width:100%;max-width:1000px; color: #fff!important;
-        font-size: 18px!important;
-        padding-top: 10px!important;
-        padding-bottom: 10px!important;
-        box-shadow: 0 0 20px 8px rgba(60,60,60,.06)!important;
-        border-bottom-right-radius: 5px;
-        border-bottom-left-radius: 5px;position: fixed;z-index: 2;border-bottom: #8e807687;
-        border-bottom-color: #8e807687;
-        border-bottom-style: inset;
-        border-bottom-width: thin;">
-        <div style="width: 80%;
-        background-image: url(/images/logo/mydropintheoceans_logo_large_no_drop.png);
-        height: 40px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        margin-left: auto;
-        margin-right: auto;
-        position: relative;
-        background-position: center;
-        margin-top: 13px;"></div>
-    </div>
+    <?php include __DIR__ . '/../../php/site-header.php'; ?>
     <div style="background-size: cover; width:100%;height:120%;background-image: url(/images/background/MyDIO_back.jpg);background-repeat: no-repeat;background-position-x: center;background-position-y: 74px;position:fixed;max-width:1000px;">
     </div>
     <div style="border: 0;margin: 0;">
