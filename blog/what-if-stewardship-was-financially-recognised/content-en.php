@@ -28,9 +28,44 @@
 <p>🌊 Your drop in the oceans matters.<br>Let’s celebrate stewardship and start a chain reaction—redefining value and realigning growth.</p>
 <p><b>Question:</b><br>If you could earn credit for stewardship, what would you do differently?</p>
 <p><span class="blog-nav-label">🔗 Missed Parts 1 & 2?</span> <a class="blog-nav-link" href="/blog/why-the-swiss-said-no-to-free-money/">Why the Swiss Said No to Free Money</a> & <a class="blog-nav-link" href="/blog/money-work-worth/">Money = Work = Worth: A Story We’ve All Inherited</a></p>
-<p>For a deeper look at how we can correct the mismatch between value and reward, see our <a class="blog-nav-link" href="/theory-of-change/">Theory of Change</a>.</p>
+<p>For a deeper look at how we can correct the mismatch between value and reward, see our <a class="blog-nav-link" href="/theory-of-change/">Theory of Change framework</a>.</p>
 <p>Explore more about why nature is not a charity in <a class="blog-nav-link" href="/blog/nature-is-not-a-charity/">Nature is Not a Charity—It’s an Economic Imperative</a>.</p>
 <p><span class="blog-nav-label blog-nav-upnext">⏩ Up next:</span> <span class="blog-nav-link">How Do We Measure What Matters?</span></p>
+
+<hr style="margin:2em 0;">
+
+<h2>From Theory to Practice</h2>
+
+<p>This article forms part of a broader exploration into how value is created, recognised and distributed within society.</p>
+
+<p>Many activities that preserve, restore or strengthen the foundations of human wellbeing generate value for communities and Nature, yet remain largely invisible within everyday economic systems. At the same time, activities that generate financial returns are often immediately recognised and rewarded.</p>
+
+<p>The Theory of Change behind My Drop in the Oceans explores whether this imbalance can be addressed by broadening what economic systems recognise and value.</p>
+
+<p>Rather than viewing stewardship as a charitable act, a sacrifice or an optional lifestyle choice, we explore whether stewardship itself represents a form of value creation that could become more visible and participative throughout the economy.</p>
+
+<p>This does not imply replacing markets, money or private enterprise. Rather, it raises a question: if healthy ecosystems, resilient communities and long-term stewardship create real value, how might that value become more visible where economic decisions are made every day?</p>
+
+<p>mydio.com is a practical implementation of this thinking. It seeks to make the value created by selected sustainable choices more visible within everyday economic activity, helping connect stewardship, participation and tangible benefits.</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is this about rewarding people for doing the right thing?</h3>
+
+<p>Not exactly. The idea is less about rewards and more about recognition. Many forms of stewardship already create value for society and Nature. The question is whether economic systems can better acknowledge that value.</p>
+
+<h3>How does this relate to mydio.com?</h3>
+
+<p>mydio.com is a practical implementation of this thinking. It seeks to recognise selected sustainable choices through a complementary points system that can be used with participating partners.</p>
+
+<h3>Is this connected to degrowth, Doughnut Economics or the circular economy?</h3>
+
+<p>The article draws inspiration from several schools of thought that question how value is measured and how prosperity is defined. The common thread is an interest in creating economies that operate within ecological boundaries while supporting human wellbeing.</p>
+
+<h3>Where can I learn more?</h3>
+
+<p>Read the <a class="blog-nav-link" href="/theory-of-change/">Theory of Change page</a> for a deeper explanation of the assumptions, rationale and long-term vision behind these ideas.</p>
+
 <div style="margin-top: 2em; font-size: 0.95em; color: #666;">
   <strong>Originally shared on LinkedIn.</strong>
   <a href="https://www.linkedin.com/posts/my-drop-in-the-oceans_mydiocom-activity-7346447706191540224-N-75/" class="linkedin-btn" target="_blank" rel="noopener">Join the discussion</a><br>
