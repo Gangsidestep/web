@@ -47,7 +47,7 @@ $languageLabel = $headerLocale === 'fr'
     padding-bottom: 10px!important;
     box-shadow: 0 0 20px 8px rgba(60,60,60,.06)!important;
     border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;position: fixed;z-index: 2;border-bottom: #8e807687;
+    border-bottom-left-radius: 5px;position: fixed;z-index: 9999;border-bottom: #8e807687;
     border-bottom-color: #8e807687;
     border-bottom-style: inset;
     border-bottom-width: thin;left:0;right:0;margin:0 auto;">
