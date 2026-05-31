@@ -332,6 +332,15 @@ $faqSchema = $isFr
   <div style="max-width: 1000px !important;margin-right: auto;margin-left: auto;">
 	<?php include __DIR__ . '/../php/site-header.php'; ?>
 
+	<?php if (!empty($_GET['debug_locale'])): ?>
+		<div style="position:fixed;right:12px;top:72px;z-index:99999;background:#fff;color:#000;padding:8px;border:2px solid #b00;border-radius:6px;font-size:13px;">
+			<strong>DEBUG LOCALE</strong><br>
+			Server locale: <?php echo htmlspecialchars($locale ?? get_current_locale()); ?><br>
+			Cookie `user_locale`: <?php echo htmlspecialchars($_COOKIE['user_locale'] ?? ''); ?><br>
+			REDIRECT_APP_LOCALE: <?php echo htmlspecialchars($_SERVER['REDIRECT_APP_LOCALE'] ?? ''); ?>
+		</div>
+	<?php endif; ?>
+
 	<div style="background-size: cover; width:100%;height:120%;background-image: url(../images/background/MyDIO_back.jpg);background-repeat: no-repeat;background-position-x: center;background-position-y: 74px;position:fixed;max-width:1000px;z-index:-1;">
 	</div>
 
