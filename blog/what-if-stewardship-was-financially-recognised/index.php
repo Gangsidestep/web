@@ -32,10 +32,6 @@ $pageTitle = $locale === 'fr'
     <meta property="og:image:width" content="200">
     <meta property="og:image:height" content="200">
     <link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl); ?>" />
-    <link rel="alternate" hreflang="en" href="<?php echo htmlspecialchars($alternateEnUrl); ?>" />
-    <link rel="alternate" hreflang="fr" href="<?php echo htmlspecialchars($alternateFrUrl); ?>" />
-    <link rel="alternate" hreflang="de" href="<?php echo htmlspecialchars($alternateDeUrl); ?>" />
-    <link rel="alternate" hreflang="x-default" href="<?php echo htmlspecialchars($alternateEnUrl); ?>" />
     <title><?php echo htmlspecialchars($pageTitle); ?></title>
     <meta property="og:title" content="<?php echo htmlspecialchars($pageTitle); ?>">
     <meta property="og:description" content="<?php echo htmlspecialchars($metaDescription); ?>">
