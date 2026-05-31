@@ -7,6 +7,8 @@ $is_contact = (strpos($current_page, '/contact') !== false);
 $is_privacy = (strpos($current_page, '/privacy') !== false);
 // Blog detection
 $is_blog = (strpos($current_page, '/blog') !== false);
+// FAQ detection
+$is_faq = (strpos($current_page, '/faq') !== false);
 // Detect if current page is the blog index (ends with /blog or /blog/)
 $is_blog_index = preg_match('#/blog/?$#', $current_page) === 1;
 
@@ -16,6 +18,7 @@ $theory_color = $is_theory ? '#d0aea1' : '#fff';
 $contact_color = $is_contact ? '#d0aea1' : '#fff';
 $privacy_color = $is_privacy ? '#d0aea1' : '#fff';
 $blog_color = $is_blog ? '#d0aea1' : '#fff';
+$faq_color = $is_faq ? '#d0aea1' : '#fff';
 
 // Determine if we should use onclick or href for home link
 $home_link = $is_home ? 'onclick="show_landing_page()"' : 'href="/"';
@@ -39,6 +42,7 @@ if ($is_blog_index) {
 	<div style="width:90%;max-width:600px;margin-left:auto;margin-right:auto;margin-top:20px;margin-bottom:60px;">
 		<span class="link" id="home_page" <?php echo $home_link; ?> style="color:<?php echo $home_color; ?>"><?php echo $is_home ? 'Home' : '<a href="/">Home</a>'; ?></span> | 
 		<span class="link" id="theory_link" <?php echo $theory_link; ?> style="color:<?php echo $theory_color; ?>"><?php echo $is_theory ? 'Theory of Change' : '<a href="/theory-of-change">Theory of Change</a>'; ?></span> | 
+		<span class="link" id="faq_link" <?php echo $is_faq ? '' : 'href="/faq"'; ?> style="color:<?php echo $faq_color; ?>"><?php echo $is_faq ? 'FAQ' : '<a href="/faq">FAQ</a>'; ?></span> | 
 		<span class="link" id="contact_link" <?php echo $contact_link; ?> style="color:<?php echo $contact_color; ?>"><?php echo $is_contact ? 'Contact' : '<a href="/contact">Contact</a>'; ?></span> | 
 		<span class="link" id="blog_link" <?php echo $blog_link; ?> style="color:<?php echo $blog_color; ?>"><?php echo $is_blog_index ? 'Blog' : '<a href="/blog">Blog</a>'; ?></span> | 
 		<span class="link" id="privacy_link" <?php echo $privacy_link; ?> style="color:<?php echo $privacy_color; ?>"><?php echo $is_privacy ? 'Privacy' : '<a href="/privacy">Privacy</a>'; ?></span>
