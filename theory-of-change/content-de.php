@@ -1,8 +1,9 @@
 <?php
 // DISABLED: German language content file removed to fix search indexation
 // All content now served in English only
-header('Location: https://mydropintheoceans.org/theory-of-change/', true, 301);
-exit;
+?>
+<?php
+// German content enabled (previously disabled for indexing fixes)
 ?>
 
 		<div class="framing-box" style="margin-top: 18px;">
