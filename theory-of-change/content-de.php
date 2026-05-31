@@ -1,10 +1,14 @@
-<?php
-// DISABLED: German language content file removed to fix search indexation
-// All content now served in English only
-?>
-<?php
-// German content enabled (previously disabled for indexing fixes)
-?>
+	<div id="landing_page">
+		<div style="padding-left: 15%;width: 85%; top: 30%;position: relative;height: 5%"> </div>
+
+		<div class="intro_box"><br>
+			<b>Theorie des Wandels</b>
+		</div>
+
+		<div class="white_page_span" id="bottom_page_span">
+			<h1 class="header_one">Wirtschaft und Natur durch Wertsignale und Anreizstrukturen in Einklang bringen</h1>
+
+		</div>
 
 		<div class="framing-box" style="margin-top: 18px;">
 			<h3>Vor dem Lesen</h3>
