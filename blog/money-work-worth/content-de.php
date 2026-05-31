@@ -1,5 +1,11 @@
 <?php
-$canonicalUrl = $canonicalUrl ?? 'https://mydropintheoceans.org/de/blog/money-work-worth/';
+if (!isset($canonicalUrl)) {
+  if (function_exists('localized_url')) {
+    $canonicalUrl = localized_url('/blog/money-work-worth/', 'de');
+  } else {
+    $canonicalUrl = 'https://mydropintheoceans.org/de/blog/money-work-worth/';
+  }
+}
 $pageTitle = $pageTitle ?? 'Geld = Arbeit = Wert: Eine Geschichte, die wir alle geerbt haben';
 $locale = $locale ?? 'de';
 ?>

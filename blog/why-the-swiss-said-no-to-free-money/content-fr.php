@@ -1,5 +1,11 @@
 <?php
-$canonicalUrl = $canonicalUrl ?? 'https://mydropintheoceans.org/fr/blog/why-the-swiss-said-no-to-free-money/';
+if (!isset($canonicalUrl)) {
+  if (function_exists('localized_url')) {
+    $canonicalUrl = localized_url('/blog/why-the-swiss-said-no-to-free-money/', 'fr');
+  } else {
+    $canonicalUrl = 'https://mydropintheoceans.org/fr/blog/why-the-swiss-said-no-to-free-money/';
+  }
+}
 $pageTitle = $pageTitle ?? "Pourquoi la Suisse a dit non à l'argent gratuit";
 $locale = $locale ?? 'fr';
 ?>

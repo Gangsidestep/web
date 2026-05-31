@@ -1,5 +1,11 @@
 <?php
-$canonicalUrl = $canonicalUrl ?? 'https://mydropintheoceans.org/blog/money-work-worth/';
+if (!isset($canonicalUrl)) {
+  if (function_exists('localized_url')) {
+    $canonicalUrl = localized_url('/blog/money-work-worth/', 'en');
+  } else {
+    $canonicalUrl = 'https://mydropintheoceans.org/blog/money-work-worth/';
+  }
+}
 $pageTitle = $pageTitle ?? 'Money = Work = Worth: A Story We\'ve All Inherited';
 $locale = $locale ?? 'en';
 ?>

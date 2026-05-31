@@ -1,5 +1,11 @@
 <?php
-$canonicalUrl = $canonicalUrl ?? 'https://mydropintheoceans.org/blog/make-money-first-then-think-of-nature/';
+if (!isset($canonicalUrl)) {
+  if (function_exists('localized_url')) {
+    $canonicalUrl = localized_url('/blog/make-money-first-then-think-of-nature/', 'en');
+  } else {
+    $canonicalUrl = 'https://mydropintheoceans.org/blog/make-money-first-then-think-of-nature/';
+  }
+}
 $pageTitle = $pageTitle ?? 'Make Money First, Then (Maybe) Think of Nature';
 $locale = $locale ?? 'en';
 ?>

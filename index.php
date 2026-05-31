@@ -8,14 +8,17 @@ $alternateFrUrl = localized_url('/', 'fr');
 $alternateDeUrl = localized_url('/', 'de');
 $xDefaultUrl = $alternateEnUrl;
 
-// English-only content (no language variations to prevent phantom URLs)
+// determine current locale and localized canonical for root
+$locale = get_current_locale();
+
+// English default meta (body includes localized fragments when available)
 $pageTitle    = "Dividend for Nature and Natural Capital | My Drop In The Oceans";
 $pageDesc     = "Explore a practical framework that rewards stewardship, makes natural capital visible, and aligns economic incentives with ecological reality.";
 $pageKeywords = "Citizen's Dividend for Nature, natural capital, ecological economics, economic incentives, stewardship, nature-positive economy";
-$canonicalUrl = "https://mydropintheoceans.org/";
+$canonicalUrl = localized_url('/', $locale);
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="<?php echo htmlspecialchars($locale, ENT_QUOTES, 'UTF-8'); ?>">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +30,7 @@ $canonicalUrl = "https://mydropintheoceans.org/";
 	<meta name="author" content="My Drop In The Oceans">
 	<meta name="robots" content="index, follow">
 
-	<link rel="canonical" href="https://mydropintheoceans.org/">
+	<link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8'); ?>">
 	<link rel="alternate" hreflang="en" href="<?php echo htmlspecialchars($alternateEnUrl, ENT_QUOTES, 'UTF-8'); ?>" />
 	<link rel="alternate" hreflang="fr" href="<?php echo htmlspecialchars($alternateFrUrl, ENT_QUOTES, 'UTF-8'); ?>" />
 	<link rel="alternate" hreflang="de" href="<?php echo htmlspecialchars($alternateDeUrl, ENT_QUOTES, 'UTF-8'); ?>" />
@@ -37,7 +40,7 @@ $canonicalUrl = "https://mydropintheoceans.org/";
 	<meta property="og:title"        content="<?php echo htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8'); ?>">
 	<meta property="og:description"  content="<?php echo htmlspecialchars($pageDesc, ENT_QUOTES, 'UTF-8'); ?>">
 	<meta property="og:type"         content="website">
-	<meta property="og:url"          content="https://mydropintheoceans.org/">
+	<meta property="og:url"          content="<?php echo htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8'); ?>">
 	<meta property="og:image"        content="https://mydropintheoceans.org/images/backdrop_an_economy_linkedin.jpg">
 	<meta property="og:image:type"   content="image/jpeg">
 	<meta property="og:image:width"  content="1200">

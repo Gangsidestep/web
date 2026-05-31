@@ -1,5 +1,11 @@
 <?php
-$canonicalUrl = $canonicalUrl ?? 'https://mydropintheoceans.org/faq/';
+if (!isset($canonicalUrl)) {
+  if (function_exists('localized_url')) {
+    $canonicalUrl = localized_url('/faq/', 'en');
+  } else {
+    $canonicalUrl = 'https://mydropintheoceans.org/faq/';
+  }
+}
 $pageTitle = $pageTitle ?? 'Natural Capital at the Point of Transaction';
 $locale = $locale ?? 'en';
 ?>
