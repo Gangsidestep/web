@@ -6,11 +6,6 @@ $pageTitle    = "Dividend for Nature and Natural Capital | My Drop In The Oceans
 $pageDesc     = "Explore a practical framework that rewards stewardship, makes natural capital visible, and aligns economic incentives with ecological reality.";
 $pageKeywords = "Citizen's Dividend for Nature, natural capital, ecological economics, economic incentives, stewardship, nature-positive economy";
 $canonicalUrl = "https://mydropintheoceans.org/";
-// determine current locale for choosing localized home content
-include_once __DIR__ . '/php/i18n.php';
-$locale = function_exists('get_current_locale') ? get_current_locale() : 'en';
-$isFr = $locale === 'fr';
-$isDe = $locale === 'de';
 ?>
 <!doctype html>
 <html lang="en">
