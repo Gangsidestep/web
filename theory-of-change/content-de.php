@@ -6,7 +6,13 @@
 		</div>
 
 		<div class="white_page_span" id="bottom_page_span">
-			<h1 class="header_one">Wirtschaft und Natur durch Wertsignale und Anreizstrukturen in Einklang bringen</h1>
+			<h1 class="header_one">Theorie des Wandels für Nachhaltigkeit</h1>
+
+		<p class="definition_snippet">
+			Eine <strong>Theorie des Wandels</strong> erklärt, wie systemische Transformation entstehen kann, indem wirtschaftliche Anreize, Institutionen und alltägliche Entscheidungen miteinander verknüpft werden.
+			Im Kontext der Nachhaltigkeit bedeutet dies, Wertsignale neu zu gestalten, damit Naturkapital wirtschaftlich sichtbarer wird und wirtschaftliche Rahmenbedingungen besser mit der ökologischen Realität übereinstimmen.
+		</p>
+
 
 		<div class="framing-box" style="margin-top: 18px;">
 			<h3>Vor dem Lesen</h3>

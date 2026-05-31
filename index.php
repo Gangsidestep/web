@@ -128,6 +128,13 @@ $canonicalUrl = "https://mydropintheoceans.org/";
 
 		<div class="white_page_span">
 		<?php
+		// Ensure locale helpers and boolean flags exist to avoid undefined variable warnings
+		if (!function_exists('get_current_locale')) {
+			include_once __DIR__ . '/php/i18n.php';
+		}
+		$locale = isset($locale) ? $locale : (function_exists('get_current_locale') ? get_current_locale() : 'en');
+		$isFr = ($locale === 'fr');
+		$isDe = ($locale === 'de');
 		if ($isDe) {
 			include __DIR__ . '/php/home-de.php';
 		} elseif ($isFr) {

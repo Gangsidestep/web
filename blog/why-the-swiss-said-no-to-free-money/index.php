@@ -1,5 +1,15 @@
 <?php 
 include __DIR__ . '/../../php/analytics.php';
+include __DIR__ . '/../../php/i18n.php';
+$locale = get_current_locale();
+$deContentPath = __DIR__ . '/content-de.php';
+$frContentPath = __DIR__ . '/content-fr.php';
+$hasDeContent = is_readable($deContentPath);
+$hasFrContent = is_readable($frContentPath);
+// Localized page title
+$pageTitle = $locale === 'fr'
+  ? 'Pourquoi les Suisses ont dit non à l\'argent gratuit'
+  : ($locale === 'de' ? 'Warum die Schweiz Nein zu kostenlosem Geld sagte' : 'Why the Swiss Said No to Free Money');
 ?>
 <!doctype html>
 <html lang="en">
@@ -15,7 +25,7 @@ include __DIR__ . '/../../php/analytics.php';
     <link rel="canonical" href="https://mydropintheoceans.org/blog/why-the-swiss-said-no-to-free-money/" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Why the Swiss Said No to Free Money (Swiss UBI Referendum)">
+    <meta property="og:title" content="<?php echo htmlspecialchars($pageTitle); ?>">
     <meta property="og:description" content="What the 2016 Swiss UBI referendum revealed about work, value, nature, and economic incentives.">
     <meta property="og:url" content="https://mydropintheoceans.org/blog/why-the-swiss-said-no-to-free-money/">
     <meta property="og:type" content="article">
@@ -26,41 +36,44 @@ include __DIR__ . '/../../php/analytics.php';
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Why the Swiss Said No to Free Money (Swiss UBI Referendum)">
+    <meta name="twitter:title" content="<?php echo htmlspecialchars($pageTitle); ?>">
     <meta name="twitter:description" content="What the 2016 Swiss UBI referendum revealed about work, value, nature, and economic incentives.">
     <meta name="twitter:image" content="https://mydropintheoceans.org/images/backdrop_an_economy_linkedin.jpg">
 
-    <title>Why the Swiss Said No to Free Money | Swiss UBI Referendum</title>
+    <title><?php echo htmlspecialchars($pageTitle ?? 'Why the Swiss Said No to Free Money'); ?> | Swiss UBI Referendum</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/connect-icons/apple-touch-icon.png">
     <link rel="stylesheet" type="text/css" href="/css/mydropintheoceans-style.css?v=<?php echo time(); ?>">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js?v=<?php echo date('Ymd'); ?>"></script>
 
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Why the Swiss Said No to Free Money",
-      "description": "What a historic vote revealed about our emotional relationship with Nature, work, money, and worth.",
-      "image": "https://mydropintheoceans.org/images/backdrop_an_economy_linkedin.jpg",
-      "author": {
-        "@type": "Organization",
-        "name": "My Drop In The Oceans"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "My Drop In The Oceans",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://mydropintheoceans.org/images/logo/mydropintheoceans_logo_large_no_drop.png"
-        }
-      },
-      "datePublished": "2025-06-14",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://mydropintheoceans.org/blog/why-the-swiss-said-no-to-free-money/"
-      }
-    }
+    <?php
+    $articleSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'Article',
+        'headline' => $pageTitle,
+        'description' => 'What a historic vote revealed about our emotional relationship with Nature, work, money, and worth.',
+        'image' => 'https://mydropintheoceans.org/images/backdrop_an_economy_linkedin.jpg',
+        'author' => [
+            '@type' => 'Organization',
+            'name' => 'My Drop In The Oceans'
+        ],
+        'publisher' => [
+            '@type' => 'Organization',
+            'name' => 'My Drop In The Oceans',
+            'logo' => [
+                '@type' => 'ImageObject',
+                'url' => 'https://mydropintheoceans.org/images/logo/mydropintheoceans_logo_large_no_drop.png'
+            ]
+        ],
+        'datePublished' => '2025-06-14',
+        'mainEntityOfPage' => [
+            '@type' => 'WebPage',
+            '@id' => 'https://mydropintheoceans.org/blog/why-the-swiss-said-no-to-free-money/'
+        ]
+    ];
+    echo json_encode($articleSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+    ?>
     </script>
 
     <style>
@@ -92,28 +105,7 @@ include __DIR__ . '/../../php/analytics.php';
 
 <body style="border: 0;margin: 0;padding: 0;background-color: #080a23;">
   <div style="max-width: 1000px !important;margin-right: auto;margin-left: auto;">
-    <div style="height:60px;background-color: white;width:100%;max-width:1000px; color: #fff!important;
-        font-size: 18px!important;
-        padding-top: 10px!important;
-        padding-bottom: 10px!important;
-        box-shadow: 0 0 20px 8px rgba(60,60,60,.06)!important;
-        border-bottom-right-radius: 5px;
-        border-bottom-left-radius: 5px;position: fixed;z-index: 2;border-bottom: #8e807687;
-        border-bottom-color: #8e807687;
-        border-bottom-style: inset;
-        border-bottom-width: thin;">
-        <div style="width: 80%;
-        background-image: url(/images/logo/mydropintheoceans_logo_large_no_drop.png);
-        height: 40px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        margin-left: auto;
-        margin-right: auto;
-        position: relative;
-        background-position: center;
-        margin-top: 13px;"></div>
-    </div>
-
+    <?php include __DIR__ . '/../../php/site-header.php'; ?>
     <div style="background-size: cover; width:100%;height:120%;background-image: url(/images/background/MyDIO_back.jpg);background-repeat: no-repeat;background-position-x: center;background-position-y: 74px;position:fixed;max-width:1000px;">
     </div>
 
@@ -132,11 +124,16 @@ include __DIR__ . '/../../php/analytics.php';
 
         <div class="white_page_span">
           <p></p>
-          <h1 class="header_one">Why the Swiss Said No to Free Money</h1>
+          <h1 class="header_one"><?php echo htmlspecialchars($pageTitle ?? 'Why the Swiss Said No to Free Money'); ?></h1>
           <p></p>
           <div class="published-date">Published 2025-06-14</div>
 
           <span class="span_text_box">
+            <?php if ($locale === 'fr' && $hasFrContent): ?>
+              <?php include __DIR__ . '/content-fr.php'; ?>
+            <?php elseif ($locale === 'de' && $hasDeContent): ?>
+              <?php include __DIR__ . '/content-de.php'; ?>
+            <?php else: ?>
             <p>What a historic vote revealed about our emotional relationship with Nature, work, money, and worth.</p>
             <p>
               <div class="ch-flag-emoji-box">
@@ -204,6 +201,7 @@ include __DIR__ . '/../../php/analytics.php';
               <p>Explore more stories and insights on our <a class="blog-nav-link" href="/blog/">main Blog page</a>.</p>
               <p>We value your privacy. Read our <a class="blog-nav-link" href="/privacy/">full Privacy Policy</a>.</p>
             </div>
+          <?php endif; ?>
           </span>
         </div>
       </div>
