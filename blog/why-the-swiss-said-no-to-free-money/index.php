@@ -10,9 +10,18 @@ $hasFrContent = is_readable($frContentPath);
 $pageTitle = $locale === 'fr'
   ? 'Pourquoi les Suisses ont dit non à l\'argent gratuit'
   : ($locale === 'de' ? 'Warum die Schweiz Nein zu kostenlosem Geld sagte' : 'Why the Swiss Said No to Free Money');
+// article path + localized canonical/alternates
+$articlePath = '/blog/why-the-swiss-said-no-to-free-money/';
+$canonicalUrl = localized_url($articlePath, $locale);
+$alternateEnUrl = localized_url($articlePath, 'en');
+$alternateFrUrl = $hasFrContent ? localized_url($articlePath, 'fr') : '';
+$alternateDeUrl = $hasDeContent ? localized_url($articlePath, 'de') : '';
+$metaDescription = 'What a historic vote revealed about our emotional relationship with Nature, work, money, and worth.';
+$isArticle = true;
+$ogImage = 'https://mydropintheoceans.org/images/backdrop_an_economy_linkedin.jpg';
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="<?php echo htmlspecialchars($locale, ENT_QUOTES, 'UTF-8'); ?>">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -22,16 +31,13 @@ $pageTitle = $locale === 'fr'
     <meta name="keywords" content="Universal Basic Income, Switzerland, Stewardship, Economy, Blog, Sustainability">
     <meta name="author" content="My Drop In The Oceans">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://mydropintheoceans.org/blog/why-the-swiss-said-no-to-free-money/" />
-    <link rel="alternate" hreflang="en" href="https://mydropintheoceans.org/blog/why-the-swiss-said-no-to-free-money/" />
-    <link rel="alternate" hreflang="fr" href="https://mydropintheoceans.org/fr/blog/why-the-swiss-said-no-to-free-money/" />
-    <link rel="alternate" hreflang="de" href="https://mydropintheoceans.org/de/blog/why-the-swiss-said-no-to-free-money/" />
-    <link rel="alternate" hreflang="x-default" href="https://mydropintheoceans.org/blog/why-the-swiss-said-no-to-free-money/" />
+  <?php include __DIR__ . '/../../php/seo_tags.php'; ?>
+    <link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8'); ?>" />
 
     <!-- Open Graph -->
     <meta property="og:title" content="<?php echo htmlspecialchars($pageTitle); ?>">
     <meta property="og:description" content="What the 2016 Swiss UBI referendum revealed about work, value, nature, and economic incentives.">
-    <meta property="og:url" content="https://mydropintheoceans.org/blog/why-the-swiss-said-no-to-free-money/">
+    <meta property="og:url" content="<?php echo htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8'); ?>">
     <meta property="og:type" content="article">
     <meta property="og:image" content="https://mydropintheoceans.org/images/backdrop_an_economy_linkedin.jpg">
     <meta property="og:image:type" content="image/png">
@@ -72,8 +78,8 @@ $pageTitle = $locale === 'fr'
         ],
         'datePublished' => '2025-06-14',
         'mainEntityOfPage' => [
-            '@type' => 'WebPage',
-            '@id' => 'https://mydropintheoceans.org/blog/why-the-swiss-said-no-to-free-money/'
+          '@type' => 'WebPage',
+          '@id' => $canonicalUrl
         ]
     ];
     echo json_encode($articleSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
