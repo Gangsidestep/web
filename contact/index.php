@@ -1,16 +1,31 @@
 <?php
 //echo "My Drop In The Oceans";
 include __DIR__ . "/../php/analytics.php";
+include_once __DIR__ . "/../php/i18n.php";
+
+$locale = get_current_locale();
+$canonicalUrl = localized_url('/contact/', $locale);
+$alternateEnUrl = localized_url('/contact/', 'en');
+$alternateFrUrl = localized_url('/contact/', 'fr');
+$alternateDeUrl = localized_url('/contact/', 'de');
+// Standard meta description used by seo_tags.php
+$metaDescription = 'Contact My Drop In The Oceans about partnerships, media requests, and the Dividend for Nature framework that aligns economy and natural capital.';
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="<?php echo htmlspecialchars($locale, ENT_QUOTES, 'UTF-8'); ?>">
+
 <head>
+	<?php include __DIR__ . '/../php/seo_tags.php'; ?>
 	<meta charset="utf-8">
 	<meta name="robots" content="index, follow">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-	<meta name="Description" content="Contact My Drop In The Oceans about partnerships, media requests, and the Dividend for Nature framework that aligns economy and natural capital.">
+	
 	<meta name="keywords" content="Sustainability, Dividend for Nature, Natural Capital," />
-	<link rel="canonical" href="https://mydropintheoceans.org/contact/" />
+	<link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8'); ?>" />
+	<link rel="alternate" hreflang="en" href="<?php echo htmlspecialchars($alternateEnUrl, ENT_QUOTES, 'UTF-8'); ?>" />
+	<link rel="alternate" hreflang="fr" href="<?php echo htmlspecialchars($alternateFrUrl, ENT_QUOTES, 'UTF-8'); ?>" />
+	<link rel="alternate" hreflang="de" href="<?php echo htmlspecialchars($alternateDeUrl, ENT_QUOTES, 'UTF-8'); ?>" />
+	<link rel="alternate" hreflang="x-default" href="<?php echo htmlspecialchars($alternateEnUrl, ENT_QUOTES, 'UTF-8'); ?>" />
 	<title>Contact My Drop In The Oceans | Partnerships, Media, Questions</title>
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
 	<link rel="stylesheet" type="text/css" href="/css/mydropintheoceans-style.css?v=<?php echo time(); ?>">
@@ -154,6 +169,7 @@ include __DIR__ . "/../php/analytics.php";
 	
 	<div style="border: 0;margin: 0;">
 		<div id="contact_box"  >
+			<h1 class="header_one"><?php echo htmlspecialchars($locale === 'fr' ? 'Contact' : ($locale === 'de' ? 'Kontakt' : 'Contact')); ?></h1>
 			<div id="response_box" class="contact_box">Contact:
 				<br>
 				<p></p>

@@ -1,12 +1,22 @@
 <?php
 include __DIR__ . '/../../php/analytics.php';
+include __DIR__ . '/../../php/i18n.php';
+$locale = get_current_locale();
+$articlePath = '/blog/what-if-stewardship-was-financially-recognised/';
+$canonicalUrl = localized_url($articlePath, $locale);
+$alternateEnUrl = localized_url($articlePath, 'en');
+$alternateFrUrl = localized_url($articlePath, 'fr');
+$alternateDeUrl = localized_url($articlePath, 'de');
+// Provide meta description for seo_tags.php
+$metaDescription = "What if acts of care and stewardship earned you real, tangible benefits? Exploring a regenerative economy.";
 ?>
 <!doctype html>
 <html lang="en">
 <head>
+  <?php include __DIR__ . '/../../php/seo_tags.php'; ?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta name="Description" content="What if acts of care and stewardship earned you real, tangible benefits? Exploring a regenerative economy.">
+    <!-- description moved to seo_tags.php -->
     <meta name="keywords" content="Stewardship, Financial Recognition, Regenerative Economy, Blog, Sustainability" />
     <meta name="author" content="My Drop In The Oceans">
     <meta property="og:image" content="/images/backdrop_an_economy_linkedin.jpg">
@@ -146,7 +156,7 @@ include __DIR__ . '/../../php/analytics.php';
             <p>A regenerative economy: Not just healthier ecosystems but better work-life balance?</p>
             <p>🌊 Your drop in the oceans matters.<br>Let’s celebrate stewardship and start a chain reaction—redefining value and realigning growth.</p>
             <p><b>Question:</b><br>If you could earn credit for stewardship, what would you do differently?</p>
-            <p><span class="blog-nav-label">🔗 Missed Parts 1 & 2?</span> <a class="blog-nav-link" href="/blog/why-the-swiss-said-no-to-free-money.php">Why the Swiss Said No to Free Money</a> & <a class="blog-nav-link" href="/blog/money-work-worth/">Money = Work = Worth: A Story We’ve All Inherited</a></p>
+            <p><span class="blog-nav-label">🔗 Missed Parts 1 & 2?</span> <a class="blog-nav-link" href="/blog/why-the-swiss-said-no-to-free-money/">Why the Swiss Said No to Free Money</a> & <a class="blog-nav-link" href="/blog/money-work-worth/">Money = Work = Worth: A Story We’ve All Inherited</a></p>
             <p>For a deeper look at how we can correct the mismatch between value and reward, see our <a class="blog-nav-link" href="/theory-of-change/">Theory of Change</a>.</p>
             <p>Explore more about why nature is not a charity in <a class="blog-nav-link" href="/blog/nature-is-not-a-charity/">Nature is Not a Charity—It’s an Economic Imperative</a>.</p>
             <p><span class="blog-nav-label blog-nav-upnext">⏩ Up next:</span> <span class="blog-nav-link">How Do We Measure What Matters?</span></p>
