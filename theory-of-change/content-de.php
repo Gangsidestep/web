@@ -8,8 +8,6 @@
 		<div class="white_page_span" id="bottom_page_span">
 			<h1 class="header_one">Wirtschaft und Natur durch Wertsignale und Anreizstrukturen in Einklang bringen</h1>
 
-		</div>
-
 		<div class="framing-box" style="margin-top: 18px;">
 			<h3>Vor dem Lesen</h3>
 			<p>
