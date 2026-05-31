@@ -114,7 +114,7 @@ $pageTitle = $locale === 'fr'
         <div style="padding-left: 15%;width: 85%; top: 30%;position: relative;height: 5%;"></div>
 
         <div class="intro_box"><br>
-          <b>Part 1/7</b><br>Why the Swiss Said No to Free Money
+          <b>Part 1/7</b><br><?php echo htmlspecialchars($pageTitle ?? 'Why the Swiss Said No to Free Money'); ?>
         </div>
 
         <div class="brown_page_spacer_top">
@@ -188,9 +188,9 @@ $pageTitle = $locale === 'fr'
             <div class="social-share-bar">
               <div class="share-label">Share:</div>
               <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://mydropintheoceans.org/blog/why-the-swiss-said-no-to-free-money/" target="_blank" rel="noopener" class="social-link"><img src="/images/social/linkedin.svg" alt="LinkedIn" style="width:28px;height:28px;vertical-align:middle;"></a>
-              <a href="https://twitter.com/intent/tweet?url=https://mydropintheoceans.org/blog/why-the-swiss-said-no-to-free-money/&text=Why%20the%20Swiss%20Said%20No%20to%20Free%20Money" target="_blank" rel="noopener" class="social-link"><img src="/images/social/twitter.svg" alt="Twitter" style="width:28px;height:28px;vertical-align:middle;"></a>
+              <a href="https://twitter.com/intent/tweet?url=https://mydropintheoceans.org/blog/why-the-swiss-said-no-to-free-money/&text=<?php echo urlencode($pageTitle ?? 'Why the Swiss Said No to Free Money'); ?>" target="_blank" rel="noopener" class="social-link"><img src="/images/social/twitter.svg" alt="Twitter" style="width:28px;height:28px;vertical-align:middle;"></a>
               <a href="https://www.facebook.com/sharer/sharer.php?u=https://mydropintheoceans.org/blog/why-the-swiss-said-no-to-free-money/" target="_blank" rel="noopener" class="social-link"><img src="/images/social/facebook.svg" alt="Facebook" style="width:28px;height:28px;vertical-align:middle;"></a>
-              <a href="https://wa.me/?text=Why%20the%20Swiss%20Said%20No%20to%20Free%20Money%20https://mydropintheoceans.org/blog/why-the-swiss-said-no-to-free-money/" target="_blank" rel="noopener" class="social-link"><img src="/images/social/whatsapp.svg" alt="WhatsApp" style="width:28px;height:28px;vertical-align:middle;"></a>
+              <a href="https://wa.me/?text=<?php echo urlencode(($pageTitle ?? 'Why the Swiss Said No to Free Money') . ' ' . 'https://mydropintheoceans.org/blog/why-the-swiss-said-no-to-free-money/'); ?>" target="_blank" rel="noopener" class="social-link"><img src="/images/social/whatsapp.svg" alt="WhatsApp" style="width:28px;height:28px;vertical-align:middle;"></a>
             </div>
 
             <div style="font-size: 0.95em; color: #222; margin-top: 2em;">
