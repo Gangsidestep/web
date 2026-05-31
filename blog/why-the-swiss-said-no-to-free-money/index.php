@@ -23,6 +23,10 @@ $pageTitle = $locale === 'fr'
     <meta name="author" content="My Drop In The Oceans">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://mydropintheoceans.org/blog/why-the-swiss-said-no-to-free-money/" />
+    <link rel="alternate" hreflang="en" href="https://mydropintheoceans.org/blog/why-the-swiss-said-no-to-free-money/" />
+    <link rel="alternate" hreflang="fr" href="https://mydropintheoceans.org/fr/blog/why-the-swiss-said-no-to-free-money/" />
+    <link rel="alternate" hreflang="de" href="https://mydropintheoceans.org/de/blog/why-the-swiss-said-no-to-free-money/" />
+    <link rel="alternate" hreflang="x-default" href="https://mydropintheoceans.org/blog/why-the-swiss-said-no-to-free-money/" />
 
     <!-- Open Graph -->
     <meta property="og:title" content="<?php echo htmlspecialchars($pageTitle); ?>">

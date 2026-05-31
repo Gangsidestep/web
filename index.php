@@ -1,6 +1,13 @@
 <?php
 include __DIR__ . '/php/analytics.php';
 
+// Provide localized alternate URLs for root so hreflang links are available
+include_once __DIR__ . '/php/i18n.php';
+$alternateEnUrl = localized_url('/', 'en');
+$alternateFrUrl = localized_url('/', 'fr');
+$alternateDeUrl = localized_url('/', 'de');
+$xDefaultUrl = $alternateEnUrl;
+
 // English-only content (no language variations to prevent phantom URLs)
 $pageTitle    = "Dividend for Nature and Natural Capital | My Drop In The Oceans";
 $pageDesc     = "Explore a practical framework that rewards stewardship, makes natural capital visible, and aligns economic incentives with ecological reality.";
@@ -21,6 +28,10 @@ $canonicalUrl = "https://mydropintheoceans.org/";
 	<meta name="robots" content="index, follow">
 
 	<link rel="canonical" href="https://mydropintheoceans.org/">
+	<link rel="alternate" hreflang="en" href="<?php echo htmlspecialchars($alternateEnUrl, ENT_QUOTES, 'UTF-8'); ?>" />
+	<link rel="alternate" hreflang="fr" href="<?php echo htmlspecialchars($alternateFrUrl, ENT_QUOTES, 'UTF-8'); ?>" />
+	<link rel="alternate" hreflang="de" href="<?php echo htmlspecialchars($alternateDeUrl, ENT_QUOTES, 'UTF-8'); ?>" />
+	<link rel="alternate" hreflang="x-default" href="<?php echo htmlspecialchars($xDefaultUrl, ENT_QUOTES, 'UTF-8'); ?>" />
 
 	<!-- Open Graph -->
 	<meta property="og:title"        content="<?php echo htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8'); ?>">

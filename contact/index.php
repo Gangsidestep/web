@@ -22,10 +22,6 @@ $metaDescription = 'Contact My Drop In The Oceans about partnerships, media requ
 	
 	<meta name="keywords" content="Sustainability, Dividend for Nature, Natural Capital," />
 	<link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8'); ?>" />
-	<link rel="alternate" hreflang="en" href="<?php echo htmlspecialchars($alternateEnUrl, ENT_QUOTES, 'UTF-8'); ?>" />
-	<link rel="alternate" hreflang="fr" href="<?php echo htmlspecialchars($alternateFrUrl, ENT_QUOTES, 'UTF-8'); ?>" />
-	<link rel="alternate" hreflang="de" href="<?php echo htmlspecialchars($alternateDeUrl, ENT_QUOTES, 'UTF-8'); ?>" />
-	<link rel="alternate" hreflang="x-default" href="<?php echo htmlspecialchars($alternateEnUrl, ENT_QUOTES, 'UTF-8'); ?>" />
 	<title>Contact My Drop In The Oceans | Partnerships, Media, Questions</title>
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
 	<link rel="stylesheet" type="text/css" href="/css/mydropintheoceans-style.css?v=<?php echo time(); ?>">

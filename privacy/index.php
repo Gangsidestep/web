@@ -22,10 +22,6 @@ $metaDescription = 'Privacy and Cookie Policy for My Drop In The Oceans';
 	
 	<meta name="keywords" content="Privacy Policy, Cookie Policy, Data Protection" />
 	<link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8'); ?>" />
-	<link rel="alternate" hreflang="en" href="<?php echo htmlspecialchars($alternateEnUrl, ENT_QUOTES, 'UTF-8'); ?>" />
-	<link rel="alternate" hreflang="fr" href="<?php echo htmlspecialchars($alternateFrUrl, ENT_QUOTES, 'UTF-8'); ?>" />
-	<link rel="alternate" hreflang="de" href="<?php echo htmlspecialchars($alternateDeUrl, ENT_QUOTES, 'UTF-8'); ?>" />
-	<link rel="alternate" hreflang="x-default" href="<?php echo htmlspecialchars($alternateEnUrl, ENT_QUOTES, 'UTF-8'); ?>" />
 	<title>Privacy & Cookie Policy | My Drop in The Oceans</title> 
 	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 	<link rel="stylesheet" type="text/css" href="/css/mydropintheoceans-style.css?v=<?php echo time(); ?>">

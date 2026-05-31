@@ -1,22 +1,34 @@
 <?php
 include __DIR__ . '/../../php/analytics.php';
 include __DIR__ . '/../../php/i18n.php';
+
 $locale = get_current_locale();
 $articlePath = '/blog/what-if-stewardship-was-financially-recognised/';
 $canonicalUrl = localized_url($articlePath, $locale);
-$alternateEnUrl = localized_url($articlePath, 'en');
-$alternateFrUrl = localized_url($articlePath, 'fr');
-$alternateDeUrl = localized_url($articlePath, 'de');
-// Provide meta description for seo_tags.php
-$metaDescription = "What if acts of care and stewardship earned you real, tangible benefits? Exploring a regenerative economy.";
+
 $deContentPath = __DIR__ . '/content-de.php';
 $frContentPath = __DIR__ . '/content-fr.php';
 $hasDeContent = is_readable($deContentPath);
 $hasFrContent = is_readable($frContentPath);
 
+// Provide alternate URLs for seo_tags.php only when the relevant language version exists.
+$alternateEnUrl = localized_url($articlePath, 'en');
+$alternateFrUrl = $hasFrContent ? localized_url($articlePath, 'fr') : '';
+$alternateDeUrl = $hasDeContent ? localized_url($articlePath, 'de') : '';
+
+// Provide meta description for seo_tags.php
+$metaDescription = $locale === 'fr'
+  ? "Et si les gestes de soin et de stewardship donnaient lieu à de vrais bénéfices tangibles ? Une réflexion sur l’économie régénératrice."
+  : ($locale === 'de'
+    ? "Was wäre, wenn Fürsorge und Stewardship konkret anerkannt würden? Eine Reflexion über regenerative Wirtschaft."
+    : "What if acts of care and stewardship earned you real, tangible benefits? Exploring a regenerative economy.");
+
 $pageTitle = $locale === 'fr'
   ? 'Et si la stewardship était reconnue financièrement ?'
-  : ($locale === 'de' ? 'Was wäre, wenn Fürsorge finanziell anerkannt würde?' : 'What if Stewardship Was Financially Recognised?');
+  : ($locale === 'de' ? 'Was wäre, wenn Stewardship finanziell anerkannt würde?' : 'What if Stewardship Was Financially Recognised?');
+
+$ogImage = 'https://mydropintheoceans.org/images/backdrop_an_economy_linkedin.jpg';
+$isArticle = true;
 ?>
 <!doctype html>
 <html lang="<?php echo $locale; ?>">
@@ -24,48 +36,18 @@ $pageTitle = $locale === 'fr'
   <?php include __DIR__ . '/../../php/seo_tags.php'; ?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <!-- description moved to seo_tags.php -->
+    <!-- description, Open Graph, Twitter Card, hreflang and basic JSON-LD are handled by seo_tags.php -->
     <meta name="keywords" content="Stewardship, Financial Recognition, Regenerative Economy, Blog, Sustainability" />
     <meta name="author" content="My Drop In The Oceans">
-    <meta property="og:image" content="/images/backdrop_an_economy_linkedin.jpg">
-    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="200">
     <meta property="og:image:height" content="200">
-    <link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl); ?>" />
-    <title><?php echo htmlspecialchars($pageTitle); ?></title>
-    <meta property="og:title" content="<?php echo htmlspecialchars($pageTitle); ?>">
-    <meta property="og:description" content="<?php echo htmlspecialchars($metaDescription); ?>">
-    <meta property="og:url" content="<?php echo htmlspecialchars($canonicalUrl); ?>">
+    <link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8'); ?>" />
+    <title><?php echo htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8'); ?></title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/connect-icons/apple-touch-icon.png">
     <link rel="stylesheet" type="text/css" href="/css/mydropintheoceans-style.css?v=<?php echo time(); ?>">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js?v=20260203"></script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "What if Stewardship Was Financially Recognised?",
-      "description": "What if acts of care and stewardship earned you real, tangible benefits? Exploring a regenerative economy.",
-      "image": "https://mydropintheoceans.org/images/backdrop_an_economy_linkedin.jpg",
-      "author": {
-        "@type": "Organization",
-        "name": "My Drop In The Oceans"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "My Drop In The Oceans",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://mydropintheoceans.org/images/logo/mydropintheoceans_logo_large_no_drop.png"
-        }
-      },
-      "datePublished": "2025-07-03",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://mydropintheoceans.org/blog/what-if-stewardship-was-financially-recognised/"
-      }
-    }
-    </script>
     <style>
       .linkedin-btn {
         display: inline-block;
