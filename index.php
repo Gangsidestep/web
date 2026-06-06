@@ -11,10 +11,19 @@ $xDefaultUrl = $alternateEnUrl;
 // determine current locale and localized canonical for root
 $locale = get_current_locale();
 
-// English default meta (body includes localized fragments when available)
-$pageTitle    = "Dividend for Nature and Natural Capital | My Drop In The Oceans";
-$pageDesc     = "Explore a practical framework that rewards stewardship, makes natural capital visible, and aligns economic incentives with ecological reality.";
-$pageKeywords = "Citizen's Dividend for Nature, natural capital, ecological economics, economic incentives, stewardship, nature-positive economy";
+if ($locale === 'fr') {
+	$pageTitle = "Dividende pour la Nature et capital naturel | My Drop In The Oceans";
+	$pageDesc = "Découvrez un cadre pratique qui valorise la préservation, rend le capital naturel visible et aligne les incitations économiques avec la réalité écologique.";
+	$pageKeywords = "dividende citoyen pour la Nature, capital naturel, économie écologique, incitations économiques, préservation, économie régénérative";
+} elseif ($locale === 'de') {
+	$pageTitle = "Bürgerdividende für die Natur und Naturkapital | My Drop In The Oceans";
+	$pageDesc = "Entdecken Sie einen praktischen Rahmen, der Stewardship belohnt, Naturkapital sichtbar macht und wirtschaftliche Anreize mit ökologischer Realität ausrichtet.";
+	$pageKeywords = "Bürgerdividende für die Natur, Naturkapital, ökologische Ökonomie, wirtschaftliche Anreize, Stewardship, regenerative Wirtschaft";
+} else {
+	$pageTitle = "Dividend for Nature and Natural Capital | My Drop In The Oceans";
+	$pageDesc = "Explore a practical framework that rewards stewardship, makes natural capital visible, and aligns economic incentives with ecological reality.";
+	$pageKeywords = "Citizen's Dividend for Nature, natural capital, ecological economics, economic incentives, stewardship, nature-positive economy";
+}
 $canonicalUrl = localized_url('/', $locale);
 ?>
 <!doctype html>

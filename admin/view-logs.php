@@ -224,6 +224,20 @@ if (isset($_GET['ajax']) && $_GET['ajax'] == '1') {
             // Use the collected keys as labels (preserve chronological order)
             $labels = array_keys($all_keys);
             sort($labels);
+            // If a start/end range was provided and grouping is by day, expand labels
+            // to include every date in the range so the chart shows continuous days.
+            if ($start_date && $end_date && $group === 'day') {
+              $range = [];
+              $dt = new DateTime($start_date);
+              $endDt = new DateTime($end_date);
+              while ($dt <= $endDt) {
+                $d = $dt->format('Y-m-d');
+                $range[$d] = true;
+                $dt->modify('+1 day');
+              }
+              // Merge existing labels into the full range (preserves order by date)
+              $labels = array_keys($range);
+            }
             $datasets = [];
             foreach ($pages as $p) {
                 $data = [];
@@ -263,7 +277,27 @@ if (isset($_GET['ajax']) && $_GET['ajax'] == '1') {
             $buckets[$key]++;
         }
         ksort($buckets);
+      $labels = array_values(array_map(function($k){ return (string)$k; }, array_keys($buckets)));
+      // Ensure continuous day labels when start/end provided and grouping by day
+      if ($start_date && $end_date && $group === 'day') {
+        $full = [];
+        $dt = new DateTime($start_date);
+        $endDt = new DateTime($end_date);
+        while ($dt <= $endDt) {
+          $d = $dt->format('Y-m-d');
+          $full[] = $d;
+          $dt->modify('+1 day');
+        }
+        // Rebuild buckets to include zeros for missing days
+        $newBuckets = [];
+        foreach ($full as $k) { $newBuckets[$k] = $buckets[$k] ?? 0; }
+        $buckets = $newBuckets;
         $labels = array_values(array_map(function($k){ return (string)$k; }, array_keys($buckets)));
+        $data = array_values($buckets);
+        header('Content-Type: application/json');
+        echo json_encode(['labels' => $labels, 'data' => $data, 'group' => $group]);
+        exit;
+      }
         $data = array_values($buckets);
         header('Content-Type: application/json');
         echo json_encode(['labels' => $labels, 'data' => $data, 'group' => $group]);
@@ -1255,9 +1289,9 @@ echo '};';
 echo 'window.initPvdTable();';
 // Render empty chart; populate via AJAX
 echo 'window.tsChart = new Chart(document.getElementById("timelineChart"), {';
-echo '  type: "line",';
-echo '  data: { labels: [], datasets: [{ label: "Visits", data: [], borderColor: "#4bc0c0", backgroundColor: "rgba(75,192,192,0.2)", fill: true }] },';
-echo '  options: { plugins: { legend: { labels: { color: "#eee" } } }, scales: { x: { ticks: { color: "#eee" } }, y: { ticks: { color: "#eee" } } } }';
+echo '  type: "bar",';
+echo '  data: { labels: [], datasets: [{ label: "Visits (selected pages)", data: [], backgroundColor: "rgba(75,192,192,0.25)", borderColor: "#4bc0c0", borderWidth: 1 }] },';
+echo '  options: { plugins: { legend: { labels: { color: "#eee" } } }, scales: { x: { ticks: { color: "#eee" }, grid: { color: "#111" } }, y: { beginAtZero: true, ticks: { color: "#eee" }, grid: { color: "#111" } } }, responsive:true, maintainAspectRatio:false }';
 echo '});';
 echo 'new Chart(document.getElementById("pageChart"), {';
 echo '  type: "bar",';
@@ -1319,40 +1353,46 @@ echo <<<HTML
     });
 
     function saveTsPrefs(){
-      var selectedPages = Array.from(pagesSelect.selectedOptions).map(function(o){ return o.value; }).slice(0, 30);
-      setCookie('viewlogs_ts_page', pageSelect.value || '', 60);
-      setCookie('viewlogs_ts_pages', JSON.stringify(selectedPages), 60);
-      setCookie('viewlogs_ts_group', groupSelect.value || 'day', 60);
-      setCookie('viewlogs_ts_start', startInput.value || '', 60);
-      setCookie('viewlogs_ts_end', endInput.value || '', 60);
+      try {
+        var selectedPages = Array.from(pagesSelect.selectedOptions).map(function(o){ return o.value; }).slice(0, 30);
+        localStorage.setItem('viewlogs_ts_page', pageSelect.value || '');
+        localStorage.setItem('viewlogs_ts_pages', JSON.stringify(selectedPages));
+        localStorage.setItem('viewlogs_ts_group', groupSelect.value || 'day');
+        localStorage.setItem('viewlogs_ts_start', startInput.value || '');
+        localStorage.setItem('viewlogs_ts_end', endInput.value || '');
+      } catch(e) {
+        try { setCookie('viewlogs_ts_page', pageSelect.value || '', 60); setCookie('viewlogs_ts_pages', JSON.stringify(selectedPages), 60); setCookie('viewlogs_ts_group', groupSelect.value || 'day', 60); setCookie('viewlogs_ts_start', startInput.value || '', 60); setCookie('viewlogs_ts_end', endInput.value || '', 60); } catch(e2){}
+        console.warn('saveTsPrefs failed to write localStorage, falling back to cookies', e);
+      }
     }
 
     function restoreTsPrefs(){
       var restoredAny = false;
-      var savedPage = getCookie('viewlogs_ts_page');
-      if(savedPage !== ''){
-        Array.from(pageSelect.options).forEach(function(o){ if(o.value === savedPage) o.selected = true; });
-        restoredAny = true;
-      }
+      try {
+        var savedPage = localStorage.getItem('viewlogs_ts_page') || getCookie('viewlogs_ts_page');
+        if(savedPage !== '' && savedPage !== null){
+          Array.from(pageSelect.options).forEach(function(o){ if(o.value === savedPage) o.selected = true; });
+          restoredAny = true;
+        }
 
-      var savedPagesRaw = getCookie('viewlogs_ts_pages');
-      if(savedPagesRaw){
-        try {
-          var savedPages = JSON.parse(savedPagesRaw);
-          if(Array.isArray(savedPages) && savedPages.length){
-            Array.from(pagesSelect.options).forEach(function(o){ o.selected = savedPages.indexOf(o.value) !== -1; });
-            restoredAny = true;
-          }
-        } catch(e) {}
-      }
+        var savedPagesRaw = localStorage.getItem('viewlogs_ts_pages') || getCookie('viewlogs_ts_pages');
+        if(savedPagesRaw){
+          try {
+            var savedPages = JSON.parse(savedPagesRaw);
+            if(Array.isArray(savedPages) && savedPages.length){
+              Array.from(pagesSelect.options).forEach(function(o){ o.selected = savedPages.indexOf(o.value) !== -1; });
+              restoredAny = true;
+            }
+          } catch(e) {}
+        }
 
-      var savedGroup = getCookie('viewlogs_ts_group');
-      if(savedGroup){ groupSelect.value = savedGroup; restoredAny = true; }
-      var savedStart = getCookie('viewlogs_ts_start');
-      if(savedStart){ startInput.value = savedStart; restoredAny = true; }
-      var savedEnd = getCookie('viewlogs_ts_end');
-      if(savedEnd){ endInput.value = savedEnd; restoredAny = true; }
-
+        var savedGroup = localStorage.getItem('viewlogs_ts_group') || getCookie('viewlogs_ts_group');
+        if(savedGroup){ groupSelect.value = savedGroup; restoredAny = true; }
+        var savedStart = localStorage.getItem('viewlogs_ts_start') || getCookie('viewlogs_ts_start');
+        if(savedStart){ startInput.value = savedStart; restoredAny = true; }
+        var savedEnd = localStorage.getItem('viewlogs_ts_end') || getCookie('viewlogs_ts_end');
+        if(savedEnd){ endInput.value = savedEnd; restoredAny = true; }
+      } catch(e) { console.warn('restoreTsPrefs failed', e); }
       return restoredAny;
     }
 
@@ -1403,6 +1443,7 @@ echo <<<HTML
         if(start) params.set('start_date', start);
         if(end) params.set('end_date', end);
         params.set('bot_filter', botFilter);
+        console.log('fetchTimeseries', { page: page, pages: pagesMulti, group: group, start: start, end: end, bot_filter: botFilter, params: params.toString() });
         fetch(window.location.pathname + '?' + params.toString())
           .then(function(r){ return r.json(); })
           .then(function(json){

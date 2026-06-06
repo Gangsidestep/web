@@ -119,7 +119,6 @@ include __DIR__ . '/../php/analytics.php';
   <?php include __DIR__ . '/../php/seo_tags.php'; ?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta name="description" content="<?php echo htmlspecialchars($metaDescription); ?>" />
     <meta name="keywords" content="<?php echo htmlspecialchars($metaKeywords); ?>" />
     <meta name="author" content="My Drop In The Oceans">
     <meta property="og:image" content="/images/backdrop_an_economy_linkedin.jpg">
@@ -128,8 +127,6 @@ include __DIR__ . '/../php/analytics.php';
     <meta property="og:image:height" content="200">
     <link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl); ?>" />
     <title><?php echo htmlspecialchars($pageTitle); ?></title>
-    <meta property="og:title" content="<?php echo htmlspecialchars($pageTitle); ?>" />
-    <meta property="og:description" content="<?php echo htmlspecialchars($metaDescription); ?>" />
     <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/connect-icons/apple-touch-icon.png">
     <link rel="stylesheet" type="text/css" href="../css/mydropintheoceans-style.css?v=<?php echo date('Ymd'); ?>">

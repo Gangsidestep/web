@@ -1,5 +1,10 @@
 User-agent: *
 Allow: /
+# Allow recrawl of legacy URLs so crawlers can process 410 and drop them from index.
+Allow: /login/loggedin/aboutmydio/about.php
+Allow: /login/loggedin/aboutmydio/about.php*
+Allow: /login/loggedin/aboutmydio/animation.php
+Allow: /login/loggedin/aboutmydio/animation.php*
 Disallow: /admin/
 Disallow: /login/
 Disallow: /archive/

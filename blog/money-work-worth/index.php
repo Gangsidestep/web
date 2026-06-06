@@ -38,10 +38,8 @@ include __DIR__ . '/../../php/analytics.php';
 	<?php include __DIR__ . '/../../php/seo_tags.php'; ?>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-		<meta name="Description" content="<?php echo htmlspecialchars($metaDescription); ?>">
 		<meta name="keywords" content="<?php echo htmlspecialchars($metaKeywords); ?>" />
 		<meta name="author" content="My Drop In The Oceans">
-		<meta name="robots" content="index, follow">
 		<meta property="og:image" content="/images/backdrop_an_economy_linkedin.jpg">
 		<meta property="og:image:type" content="image/png">
 		<meta property="og:image:width" content="200">

@@ -162,7 +162,11 @@
 
 			Du point de vue de la gouvernance, la légitimité à long terme d’un tel mécanisme ne peut pas reposer uniquement sur l’adoption privée. Elle dépend également d’une légitimité publique issue des citoyens et du processus démocratique, tandis que les institutions scientifiques et publiques contribuent à définir comment la valeur écologique est mesurée, validée et progressivement traduite en cadres robustes.<br><br>
 
-			La mise en œuvre durable d’un tel mécanisme supposerait ainsi une forme de stewardship institutionnel. Sa légitimité démocratique reposerait sur les citoyens et la gouvernance publique, tandis que les institutions scientifiques contribueraient à définir et affiner les indicateurs écologiques sous-jacents au dividende. Sur le plan opérationnel, le mécanisme pourrait s’appuyer sur des infrastructures financières et numériques capables de traduire les signaux de valeur écologique dans les transactions économiques quotidiennes — afin que la reconnaissance du capital naturel s’inscrive concrètement dans l’économie réelle plutôt que de rester un exercice comptable abstrait.
+			La mise en œuvre durable d’un tel mécanisme supposerait ainsi une forme de stewardship institutionnel. Sa légitimité démocratique reposerait sur les citoyens et la gouvernance publique, tandis que les institutions scientifiques contribueraient à définir et affiner les indicateurs écologiques sous-jacents au dividende.<br><br>
+
+			Il est important de souligner que le cadre ne dépend d’aucune méthodologie unique. La comptabilité du capital naturel, les métriques de biodiversité, le TEEB, les approches EP&L ainsi que d’autres cadres présents ou futurs doivent être considérés comme des apports évolutifs plutôt que comme des vérités définitives. La gouvernance a donc non seulement pour rôle de définir les critères d’éligibilité, mais également de garantir la transparence, l’indépendance et l’examen continu des méthodes utilisées pour reconnaître la valeur écologique. Cette séparation contribue à réduire les risques de capture par des intérêts particuliers tout en permettant au système d’évoluer avec les connaissances scientifiques et les priorités sociétales.<br><br>
+
+			Sur le plan opérationnel, le mécanisme pourrait s’appuyer sur des infrastructures financières et numériques capables de traduire les signaux de valeur écologique dans les transactions économiques quotidiennes — afin que la reconnaissance du capital naturel s’inscrive concrètement dans l’économie réelle plutôt que de rester un exercice comptable abstrait.
 		</span>
 
 		<h2 class="header_two">Passer de la théorie à la mise en œuvre</h2>
@@ -192,7 +196,9 @@
 		<div class="framing-box">
 			<h3>Principe de mise en œuvre</h3>
 			<p>
-				La mise en pratique n’a pas vocation à remplacer le cadre théorique, mais à le tester dans des conditions réelles — afin que la théorie puisse évoluer à travers la participation, la redevabilité et l’apprentissage.
+				La mise en pratique n’a pas vocation à remplacer le cadre théorique, mais à le tester dans des conditions réelles — afin que la théorie puisse évoluer à travers la participation, la redevabilité et l’apprentissage.<br><br>
+
+				Elle crée également une boucle permanente de rétroaction entre la mesure, la gouvernance et les comportements. À mesure que les connaissances scientifiques progressent, que les mécanismes de gouvernance se renforcent et que la participation s’élargit, le cadre peut intégrer des méthodes toujours plus pertinentes pour reconnaître la valeur écologique, plutôt que de dépendre d’une définition figée dès son lancement.
 			</p>
 		</div>
 
@@ -208,8 +214,15 @@
 			L’idée est d’observer une bascule graduelle de la logique « extraction rentable » vers la logique « régénération viable ». <br><br>
 
 			Les résultats environnementaux comptent aussi : émissions carbone, indicateurs biodiversité, et méthodes de comptabilité du capital naturel.
-			Aucun indicateur n’est parfait dès le départ ; l’important est de construire une infrastructure d’incitation capable d’intégrer des mesures de plus en plus robustes avec le temps.
-		</span>
+			Aucun indicateur n’est parfait dès le départ ; l’important est de construire une infrastructure d’incitation capable d’intégrer des mesures de plus en plus robustes avec le temps.<br><br>
+
+			À mesure que la participation progresse, le mécanisme peut également créer une demande croissante pour des mesures écologiques plus précises. Plutôt que de considérer la mesure comme un exercice ponctuel, le cadre encourage une amélioration continue grâce à des incitations économiques favorisant des données plus robustes, des indicateurs plus pertinents et une compréhension scientifique toujours plus fine.<br><br>
+
+			En ce sens, le progrès se mesure non seulement par les résultats environnementaux eux-mêmes, mais aussi par la capacité croissante du système à reconnaître, valider et intégrer économiquement ces résultats dans les décisions du quotidien.		
+				<p>
+			À terme, le progrès ne se manifeste pas uniquement par des engagements ou des déclarations d’intention, mais par la circulation mesurable de signaux de valeur qui favorisent la régénération plutôt que l’extraction.
+		</p>
+</span>
 
 		<h2 class="header_two">Direction stratégique : une économie réellement régénérative</h2>
 		<span class="span_text_box">

@@ -32,6 +32,9 @@ RewriteRule ^login/ - [E=NOINDEX:1]
 RewriteRule ^HR/ - [E=NOINDEX:1]
 RewriteRule ^community/action\.php$ - [E=NOINDEX:1]
 
+# Legacy HR endpoint: redirect permanently to site root
+Redirect 301 /HR/ https://mydropintheoceans.org/
+
 # MANAGED_BLOCK_END
 # -------------------------------------------------------------------------
 # Canonical host: force www -> non-www in one hop
@@ -48,15 +51,18 @@ RewriteRule ^index\.php/login$ - [G,L,NC]
 
 # Coverage cleanup: map legacy public URLs to current equivalents
 RewriteRule ^index_fr\.php$ /fr/ [R=301,L,NC]
+RewriteRule ^about\.php$ /theory-of-change/ [R=301,L,NC]
 RewriteRule ^about/?$ /theory-of-change/ [R=301,L,NC]
 RewriteRule ^how-dio-works/?$ /theory-of-change/ [R=301,L,NC]
-RewriteRule ^blog/nature-is-not-a-$ /blog/nature-is-not-a-charity/ [R=301,L,NC]
+RewriteRule ^how-di-o-works/?$ /theory-of-change/ [R=301,L,NC]
+RewriteRule ^(contact|privacy|blog|theory-of-change|faq)$ /$1/ [R=301,L,NC]
+RewriteRule ^blog/nature-is-not-a-?$ /blog/nature-is-not-a-charity/ [R=301,L,NC]
 
 # Coverage cleanup: retire private/defunct endpoints so Google drops them faster
 RewriteRule ^community/action\.php$ - [G,L,NC]
 RewriteRule ^community/action-page\.php$ - [G,L,NC]
 RewriteRule ^reward/category\.php$ - [G,L,NC]
-RewriteRule ^login/loggedin/aboutmydio/(about|animation)\.php$ - [G,L,NC]
+RewriteRule ^login/loggedin/aboutmydio/(about|animation|credits)\.php$ - [G,L,NC]
 
 # Redirect old blog post URLs (blog/post-name.php) to new directory format (blog/post-name/)
 # Specific corrections for old slugs that differ from current directory names

@@ -27,10 +27,8 @@ $ogImage = 'https://mydropintheoceans.org/images/backdrop_an_economy_linkedin.jp
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
     <!-- SEO -->
-    <meta name="description" content="Swiss UBI referendum: what the 2016 vote revealed about work, value, and nature — and why a Dividend for Nature differs from basic income.">
     <meta name="keywords" content="Universal Basic Income, Switzerland, Stewardship, Economy, Blog, Sustainability">
     <meta name="author" content="My Drop In The Oceans">
-    <meta name="robots" content="index, follow">
   <?php include __DIR__ . '/../../php/seo_tags.php'; ?>
     <link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8'); ?>" />
 
@@ -207,7 +205,7 @@ $ogImage = 'https://mydropintheoceans.org/images/backdrop_an_economy_linkedin.jp
               <p>For a deeper look at how we can correct the mismatch between value and reward, see our <a class="blog-nav-link" href="/theory-of-change/">Theory of Change framework</a>.</p>
               <p>Explore more about why nature is not a charity in <a class="blog-nav-link" href="/blog/nature-is-not-a-charity/">this article on Nature as an Economic Imperative</a>.</p>
               <p>Have questions or want to share your thoughts? <a class="blog-nav-link" href="/contact/">Contact us here</a>.</p>
-              <p>Want to know more about our mission? Visit the <a class="blog-nav-link" href="/about/">About page</a> to learn about My Drop In The Oceans.</p>
+              <p>Want to know more about our mission? Visit the <a class="blog-nav-link" href="/theory-of-change/">About page</a> to learn about My Drop In The Oceans.</p>
               <p>Explore more stories and insights on our <a class="blog-nav-link" href="/blog/">main Blog page</a>.</p>
               <p>We value your privacy. Read our <a class="blog-nav-link" href="/privacy/">full Privacy Policy</a>.</p>
             </div>

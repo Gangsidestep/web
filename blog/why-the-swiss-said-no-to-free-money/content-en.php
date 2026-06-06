@@ -108,7 +108,7 @@ Have you ever felt like your ecological or social choices were invisible in the 
   <p>For a deeper look at how we can correct the mismatch between value and reward, see our <a class="blog-nav-link" href="<?php echo localized_url('/theory-of-change/', $locale ?? 'en'); ?>">Theory of Change framework</a>.</p>
   <p>Explore more about why nature is not a charity in <a class="blog-nav-link" href="<?php echo localized_url('/blog/nature-is-not-a-charity/', $locale ?? 'en'); ?>">this article on Nature as an Economic Imperative</a>.</p>
   <p>Have questions or want to share your thoughts? <a class="blog-nav-link" href="<?php echo localized_url('/contact/', $locale ?? 'en'); ?>">Contact us here</a>.</p>
-  <p>Want to know more about our mission? Visit the <a class="blog-nav-link" href="<?php echo localized_url('/about/', $locale ?? 'en'); ?>">About page</a> to learn about My Drop In The Oceans.</p>
+  <p>Want to know more about our mission? Visit the <a class="blog-nav-link" href="<?php echo localized_url('/theory-of-change/', $locale ?? 'en'); ?>">About page</a> to learn about My Drop In The Oceans.</p>
   <p>Explore more stories and insights on our <a class="blog-nav-link" href="<?php echo localized_url('/blog/', $locale ?? 'en'); ?>">main Blog page</a>.</p>
   <p>We value your privacy. Read our <a class="blog-nav-link" href="<?php echo localized_url('/privacy/', $locale ?? 'en'); ?>">full Privacy Policy</a>.</p>
 </div>

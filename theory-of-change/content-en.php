@@ -185,7 +185,13 @@
 
 			In governance terms, the long-term legitimacy of such a mechanism depends on more than private adoption alone. Public legitimacy ultimately comes through citizens and democratic process, while scientific credibility and public institutions help determine how ecological value is measured, validated, and translated into robust frameworks over time.<br><br>
 
-			The long-term implementation of such a mechanism would therefore require institutional stewardship. Democratic legitimacy would ultimately rest with citizens and public governance, while scientific institutions would contribute to defining and refining the ecological indicators underlying the dividend. Operationally, the mechanism could be administered through financial and digital infrastructure capable of translating ecological value signals into everyday economic transactions — ensuring that recognition of natural capital becomes practically embedded within the real economy rather than remaining an abstract accounting exercise.
+			The long-term implementation of such a mechanism would therefore require institutional stewardship. Democratic legitimacy would ultimately rest with citizens and public governance, while scientific institutions would contribute to defining, validating and continuously improving the ecological indicators underlying the dividend.<br><br>
+
+			Importantly, the framework does not depend on any single methodology, accounting standard or valuation approach. Natural capital accounting, ecosystem service valuation, TEEB, EP&amp;L, biodiversity metrics and future methodologies should be understood as evolving inputs rather than fixed truths.<br><br>
+
+			The role of governance is therefore not only to determine eligibility criteria, but also to ensure transparency, independence and ongoing scrutiny of how ecological value is recognised. This helps reduce the risk of capture by any individual interest group while allowing the framework to evolve alongside scientific understanding and societal priorities.<br><br>
+
+			Operationally, the mechanism could be administered through financial and digital infrastructure capable of translating ecological value signals into everyday economic transactions — ensuring that recognition of natural capital becomes practically embedded within the real economy rather than remaining an abstract accounting exercise.
 		</span>
 
 		<h2 class="header_two">Putting the Theory of Change into Practice</h2>
@@ -215,7 +221,9 @@
 		<div class="framing-box">
 			<h3>Implementation principle</h3>
 			<p>
-				The purpose of practical implementation is not to replace the framework, but to test it under lived conditions so that the theory can be refined through real participation, accountability and learning.
+				The purpose of practical implementation is not to replace the framework, but to test it under lived conditions so that the theory can be refined through real participation, accountability and learning.<br><br>
+
+				Practical implementation also creates a permanent feedback loop between measurement, governance and behaviour. As scientific understanding improves, governance evolves and participation grows, the framework can progressively integrate better methods of recognising ecological value rather than relying on a fixed definition established at launch.
 			</p>
 		</div>
 
@@ -228,6 +236,10 @@
 			Complementary indicators include growth in active participation (citizens and businesses), the proportion of spending influenced by regenerative incentives, and the observable evolution of purchasing trade-offs in favour of goods and services aligned with long-term ecological resilience.<br><br>
 
 			Environmental outcomes also matter. Carbon emissions are one important indicator, while other measures — including biodiversity-related metrics and emerging natural capital accounting approaches — are still evolving. The purpose of the mechanism is not to depend on one perfect metric from the outset, but to create an incentive infrastructure capable of integrating progressively better measures as science and public institutions refine them over time.<br><br>
+
+			As participation expands, the mechanism can also create increasing demand for better ecological measurement. Rather than treating measurement as a one-off exercise, the framework encourages continuous improvement by creating economic incentives for more robust data, better indicators and greater scientific precision over time.<br><br>
+
+			In this sense, progress is measured not only by environmental outcomes themselves, but by the system's growing capacity to recognise, validate and economically integrate those outcomes into everyday decision-making.<br><br>
 
 			Progress, in this sense, is not defined solely by declarations or commitments, but by the measurable circulation of value signals that support regeneration rather than extraction.
 		</span>

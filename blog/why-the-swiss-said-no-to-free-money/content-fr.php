@@ -108,7 +108,7 @@ Avez-vous déjà eu l'impression que vos choix écologiques ou sociaux étaient 
   <p>Pour une analyse approfondie de la façon dont nous pouvons corriger l'inadéquation entre la valeur et la récompense, consultez notre <a class="blog-nav-link" href="<?php echo localized_url('/theory-of-change/', $locale ?? 'fr'); ?>">cadre Théorie du changement</a>.</p>
   <p>Explorez pourquoi la nature n'est pas une charité dans <a class="blog-nav-link" href="<?php echo localized_url('/blog/nature-is-not-a-charity/', $locale ?? 'fr'); ?>">cet article sur la Nature comme impératif économique</a>.</p>
   <p>Vous avez des questions ou souhaitez partager vos pensées ? <a class="blog-nav-link" href="<?php echo localized_url('/contact/', $locale ?? 'fr'); ?>">Contactez-nous ici</a>.</p>
-  <p>Voulez-vous en savoir plus sur notre mission ? Visitez la <a class="blog-nav-link" href="<?php echo localized_url('/about/', $locale ?? 'fr'); ?>">page À propos</a> pour en savoir plus sur My Drop In The Oceans.</p>
+  <p>Voulez-vous en savoir plus sur notre mission ? Visitez la <a class="blog-nav-link" href="<?php echo localized_url('/theory-of-change/', $locale ?? 'fr'); ?>">page À propos</a> pour en savoir plus sur My Drop In The Oceans.</p>
   <p>Explorez d'autres histoires et perspectives sur notre <a class="blog-nav-link" href="<?php echo localized_url('/blog/', $locale ?? 'fr'); ?>">page Blog principale</a>.</p>
   <p>Nous valorisons votre confidentialité. Lisez notre <a class="blog-nav-link" href="<?php echo localized_url('/privacy/', $locale ?? 'fr'); ?>">Politique de confidentialité complète</a>.</p>
 </div>
