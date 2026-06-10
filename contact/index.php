@@ -17,7 +17,6 @@ $metaDescription = 'Contact My Drop In The Oceans about partnerships, media requ
 <head>
 	<?php include __DIR__ . '/../php/seo_tags.php'; ?>
 	<meta charset="utf-8">
-	<meta name="robots" content="index, follow">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 	
 	<meta name="keywords" content="Sustainability, Dividend for Nature, Natural Capital," />

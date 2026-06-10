@@ -77,6 +77,103 @@ function visit_matches_bot_filter($visit, $mode) {
   return $mode === 'bots' ? !empty($info['is_bot']) : empty($info['is_bot']);
 }
 
+function normalize_logged_page($page) {
+  $page = trim((string)$page);
+  if ($page === '') return '/';
+
+  if (preg_match('#^https?://#i', $page)) {
+    $parts = parse_url($page);
+    $path = isset($parts['path']) ? $parts['path'] : '/';
+    $query = isset($parts['query']) && $parts['query'] !== '' ? ('?' . $parts['query']) : '';
+    $page = $path . $query;
+  }
+
+  $page = preg_replace('/#.*$/', '', $page);
+  $qpos = strpos($page, '?');
+  $path = $qpos === false ? $page : substr($page, 0, $qpos);
+  $path = preg_replace('#/+#', '/', $path);
+  if ($path === '' || $path === false) $path = '/';
+  if ($path[0] !== '/') $path = '/' . $path;
+  if ($path !== '/' && !preg_match('/\.[a-z0-9]{1,8}$/i', $path)) {
+    $path = rtrim($path, '/') . '/';
+  }
+
+  return $path;
+}
+
+function page_value_for_mode($page, $mode) {
+  return $mode === 'generic' ? normalize_logged_page($page) : (string)$page;
+}
+
+function fold_locale_variants($page) {
+  $page = trim((string)$page);
+  if ($page === '') return '/';
+
+  $qpos = strpos($page, '?');
+  $path = $qpos === false ? $page : substr($page, 0, $qpos);
+  $query = $qpos === false ? '' : substr($page, $qpos + 1);
+
+  $path = preg_replace('#/+#', '/', $path);
+  if ($path === '' || $path === false) $path = '/';
+  if ($path[0] !== '/') $path = '/' . $path;
+
+  $path = preg_replace('#^/(en|fr|de)(?=/|$)#i', '', $path);
+  if ($path === '' || $path === false) $path = '/';
+  if ($path[0] !== '/') $path = '/' . $path;
+
+  if ($query !== '') {
+    parse_str($query, $params);
+    if (is_array($params) && array_key_exists('lang', $params)) {
+      unset($params['lang']);
+      $query = http_build_query($params);
+    }
+  }
+
+  return $query !== '' ? ($path . '?' . $query) : $path;
+}
+
+function page_value_for_mode_and_lang($page, $mode, $lang_fold) {
+  $value = page_value_for_mode($page, $mode);
+  if ($lang_fold) {
+    $value = fold_locale_variants($value);
+  }
+  return $value;
+}
+
+function page_language_for_filter($page) {
+  $raw = trim((string)$page);
+  if ($raw === '') return 'en';
+
+  $path = $raw;
+  $query = '';
+
+  if (preg_match('#^https?://#i', $raw)) {
+    $parts = parse_url($raw);
+    $path = isset($parts['path']) ? $parts['path'] : '/';
+    $query = isset($parts['query']) ? $parts['query'] : '';
+  } else {
+    $qpos = strpos($raw, '?');
+    $path = $qpos === false ? $raw : substr($raw, 0, $qpos);
+    $query = $qpos === false ? '' : substr($raw, $qpos + 1);
+  }
+
+  if ($query !== '') {
+    parse_str($query, $params);
+    if (is_array($params) && isset($params['lang'])) {
+      $lang = strtolower(trim((string)$params['lang']));
+      if (in_array($lang, ['en', 'fr', 'de'], true)) return $lang;
+    }
+  }
+
+  $path = preg_replace('#/+#', '/', (string)$path);
+  if (preg_match('#^/(en|fr|de)(?=/|$)#i', $path, $m)) {
+    return strtolower($m[1]);
+  }
+
+  // Default non-prefixed pages to English for filtering purposes.
+  return 'en';
+}
+
 // --- CSV Export endpoint ---
 if (isset($_GET['action']) && $_GET['action'] === 'export_csv') {
     $log_file = '/home/clients/a87f9485d236547310279906c2e64cab/web/php/analytics/visits.log';
@@ -181,11 +278,114 @@ if (isset($_GET['ajax']) && $_GET['ajax'] == '1') {
     }
   $bot_filter = get_bot_filter_mode($_GET['bot_filter'] ?? 'all');
 
+  // Delete all records for a specific IP from the active log and archived monthly logs.
+  if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'delete_ip_records') {
+    header('Content-Type: application/json');
+
+    $target_ip = trim((string)($_POST['ip'] ?? ''));
+    if ($target_ip === '' || filter_var($target_ip, FILTER_VALIDATE_IP) === false) {
+      http_response_code(400);
+      echo json_encode([
+        'ok' => false,
+        'error' => 'Please provide a valid IP address.',
+      ]);
+      exit;
+    }
+
+    $analytics_dir = '/home/clients/a87f9485d236547310279906c2e64cab/web/php/analytics';
+    $target_files = [$analytics_dir . '/visits.log'];
+    $archive_files = glob($analytics_dir . '/archives/visits-*.log') ?: [];
+    foreach ($archive_files as $archive_file) {
+      $target_files[] = $archive_file;
+    }
+
+    $deleted_total = 0;
+    $files_touched = 0;
+    $details = [];
+    $errors = [];
+
+    foreach ($target_files as $target_file) {
+      if (!is_file($target_file)) {
+        continue;
+      }
+      if (!is_readable($target_file) || !is_writable($target_file)) {
+        $errors[] = 'Cannot read/write ' . basename($target_file);
+        continue;
+      }
+
+      $file_lines = @file($target_file);
+      if ($file_lines === false) {
+        $errors[] = 'Failed to read ' . basename($target_file);
+        continue;
+      }
+
+      $kept_lines = [];
+      $deleted_in_file = 0;
+      foreach ($file_lines as $file_line) {
+        $row = json_decode($file_line, true);
+        if (!is_array($row)) {
+          $kept_lines[] = $file_line;
+          continue;
+        }
+        $row_ip = trim((string)($row['ip'] ?? ''));
+        if ($row_ip !== '' && $row_ip === $target_ip) {
+          $deleted_in_file++;
+          continue;
+        }
+        $kept_lines[] = $file_line;
+      }
+
+      if ($deleted_in_file > 0) {
+        $tmp_file = $target_file . '.tmp.' . uniqid('', true);
+        $write_ok = @file_put_contents($tmp_file, implode('', $kept_lines), LOCK_EX);
+        if ($write_ok === false) {
+          @unlink($tmp_file);
+          $errors[] = 'Failed to write temp file for ' . basename($target_file);
+          continue;
+        }
+        if (!@rename($tmp_file, $target_file)) {
+          @unlink($tmp_file);
+          $errors[] = 'Failed to replace ' . basename($target_file);
+          continue;
+        }
+
+        $files_touched++;
+        $deleted_total += $deleted_in_file;
+        $details[] = [
+          'file' => basename($target_file),
+          'deleted' => $deleted_in_file,
+        ];
+      }
+    }
+
+    echo json_encode([
+      'ok' => true,
+      'ip' => $target_ip,
+      'deleted_total' => $deleted_total,
+      'files_touched' => $files_touched,
+      'details' => $details,
+      'errors' => $errors,
+    ]);
+    exit;
+  }
+
     // Timeseries endpoint: return JSON of counts for a specific page grouped by hour/day/week
     if (isset($_GET['action']) && $_GET['action'] === 'timeseries') {
         $start_date = isset($_GET['start_date']) && $_GET['start_date'] !== '' ? convertDate($_GET['start_date']) : null;
         $end_date = isset($_GET['end_date']) && $_GET['end_date'] !== '' ? convertDate($_GET['end_date']) : null;
         $group = $_GET['group'] ?? 'day';
+      $page_mode = ($_GET['page_mode'] ?? 'exact') === 'generic' ? 'generic' : 'exact';
+      $lang_fold = !empty($_GET['lang_fold']) && $_GET['lang_fold'] !== '0';
+      $lang_filters_raw = trim((string)($_GET['lang_filters'] ?? ''));
+      $lang_filters = [];
+      if ($lang_filters_raw !== '') {
+        foreach (explode(',', $lang_filters_raw) as $lf) {
+          $lf = strtolower(trim($lf));
+          if (in_array($lf, ['en', 'fr', 'de'], true)) {
+            $lang_filters[$lf] = true;
+          }
+        }
+      }
         $page = $_GET['page'] ?? '';
         $pages_param = $_GET['pages'] ?? null; // comma-separated list
 
@@ -208,7 +408,11 @@ if (isset($_GET['ajax']) && $_GET['ajax'] == '1') {
                 $date = substr($ts, 0, 10);
                 if ($start_date && $date < $start_date) continue;
                 if ($end_date && $date > $end_date) continue;
-                $p = $v['page'] ?? '';
+              if (!empty($lang_filters)) {
+                $lang = page_language_for_filter($v['page'] ?? '');
+                if (!isset($lang_filters[$lang])) continue;
+              }
+                $p = page_value_for_mode_and_lang($v['page'] ?? '', $page_mode, $lang_fold);
                 if (!in_array($p, $pages, true)) continue;
                 if ($group === 'hour') {
                     $key = substr($ts, 0, 13);
@@ -260,7 +464,11 @@ if (isset($_GET['ajax']) && $_GET['ajax'] == '1') {
             $date = substr($ts, 0, 10);
             if ($start_date && $date < $start_date) continue;
             if ($end_date && $date > $end_date) continue;
-            $p = $v['page'] ?? '';
+          if (!empty($lang_filters)) {
+            $lang = page_language_for_filter($v['page'] ?? '');
+            if (!isset($lang_filters[$lang])) continue;
+          }
+            $p = page_value_for_mode_and_lang($v['page'] ?? '', $page_mode, $lang_fold);
             if ($page !== '' && $p !== $page) continue;
             if ($group === 'hour') {
                 $key = substr($ts, 0, 13); // YYYY-MM-DD HH
@@ -513,6 +721,31 @@ $timeline_data = array_values($daily_visits);
 arsort($page_views);
 $page_labels = array_keys($page_views);
 $page_data = array_values($page_views);
+
+$generic_page_views = [];
+foreach ($page_views as $page => $count) {
+  $g = normalize_logged_page($page);
+  $generic_page_views[$g] = ($generic_page_views[$g] ?? 0) + $count;
+}
+arsort($generic_page_views);
+$generic_page_labels = array_keys($generic_page_views);
+
+$exact_lang_page_views = [];
+foreach ($page_views as $page => $count) {
+  $k = fold_locale_variants($page);
+  $exact_lang_page_views[$k] = ($exact_lang_page_views[$k] ?? 0) + $count;
+}
+arsort($exact_lang_page_views);
+$exact_lang_page_labels = array_keys($exact_lang_page_views);
+
+$generic_lang_page_views = [];
+foreach ($page_views as $page => $count) {
+  $k = fold_locale_variants(normalize_logged_page($page));
+  $generic_lang_page_views[$k] = ($generic_lang_page_views[$k] ?? 0) + $count;
+}
+arsort($generic_lang_page_views);
+$generic_lang_page_labels = array_keys($generic_lang_page_views);
+
 arsort($referers);
 $referer_labels = array_keys($referers);
 $referer_data = array_values($referers);
@@ -611,6 +844,17 @@ echo '<label id="ts_pages_wrap" style="position:relative;min-width:420px;max-wid
 echo 'Compare pages: ';
 echo '<select id="ts_pages" multiple size="1" style="min-width:420px;max-width:980px;width:100%;position:absolute;left:0;top:1.6em;z-index:50;height:auto;max-height:360px;background:#111;color:#eee;border:1px solid #555;border-radius:4px;"></select>';
 echo '</label>';
+echo '<button id="ts_mode_toggle" type="button" style="font-size:0.85em;background:#1a2a3a;color:#7fc0f0;border:1px solid #4b90c0;border-radius:4px;padding:4px 10px;">Mode: Generic URLs</button>';
+echo '<button id="ts_lang_toggle" type="button" style="font-size:0.85em;background:#2a1a3a;color:#d2b7f5;border:1px solid #7a58a8;border-radius:4px;padding:4px 10px;">Lang fold: Off</button>';
+echo '<span style="display:inline-flex;gap:4px;align-items:center;">';
+echo '<span style="font-size:0.82em;color:#bbb;">Language:</span>';
+echo '<button id="ts_lang_all" type="button" style="font-size:0.82em;background:#1d2a2f;color:#bde9f5;border:1px solid #4b90c0;border-radius:4px;padding:3px 8px;">All</button>';
+echo '<button id="ts_lang_en" type="button" style="font-size:0.82em;background:#1f2f1f;color:#cdeecb;border:1px solid #4f9a4f;border-radius:4px;padding:3px 8px;">EN</button>';
+echo '<button id="ts_lang_fr" type="button" style="font-size:0.82em;background:#2f2620;color:#f3debf;border:1px solid #aa8b5a;border-radius:4px;padding:3px 8px;">FR</button>';
+echo '<button id="ts_lang_de" type="button" style="font-size:0.82em;background:#2b2333;color:#e2ccf6;border:1px solid #8a68b8;border-radius:4px;padding:3px 8px;">DE</button>';
+echo '</span>';
+echo '<button id="ts_select_all" type="button" style="font-size:0.85em;background:#1f3a1f;color:#bfe8bf;border:1px solid #3f8a3f;border-radius:4px;padding:4px 10px;">Select All</button>';
+echo '<button id="ts_reset" type="button" style="font-size:0.85em;background:#3a2a1a;color:#f0d0a0;border:1px solid #a07848;border-radius:4px;padding:4px 10px;">Reset</button>';
 echo '<label>Group: <select id="ts_group"><option value="hour">Hour</option><option value="day" selected>Day</option><option value="week">Week</option></select></label>';
 echo '<label>From: <input type="date" id="ts_start"></label>';
 echo '<label>To: <input type="date" id="ts_end"></label>';
@@ -653,6 +897,7 @@ echo <<<'IPHTML'
   <label style="font-size:0.85em;"><input type="checkbox" id="ip_exclude_mine"> Exclude my activity</label>
   <label style="font-size:0.85em;">My IP: <input type="text" id="mine_ip_input" placeholder="203.0.113.10" style="font-size:0.9em;min-width:140px;"></label>
   <button id="mine_add_ip" style="font-size:0.8em;">Add IP</button>
+  <button id="mine_delete_ip_records" style="font-size:0.8em;background:#4a1f1f;color:#ffd7d7;border:1px solid #8c3b3b;border-radius:4px;">Delete records for this IP</button>
   <label style="font-size:0.85em;">My hash: <input type="text" id="mine_hash_input" placeholder="visitor hash" style="font-size:0.9em;min-width:140px;"></label>
   <button id="mine_add_hash" style="font-size:0.8em;">Add hash</button>
 </div>
@@ -853,6 +1098,39 @@ echo <<<'IPJS'
     renderFromRows();
   });
   document.getElementById("mine_add_ip").addEventListener("click", function(e){ e.preventDefault(); addMineIp(document.getElementById("mine_ip_input").value.trim()); renderFromRows(); });
+  document.getElementById("mine_delete_ip_records").addEventListener("click", function(e){
+    e.preventDefault();
+    var ip = document.getElementById("mine_ip_input").value.trim();
+    if(!ip){
+      alert("Enter an IP address first.");
+      return;
+    }
+    var confirmMsg = "Delete all log records for IP " + ip + " from active and archived visits logs? This cannot be undone.";
+    if(!window.confirm(confirmMsg)) return;
+    var body = new URLSearchParams({ action: "delete_ip_records", ip: ip });
+    fetch(window.location.pathname + "?ajax=1", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+      body: body.toString()
+    })
+    .then(function(r){ return r.json(); })
+    .then(function(resp){
+      if(!resp || !resp.ok){
+        alert((resp && resp.error) ? resp.error : "Deletion failed.");
+        return;
+      }
+      var msg = "Deleted " + (resp.deleted_total || 0) + " record(s) for " + ip + " across " + (resp.files_touched || 0) + " file(s).";
+      if(resp.errors && resp.errors.length){
+        msg += "\nWarnings: " + resp.errors.join("; ");
+      }
+      alert(msg);
+      loadIpData();
+    })
+    .catch(function(err){
+      console.error(err);
+      alert("Deletion failed due to a network/server error.");
+    });
+  });
   document.getElementById("mine_add_hash").addEventListener("click", function(e){ e.preventDefault(); addMineHash(document.getElementById("mine_hash_input").value.trim()); renderFromRows(); });
   document.getElementById("mine_tags").addEventListener("click", function(e){
     var ip = e.target.getAttribute("data-rm-ip");
@@ -1306,11 +1584,23 @@ echo '});';
 echo '</script>';
 
 $pages_json = json_encode($page_labels);
+$generic_pages_json = json_encode($generic_page_labels);
+$exact_lang_pages_json = json_encode($exact_lang_page_labels);
+$generic_lang_pages_json = json_encode($generic_lang_page_labels);
 $top_pages = $page_labels;
 // compute top 5 pages by page_views
 arsort($page_views);
 $top_pages = array_slice(array_keys($page_views), 0, 5);
 $top_pages_json = json_encode(array_values($top_pages));
+
+$top_generic_pages = array_slice(array_keys($generic_page_views), 0, 5);
+$top_generic_pages_json = json_encode(array_values($top_generic_pages));
+
+$top_exact_lang_pages = array_slice(array_keys($exact_lang_page_views), 0, 5);
+$top_exact_lang_pages_json = json_encode(array_values($top_exact_lang_pages));
+
+$top_generic_lang_pages = array_slice(array_keys($generic_lang_page_views), 0, 5);
+$top_generic_lang_pages_json = json_encode(array_values($top_generic_lang_pages));
 
 echo <<<HTML
 </body></html>
@@ -1338,30 +1628,206 @@ echo <<<HTML
     var startInput = qs('ts_start');
     var endInput = qs('ts_end');
     var refresh = qs('ts_refresh');
-    // Populate pages list from existing page labels
-    var pages = $pages_json || [];
-    pageSelect.innerHTML = '<option value="">All pages</option>';
-    pages.forEach(function(p){ var opt=document.createElement('option'); opt.value=p; opt.textContent=p; pageSelect.appendChild(opt); });
-    var topPages = $top_pages_json || [];
-    pages.forEach(function(p){
-      var opt=document.createElement('option');
-      opt.value=p;
-      opt.textContent=p;
-      opt.style.backgroundColor = '#111';
-      opt.style.color = '#eee';
-      pagesSelect.appendChild(opt);
-    });
+    var modeToggle = qs('ts_mode_toggle');
+    var langToggle = qs('ts_lang_toggle');
+    var langAllBtn = qs('ts_lang_all');
+    var langEnBtn = qs('ts_lang_en');
+    var langFrBtn = qs('ts_lang_fr');
+    var langDeBtn = qs('ts_lang_de');
+    var selectAllBtn = qs('ts_select_all');
+    var resetBtn = qs('ts_reset');
+
+    var exactPages = $pages_json || [];
+    var genericPages = $generic_pages_json || [];
+    var exactLangPages = $exact_lang_pages_json || [];
+    var genericLangPages = $generic_lang_pages_json || [];
+    var topPagesExact = $top_pages_json || [];
+    var topPagesGeneric = $top_generic_pages_json || [];
+    var topPagesExactLang = $top_exact_lang_pages_json || [];
+    var topPagesGenericLang = $top_generic_lang_pages_json || [];
+    var pageMode = 'generic';
+    var langFold = false;
+    var selectedLangs = []; // [] means all languages
+
+    function pagesForMode(mode, fold){
+      if (mode === 'generic') return fold ? genericLangPages : genericPages;
+      return fold ? exactLangPages : exactPages;
+    }
+    function topPagesForMode(mode, fold){
+      if (mode === 'generic') return fold ? topPagesGenericLang : topPagesGeneric;
+      return fold ? topPagesExactLang : topPagesExact;
+    }
+    function modeSuffix(mode, fold){ return (mode === 'generic' ? 'generic' : 'exact') + (fold ? '_lang' : '_nolang'); }
+
+    function detectLangClient(value){
+      var s = String(value || '').trim();
+      if(!s) return 'en';
+      var q = s.indexOf('?');
+      var path = q >= 0 ? s.substring(0, q) : s;
+      var query = q >= 0 ? s.substring(q + 1) : '';
+
+      if(query){
+        try {
+          var qp = new URLSearchParams(query);
+          var qlang = (qp.get('lang') || '').toLowerCase();
+          if(qlang === 'en' || qlang === 'fr' || qlang === 'de') return qlang;
+        } catch(e) {}
+      }
+      path = path.replace(/\/+/g, '/');
+      var m = path.match(/^\/(en|fr|de)(?=\/|$)/i);
+      if(m) return m[1].toLowerCase();
+      return 'en';
+    }
+
+    function langSet(){
+      var out = {};
+      selectedLangs.forEach(function(l){ out[l] = true; });
+      return out;
+    }
+
+    function filterPagesBySelectedLang(pages){
+      if(!selectedLangs.length) return pages.slice();
+      var keep = langSet();
+      return pages.filter(function(p){ return !!keep[detectLangClient(p)]; });
+    }
+
+    function normalizeGenericClient(p){
+      var s = String(p || '').trim();
+      if(!s) return '/';
+      var q = s.indexOf('?');
+      if(q >= 0) s = s.substring(0, q);
+      s = s.replace(/\/+/g, '/');
+      if(!s) s = '/';
+      if(s.charAt(0) !== '/') s = '/' + s;
+      if(s !== '/' && !/\.[a-z0-9]{1,8}$/i.test(s)) s = s.replace(/\/+$/, '') + '/';
+      return s;
+    }
+
+    function foldLangClient(value){
+      var s = String(value || '').trim();
+      if(!s) return '/';
+      var q = s.indexOf('?');
+      var path = q >= 0 ? s.substring(0, q) : s;
+      var query = q >= 0 ? s.substring(q + 1) : '';
+      path = path.replace(/\/+/g, '/');
+      if(!path) path = '/';
+      if(path.charAt(0) !== '/') path = '/' + path;
+      path = path.replace(/^\/(en|fr|de)(?=\/|$)/i, '');
+      if(!path) path = '/';
+      if(path.charAt(0) !== '/') path = '/' + path;
+      if(query){
+        var params = new URLSearchParams(query);
+        params.delete('lang');
+        query = params.toString();
+      }
+      return query ? (path + '?' + query) : path;
+    }
+
+    function remapSelectionForMode(values, mode, fold){
+      var targetPages = filterPagesBySelectedLang(pagesForMode(mode, fold));
+      var set = {};
+      values.forEach(function(v){
+        var mapped = mode === 'generic' ? normalizeGenericClient(v) : String(v || '');
+        if (fold) mapped = foldLangClient(mapped);
+        if(targetPages.indexOf(mapped) !== -1) set[mapped] = true;
+      });
+      return Object.keys(set);
+    }
+
+    function applySelected(selectEl, selectedValues){
+      var wanted = {};
+      (selectedValues || []).forEach(function(v){ wanted[v] = true; });
+      Array.from(selectEl.options).forEach(function(o){ o.selected = !!wanted[o.value]; });
+    }
+
+    function repopulatePageOptions(selectedSingle, selectedMulti){
+      var pages = filterPagesBySelectedLang(pagesForMode(pageMode, langFold));
+      pageSelect.innerHTML = '<option value="">All pages</option>';
+      pages.forEach(function(p){
+        var opt=document.createElement('option');
+        opt.value=p;
+        opt.textContent=p;
+        pageSelect.appendChild(opt);
+      });
+
+      pagesSelect.innerHTML = '';
+      pages.forEach(function(p){
+        var opt=document.createElement('option');
+        opt.value=p;
+        opt.textContent=p;
+        opt.style.backgroundColor = '#111';
+        opt.style.color = '#eee';
+        pagesSelect.appendChild(opt);
+      });
+
+      if(selectedSingle && pages.indexOf(selectedSingle) !== -1){
+        pageSelect.value = selectedSingle;
+      } else {
+        pageSelect.value = '';
+      }
+      applySelected(pagesSelect, selectedMulti || []);
+    }
+
+    function updateModeButton(){
+      if(!modeToggle) return;
+      modeToggle.textContent = pageMode === 'generic' ? 'Mode: Generic URLs' : 'Mode: Exact URLs + Queries';
+    }
+
+    function updateLangButton(){
+      if(!langToggle) return;
+      langToggle.textContent = langFold ? 'Lang fold: On' : 'Lang fold: Off';
+    }
+
+    function updateLanguageButtons(){
+      var btns = [langAllBtn, langEnBtn, langFrBtn, langDeBtn];
+      btns.forEach(function(b){ if(b){ b.style.opacity = '0.7'; b.style.boxShadow = 'none'; } });
+      if(!selectedLangs.length){
+        if(langAllBtn){ langAllBtn.style.opacity = '1'; langAllBtn.style.boxShadow = '0 0 0 1px #7fc0f0 inset'; }
+      } else {
+        selectedLangs.forEach(function(l){
+          var btn = l === 'en' ? langEnBtn : (l === 'fr' ? langFrBtn : (l === 'de' ? langDeBtn : null));
+          if(btn){ btn.style.opacity = '1'; btn.style.boxShadow = '0 0 0 1px #fff inset'; }
+        });
+      }
+    }
+
+    function selectAllCurrentModePages(){
+      Array.from(pagesSelect.options).forEach(function(o){ o.selected = true; });
+    }
+
+    function resetTsControls(){
+      var defaults = topPagesForMode(pageMode, langFold);
+      repopulatePageOptions('', defaults);
+      groupSelect.value = 'day';
+      startInput.value = '';
+      endInput.value = '';
+      saveTsPrefs();
+      fetchTimeseries();
+    }
 
     function saveTsPrefs(){
+      var selectedPages = Array.from(pagesSelect.selectedOptions).map(function(o){ return o.value; });
+      var suffix = modeSuffix(pageMode, langFold);
       try {
-        var selectedPages = Array.from(pagesSelect.selectedOptions).map(function(o){ return o.value; }).slice(0, 30);
-        localStorage.setItem('viewlogs_ts_page', pageSelect.value || '');
-        localStorage.setItem('viewlogs_ts_pages', JSON.stringify(selectedPages));
+        localStorage.setItem('viewlogs_ts_mode', pageMode);
+        localStorage.setItem('viewlogs_ts_lang_fold', langFold ? '1' : '0');
+        localStorage.setItem('viewlogs_ts_langs', JSON.stringify(selectedLangs));
+        localStorage.setItem('viewlogs_ts_page_' + suffix, pageSelect.value || '');
+        localStorage.setItem('viewlogs_ts_pages_' + suffix, JSON.stringify(selectedPages));
         localStorage.setItem('viewlogs_ts_group', groupSelect.value || 'day');
         localStorage.setItem('viewlogs_ts_start', startInput.value || '');
         localStorage.setItem('viewlogs_ts_end', endInput.value || '');
       } catch(e) {
-        try { setCookie('viewlogs_ts_page', pageSelect.value || '', 60); setCookie('viewlogs_ts_pages', JSON.stringify(selectedPages), 60); setCookie('viewlogs_ts_group', groupSelect.value || 'day', 60); setCookie('viewlogs_ts_start', startInput.value || '', 60); setCookie('viewlogs_ts_end', endInput.value || '', 60); } catch(e2){}
+        try {
+          setCookie('viewlogs_ts_mode', pageMode, 60);
+          setCookie('viewlogs_ts_lang_fold', langFold ? '1' : '0', 60);
+          setCookie('viewlogs_ts_langs', JSON.stringify(selectedLangs), 60);
+          setCookie('viewlogs_ts_page_' + suffix, pageSelect.value || '', 60);
+          setCookie('viewlogs_ts_pages_' + suffix, JSON.stringify(selectedPages), 60);
+          setCookie('viewlogs_ts_group', groupSelect.value || 'day', 60);
+          setCookie('viewlogs_ts_start', startInput.value || '', 60);
+          setCookie('viewlogs_ts_end', endInput.value || '', 60);
+        } catch(e2){}
         console.warn('saveTsPrefs failed to write localStorage, falling back to cookies', e);
       }
     }
@@ -1369,22 +1835,34 @@ echo <<<HTML
     function restoreTsPrefs(){
       var restoredAny = false;
       try {
-        var savedPage = localStorage.getItem('viewlogs_ts_page') || getCookie('viewlogs_ts_page');
-        if(savedPage !== '' && savedPage !== null){
-          Array.from(pageSelect.options).forEach(function(o){ if(o.value === savedPage) o.selected = true; });
-          restoredAny = true;
-        }
+        var savedMode = localStorage.getItem('viewlogs_ts_mode') || getCookie('viewlogs_ts_mode');
+        if(savedMode === 'generic' || savedMode === 'exact') pageMode = savedMode;
+        var savedLangFold = localStorage.getItem('viewlogs_ts_lang_fold') || getCookie('viewlogs_ts_lang_fold');
+        langFold = savedLangFold === '1';
 
-        var savedPagesRaw = localStorage.getItem('viewlogs_ts_pages') || getCookie('viewlogs_ts_pages');
-        if(savedPagesRaw){
+        var savedLangsRaw = localStorage.getItem('viewlogs_ts_langs') || getCookie('viewlogs_ts_langs');
+        if(savedLangsRaw){
           try {
-            var savedPages = JSON.parse(savedPagesRaw);
-            if(Array.isArray(savedPages) && savedPages.length){
-              Array.from(pagesSelect.options).forEach(function(o){ o.selected = savedPages.indexOf(o.value) !== -1; });
-              restoredAny = true;
+            var parsedLangs = JSON.parse(savedLangsRaw);
+            if(Array.isArray(parsedLangs)){
+              selectedLangs = parsedLangs.filter(function(l){ return l === 'en' || l === 'fr' || l === 'de'; });
             }
           } catch(e) {}
         }
+
+        var suffix = modeSuffix(pageMode, langFold);
+        var savedPage = localStorage.getItem('viewlogs_ts_page_' + suffix) || getCookie('viewlogs_ts_page_' + suffix);
+        var savedPagesRaw = localStorage.getItem('viewlogs_ts_pages_' + suffix) || getCookie('viewlogs_ts_pages_' + suffix);
+        var savedPages = [];
+        if(savedPagesRaw){
+          try {
+            var parsed = JSON.parse(savedPagesRaw);
+            if(Array.isArray(parsed)) savedPages = parsed;
+          } catch(e) {}
+        }
+
+        repopulatePageOptions(savedPage || '', savedPages);
+        if((savedPage && savedPage !== '') || (savedPages && savedPages.length)) restoredAny = true;
 
         var savedGroup = localStorage.getItem('viewlogs_ts_group') || getCookie('viewlogs_ts_group');
         if(savedGroup){ groupSelect.value = savedGroup; restoredAny = true; }
@@ -1393,12 +1871,18 @@ echo <<<HTML
         var savedEnd = localStorage.getItem('viewlogs_ts_end') || getCookie('viewlogs_ts_end');
         if(savedEnd){ endInput.value = savedEnd; restoredAny = true; }
       } catch(e) { console.warn('restoreTsPrefs failed', e); }
+      updateModeButton();
+      updateLangButton();
+      updateLanguageButtons();
       return restoredAny;
     }
 
     var restored = restoreTsPrefs();
     if(!restored){
-      Array.from(pagesSelect.options).forEach(function(o){ if(topPages.indexOf(o.value) !== -1) o.selected = true; });
+      repopulatePageOptions('', topPagesForMode(pageMode, langFold));
+      updateModeButton();
+      updateLangButton();
+      updateLanguageButtons();
     }
 
     function collapsePagesSelect(){
@@ -1438,12 +1922,15 @@ echo <<<HTML
         var botFilter = botFilterSelect ? (botFilterSelect.value || 'all') : 'all';
       saveTsPrefs();
         var params = new URLSearchParams({ ajax:1, action:'timeseries', group:group });
+        params.set('page_mode', pageMode);
+        params.set('lang_fold', langFold ? '1' : '0');
+        if(selectedLangs.length) params.set('lang_filters', selectedLangs.join(','));
         if(page) params.set('page', page);
         if(pagesMulti.length) params.set('pages', pagesMulti.join(','));
         if(start) params.set('start_date', start);
         if(end) params.set('end_date', end);
         params.set('bot_filter', botFilter);
-        console.log('fetchTimeseries', { page: page, pages: pagesMulti, group: group, start: start, end: end, bot_filter: botFilter, params: params.toString() });
+        console.log('fetchTimeseries', { page_mode: pageMode, lang_fold: langFold, lang_filters: selectedLangs, page: page, pages: pagesMulti, group: group, start: start, end: end, bot_filter: botFilter, params: params.toString() });
         fetch(window.location.pathname + '?' + params.toString())
           .then(function(r){ return r.json(); })
           .then(function(json){
@@ -1481,6 +1968,84 @@ echo <<<HTML
     [pageSelect, pagesSelect, groupSelect, startInput, endInput].forEach(function(el){
       el.addEventListener('change', saveTsPrefs);
     });
+    if(modeToggle){
+      modeToggle.addEventListener('click', function(e){
+        e.preventDefault();
+        var oldSingle = pageSelect.value || '';
+        var oldMulti = Array.from(pagesSelect.selectedOptions).map(function(o){ return o.value; });
+        pageMode = pageMode === 'generic' ? 'exact' : 'generic';
+        var remappedSingle = remapSelectionForMode(oldSingle ? [oldSingle] : [], pageMode, langFold);
+        var remappedMulti = remapSelectionForMode(oldMulti, pageMode, langFold);
+        if(!remappedMulti.length) remappedMulti = topPagesForMode(pageMode, langFold);
+        repopulatePageOptions(remappedSingle.length ? remappedSingle[0] : '', remappedMulti);
+        updateModeButton();
+        saveTsPrefs();
+        fetchTimeseries();
+      });
+    }
+    if(langToggle){
+      langToggle.addEventListener('click', function(e){
+        e.preventDefault();
+        var oldSingle = pageSelect.value || '';
+        var oldMulti = Array.from(pagesSelect.selectedOptions).map(function(o){ return o.value; });
+        langFold = !langFold;
+        var remappedSingle = remapSelectionForMode(oldSingle ? [oldSingle] : [], pageMode, langFold);
+        var remappedMulti = remapSelectionForMode(oldMulti, pageMode, langFold);
+        if(!remappedMulti.length) remappedMulti = topPagesForMode(pageMode, langFold);
+        repopulatePageOptions(remappedSingle.length ? remappedSingle[0] : '', remappedMulti);
+        updateLangButton();
+        saveTsPrefs();
+        fetchTimeseries();
+      });
+    }
+    if(langAllBtn){
+      langAllBtn.addEventListener('click', function(e){
+        e.preventDefault();
+        selectedLangs = [];
+        var oldSingle = pageSelect.value || '';
+        var oldMulti = Array.from(pagesSelect.selectedOptions).map(function(o){ return o.value; });
+        var remappedSingle = remapSelectionForMode(oldSingle ? [oldSingle] : [], pageMode, langFold);
+        var remappedMulti = remapSelectionForMode(oldMulti, pageMode, langFold);
+        if(!remappedMulti.length) remappedMulti = topPagesForMode(pageMode, langFold);
+        repopulatePageOptions(remappedSingle.length ? remappedSingle[0] : '', remappedMulti);
+        updateLanguageButtons();
+        saveTsPrefs();
+        fetchTimeseries();
+      });
+    }
+    function toggleSingleLanguage(lang){
+      var idx = selectedLangs.indexOf(lang);
+      if(idx === -1) selectedLangs.push(lang); else selectedLangs.splice(idx, 1);
+      if(selectedLangs.length === 3){
+        selectedLangs = [];
+      }
+      var oldSingle = pageSelect.value || '';
+      var oldMulti = Array.from(pagesSelect.selectedOptions).map(function(o){ return o.value; });
+      var remappedSingle = remapSelectionForMode(oldSingle ? [oldSingle] : [], pageMode, langFold);
+      var remappedMulti = remapSelectionForMode(oldMulti, pageMode, langFold);
+      if(!remappedMulti.length) remappedMulti = topPagesForMode(pageMode, langFold);
+      repopulatePageOptions(remappedSingle.length ? remappedSingle[0] : '', remappedMulti);
+      updateLanguageButtons();
+      saveTsPrefs();
+      fetchTimeseries();
+    }
+    if(langEnBtn){ langEnBtn.addEventListener('click', function(e){ e.preventDefault(); toggleSingleLanguage('en'); }); }
+    if(langFrBtn){ langFrBtn.addEventListener('click', function(e){ e.preventDefault(); toggleSingleLanguage('fr'); }); }
+    if(langDeBtn){ langDeBtn.addEventListener('click', function(e){ e.preventDefault(); toggleSingleLanguage('de'); }); }
+    if(selectAllBtn){
+      selectAllBtn.addEventListener('click', function(e){
+        e.preventDefault();
+        selectAllCurrentModePages();
+        saveTsPrefs();
+        fetchTimeseries();
+      });
+    }
+    if(resetBtn){
+      resetBtn.addEventListener('click', function(e){
+        e.preventDefault();
+        resetTsControls();
+      });
+    }
     refresh.addEventListener('click', function(e){ e.preventDefault(); fetchTimeseries(); });
     fetchTimeseries();
 })();
