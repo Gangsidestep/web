@@ -49,7 +49,7 @@ include __DIR__ . '/../../php/analytics.php';
 		<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 		<link rel="apple-touch-icon" sizes="180x180" href="/images/connect-icons/apple-touch-icon.png">
 		<link rel="stylesheet" type="text/css" href="/css/mydropintheoceans-style.css?v=<?php echo time(); ?>">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js?v=20260203"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js?v=20260203"></script>
 		<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",

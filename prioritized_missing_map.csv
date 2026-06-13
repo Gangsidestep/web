@@ -1,0 +1,505 @@
+missing_target,count,source_files
+https://www.google.com/chrome/,23,css/access_profiles.php;css/addsecuritybusi.php;css/spendbusinessprofile.php;css/template.php;images/connect-icons/index.php;images/connect-icons/newbusinessback.php;images/connect-icons/profile.php;images/index.php;images/profile.php;images/spendbusinessprofile.php;js/about_bus.php;js/adminlogin.php;js/create_rewardable_action.php;js/driver_token.php;js/tiltedpage_scroll-master/demo/demo.php
+http://jqueryvalidation.org/,22,js/validate/demo/ajaxSubmit-integration-demo.html;js/validate/demo/custom-messages-data-demo.html;js/validate/demo/custom-methods-demo.html;js/validate/demo/dynamic-totals.html;js/validate/demo/errorcontainer-demo.html;js/validate/demo/errors-within-labels.html;js/validate/demo/index.html;js/validate/demo/milk/index.html;js/validate/demo/radio-checkbox-select-demo.html;js/validate/demo/requirejs/index.html;js/validate/test/index.html
+https://www.linkedin.com/shareArticle?mini=true&url=<?php echo urlencode($canonicalUrl); ?>,22,blog/make-money-first-then-think-of-nature/content-de.php;blog/make-money-first-then-think-of-nature/content-en.php;blog/make-money-first-then-think-of-nature/content-fr.php;blog/making-natural-capital-visible-in-everyday-transactions/content-de.php;blog/making-natural-capital-visible-in-everyday-transactions/content-en.php;blog/making-natural-capital-visible-in-everyday-transactions/content-fr.php;blog/money-work-worth/content-de.php;blog/money-work-worth/content-en.php;blog/money-work-worth/content-fr.php;blog/nature-is-not-a-charity/content-de.php;blog/nature-is-not-a-charity/content-en.php;blog/nature-is-not-a-charity/content-fr.php;blog/why-the-swiss-said-no-to-free-money/content-de.php;blog/why-the-swiss-said-no-to-free-money/content-en.php;blog/why-the-swiss-said-no-to-free-money/content-fr.php;faq/content-de.php;faq/content-en.php;faq/content-fr.php;php/home-de.php;php/home-en.php;php/home-fr.php;theory-of-change/content-fr.php
+https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode($canonicalUrl); ?>,22,blog/make-money-first-then-think-of-nature/content-de.php;blog/make-money-first-then-think-of-nature/content-en.php;blog/make-money-first-then-think-of-nature/content-fr.php;blog/making-natural-capital-visible-in-everyday-transactions/content-de.php;blog/making-natural-capital-visible-in-everyday-transactions/content-en.php;blog/making-natural-capital-visible-in-everyday-transactions/content-fr.php;blog/money-work-worth/content-de.php;blog/money-work-worth/content-en.php;blog/money-work-worth/content-fr.php;blog/nature-is-not-a-charity/content-de.php;blog/nature-is-not-a-charity/content-en.php;blog/nature-is-not-a-charity/content-fr.php;blog/why-the-swiss-said-no-to-free-money/content-de.php;blog/why-the-swiss-said-no-to-free-money/content-en.php;blog/why-the-swiss-said-no-to-free-money/content-fr.php;faq/content-de.php;faq/content-en.php;faq/content-fr.php;php/home-de.php;php/home-en.php;php/home-fr.php;theory-of-change/content-fr.php
+/a,18,images/all-225.js;images/style-1.7.10.js;js/all-1.8.0.js;js/all-225.js;js/all-255.js;js/style-1.7.10.js;js/validate/lib/jquery-1.11.1.js;js/validate/lib/jquery-1.7.2.js;js/validate/lib/jquery-1.8.3.js;js/validate/lib/jquery-1.9.1.js
+"<?php echo htmlspecialchars(localized_path('/blog/', $locale)); ?>",17,blog/make-money-first-then-think-of-nature/content-de.php;blog/make-money-first-then-think-of-nature/content-en.php;blog/make-money-first-then-think-of-nature/content-fr.php;blog/making-natural-capital-visible-in-everyday-transactions/content-de.php;blog/making-natural-capital-visible-in-everyday-transactions/content-en.php;blog/making-natural-capital-visible-in-everyday-transactions/content-fr.php;blog/money-work-worth/content-de.php;blog/money-work-worth/content-en.php;blog/money-work-worth/content-fr.php;blog/nature-is-not-a-charity/content-de.php;blog/nature-is-not-a-charity/content-en.php;blog/nature-is-not-a-charity/content-fr.php;faq/content-de.php;faq/content-en.php;faq/content-fr.php;theory-of-change/content-de.php;theory-of-change/content-fr.php
+https://twitter.com/intent/tweet?url=<?php echo urlencode($canonicalUrl); ?>&text=<?php echo urlencode($pageTitle); ?>,15,blog/make-money-first-then-think-of-nature/content-de.php;blog/make-money-first-then-think-of-nature/content-en.php;blog/make-money-first-then-think-of-nature/content-fr.php;blog/making-natural-capital-visible-in-everyday-transactions/content-de.php;blog/making-natural-capital-visible-in-everyday-transactions/content-en.php;blog/making-natural-capital-visible-in-everyday-transactions/content-fr.php;blog/money-work-worth/content-de.php;blog/money-work-worth/content-en.php;blog/money-work-worth/content-fr.php;blog/nature-is-not-a-charity/content-de.php;blog/nature-is-not-a-charity/content-en.php;blog/nature-is-not-a-charity/content-fr.php;php/home-de.php;php/home-en.php;php/home-fr.php
+https://wa.me/?text=<?php echo urlencode($pageTitle . ' ' . $canonicalUrl); ?>,15,blog/make-money-first-then-think-of-nature/content-de.php;blog/make-money-first-then-think-of-nature/content-en.php;blog/make-money-first-then-think-of-nature/content-fr.php;blog/making-natural-capital-visible-in-everyday-transactions/content-de.php;blog/making-natural-capital-visible-in-everyday-transactions/content-en.php;blog/making-natural-capital-visible-in-everyday-transactions/content-fr.php;blog/money-work-worth/content-de.php;blog/money-work-worth/content-en.php;blog/money-work-worth/content-fr.php;blog/nature-is-not-a-charity/content-de.php;blog/nature-is-not-a-charity/content-en.php;blog/nature-is-not-a-charity/content-fr.php;php/home-de.php;php/home-en.php;php/home-fr.php
+"<?php echo htmlspecialchars(localized_path('/theory-of-change/', $locale)); ?>",15,blog/make-money-first-then-think-of-nature/content-de.php;blog/make-money-first-then-think-of-nature/content-en.php;blog/make-money-first-then-think-of-nature/content-fr.php;blog/making-natural-capital-visible-in-everyday-transactions/content-de.php;blog/making-natural-capital-visible-in-everyday-transactions/content-en.php;blog/making-natural-capital-visible-in-everyday-transactions/content-fr.php;blog/money-work-worth/content-de.php;blog/money-work-worth/content-en.php;blog/money-work-worth/content-fr.php;blog/nature-is-not-a-charity/content-de.php;blog/nature-is-not-a-charity/content-en.php;blog/nature-is-not-a-charity/content-fr.php;faq/content-de.php;faq/content-en.php;faq/content-fr.php
+"<?php echo htmlspecialchars(localized_path('/contact/', $locale)); ?>",15,blog/make-money-first-then-think-of-nature/content-de.php;blog/make-money-first-then-think-of-nature/content-en.php;blog/make-money-first-then-think-of-nature/content-fr.php;blog/making-natural-capital-visible-in-everyday-transactions/content-de.php;blog/making-natural-capital-visible-in-everyday-transactions/content-en.php;blog/making-natural-capital-visible-in-everyday-transactions/content-fr.php;blog/money-work-worth/content-de.php;blog/money-work-worth/content-en.php;blog/money-work-worth/content-fr.php;blog/nature-is-not-a-charity/content-de.php;blog/nature-is-not-a-charity/content-en.php;blog/nature-is-not-a-charity/content-fr.php;faq/content-en.php;theory-of-change/content-de.php;theory-of-change/content-fr.php
+"<?php echo htmlspecialchars(localized_path('/privacy/', $locale)); ?>",15,blog/make-money-first-then-think-of-nature/content-de.php;blog/make-money-first-then-think-of-nature/content-en.php;blog/make-money-first-then-think-of-nature/content-fr.php;blog/making-natural-capital-visible-in-everyday-transactions/content-de.php;blog/making-natural-capital-visible-in-everyday-transactions/content-en.php;blog/making-natural-capital-visible-in-everyday-transactions/content-fr.php;blog/money-work-worth/content-de.php;blog/money-work-worth/content-en.php;blog/money-work-worth/content-fr.php;blog/nature-is-not-a-charity/content-de.php;blog/nature-is-not-a-charity/content-en.php;blog/nature-is-not-a-charity/content-fr.php;faq/content-de.php;faq/content-en.php;faq/content-fr.php
+"<?php echo htmlspecialchars(localized_path('/', $locale)); ?>",14,blog/make-money-first-then-think-of-nature/content-de.php;blog/make-money-first-then-think-of-nature/content-en.php;blog/make-money-first-then-think-of-nature/content-fr.php;blog/making-natural-capital-visible-in-everyday-transactions/content-de.php;blog/making-natural-capital-visible-in-everyday-transactions/content-en.php;blog/making-natural-capital-visible-in-everyday-transactions/content-fr.php;blog/money-work-worth/content-de.php;blog/money-work-worth/content-en.php;blog/money-work-worth/content-fr.php;blog/nature-is-not-a-charity/content-de.php;blog/nature-is-not-a-charity/content-en.php;blog/nature-is-not-a-charity/content-fr.php;theory-of-change/content-de.php;theory-of-change/content-fr.php
+"<?php echo htmlspecialchars(localized_path('/blog/why-the-swiss-said-no-to-free-money/', $locale)); ?>",12,blog/make-money-first-then-think-of-nature/content-de.php;blog/make-money-first-then-think-of-nature/content-en.php;blog/make-money-first-then-think-of-nature/content-fr.php;blog/making-natural-capital-visible-in-everyday-transactions/content-de.php;blog/making-natural-capital-visible-in-everyday-transactions/content-en.php;blog/making-natural-capital-visible-in-everyday-transactions/content-fr.php;blog/money-work-worth/content-de.php;blog/money-work-worth/content-en.php;blog/money-work-worth/content-fr.php;blog/nature-is-not-a-charity/content-en.php;theory-of-change/content-de.php;theory-of-change/content-fr.php
+"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",10,images/all-225.js;images/style-1.7.10.js;js/all-1.8.0.js;js/all-225.js;js/all-255.js;js/style-1.7.10.js
+"<?php echo htmlspecialchars(localized_path('/blog/what-if-stewardship-was-financially-recognised/', $locale)); ?>",10,blog/make-money-first-then-think-of-nature/content-en.php;blog/making-natural-capital-visible-in-everyday-transactions/content-de.php;blog/making-natural-capital-visible-in-everyday-transactions/content-en.php;blog/making-natural-capital-visible-in-everyday-transactions/content-fr.php;blog/money-work-worth/content-de.php;blog/money-work-worth/content-en.php;blog/money-work-worth/content-fr.php;blog/nature-is-not-a-charity/content-en.php;theory-of-change/content-de.php;theory-of-change/content-fr.php
+../js/vendor/respond.min.js,9,css/access_profiles.php;css/addsecuritybusi.php;css/spendbusinessprofile.php;images/connect-icons/newbusinessback.php;images/spendbusinessprofile.php;js/about_bus.php
+"<?php echo htmlspecialchars(localized_path('/blog/nature-is-not-a-charity/', $locale)); ?>",9,blog/make-money-first-then-think-of-nature/content-en.php;blog/making-natural-capital-visible-in-everyday-transactions/content-de.php;blog/making-natural-capital-visible-in-everyday-transactions/content-en.php;blog/making-natural-capital-visible-in-everyday-transactions/content-fr.php;blog/money-work-worth/content-de.php;blog/money-work-worth/content-en.php;blog/money-work-worth/content-fr.php;theory-of-change/content-de.php;theory-of-change/content-fr.php
+//connect.facebook.net/en_US/all.js,8,images/all-225.js;images/style-1.7.10.js;js/all-1.8.0.js;js/all-255.js;js/style-1.7.10.js
+/search/,8,images/all-225.js;images/style-1.7.10.js;js/all-1.8.0.js;js/all-225.js;js/style-1.7.10.js
+https://connect.facebook.net/en_US/all.js,7,css/access_profiles.php;css/spendbusinessprofile.php;images/connect-icons/newbusinessback.php;js/about_bus.php
+create_a_quiz.php,7,css/spendbusinessprofile.php;images/ecomm_cart.php;images/index.php;images/spendbusinessprofile.php
+../admin_choice.php,7,css/spendbusinessprofile.php;images/ecomm_cart.php;images/index.php;images/spendbusinessprofile.php
+d,7,images/all-225.js;js/all-225.js;js/all-255.js;js/validate/lib/require.js
+<?php echo htmlspecialchars($canonicalUrl); ?>,7,blog/index.php;blog/make-money-first-then-think-of-nature/index.php;blog/making-natural-capital-visible-in-everyday-transactions/index.php;blog/money-work-worth/index.php;blog/nature-is-not-a-charity/index.php;faq/index.php;theory-of-change/index.php
+//ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js?v=<?php echo date('Ymd'); ?>,6,blog/index.php;blog/make-money-first-then-think-of-nature/index.php;blog/making-natural-capital-visible-in-everyday-transactions/index.php;blog/why-the-swiss-said-no-to-free-money/index.php;faq/index.php;index.php
+https://code.jquery.com/jquery-1.9.1.js,6,js/tiltedpage_scroll-master/demo/demo.html;js/tiltedpage_scroll-master/demo/demo.php;js/tiltedpage_scroll-master/demo/tiltedpage_scroll_demo.html
+../css/demo.css,6,js/tiltedpage_scroll-master/demo/demo.html;js/tiltedpage_scroll-master/demo/demo.php;js/tiltedpage_scroll-master/demo/tiltedpage_scroll_demo.html
+../js/demo.js,6,js/tiltedpage_scroll-master/demo/demo.html;js/tiltedpage_scroll-master/demo/demo.php;js/tiltedpage_scroll-master/demo/tiltedpage_scroll_demo.html
+https://mydio.com/,6,php/home-de.php;php/home-en.php;php/home-fr.php;theory-of-change/content-de.php;theory-of-change/content-en.php;theory-of-change/content-fr.php
+"<?php echo htmlspecialchars(localized_path('/blog/make-money-first-then-think-of-nature/', $locale)); ?>",6,blog/making-natural-capital-visible-in-everyday-transactions/content-de.php;blog/making-natural-capital-visible-in-everyday-transactions/content-en.php;blog/making-natural-capital-visible-in-everyday-transactions/content-fr.php;blog/nature-is-not-a-charity/content-en.php;theory-of-change/content-de.php;theory-of-change/content-fr.php
+"<?php echo htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8'); ?>",5,blog/what-if-stewardship-was-financially-recognised/index.php;blog/why-the-swiss-said-no-to-free-money/index.php;contact/index.php;index.php;privacy/index.php
+https://maps.googleapis.com/maps/api/js?key=AIzaSyCn6C041sdi9PdqPRo_dpCcYwC7h-5QwBU&v=3.11&sensor=false,5,css/spendbusinessprofile.php;images/spendbusinessprofile.php;js/about_bus.php
+/login/index.php?redirect=<? echo urlencode($server); ?>,5,images/ecomm_cart.php;images/index.php;images/spendbusinessprofile.php
+'+target+',5,images/all-225.js;js/all-225.js;js/all-255.js
+"e||c.location.href,!1",5,images/all-225.js;js/all-225.js;js/all-255.js
+e,5,images/all-225.js;js/all-225.js;js/all-255.js
+c.location.href,5,images/all-225.js;js/all-225.js;js/all-255.js
+c,5,images/all-225.js;js/all-225.js;js/all-255.js
+m.unescapeString(a.url||d.location.href,5,images/all-225.js;js/all-225.js;js/all-255.js
+b.url,5,images/all-225.js;js/all-225.js;js/all-255.js
+b.hash,5,images/all-225.js;js/all-225.js;js/all-255.js
+a,5,images/all-225.js;js/all-225.js;js/all-255.js
+http://help.bloglovin.com,5,images/all-225.js;js/all-1.8.0.js;js/all-255.js
+i.src,5,images/style-1.7.10.js;js/all-1.8.0.js;js/style-1.7.10.js
+'+n+',5,images/style-1.7.10.js;js/all-1.8.0.js;js/style-1.7.10.js
+'+t+',5,images/style-1.7.10.js;js/all-1.8.0.js;js/style-1.7.10.js
+"/blog/""+t.id+""",5,images/style-1.7.10.js;js/all-1.8.0.js;js/style-1.7.10.js
+'+t.snap+',5,images/style-1.7.10.js;js/all-1.8.0.js;js/style-1.7.10.js
+/blog/'+t.id+',5,images/style-1.7.10.js;js/all-1.8.0.js;js/style-1.7.10.js
+'+e+',5,images/style-1.7.10.js;js/all-1.8.0.js;js/style-1.7.10.js
+/blog/'+t.blog_id+',5,images/style-1.7.10.js;js/all-1.8.0.js;js/style-1.7.10.js
+'+t.profile+',5,images/style-1.7.10.js;js/all-1.8.0.js;js/style-1.7.10.js
++s+,5,images/style-1.7.10.js;js/all-1.8.0.js;js/style-1.7.10.js
+' + baseUrl + '/blogs,5,images/style-1.7.10.js;js/all-1.8.0.js;js/style-1.7.10.js
+' + baseUrl + friend.profile_link + ',5,images/style-1.7.10.js;js/all-1.8.0.js;js/style-1.7.10.js
+' + baseUrl + '/blog/' + post.blog.id + ',5,images/style-1.7.10.js;js/all-1.8.0.js;js/style-1.7.10.js
+' + baseUrl + friend2.profile_link + ',5,images/style-1.7.10.js;js/all-1.8.0.js;js/style-1.7.10.js
+' + baseUrl + followed[0].profile_link + ',5,images/style-1.7.10.js;js/all-1.8.0.js;js/style-1.7.10.js
+' + baseUrl + followed[1].profile_link + ',5,images/style-1.7.10.js;js/all-1.8.0.js;js/style-1.7.10.js
+' + baseUrl + '/blog/' + followed[0].blog_id + ',5,images/style-1.7.10.js;js/all-1.8.0.js;js/style-1.7.10.js
+' + baseUrl + '/blog/' + followed[1].blog_id + ',5,images/style-1.7.10.js;js/all-1.8.0.js;js/style-1.7.10.js
++ (imageURL) +,5,images/style-1.7.10.js;js/all-1.8.0.js;js/style-1.7.10.js
+/feed,5,images/style-1.7.10.js;js/all-1.8.0.js;js/style-1.7.10.js
+' + base_url + first.profile_link + ',5,images/style-1.7.10.js;js/all-1.8.0.js;js/style-1.7.10.js
++ (item.CDN_thumb) +,5,images/style-1.7.10.js;js/all-1.8.0.js;js/style-1.7.10.js
+' + base_url + item.link + ',5,images/style-1.7.10.js;js/all-1.8.0.js;js/style-1.7.10.js
++ (item.snap) +,5,images/style-1.7.10.js;js/all-1.8.0.js;js/style-1.7.10.js
+' + base_url + '/blog/' + item.blog_id + ',5,images/style-1.7.10.js;js/all-1.8.0.js;js/style-1.7.10.js
+/blogs,5,images/style-1.7.10.js;js/all-1.8.0.js;js/style-1.7.10.js
+/friends,5,images/style-1.7.10.js;js/all-1.8.0.js;js/style-1.7.10.js
++ post.CDN_thumb +,5,images/style-1.7.10.js;js/all-1.8.0.js;js/style-1.7.10.js
++ (post.media_new_post) +,5,images/style-1.7.10.js;js/all-1.8.0.js;js/style-1.7.10.js
+/' + username + '/likes,5,images/style-1.7.10.js;js/all-1.8.0.js;js/style-1.7.10.js
+/tos,5,images/style-1.7.10.js;js/all-1.8.0.js;js/style-1.7.10.js
++ category.image +,5,images/style-1.7.10.js;js/all-1.8.0.js;js/style-1.7.10.js
+/feed/friends,5,images/style-1.7.10.js;js/all-1.8.0.js;js/style-1.7.10.js
+"$articlePath, $locale",5,blog/make-money-first-then-think-of-nature/index.php;blog/making-natural-capital-visible-in-everyday-transactions/index.php;blog/money-work-worth/index.php;blog/what-if-stewardship-was-financially-recognised/index.php;blog/why-the-swiss-said-no-to-free-money/index.php
+//ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js?v=20260203,5,blog/money-work-worth/index.php;blog/nature-is-not-a-charity/index.php;blog/what-if-stewardship-was-financially-recognised/index.php;privacy/index.php
+https://mydio.com,5,blog/nature-is-not-a-charity/content-de.php;blog/nature-is-not-a-charity/content-en.php;blog/nature-is-not-a-charity/content-fr.php;faq/content-en.php
+"<?php echo htmlspecialchars(localized_path('/blog/money-work-worth/', $locale)); ?>",5,blog/making-natural-capital-visible-in-everyday-transactions/content-de.php;blog/making-natural-capital-visible-in-everyday-transactions/content-en.php;blog/making-natural-capital-visible-in-everyday-transactions/content-fr.php;theory-of-change/content-de.php;theory-of-change/content-fr.php
+../../../images/favicon.ico,4,css/access_profiles.php;css/spendbusinessprofile.php;images/spendbusinessprofile.php
+https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js,4,css/access_profiles.php;images/connect-icons/index.php;images/index.php
+../glyphicons_free/fonts/glyphicons-halflings-regular.eot,4,css/mydiostyle.css;css/mydiostyle.php;images/logo/mydiostyle.css
+../glyphicons_free/fonts/glyphicons-halflings-regular.eot?#iefix,4,css/mydiostyle.css;css/mydiostyle.php;images/logo/mydiostyle.css
+../glyphicons_free/fonts/glyphicons-halflings-regular.woff2,4,css/mydiostyle.css;css/mydiostyle.php;images/logo/mydiostyle.css
+../glyphicons_free/fonts/glyphicons-halflings-regular.woff,4,css/mydiostyle.css;css/mydiostyle.php;images/logo/mydiostyle.css
+../glyphicons_free/fonts/glyphicons-halflings-regular.ttf,4,css/mydiostyle.css;css/mydiostyle.php;images/logo/mydiostyle.css
+../glyphicons_free/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular,4,css/mydiostyle.css;css/mydiostyle.php;images/logo/mydiostyle.css
+../images/connect-icons/dio_animat100n4.gif,4,css/mydiostyle.css;css/mydiostyle.php;images/logo/mydiostyle.css
+https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js,4,css/spendbusinessprofile.php;js/about_bus.php
+/about.php,4,css/spendbusinessprofile.php;images/ecomm_cart.php;images/spendbusinessprofile.php
+../../../businesssignup/<?php echo $logo; ?>,4,css/spendbusinessprofile.php;images/spendbusinessprofile.php
+https://code.jquery.com/jquery-1.10.2.js,4,images/inventory_edit.php;images/inventory_list.php;js/create_rewardable_action.php
+/login/loggedin/account.php,4,images/ecomm_cart.php;images/spendbusinessprofile.php
+/login/loggedin/aboutmydio/animation.php,4,images/ecomm_cart.php;images/spendbusinessprofile.php
+node.src,4,js/jquery.js;js/validate/lib/jquery-1.11.1.js
+j.src,4,js/jquery.min.js;js/latest/jquery.min.js
+/images/tiltedpage_scroll_image.png,4,js/tiltedpage_scroll-master/demo/demo.html;js/tiltedpage_scroll-master/demo/tiltedpage_scroll_demo.html
+favicon.png,4,js/tiltedpage_scroll-master/demo/demo.html;js/tiltedpage_scroll-master/demo/tiltedpage_scroll_demo.html
+http://www.thepetedesign.com,4,js/tiltedpage_scroll-master/demo/demo.html;js/tiltedpage_scroll-master/demo/tiltedpage_scroll_demo.html
+http://www.travelistly.com,4,js/tiltedpage_scroll-master/demo/demo.html;js/tiltedpage_scroll-master/demo/tiltedpage_scroll_demo.html
+http://www.bucketlistly.com,4,js/tiltedpage_scroll-master/demo/demo.html;js/tiltedpage_scroll-master/demo/tiltedpage_scroll_demo.html
+https://github.com/peachananr/flipping_gallery,4,js/tiltedpage_scroll-master/demo/demo.html;js/tiltedpage_scroll-master/demo/tiltedpage_scroll_demo.html
+http://www.bucketlistly.com/achievements/visit-sydney-australia-95861,4,js/tiltedpage_scroll-master/demo/demo.html;js/tiltedpage_scroll-master/demo/tiltedpage_scroll_demo.html
+http://www.bucketlistly.com/achievements/visit-uluru-ayers-rock-96722,4,js/tiltedpage_scroll-master/demo/demo.html;js/tiltedpage_scroll-master/demo/tiltedpage_scroll_demo.html
+http://www.bucketlistly.com/achievements/travel-to-zhangjiajie-avatar-s-mountains-china-85798,4,js/tiltedpage_scroll-master/demo/demo.html;js/tiltedpage_scroll-master/demo/tiltedpage_scroll_demo.html
+http://www.bucketlistly.com/achievements/ride-a-camel-93541,4,js/tiltedpage_scroll-master/demo/demo.html;js/tiltedpage_scroll-master/demo/tiltedpage_scroll_demo.html
+http://www.thepetedesign.com/#design,4,js/tiltedpage_scroll-master/demo/demo.html;js/tiltedpage_scroll-master/demo/tiltedpage_scroll_demo.html
+https://github.com/peachananr/tiltedpage-scroll,4,js/tiltedpage_scroll-master/demo/demo.html;js/tiltedpage_scroll-master/demo/tiltedpage_scroll_demo.html
+https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png,4,js/tiltedpage_scroll-master/demo/demo.html;js/tiltedpage_scroll-master/demo/tiltedpage_scroll_demo.html
+http://code.jquery.com/ui/1.10.4/jquery-ui.min.js,4,js/validate/demo/multipart/index.html;js/validate/demo/themerollered.html
+../images/about_imgs/wee-cloud.png,3,css/mydiostyle.css;css/mydiostyle.php
+/images/background/jump.png,3,css/mydiostyle.css;css/twittermydiostyle.css
+/login/index.php?redirect=<? echo urlencode($redirect); ?>,3,css/spendbusinessprofile.php;images/spendbusinessprofile.php
+/signup/index.php?redirect=<? echo urlencode($redirect); ?>,3,css/spendbusinessprofile.php;images/spendbusinessprofile.php
+"action.php?id="".$output[",3,css/spendbusinessprofile.php;images/spendbusinessprofile.php
+../../../js/all-225.js,3,css/spendbusinessprofile.php;images/spendbusinessprofile.php
+/images/connect-icons/camera_white.png,3,images/connect-icons/profile.php;images/inventory_edit.php;images/profile.php
+../../login/index.php,3,images/connect-icons/index.php;images/index.php
+../../signup/,3,images/connect-icons/index.php;images/index.php
+"/blog/""+item.id+""",3,images/all-225.js;js/all-225.js
+'+item.snap+',3,images/all-225.js;js/all-225.js
+/blog/'+item.id+',3,images/all-225.js;js/all-225.js
+http://help.mydropintheoceans.com,3,images/style-1.7.10.js;js/style-1.7.10.js
+../images/favicon.ico,3,images/connect-icons/newbusinessback.php
+https://www.teebweb.org/,3,php/home-de.php;php/home-en.php;php/home-fr.php
+https://www.footprintnetwork.org/,3,php/home-de.php;php/home-en.php;php/home-fr.php
+https://www.gov.uk/government/publications/final-report-the-economics-of-biodiversity-the-dasgupta-review,3,php/home-de.php;php/home-en.php;php/home-fr.php
+https://seea.un.org/,3,php/home-de.php;php/home-en.php;php/home-fr.php
+https://www.ipbes.net/node/35274,3,php/home-de.php;php/home-en.php;php/home-fr.php
+https://mydio.com/about-us,3,php/home-de.php;php/home-en.php;php/home-fr.php
+https://mydio.com/story,3,php/home-de.php;php/home-en.php;php/home-fr.php
+https://www.linkedin.com/feed/update/urn:li:activity:7343198494863622144/,3,blog/money-work-worth/content-de.php;blog/money-work-worth/content-en.php;blog/money-work-worth/content-fr.php
+"$articlePath, 'en'",3,blog/money-work-worth/index.php;blog/what-if-stewardship-was-financially-recognised/index.php;blog/why-the-swiss-said-no-to-free-money/index.php
+"$articlePath, 'fr'",3,blog/money-work-worth/index.php;blog/what-if-stewardship-was-financially-recognised/index.php;blog/why-the-swiss-said-no-to-free-money/index.php
+"$articlePath, 'de'",3,blog/money-work-worth/index.php;blog/what-if-stewardship-was-financially-recognised/index.php;blog/why-the-swiss-said-no-to-free-money/index.php
+https://www.linkedin.com/posts/mydiocom_mydiocom-activity-7291447501079937025-vpXU/,3,blog/nature-is-not-a-charity/content-de.php;blog/nature-is-not-a-charity/content-en.php;blog/nature-is-not-a-charity/content-fr.php
+https://www.linkedin.com/posts/my-drop-in-the-oceans_mydiocom-activity-7346447706191540224-N-75/,3,blog/what-if-stewardship-was-financially-recognised/content-de.php;blog/what-if-stewardship-was-financially-recognised/content-en.php;blog/what-if-stewardship-was-financially-recognised/content-fr.php
+https://www.linkedin.com/shareArticle?mini=true&url=https://mydropintheoceans.org/blog/what-if-stewardship-was-financially-recognised/,3,blog/what-if-stewardship-was-financially-recognised/content-de.php;blog/what-if-stewardship-was-financially-recognised/content-en.php;blog/what-if-stewardship-was-financially-recognised/content-fr.php
+https://www.facebook.com/sharer/sharer.php?u=https://mydropintheoceans.org/blog/what-if-stewardship-was-financially-recognised/,3,blog/what-if-stewardship-was-financially-recognised/content-de.php;blog/what-if-stewardship-was-financially-recognised/content-en.php;blog/what-if-stewardship-was-financially-recognised/content-fr.php
+https://swisspowershift.ch/integrer-la-question-de-durabilite-au-mandat-de-la-bns-lidee-nest-pas-mauvaise/,3,blog/making-natural-capital-visible-in-everyday-transactions/content-de.php;blog/making-natural-capital-visible-in-everyday-transactions/content-en.php;blog/making-natural-capital-visible-in-everyday-transactions/content-fr.php
+https://twitter.com/intent/tweet?url=<?php echo urlencode($canonicalUrl); ?>&text=<?php echo urlencode($metaTitle ?? $pageTitle); ?>,3,faq/content-de.php;faq/content-en.php;faq/content-fr.php
+https://wa.me/?text=<?php echo urlencode(($metaTitle ?? $pageTitle) . ' ' . $canonicalUrl); ?>,3,faq/content-de.php;faq/content-en.php;faq/content-fr.php
+"<?php echo htmlspecialchars($alternateEnUrl, ENT_QUOTES, 'UTF-8'); ?>",2,index.php;php/seo_tags.php
+"<?php echo htmlspecialchars($alternateFrUrl, ENT_QUOTES, 'UTF-8'); ?>",2,index.php;php/seo_tags.php
+"<?php echo htmlspecialchars($alternateDeUrl, ENT_QUOTES, 'UTF-8'); ?>",2,index.php;php/seo_tags.php
+animation.php,2,css/access_profiles.php;css/addsecuritybusi.php
+../../images/favicon.ico,2,css/addsecuritybusi.php;js/adminlogin.php
+bus_login.php,2,css/addsecuritybusi.php
+https://i.stack.imgur.com/mJotv.gif,2,css/mydiostyle.css
+https://www.mydropintheoceans.org/images/favicon.ico,2,css/mydiostyle.css
+../images/about_imgs/search.png,2,css/mydiostyle.css
+../images/about_imgs/about.png,2,css/mydiostyle.css
+../images/about_imgs/settings.png,2,css/mydiostyle.css
+input.files[0],2,images/connect-icons/profile.php;images/profile.php
+<? echo $image; ?>,2,images/connect-icons/profile.php;images/profile.php
+../images/connect-icons/camera_white.png,2,images/connect-icons/profile.php;images/profile.php
+../../images/connect-icons/camera_white.png,2,images/connect-icons/profile.php;images/profile.php
+../about.php,2,images/index.php
+""".$output['community_image'].""",2,images/index.php
+../inventory_images/,2,images/inventory_edit.php;images/inventory_list.php
+../inventory_images/empty_img.jpg,2,images/inventory_edit.php;images/inventory_list.php
+../style/style.css,2,images/inventory_edit.php;images/inventory_list.php
+https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=https://mydropintheoceans.org/MyDIOnlineStore/product_qr.php?id=$id-:-$cmpyid,2,images/inventory_edit.php;images/inventory_list.php
+https://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.min.js,2,images/ecomm_cart.php
+""".$output2['action_image'].""",2,images/spendbusinessprofile.php
+"/community/action.php?redirect="".$redirect.""&id="".$output2[",2,images/spendbusinessprofile.php
+"/community/action.php?id="".$output2[",2,images/spendbusinessprofile.php
++taxidata.profile_pic+,2,images/spendbusinessprofile.php
+../login/loggedin/new_account.php,2,images/connect-icons/newbusinessback.php
+../images/Map-icon.png,2,images/logo/mydiostyle.css
+../images/connect-icons/profile_icon.jpg,2,images/logo/mydiostyle.css
+../images/background/TRI-F4-AGENCE41.png,2,images/logo/mydiostyle.css
+../images/connect-icons/facebook-connect@2x.png,2,images/logo/mydiostyle.css
+images/favicon.ico,2,js/about_bus.php
+https://maps.googleapis.com/maps/api/js?key=AIzaSyCn6C041sdi9PdqPRo_dpCcYwC7h-5QwBU&v&libraries=places,2,js/about_bus.php
+../../checkoutofsite.php,2,js/adminlogin.php
+forgotPass.php,2,js/adminlogin.php
+../../images/connect-icons/dio_animat32s.gif,2,js/adminlogin.php
+js/tpg_bus_stops.js,2,js/bus_stops.js
+community_admin.php,2,js/create_rewardable_action.php
+jquery.js,2,js/validate/README.md
+jquery.validate.js,2,js/validate/README.md
+http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css,2,js/validate/demo/jquerymobile.html
+http://code.jquery.com/jquery-1.11.1.min.js,2,js/validate/demo/jquerymobile.html
+http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js,2,js/validate/demo/jquerymobile.html
+http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.min.css,2,js/validate/demo/themerollered.html
+https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css,2,js/validate/demo/bootstrap/index.html
+http://getbootstrap.com/,2,js/validate/demo/bootstrap/index.html
+"<?php echo htmlEntities($_SERVER['PHP_SELF'], ENT_QUOTES); ?>",2,js/validate/demo/captcha/index.php
+http://code.jquery.com/ui/1.11.3/themes/swanky-purse/jquery-ui.css,2,js/validate/demo/cinema/index.html
+http://code.jquery.com/ui/1.11.3/jquery-ui.js,2,js/validate/demo/cinema/index.html
+images/fieldset_gradient.jpg,2,js/validate/demo/login/screen.css
+images/fieldset-gradient-02.jpg,2,js/validate/demo/login/screen.css
+images/action-bottom.gif,2,js/validate/demo/marketo/stylesheet.css
+images/line-grey.gif,2,js/validate/demo/marketo/stylesheet.css
+images/back_home-hero.jpg,2,js/validate/demo/marketo/stylesheet.css
+images/back_tan-fade.gif,2,js/validate/demo/marketo/stylesheet.css
+images/back_home-icons.png,2,js/validate/demo/marketo/stylesheet.css
+images/icon_search-engine-market.png,2,js/validate/demo/marketo/stylesheet.css
+images/icon_landing-pages.png,2,js/validate/demo/marketo/stylesheet.css
+images/icon_salesforce.png,2,js/validate/demo/marketo/stylesheet.css
+images/news.gif,2,js/validate/demo/marketo/stylesheet.css
+images/icon_news.gif,2,js/validate/demo/marketo/stylesheet.css
+images/arrow_r-blue.gif,2,js/validate/demo/marketo/stylesheet.css
+images/back_nav_side.gif,2,js/validate/demo/marketo/stylesheet.css
+images/logo_marketo_square.gif,2,js/validate/demo/marketo/stylesheet.css
+images/arrow_d-green.gif,2,js/validate/demo/marketo/stylesheet.css
+images/tab_green2.gif,2,js/validate/demo/marketo/stylesheet.css
+images/bullet_triangle_blue.gif,2,js/validate/demo/marketo/stylesheet.css
+images/monitor24.gif,2,js/validate/demo/marketo/stylesheet.css
+/images/forms/backRequiredGray.gif,2,js/validate/demo/marketo/stylesheet.css
+images/buynowBack.gif,2,js/validate/demo/marketo/stylesheet.css
+quote.gif,2,js/validate/demo/multipart/style.css
+buttonbg.gif,2,js/validate/demo/multipart/style.css
+input.png,2,js/validate/demo/multipart/style.css
+headerbg.jpg,2,js/validate/demo/multipart/style.css
+tableft.gif,2,js/validate/demo/multipart/style.css
+tabright.gif,2,js/validate/demo/multipart/style.css
+square_arrow.gif,2,js/validate/demo/multipart/style.css
+https://cdn.jsdelivr.net/semantic-ui/2.1.4/semantic.min.css,2,js/validate/demo/semantic-ui/index.html
+http://semantic-ui.com/,2,js/validate/demo/semantic-ui/index.html
++ur.length+,2,js/validate/demo/tinymce/tiny_mce.js
+"+s.url_converter.call(s.url_converter_scope||t,t.decode(c),'style',null)+",2,js/validate/demo/tinymce/tiny_mce.js
+"+t.encode(s.url_converter.call(s.url_converter_scope||t,t.decode(c),b,n))+",2,js/validate/demo/tinymce/tiny_mce.js
+'+tinymce._addVer(u)+',2,js/validate/demo/tinymce/tiny_mce.js
+'+s.image+',2,js/validate/demo/tinymce/tiny_mce.js
+'+t.documentBaseURI.getURI()+',2,js/validate/demo/tinymce/tiny_mce.js
+//tinymce.cachefly.net/4.1/tinymce.min.js,2,js/validate/demo/tinymce4/index.html
+'+ s.iframeSrc +',2,js/validate/lib/jquery.form.js
+""" + file + """,2,js/validate/lib/jquery.js
+requestSettings,2,js/validate/lib/jquery.mockjax.js
+h,2,js/validate/lib/require.js
+"c(b,a&&a.id,!0",2,js/validate/lib/require.js
+"d,b,c",2,js/validate/lib/require.js
+http://simon.incutio.com/2003/03/25/#getElementsBySelector,2,js/validate/test/index.html
+http://www.google.com/,2,js/validate/test/index.html
+http://groups.google.com/,2,js/validate/test/index.html
+http://diveintomark.org/,2,js/validate/test/index.html
+http://www.yahoo.com/,2,js/validate/test/index.html
+http://simon.incutio.com/,2,js/validate/test/index.html
+params,2,js/validate/test/qunit/qunit.js
+"{ filter: undefined, module: undefined, testId: undefined }",2,js/validate/test/qunit/qunit.js
+{ testId: testId },2,js/validate/test/qunit/qunit.js
+""" + setUrl({ maxDepth: -1 }) + """,2,js/validate/test/qunit/qunit.js
+"$requestUri, PHP_URL_PATH",2,php/i18n.php;php/site-header.php
+<?php echo htmlspecialchars($alternateEnUrl); ?>,2,blog/nature-is-not-a-charity/index.php;theory-of-change/index.php
+<?php echo htmlspecialchars($alternateFrUrl); ?>,2,blog/nature-is-not-a-charity/index.php;theory-of-change/index.php
+<?php echo htmlspecialchars($alternateDeUrl); ?>,2,blog/nature-is-not-a-charity/index.php;theory-of-change/index.php
+<?php echo htmlspecialchars($xDefaultUrl); ?>,2,blog/nature-is-not-a-charity/index.php;theory-of-change/index.php
+"<?php echo htmlspecialchars(localized_url($articlePath, 'en')); ?>",2,blog/make-money-first-then-think-of-nature/index.php;blog/making-natural-capital-visible-in-everyday-transactions/index.php
+"<?php echo htmlspecialchars(localized_url($articlePath, 'fr')); ?>",2,blog/make-money-first-then-think-of-nature/index.php;blog/making-natural-capital-visible-in-everyday-transactions/index.php
+"<?php echo htmlspecialchars(localized_url($articlePath, 'de')); ?>",2,blog/make-money-first-then-think-of-nature/index.php;blog/making-natural-capital-visible-in-everyday-transactions/index.php
+"<?php echo htmlspecialchars(localized_path('/blog/making-natural-capital-visible-in-everyday-transactions/', $locale)); ?>",2,theory-of-change/content-de.php;theory-of-change/content-fr.php
+"/', 'en",1,index.php
+"/', 'fr",1,index.php
+"/', 'de",1,index.php
+"'/', $locale",1,index.php
+"<?php echo htmlspecialchars($xDefaultUrl, ENT_QUOTES, 'UTF-8'); ?>",1,index.php
+"'/contact/', $locale",1,contact/index.php
+"/contact/', 'en",1,contact/index.php
+"/contact/', 'fr",1,contact/index.php
+"/contact/', 'de",1,contact/index.php
+//ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js,1,contact/index.php
+login.php,1,css/access_profiles.php
+../../css/twittermydiostyle.css,1,css/access_profiles.php
+../../css/mydiostyle.css,1,css/access_profiles.php
+../new_account.php,1,css/access_profiles.php
+about.php,1,css/access_profiles.php
+credits.php,1,css/access_profiles.php
+rewards.php,1,css/access_profiles.php
+userlist.php,1,css/access_profiles.php
+businesses.php,1,css/access_profiles.php
+../../../checkoutofsite.php,1,css/access_profiles.php
+../account.php,1,css/access_profiles.php
+admin_choice.php,1,css/access_profiles.php
+http://connect.facebook.net/en_US/all.js,1,css/addsecuritybusi.php
+../../login/loggedin/new_account.php,1,css/addsecuritybusi.php
+"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAMAAABmmnOVAAAAdVBMVEUAAAA5OTkzMzM7Ozs3NzdBQUFAQEA/Pz8+Pj5BQUFAQEA/Pz8+Pj5BQUFAQEA/Pz9BQUE+Pj4/Pz8/Pz8+Pj4/Pz8/Pz8/Pz8+Pj4/Pz8+Pj4/Pz8/Pz8/Pz8/Pz8/Pz8+Pj4/Pz8/Pz8/Pz8/Pz9AQEA/Pz+fdCaPAAAAJnRSTlMACQoNDjM4OTo7PEFCQ0RFS6ytsbS1tru8vcTFxu7x8vX19vf4+C5yomAAAAJESURBVHgBvdzLTsJAGEfxr4C2KBcVkQsIDsK8/yPaqIsPzVlyzrKrX/5p0kkXEz81L23otc9NpIbbWia2YVLqdnhlqFlhGWpSDHe1aopsSIpRb8gK0dC3G30b9rVmhWZIimTICsvQtx/FsuYOrWHoDjX3Gu31gzJxdki934WrAIOsAIOsAIOiAMPhPsJTgKGN0BVsYIVsYIVpYIVpYIVpYIVpYIVpYIVpYIVpYIVlAIVgEBRs8BRs8BRs8BRs8BRs8BRs8BRs8BRTNmgKNngKNngKNngKNngKNhiKGxgiOlZoBlaYBlaYBlaYBlaYBlaYBlaYBlaYBlZIBlBMfQMrVAMr2KAqBENSHFHhGEABhi5CV6gGUKgGUKgGUKgGUFwuqgEUvoEVsoEVpoEUpgEUggF+gKTKY+h1fxSlC7/Z+RrxOQ3fcEoAPPHZBlaYBlaYBlaYBlZYBlYIhvLBCstw7PgM7hkiWOEZWGEaWGEaWGEaIsakEAysmHkGVpxmvoEVqoEVpoEVpoEVpoEVpoEVpoEVkoEVgkFQsEFSsEFQsGEcoSvY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnY4CnmbNAUT2c2WAo2eAo2eAo2eAo2eAo2eArNEPFACjZ4CjZ4CjZ4CjaIird/rBvFH6llNCvewdli1URWCIakSIZesUaDoFg36dKFWk9zCZDei3TtwmCj7pC22AwikiIZPEU29IpFNliKxa/hC9DFITjQPYhcAAAAAElFTkSuQmCC",1,css/addtohomescreen.css
+"data:image/png;base64,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",1,css/addtohomescreen.css
+"data:image/png;base64,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",1,css/addtohomescreen.css
+"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAANlBMVEVmZmb///9mZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZW6fJrAAAAEXRSTlMAAAYHG21ub8fLz9DR8/T4+RrZ9owAAAB3SURBVHja7dNLDoAgDATQWv4gKve/rEajJOJiWLgg6WzpSyB0aHqHiNj6nL1lovb4C+hYzkSNAT7mryQFAVOeGAj4CjwEtgrWXpD/uZKtwEJApXt+Vn0flzRhgNiFZQkOXY0aADQZCOCPlsZJ46Rx0jhp3IiN2wGDHhxtldrlwQAAAABJRU5ErkJggg==",1,css/addtohomescreen.css
+../fonts/glyphicons-halflings-regular.eot,1,css/bootstrap.css
+../fonts/glyphicons-halflings-regular.eot?#iefix,1,css/bootstrap.css
+../fonts/glyphicons-halflings-regular.woff2,1,css/bootstrap.css
+../fonts/glyphicons-halflings-regular.woff,1,css/bootstrap.css
+../fonts/glyphicons-halflings-regular.ttf,1,css/bootstrap.css
+../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular,1,css/bootstrap.css
+../images/about_imgs/edit.png,1,css/mydiostyle.css
+../images/campaigns/night_sky_stars.jpg,1,css/mydiostyle.css
+../fonts/OpenSans/opensans-light.eot,1,css/style-1.7.10.css
+../fonts/OpenSans/opensans-light.eot?#iefix,1,css/style-1.7.10.css
+../fonts/OpenSans/opensans-light.woff,1,css/style-1.7.10.css
+../fonts/OpenSans/opensans-light.ttf,1,css/style-1.7.10.css
+../fonts/OpenSans/opensans-regular.eot,1,css/style-1.7.10.css
+../fonts/OpenSans/opensans-regular.eot?#iefix,1,css/style-1.7.10.css
+../fonts/OpenSans/opensans-regular.woff,1,css/style-1.7.10.css
+../fonts/OpenSans/opensans-regular.ttf,1,css/style-1.7.10.css
+../fonts/OpenSans/opensans-bold.eot,1,css/style-1.7.10.css
+../fonts/OpenSans/opensans-bold.eot?#iefix,1,css/style-1.7.10.css
+../fonts/OpenSans/opensans-bold.woff,1,css/style-1.7.10.css
+../fonts/OpenSans/opensans-bold.ttf,1,css/style-1.7.10.css
+https://www.bloglovin.com/assets/gfx/icons-2.png,1,css/style-1.7.10.css
+https://www.bloglovin.com/assets/gfx/sidebar-hamburger.png,1,css/style-1.7.10.css
+https://www.bloglovin.com/assets/gfx/icons@2x-2.png,1,css/style-1.7.10.css
+https://www.bloglovin.com/assets/gfx/sidebar-hamburger@2x.png,1,css/style-1.7.10.css
+https://www.bloglovin.com/assets/gfx/hamburger.png,1,css/style-1.7.10.css
+https://www.bloglovin.com/assets/gfx/hamburger-active.png,1,css/style-1.7.10.css
+https://www.bloglovin.com/assets/gfx/search.png,1,css/style-1.7.10.css
+https://www.bloglovin.com/assets/gfx/search-active.png,1,css/style-1.7.10.css
+https://www.bloglovin.com/assets/gfx/user.png,1,css/style-1.7.10.css
+https://www.bloglovin.com/assets/gfx/user-active.png,1,css/style-1.7.10.css
+http://www.mydropintheoceans.org/images/logo/mydiologotextonly.jpg,1,css/style-1.7.10.css
+https://www.bloglovin.com/assets/gfx/hamburger@2x.png,1,css/style-1.7.10.css
+https://www.bloglovin.com/assets/gfx/hamburger-active@2x.png,1,css/style-1.7.10.css
+https://www.bloglovin.com/assets/gfx/search@2x.png,1,css/style-1.7.10.css
+https://www.bloglovin.com/assets/gfx/search-active@2x.png,1,css/style-1.7.10.css
+https://www.bloglovin.com/assets/gfx/user@2x.png,1,css/style-1.7.10.css
+https://www.bloglovin.com/assets/gfx/user-active@2x.png,1,css/style-1.7.10.css
+https://www.bloglovin.com/assets/gfx/appstore.svg,1,css/style-1.7.10.css
+https://www.bloglovin.com/assets/gfx/get_mobile/devices-small.png,1,css/style-1.7.10.css
+https://www.bloglovin.com/assets/gfx/appstore.png,1,css/style-1.7.10.css
+https://www.bloglovin.com/assets/gfx/get_mobile/devices.png,1,css/style-1.7.10.css
+https://www.bloglovin.com/assets/gfx/get_mobile/devices-small@2x.png,1,css/style-1.7.10.css
+https://www.bloglovin.com/assets/gfx/get_mobile/devices@2x.png,1,css/style-1.7.10.css
+https://www.bloglovin.com/assets/gfx/onboarding/bg.png,1,css/style-1.7.10.css
+https://www.bloglovin.com/assets/gfx/social-publish-promo.jpg,1,css/style-1.7.10.css
+/assets/gfx/social-publish-promo.jpg,1,css/style-1.7.10.css
+https://www.bloglovin.com/assets/gfx/mobile-homepage-bg.jpg,1,css/style-1.7.10.css
+/files/font/OpenSans/opensans-regular.eot,1,css/twittermydiostyle.css
+/files/font/OpenSans/opensans-regular.eot?#iefix,1,css/twittermydiostyle.css
+/files/font/OpenSans/opensans-regular.woff,1,css/twittermydiostyle.css
+/files/font/OpenSans/opensans-regular.ttf,1,css/twittermydiostyle.css
+/files/font/OpenSans/opensans-light.eot,1,css/twittermydiostyle.css
+/files/font/OpenSans/opensans-light.eot?#iefix,1,css/twittermydiostyle.css
+/files/font/OpenSans/opensans-light.woff,1,css/twittermydiostyle.css
+/files/font/OpenSans/opensans-light.ttf,1,css/twittermydiostyle.css
+/files/font/OpenSans/opensans-bold.eot,1,css/twittermydiostyle.css
+/files/font/OpenSans/opensans-bold.eot?#iefix,1,css/twittermydiostyle.css
+/files/font/OpenSans/opensans-bold.woff,1,css/twittermydiostyle.css
+/files/font/OpenSans/opensans-bold.ttf,1,css/twittermydiostyle.css
+/files/font/fontawesome/fontawesome-webfont.eot,1,css/twittermydiostyle.css
+/files/font/fontawesome/fontawesome-webfont.eot?#iefix,1,css/twittermydiostyle.css
+/files/font/fontawesome/fontawesome-webfont.woff,1,css/twittermydiostyle.css
+/files/font/fontawesome/fontawesome-webfont.ttf,1,css/twittermydiostyle.css
+/files/font/fontawesome/fontawesome-webfont.svg#FontAwesome,1,css/twittermydiostyle.css
+images/hamburger-icon@2x.png,1,css/twittermydiostyle.css
+/wordpress-4.0/wordpress/?page_id=16,1,css/twittermydiostyle.css
+/images/background/businessesx.jpg,1,css/twittermydiostyle.css
+/images/background/businesses.jpg,1,css/twittermydiostyle.css
+/images/background/bdropaccounts.png,1,css/twittermydiostyle.css
+../images/background/bdropstart.png,1,css/twittermydiostyle.css
+/images/background/bdropstart.png,1,css/twittermydiostyle.css
+../images/background/bdroplogin.jpg,1,css/twittermydiostyle.css
+/images/background/bdroplogin.jpg,1,css/twittermydiostyle.css
+/images/background/iceberg.jpg,1,css/twittermydiostyle.css
+/images/background/animatedglobe.gif,1,css/twittermydiostyle.css
+../images/background/animatedglobe.gif,1,css/twittermydiostyle.css
+/images/about/devices-3.png,1,css/twittermydiostyle.css
+/images/about/devices-3@2x.png,1,css/twittermydiostyle.css
+/images/search.png,1,css/twittermydiostyle.css
+../assets/gfx/search@2x.png,1,css/twittermydiostyle.css
+../images/search-active@2x.png,1,css/twittermydiostyle.css
+../images/hamburger@2x.png,1,css/twittermydiostyle.css
+../images/hamburgerdio@2x.png,1,css/twittermydiostyle.css
+../images/search@2x.png,1,css/twittermydiostyle.css
+../images/connect-icons/dio_black_animat90.gif,1,css/twittermydiostyle.css
+../images/connect-icons/dio_alpha_animat70.gif,1,css/twittermydiostyle.css
+../images/connect-icons/dio_animat100s.gif,1,css/twittermydiostyle.css
+../images/search.png,1,css/twittermydiostyle.css
+../images/search-active.png,1,css/twittermydiostyle.css
+../../images/user@2x.png,1,css/twittermydiostyle.css
+../images/icons@2x.png,1,css/twittermydiostyle.css
+loggedin/account.php,1,css/spendbusinessprofile.php
+account.php,1,css/spendbusinessprofile.php
+""".$output['action_image'].""",1,css/spendbusinessprofile.php
+"/community/action.php?redirect="".$redirect.""&id="".$output[",1,css/spendbusinessprofile.php
+"/community/action.php?id="".$output[",1,css/spendbusinessprofile.php
+<?php echo $image; ?>,1,images/profile.php
+product_list.php,1,images/inventory_edit.php
+https://code.jquery.com/jquery-1.4.2.min.js,1,images/ecomm_cart.php
+https://code.jquery.com/ui/1.8.21/jquery-ui.min.js,1,images/ecomm_cart.php
+http://pinterest.com/pin/create/button/,1,images/all-225.js
+https://twitter.com/share?via=bloglovin,1,images/all-225.js
+../../../js/latest/jquery.min.js,1,images/spendbusinessprofile.php
+../js/all-225.js,1,images/connect-icons/newbusinessback.php
+../images/logo/full_sq.png,1,images/logo/style.css
+../images/logo/drop.png,1,images/logo/style.css
+../images/logo/logo_outline.png,1,images/logo/style.css
+...t,1,js/chart.js
+"$data['referer'], PHP_URL_HOST",1,php/analytics-view.php
+"$_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH",1,php/i18n.php
+"string $path, ?string $locale = null",1,php/i18n.php
+/fr/theory-of-change/,1,php/home-fr.php
+/fr/contact/,1,php/home-fr.php
+/fr/blog/nature-is-not-a-charity/,1,php/home-fr.php
+/fr/blog/why-the-swiss-said-no-to-free-money/,1,php/home-fr.php
+/fr/blog/make-money-first-then-think-of-nature/,1,php/home-fr.php
+/fr/blog/money-work-worth/,1,php/home-fr.php
+/fr/blog/what-if-stewardship-was-financially-recognised/,1,php/home-fr.php
+/fr/blog/,1,php/home-fr.php
+/fr/privacy/,1,php/home-fr.php
+/de/theory-of-change/,1,php/home-de.php
+/de/contact/,1,php/home-de.php
+/de/blog/nature-is-not-a-charity/,1,php/home-de.php
+/de/blog/why-the-swiss-said-no-to-free-money/,1,php/home-de.php
+/de/blog/make-money-first-then-think-of-nature/,1,php/home-de.php
+/de/blog/money-work-worth/,1,php/home-de.php
+/de/blog/what-if-stewardship-was-financially-recognised/,1,php/home-de.php
+/de/blog/,1,php/home-de.php
+/de/privacy/,1,php/home-de.php
+"' . htmlspecialchars($home_url, ENT_QUOTES, 'UTF-8') . '",1,php/footer.php
+"' . htmlspecialchars($theory_url, ENT_QUOTES, 'UTF-8') . '",1,php/footer.php
+"' . htmlspecialchars($contact_url, ENT_QUOTES, 'UTF-8') . '",1,php/footer.php
+"' . htmlspecialchars($privacy_url, ENT_QUOTES, 'UTF-8') . '",1,php/footer.php
+"' . htmlspecialchars($blog_url, ENT_QUOTES, 'UTF-8') . '",1,php/footer.php
+"' . htmlspecialchars($faq_url, ENT_QUOTES, 'UTF-8') . '",1,php/footer.php
+"$requestPath, $supportedLocale",1,php/site-header.php
+"'/blog/', $locale",1,blog/index.php
+"/blog/', 'en",1,blog/index.php
+"/blog/', 'fr",1,blog/index.php
+"/blog/', 'de",1,blog/index.php
+"<?php echo htmlspecialchars(localized_path('/blog/' . $post['slug'], $locale)); ?>",1,blog/index.php
+"/blog/money-work-worth/', 'en",1,blog/money-work-worth/content-en.php
+"/blog/money-work-worth/', 'fr",1,blog/money-work-worth/content-fr.php
+"/blog/money-work-worth/', 'de",1,blog/money-work-worth/content-de.php
+"$_SERVER['REQUEST_URI'] ?? $articlePath, PHP_URL_PATH",1,blog/nature-is-not-a-charity/index.php
+https://twitter.com/intent/tweet?url=https://mydropintheoceans.org/blog/what-if-stewardship-was-financially-recognised/&text=What%20if%20Stewardship%20Was%20Financially%20Recognised%3F,1,blog/what-if-stewardship-was-financially-recognised/content-en.php
+https://wa.me/?text=What%20if%20Stewardship%20Was%20Financially%20Recognised%3F%20https://mydropintheoceans.org/blog/what-if-stewardship-was-financially-recognised/,1,blog/what-if-stewardship-was-financially-recognised/content-en.php
+https://twitter.com/intent/tweet?url=https://mydropintheoceans.org/blog/what-if-stewardship-was-financially-recognised/&text=Et%20si%20la%20stewardship%20%C3%A9tait%20reconnue%20financi%C3%A8rement%20%3F,1,blog/what-if-stewardship-was-financially-recognised/content-fr.php
+https://wa.me/?text=Et%20si%20la%20stewardship%20%C3%A9tait%20reconnue%20financi%C3%A8rement%20%3F%20https://mydropintheoceans.org/blog/what-if-stewardship-was-financially-recognised/,1,blog/what-if-stewardship-was-financially-recognised/content-fr.php
+https://twitter.com/intent/tweet?url=https://mydropintheoceans.org/blog/what-if-stewardship-was-financially-recognised/&text=Was%20w%C3%A4re%2C%20wenn%20F%C3%BCrsorge%20finanziell%20anerkannt%20w%C3%BCrde%3F,1,blog/what-if-stewardship-was-financially-recognised/content-de.php
+https://wa.me/?text=Was%20w%C3%A4re%2C%20wenn%20F%C3%BCrsorge%20finanziell%20anerkannt%20w%C3%BCrde%3F%20https://mydropintheoceans.org/blog/what-if-stewardship-was-financially-recognised/,1,blog/what-if-stewardship-was-financially-recognised/content-de.php
+https://www.linkedin.com/shareArticle?mini=true&url=https://mydropintheoceans.org/blog/why-the-swiss-said-no-to-free-money/,1,blog/why-the-swiss-said-no-to-free-money/index.php
+https://twitter.com/intent/tweet?url=https://mydropintheoceans.org/blog/why-the-swiss-said-no-to-free-money/&text=<?php echo urlencode($pageTitle ?? 'Why the Swiss Said No to Free Money'); ?>,1,blog/why-the-swiss-said-no-to-free-money/index.php
+https://www.facebook.com/sharer/sharer.php?u=https://mydropintheoceans.org/blog/why-the-swiss-said-no-to-free-money/,1,blog/why-the-swiss-said-no-to-free-money/index.php
+https://wa.me/?text=<?php echo urlencode(($pageTitle ?? 'Why the Swiss Said No to Free Money') . ' ' . 'https://mydropintheoceans.org/blog/why-the-swiss-said-no-to-free-money/'); ?>,1,blog/why-the-swiss-said-no-to-free-money/index.php
+"/blog/why-the-swiss-said-no-to-free-money/', 'de",1,blog/why-the-swiss-said-no-to-free-money/content-de.php
+"<?php echo localized_url('/blog/money-work-worth/', $locale ?? 'de'); ?>",1,blog/why-the-swiss-said-no-to-free-money/content-de.php
+"<?php echo localized_url('/theory-of-change/', $locale ?? 'de'); ?>",1,blog/why-the-swiss-said-no-to-free-money/content-de.php
+https://twitter.com/intent/tweet?url=<?php echo urlencode($canonicalUrl); ?>&text=Warum%20die%20Schweiz%20Nein%20zu%20kostenlosem%20Geld%20sagte,1,blog/why-the-swiss-said-no-to-free-money/content-de.php
+https://wa.me/?text=Warum%20die%20Schweiz%20Nein%20zu%20kostenlosem%20Geld%20sagte%20<?php echo urlencode($canonicalUrl); ?>,1,blog/why-the-swiss-said-no-to-free-money/content-de.php
+"<?php echo localized_url('/blog/nature-is-not-a-charity/', $locale ?? 'de'); ?>",1,blog/why-the-swiss-said-no-to-free-money/content-de.php
+"<?php echo localized_url('/contact/', $locale ?? 'de'); ?>",1,blog/why-the-swiss-said-no-to-free-money/content-de.php
+"<?php echo localized_url('/blog/', $locale ?? 'de'); ?>",1,blog/why-the-swiss-said-no-to-free-money/content-de.php
+"<?php echo localized_url('/privacy/', $locale ?? 'de'); ?>",1,blog/why-the-swiss-said-no-to-free-money/content-de.php
+"/blog/why-the-swiss-said-no-to-free-money/', 'en",1,blog/why-the-swiss-said-no-to-free-money/content-en.php
+"<?php echo localized_url('/blog/money-work-worth/', $locale ?? 'en'); ?>",1,blog/why-the-swiss-said-no-to-free-money/content-en.php
+"<?php echo localized_url('/theory-of-change/', $locale ?? 'en'); ?>",1,blog/why-the-swiss-said-no-to-free-money/content-en.php
+https://twitter.com/intent/tweet?url=<?php echo urlencode($canonicalUrl); ?>&text=Why%20the%20Swiss%20Said%20No%20to%20Free%20Money,1,blog/why-the-swiss-said-no-to-free-money/content-en.php
+https://wa.me/?text=Why%20the%20Swiss%20Said%20No%20to%20Free%20Money%20<?php echo urlencode($canonicalUrl); ?>,1,blog/why-the-swiss-said-no-to-free-money/content-en.php
+"<?php echo localized_url('/blog/make-money-first-then-think-of-nature/', $locale ?? 'en'); ?>",1,blog/why-the-swiss-said-no-to-free-money/content-en.php
+"<?php echo localized_url('/blog/what-if-stewardship-was-financially-recognised/', $locale ?? 'en'); ?>",1,blog/why-the-swiss-said-no-to-free-money/content-en.php
+"<?php echo localized_url('/blog/nature-is-not-a-charity/', $locale ?? 'en'); ?>",1,blog/why-the-swiss-said-no-to-free-money/content-en.php
+"<?php echo localized_url('/contact/', $locale ?? 'en'); ?>",1,blog/why-the-swiss-said-no-to-free-money/content-en.php
+"<?php echo localized_url('/blog/', $locale ?? 'en'); ?>",1,blog/why-the-swiss-said-no-to-free-money/content-en.php
+"<?php echo localized_url('/privacy/', $locale ?? 'en'); ?>",1,blog/why-the-swiss-said-no-to-free-money/content-en.php
+"/blog/why-the-swiss-said-no-to-free-money/', 'fr",1,blog/why-the-swiss-said-no-to-free-money/content-fr.php
+"<?php echo localized_url('/blog/money-work-worth/', $locale ?? 'fr'); ?>",1,blog/why-the-swiss-said-no-to-free-money/content-fr.php
+"<?php echo localized_url('/theory-of-change/', $locale ?? 'fr'); ?>",1,blog/why-the-swiss-said-no-to-free-money/content-fr.php
+https://twitter.com/intent/tweet?url=<?php echo urlencode($canonicalUrl); ?>&text=Pourquoi%20la%20Suisse%20a%20dit%20non%20%C3%A0%20l%27argent%20gratuit,1,blog/why-the-swiss-said-no-to-free-money/content-fr.php
+https://wa.me/?text=Pourquoi%20la%20Suisse%20a%20dit%20non%20%C3%A0%20l%27argent%20gratuit%20<?php echo urlencode($canonicalUrl); ?>,1,blog/why-the-swiss-said-no-to-free-money/content-fr.php
+"<?php echo localized_url('/blog/nature-is-not-a-charity/', $locale ?? 'fr'); ?>",1,blog/why-the-swiss-said-no-to-free-money/content-fr.php
+"<?php echo localized_url('/contact/', $locale ?? 'fr'); ?>",1,blog/why-the-swiss-said-no-to-free-money/content-fr.php
+"<?php echo localized_url('/blog/', $locale ?? 'fr'); ?>",1,blog/why-the-swiss-said-no-to-free-money/content-fr.php
+"<?php echo localized_url('/privacy/', $locale ?? 'fr'); ?>",1,blog/why-the-swiss-said-no-to-free-money/content-fr.php
+"/blog/make-money-first-then-think-of-nature/', 'fr",1,blog/make-money-first-then-think-of-nature/content-fr.php
+"/blog/make-money-first-then-think-of-nature/', 'en",1,blog/make-money-first-then-think-of-nature/content-en.php
+"/blog/make-money-first-then-think-of-nature/', 'de",1,blog/make-money-first-then-think-of-nature/content-de.php
+/blog/nature-is-not-a-charity.php,1,
+/blog/why-the-swiss-said-no-to-free-money.php,1,
+/login/index.php?redirect=<?php echo urlencode($server); ?>,1,
+../login/loggedin/aboutmydio/about.php,1,
+"profile.php?id="".$output[",1,
+product_qr.php?id='<? echo $product_id; ?>',1,
+/login/loggedin/aboutmydio/about.php?p=about,1,
+"/faq/', 'de",1,faq/content-de.php
+"/faq/', 'en",1,faq/content-en.php
+"/faq/', 'fr",1,faq/content-fr.php
+"$pagePath, $locale",1,faq/index.php
+"<?php echo htmlspecialchars(localized_url($pagePath, 'en')); ?>",1,faq/index.php
+"<?php echo htmlspecialchars(localized_url($pagePath, 'fr')); ?>",1,faq/index.php
+"<?php echo htmlspecialchars(localized_url($pagePath, 'de')); ?>",1,faq/index.php
+$page,1,admin/view-logs.php
+$raw,1,admin/view-logs.php
+"$referer, PHP_URL_HOST",1,admin/view-logs.php
+"startDate, endDate, botFilter",1,admin/view-logs.php
+"$_SERVER['REQUEST_URI'] ?? '/theory-of-change/', PHP_URL_PATH",1,theory-of-change/index.php
+//ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js?v=<?php echo time(); ?>,1,theory-of-change/index.php
+https://www.linkedin.com/shareArticle?mini=true&url=https://mydropintheoceans.org/de/theory-of-change/,1,theory-of-change/content-de.php
+https://twitter.com/intent/tweet?url=https://mydropintheoceans.org/de/theory-of-change/&text=Theorie%20des%20Wandels%3A%20Wirtschaft%20und%20Natur%20im%20Einklang,1,theory-of-change/content-de.php
+https://www.facebook.com/sharer/sharer.php?u=https://mydropintheoceans.org/de/theory-of-change/,1,theory-of-change/content-de.php
+https://wa.me/?text=Theorie%20des%20Wandels%3A%20Wirtschaft%20und%20Natur%20im%20Einklang%20https://mydropintheoceans.org/de/theory-of-change/,1,theory-of-change/content-de.php
+https://www.linkedin.com/shareArticle?mini=true&url=https://mydropintheoceans.org/theory-of-change/,1,theory-of-change/content-en.php
+https://twitter.com/intent/tweet?url=https://mydropintheoceans.org/theory-of-change/&text=Theory%20of%20Change%3A%20Aligning%20Economy%20and%20Nature,1,theory-of-change/content-en.php
+https://www.facebook.com/sharer/sharer.php?u=https://mydropintheoceans.org/theory-of-change/,1,theory-of-change/content-en.php
+https://wa.me/?text=Theory%20of%20Change%3A%20Aligning%20Economy%20and%20Nature%20https://mydropintheoceans.org/theory-of-change/,1,theory-of-change/content-en.php
+https://twitter.com/intent/tweet?url=<?php echo urlencode($canonicalUrl); ?>&text=<?php echo urlencode($ogTitle); ?>,1,theory-of-change/content-fr.php
+https://wa.me/?text=<?php echo urlencode($ogTitle . ' ' . $canonicalUrl); ?>,1,theory-of-change/content-fr.php
+"'/privacy/', $locale",1,privacy/index.php
+"/privacy/', 'en",1,privacy/index.php
+"/privacy/', 'fr",1,privacy/index.php
+"/privacy/', 'de",1,privacy/index.php
+"<?php echo htmlspecialchars(localized_path('/contact/', $locale), ENT_QUOTES, 'UTF-8'); ?>",1,privacy/index.php

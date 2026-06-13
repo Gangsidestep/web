@@ -1,0 +1,203 @@
+Distinct missing (cleaned): 418
+
+Top 200 missing targets:
+  56  blog/making-natural-capital-visible-in-everyday-transactions/<
+  35  theory-of-change/<
+  27  blog/why-the-swiss-said-no-to-free-money/<
+  25  blog/money-work-worth/<
+  25  blog/make-money-first-then-think-of-nature/<
+  23  blog/nature-is-not-a-charity/<
+  22  a
+  19  faq/<
+  18  js/+ (imageURL) +
+  18  js/+ (imageURL) +
+  15  blogs
+  13  ajax/libs/jquery/3.7.0/jquery.min.js
+  11  search/
+   9  images/+ (imageURL) +
+   8  en_US/all.js
+   8  js/+ post.CDN_thumb +
+   8  js/+ category.image +
+   8  js/+ post.CDN_thumb +
+   8  js/+ category.image +
+   6  images/background/bdroplogin.jpg
+   6  images/background/iceberg.jpg
+   6  js/d
+   6  js/d
+   5  <
+   5  js/vendor/respond.min.js
+   5  images/background/jump.png
+   5  images/connect-icons/camera_white.png
+   5  blog/"+t.id+"
+   5  blog/'+t.id+'
+   5  blog/'+t.blog_id+'
+   5  feed
+   5  friends
+   5  ' + username + '/likes
+   5  tos
+   5  feed/friends
+   4  glyphicons_free/fonts/glyphicons-halflings-regular.eot
+   4  images/+ post.CDN_thumb +
+   4  images/+ category.image +
+   4  js/data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP/yH5BAEAAAAALAAAAAABAAEAAAIBRAA7
+   4  js/'+e+'
+   4  js/+ (item.snap) +
+   4  js/' + base_url + '/blog/' + item.blog_id + '
+   4  js/e
+   4  js/b.url
+   4  images/tiltedpage_scroll_image.png
+   4  js/data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP/yH5BAEAAAAALAAAAAABAAEAAAIBRAA7
+   4  js/'+e+'
+   4  js/+ (item.snap) +
+   4  js/' + base_url + '/blog/' + item.blog_id + '
+   4  js/e
+   4  js/b.url
+   3  ..images/favicon.ico
+   3  .images/favicon.ico
+   3  images/about_imgs/wee-cloud.png
+   3  images/background/bdropstart.png
+   3  images/background/animatedglobe.gif
+   3  images/d
+   3  blog/"+item.id+"
+   3  blog/'+item.id+'
+   3  js/tiltedpage_scroll-master/css/demo.css
+   3  js/tiltedpage_scroll-master/js/demo.js
+   3  js/vendor/respond.min.js
+   3  js/tiltedpage_scroll-master/css/demo.css
+   3  js/tiltedpage_scroll-master/js/demo.js
+   2  fonts/glyphicons-halflings-regular.eot
+   2  glyphicons_free/fonts/glyphicons-halflings-regular.woff2
+   2  glyphicons_free/fonts/glyphicons-halflings-regular.woff
+   2  glyphicons_free/fonts/glyphicons-halflings-regular.ttf
+   2  glyphicons_free/fonts/glyphicons-halflings-regular.svg
+   2  images/connect-icons/dio_animat100n4.gif
+   2  fonts/OpenSans/opensans-light.eot
+   2  fonts/OpenSans/opensans-regular.eot
+   2  fonts/OpenSans/opensans-bold.eot
+   2  files/font/OpenSans/opensans-regular.eot
+   2  files/font/OpenSans/opensans-light.eot
+   2  files/font/OpenSans/opensans-bold.eot
+   2  files/font/fontawesome/fontawesome-webfont.eot
+   2  wordpress-4.0/wordpress/
+   2  images/background/businesses.jpg
+   2  images/background/bdropaccounts.png
+   2  images/search.png
+   2  images/search-active@2x.png
+   2  ..businesssignup/<
+   2  ..js/all-225.js
+   2  images/<
+   2  images/".$output['community_image']."
+   2  inventory_images
+   2  inventory_images/empty_img.jpg
+   2  style/style.css
+   2  images/e
+   2  images/b.url
+   2  images/data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP/yH5BAEAAAAALAAAAAABAAEAAAIBRAA7
+   2  images/'+e+'
+   2  images/+ (item.snap) +
+   2  images/' + base_url + '/blog/' + item.blog_id + '
+   2  images/connect-icons/<
+   2  signup
+   2  images/glyphicons_free/fonts/glyphicons-halflings-regular.eot
+   2  js/i.src
+   2  js/'+n+'
+   2  js/'+t+'
+   2  js/'+t.snap+'
+   2  js/'+t.profile+'
+   2  js/+s+
+   2  js/+ (item.CDN_thumb) +
+   2  js/' + base_url + item.link + '
+   2  js/+ (post.media_new_post) +
+   2  js/'+target+'
+   2  js/e||c.location.href,!1
+   2  js/c.location.href
+   2  js/c
+   2  js/m.unescapeString(a.url||d.location.href
+   2  js/b.hash
+   2  js/a
+   2  js/tiltedpage_scroll-master/demo/favicon.png
+   2  js/validate/demo/marketo/images/arrow_d-green.gif
+   2  images/forms/backRequiredGray.gif
+   2  js/validate/demo/multipart/buttonbg.gif
+   2  js/validate/demo/tinymce/'+tinymce._addVer(u)+'
+   2  4.1/tinymce.min.js
+   2  js/validate/lib/requestSettings
+   2  js/validate/test/qunit/params
+   2  fr/theory-of-change/
+   2  fr/contact/
+   2  fr/blog/nature-is-not-a-charity/
+   2  fr/blog/money-work-worth/
+   2  fr/blog/what-if-stewardship-was-financially-recognised/
+   2  de/theory-of-change/
+   2  de/contact/
+   2  de/blog/nature-is-not-a-charity/
+   2  de/blog/money-work-worth/
+   2  de/blog/what-if-stewardship-was-financially-recognised/
+   2  blog/<
+   2  js/i.src
+   2  js/'+n+'
+   2  js/'+t+'
+   2  js/'+t.snap+'
+   2  js/'+t.profile+'
+   2  js/+s+
+   2  js/+ (item.CDN_thumb) +
+   2  js/' + base_url + item.link + '
+   2  js/+ (post.media_new_post) +
+   2  js/'+target+'
+   2  js/e||c.location.href,!1
+   2  js/c.location.href
+   2  js/c
+   2  js/m.unescapeString(a.url||d.location.href
+   2  js/b.hash
+   2  js/a
+   2  .businesssignup/<
+   2  js/tiltedpage_scroll-master/demo/favicon.png
+   2  js/validate/demo/marketo/images/arrow_d-green.gif
+   2  js/validate/demo/multipart/buttonbg.gif
+   2  js/validate/demo/tinymce/'+tinymce._addVer(u)+'
+   2  js/validate/lib/requestSettings
+   2  js/validate/test/qunit/params
+   2  images/favicon.ico
+   2  about_imgs/".$output['community_image']."
+   2  glyphicons_free/fonts/glyphicons-halflings-regular.eot
+   2  admin/startDate, endDate, botFilter
+   2  privacy/<
+   1  ', 'en
+   1  ', 'fr
+   1  ', 'de
+   1  '/', $locale
+   1  contact/'/contact/', $locale
+   1  contact/', 'en
+   1  contact/', 'fr
+   1  contact/', 'de
+   1  contact/<
+   1  .css/twittermydiostyle.css
+   1  .css/mydiostyle.css
+   1  fonts/glyphicons-halflings-regular.woff2
+   1  fonts/glyphicons-halflings-regular.woff
+   1  fonts/glyphicons-halflings-regular.ttf
+   1  fonts/glyphicons-halflings-regular.svg
+   1  images/about_imgs/search.png
+   1  images/about_imgs/edit.png
+   1  images/about_imgs/about.png
+   1  images/about_imgs/settings.png
+   1  images/campaigns/night_sky_stars.jpg
+   1  fonts/OpenSans/opensans-light.woff
+   1  fonts/OpenSans/opensans-light.ttf
+   1  fonts/OpenSans/opensans-regular.woff
+   1  fonts/OpenSans/opensans-regular.ttf
+   1  fonts/OpenSans/opensans-bold.woff
+   1  fonts/OpenSans/opensans-bold.ttf
+   1  assets/gfx/social-publish-promo.jpg
+   1  files/font/OpenSans/opensans-regular.woff
+   1  files/font/OpenSans/opensans-regular.ttf
+   1  files/font/OpenSans/opensans-light.woff
+   1  files/font/OpenSans/opensans-light.ttf
+   1  files/font/OpenSans/opensans-bold.woff
+   1  files/font/OpenSans/opensans-bold.ttf
+   1  files/font/fontawesome/fontawesome-webfont.woff
+   1  files/font/fontawesome/fontawesome-webfont.ttf
+   1  files/font/fontawesome/fontawesome-webfont.svg
+   1  css/images/hamburger-icon@2x.png
+   1  images/background/businessesx.jpg
+   1  images/about/devices-3.png

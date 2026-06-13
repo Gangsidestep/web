@@ -65,7 +65,7 @@ $t = $copy[$locale] ?? $copy['en'];
 	<title><?php echo htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8'); ?></title> 
 	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 	<link rel="stylesheet" type="text/css" href="/css/mydropintheoceans-style.css?v=<?php echo time(); ?>">
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js?v=20260203"></script>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js?v=20260203"></script>
 </head>
 <body style="border: 0;margin: 0;padding: 0;background-color: #080a23;">
   <div style="max-width: 1000px !important;margin-right: auto;margin-left: auto;">

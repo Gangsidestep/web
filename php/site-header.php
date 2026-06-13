@@ -72,3 +72,4 @@ $languageLabel = $headerLocale === 'fr'
       </select>
     </div>
 </div>
+<script src="/js/baseurl-shim.js"></script>

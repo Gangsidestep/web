@@ -1,0 +1,53 @@
+Missing internal references total distinct: 509
+
+Top 50 missing targets:
+  80  js/' + baseUrl + friend.profile_link + '
+  80  js/' + baseUrl + friend.profile_link + '
+  56  blog/making-natural-capital-visible-in-everyday-transactions/<
+  40  images/' + baseUrl + friend.profile_link + '
+  40  js/' + baseUrl + '/blog/' + post.blog.id + '
+  40  js/' + baseUrl + friend2.profile_link + '
+  40  js/' + baseUrl + followed[0].profile_link + '
+  40  js/' + baseUrl + followed[1].profile_link + '
+  40  js/' + baseUrl + '/blog/' + followed[0].blog_id + '
+  40  js/' + baseUrl + '/blog/' + followed[1].blog_id + '
+  40  js/' + baseUrl + '/blog/' + post.blog.id + '
+  40  js/' + baseUrl + friend2.profile_link + '
+  40  js/' + baseUrl + followed[0].profile_link + '
+  40  js/' + baseUrl + followed[1].profile_link + '
+  40  js/' + baseUrl + '/blog/' + followed[0].blog_id + '
+  40  js/' + baseUrl + '/blog/' + followed[1].blog_id + '
+  35  theory-of-change/<
+  27  blog/why-the-swiss-said-no-to-free-money/<
+  25  blog/money-work-worth/<
+  25  blog/make-money-first-then-think-of-nature/<
+  23  blog/nature-is-not-a-charity/<
+  22  a
+  20  images/' + baseUrl + '/blog/' + post.blog.id + '
+  20  images/' + baseUrl + friend2.profile_link + '
+  20  images/' + baseUrl + followed[0].profile_link + '
+  20  images/' + baseUrl + followed[1].profile_link + '
+  20  images/' + baseUrl + '/blog/' + followed[0].blog_id + '
+  20  images/' + baseUrl + '/blog/' + followed[1].blog_id + '
+  19  faq/<
+  18  js/+ (imageURL) +
+  18  js/+ (imageURL) +
+  15  blogs
+  13  ajax/libs/jquery/3.7.0/jquery.min.js
+  12  login/index.php
+  11  search/
+   9  community/action.php
+   9  images/+ (imageURL) +
+   8  login/loggedin/account.php
+   8  en_US/all.js
+   8  js/+ post.CDN_thumb +
+   8  js/+ category.image +
+   8  js/+ post.CDN_thumb +
+   8  js/+ category.image +
+   6  images/background/bdroplogin.jpg
+   6  images/background/iceberg.jpg
+   6  js/d
+   6  js/d
+   5  <
+   5  js/vendor/respond.min.js
+   5  images/background/jump.png

@@ -102,7 +102,7 @@ include "admin/language_support.php";
 			});
 			function checkform ( form )
 {
-  // see http://www.thesitewizard.com/archive/validation.shtml
+  // see http://www.thesitewizard.com/validation.shtml
   // for an explanation of this script and how to use it on your
   // own website
 

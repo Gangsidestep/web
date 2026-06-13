@@ -130,7 +130,7 @@ include __DIR__ . '/../php/analytics.php';
     <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/connect-icons/apple-touch-icon.png">
     <link rel="stylesheet" type="text/css" href="../css/mydropintheoceans-style.css?v=<?php echo date('Ymd'); ?>">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js?v=<?php echo date('Ymd'); ?>"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js?v=<?php echo date('Ymd'); ?>"></script>
 </head>
 <body style="border: 0;margin: 0;padding: 0;background-color: #080a23;">
   <div style="max-width: 1000px !important;margin-right: auto;margin-left: auto;">

@@ -1,0 +1,186 @@
+Distinct missing (cleaned): 183
+
+Top 200 missing targets:
+   59  js/#
+   51  blog/making-natural-capital-visible-in-everyday-transactions/<?php echo htmlspecialchars(localized_path(
+   30  theory-of-change/<?php echo htmlspecialchars(localized_path(
+   29  images/#
+   27  js/#
+   26  blog/why-the-swiss-said-no-to-free-money/<?php echo localized_url(
+   24  blog/money-work-worth/<?php echo htmlspecialchars(localized_path(
+   20  blog/make-money-first-then-think-of-nature/<?php echo htmlspecialchars(localized_path(
+   18  blog/nature-is-not-a-charity/<?php echo htmlspecialchars(localized_path(
+   14  a
+   14  faq/<?php echo htmlspecialchars(localized_path(
+   12  blogs
+   12  js/validate/demo/marketo/#
+   11  css/mydropintheoceans-style.css?v=<?php echo time(); ?>
+    8  search/
+    5  js/vendor/respond.min.js
+    5  images/connect-icons/camera_white.png
+    4  images/background/bdroplogin.jpg
+    4  images/background/iceberg.jpg
+    4  about.php
+    4  admin_choice.php
+    4  community/action.php?redirect=
+    4  login/loggedin/account.php
+    4  feed
+    4  friends
+    4  tos
+    4  feed/friends
+    4  js/javascript:0
+    4  js/validate/lib/#
+    4  blog/make-money-first-then-think-of-nature/<?php echo htmlspecialchars(localized_url($articlePath,
+    4  blog/making-natural-capital-visible-in-everyday-transactions/<?php echo htmlspecialchars(localized_url($articlePath,
+    4  faq/<?php echo htmlspecialchars(localized_url($pagePath,
+    3  ../../images/favicon.ico
+    3  new_account.php
+    3  css/animation.php
+    3  css/#
+    3  login/index.php?redirect=<? echo urlencode($redirect); ?>
+    3  signup/index.php?redirect=<? echo urlencode($redirect); ?>
+    3  images/create_a_quiz.php
+    3  login/index.php?redirect=<? echo urlencode($server); ?>
+    3  js/tiltedpage_scroll-master/css/demo.css
+    3  js/tiltedpage_scroll-master/js/demo.js
+    3  js/validate/demo/multipart/#
+    2  css/login.php
+    2  css/admin_choice.php
+    2  ../images/favicon.ico
+    2  ../login/loggedin/new_account.php
+    2  wordpress-4.0/wordpress/?page_id=16
+    2  images/background/jump.png
+    2  images/background/businesses.jpg
+    2  images/background/bdropaccounts.png
+    2  images/background/bdropstart.png
+    2  images/background/animatedglobe.gif
+    2  ../login/loggedin/aboutmydio/spendbusinessprofile.php?company_id=
+    2  community/action.php?id=
+    2  #
+    2  ../../js/all-225.js
+    2  images/inventory_edit.php?pid=$id
+    2  images/inventory_list.php?deleteid=$id
+    2  inventory_images
+    2  inventory_images/empty_img.jpg
+    2  style/style.css
+    2  images/inventory_list.php#inventoryForm
+    2  images/javascript:printImage($qc);
+    2  login/loggedin/aboutmydio/animation.php
+    2  images/javascript:0
+    2  images/tiltedpage_scroll_image.png
+    2  js/tiltedpage_scroll-master/demo/favicon.png
+    2  fr/theory-of-change/
+    2  fr/contact/
+    2  fr/blog/nature-is-not-a-charity/
+    2  fr/blog/money-work-worth/
+    2  fr/blog/what-if-stewardship-was-financially-recognised/
+    2  de/theory-of-change/
+    2  de/contact/
+    2  de/blog/nature-is-not-a-charity/
+    2  de/blog/money-work-worth/
+    2  de/blog/what-if-stewardship-was-financially-recognised/
+    2  php/<?php echo htmlspecialchars($alternateEnUrl, ENT_QUOTES,
+    2  js/javascript:0
+    1  <?php echo htmlspecialchars($canonicalUrl, ENT_QUOTES,
+    1  <?php echo htmlspecialchars($alternateEnUrl, ENT_QUOTES,
+    1  <?php echo htmlspecialchars($alternateFrUrl, ENT_QUOTES,
+    1  <?php echo htmlspecialchars($alternateDeUrl, ENT_QUOTES,
+    1  <?php echo htmlspecialchars($xDefaultUrl, ENT_QUOTES,
+    1  contact/<?php echo htmlspecialchars($canonicalUrl, ENT_QUOTES,
+    1  ../css/twittermydiostyle.css
+    1  ../css/mydiostyle.css
+    1  css/about.php
+    1  css/credits.php
+    1  css/rewards.php
+    1  css/userlist.php
+    1  css/businesses.php
+    1  ../../checkoutofsite.php
+    1  account.php
+    1  css/bus_login.php
+    1  assets/gfx/social-publish-promo.jpg
+    1  css/#groupdropdown
+    1  css/spendbusinessprofile.php?company_id=
+    1  css/loggedin/account.php
+    1  css/account.php
+    1  css/create_a_quiz.php
+    1  css/action.php?id=
+    1  ../images/connect-icons/camera_white.png
+    1  ../login/index.php
+    1  ../signup
+    1  images/profile.php?id=
+    1  images/product_list.php
+    1  images/inventory_list.php?yesdelete=
+    1  ../../js/latest/jquery.min.js
+    1  images/spendbusinessprofile.php?company_id=
+    1  images/action.php?id=
+    1  images/images/favicon.ico
+    1  images/js/vendor/respond.min.js
+    1  images/login/loggedin/new_account.php
+    1  images/connect-icons/#
+    1  images/js/all-225.js
+    1  images/images/connect-icons/camera_white.png
+    1  login/index.php
+    1  signup
+    1  js/images/favicon.ico
+    1  ../checkoutofsite.php
+    1  js/forgotPass.php
+    1  ../images/connect-icons/dio_animat32s.gif
+    1  connect.facebook.net/en_US/all.js
+    1  js/js/tpg_bus_stops.js
+    1  js/community_admin.php
+    1  js/latest/#
+    1  js/validate/demo/captcha/images/image.php?
+    1  js/validate/demo/captcha/<?php echo htmlEntities($_SERVER[
+    1  js/validate/demo/captcha/images/image.php?<?php echo time(); ?>
+    1  js/validate/demo/login/#
+    1  js/validate/demo/marketo/images/icon_search-engine-market.png
+    1  js/validate/demo/marketo/images/icon_landing-pages.png
+    1  js/validate/demo/marketo/images/icon_salesforce.png
+    1  js/validate/demo/tinymce/javascript:;
+    1  js/validate/test/?jquery=1.7.2
+    1  js/validate/test/?jquery=1.8.3
+    1  js/validate/test/?jquery=1.9.1
+    1  js/validate/test/?jquery=1.11.1
+    1  js/validate/test/?jquery=git
+    1  js/validate/test/#
+    1  js/validate/test/#2
+    1  php/?days=1
+    1  php/?days=7
+    1  php/?days=30
+    1  php/?days=90
+    1  fr/blog/why-the-swiss-said-no-to-free-money/
+    1  fr/blog/make-money-first-then-think-of-nature/
+    1  fr/blog/
+    1  fr/privacy/
+    1  de/blog/why-the-swiss-said-no-to-free-money/
+    1  de/blog/make-money-first-then-think-of-nature/
+    1  de/blog/
+    1  de/privacy/
+    1  php/<?php echo htmlspecialchars($alternateFrUrl, ENT_QUOTES,
+    1  php/<?php echo htmlspecialchars($alternateDeUrl, ENT_QUOTES,
+    1  blog/<?php echo htmlspecialchars($canonicalUrl); ?>
+    1  css/mydropintheoceans-style.css?v=<?php echo date(
+    1  blog/<?php echo htmlspecialchars(localized_path(
+    1  blog/money-work-worth/<?php echo htmlspecialchars($canonicalUrl); ?>
+    1  blog/nature-is-not-a-charity/<?php echo htmlspecialchars($canonicalUrl); ?>
+    1  blog/nature-is-not-a-charity/<?php echo htmlspecialchars($alternateEnUrl); ?>
+    1  blog/nature-is-not-a-charity/<?php echo htmlspecialchars($alternateFrUrl); ?>
+    1  blog/nature-is-not-a-charity/<?php echo htmlspecialchars($alternateDeUrl); ?>
+    1  blog/nature-is-not-a-charity/<?php echo htmlspecialchars($xDefaultUrl); ?>
+    1  blog/what-if-stewardship-was-financially-recognised/<?php echo htmlspecialchars($canonicalUrl, ENT_QUOTES,
+    1  blog/why-the-swiss-said-no-to-free-money/<?php echo htmlspecialchars($canonicalUrl, ENT_QUOTES,
+    1  blog/make-money-first-then-think-of-nature/<?php echo htmlspecialchars($canonicalUrl); ?>
+    1  blog/making-natural-capital-visible-in-everyday-transactions/<?php echo htmlspecialchars($canonicalUrl); ?>
+    1  faq/<?php echo htmlspecialchars($canonicalUrl); ?>
+    1  css/mydropintheoceans-style.css?v=20260203
+    1  blog/nature-is-not-a-charity.php
+    1  blog/why-the-swiss-said-no-to-free-money.php
+    1  js/validate/lib/jquery.js
+    1  js/validate/dist/jquery.validate.js
+    1  theory-of-change/<?php echo htmlspecialchars($canonicalUrl); ?>
+    1  theory-of-change/<?php echo htmlspecialchars($alternateEnUrl); ?>
+    1  theory-of-change/<?php echo htmlspecialchars($alternateFrUrl); ?>
+    1  theory-of-change/<?php echo htmlspecialchars($alternateDeUrl); ?>
+    1  theory-of-change/<?php echo htmlspecialchars($xDefaultUrl); ?>
+    1  privacy/<?php echo htmlspecialchars($canonicalUrl, ENT_QUOTES,
+    1  privacy/<?php echo htmlspecialchars(localized_path(
