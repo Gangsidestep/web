@@ -36,7 +36,7 @@ Top 50 missing targets:
   13  ajax/libs/jquery/3.7.0/jquery.min.js
   12  login/index.php
   11  search/
-   9  community/action.php
+  9  /
    9  images/+ (imageURL) +
    8  login/loggedin/account.php
    8  en_US/all.js

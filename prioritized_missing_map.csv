@@ -165,8 +165,8 @@ input.files[0],2,images/connect-icons/profile.php;images/profile.php
 https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=https://mydropintheoceans.org/MyDIOnlineStore/product_qr.php?id=$id-:-$cmpyid,2,images/inventory_edit.php;images/inventory_list.php
 https://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.min.js,2,images/ecomm_cart.php
 """.$output2['action_image'].""",2,images/spendbusinessprofile.php
-"/community/action.php?redirect="".$redirect.""&id="".$output2[",2,images/spendbusinessprofile.php
-"/community/action.php?id="".$output2[",2,images/spendbusinessprofile.php
+"/",2,images/spendbusinessprofile.php
+"/",2,images/spendbusinessprofile.php
 +taxidata.profile_pic+,2,images/spendbusinessprofile.php
 ../login/loggedin/new_account.php,2,images/connect-icons/newbusinessback.php
 ../images/Map-icon.png,2,images/logo/mydiostyle.css

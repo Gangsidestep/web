@@ -22,7 +22,7 @@ Top 200 missing targets:
     4  images/background/iceberg.jpg
     4  about.php
     4  admin_choice.php
-    4  community/action.php?redirect=
+   4  /
     4  login/loggedin/account.php
     4  feed
     4  friends
@@ -55,7 +55,7 @@ Top 200 missing targets:
     2  images/background/bdropstart.png
     2  images/background/animatedglobe.gif
     2  ../login/loggedin/aboutmydio/spendbusinessprofile.php?company_id=
-    2  community/action.php?id=
+   2  /
     2  #
     2  ../../js/all-225.js
     2  images/inventory_edit.php?pid=$id

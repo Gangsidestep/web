@@ -50,7 +50,8 @@ RewriteRule ^favicon\.ico$ https://%{HTTP_HOST}/images/favicon.ico [L,R=301]
 
 # Retire old page: return 410 Gone to accelerate de-indexing
 RewriteRule ^about-mydio(/.*)?$ - [G,L,NC]
-RewriteRule ^index\.php/login$ - [G,L,NC]
+RewriteRule ^login(/.*)?$ https://mydropintheoceans.org/ [R=301,L,NC]
+
 
 # Coverage cleanup: map legacy public URLs to current equivalents
 RewriteRule ^index_fr\.php$ /fr/ [R=301,L,NC]
@@ -66,6 +67,8 @@ RewriteRule ^community/action\.php$ - [G,L,NC]
 RewriteRule ^community/action-page\.php$ - [G,L,NC]
 RewriteRule ^reward/category\.php$ - [G,L,NC]
 RewriteRule ^login/loggedin/aboutmydio/(about|animation|credits)\.php$ - [G,L,NC]
+# General redirect for remaining /community paths (keep specific G rules above)
+RewriteRule ^community(/.*)?$ https://mydropintheoceans.org/ [R=301,L,NC]
 
 # Redirect old blog post URLs (blog/post-name.php) to new directory format (blog/post-name/)
 # Specific corrections for old slugs that differ from current directory names
