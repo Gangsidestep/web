@@ -51,6 +51,7 @@ if (basename($_SERVER['PHP_SELF']) === 'home-fr.php') {
 	<ul style="list-style:none; padding:0; margin:0;">
 		<li style="margin-bottom:0.7em;"><a href="/fr/blog/nature-is-not-a-charity/" style="color:#2a5d84; text-decoration:underline;">La Nature n'est pas une charité — c'est une nécessité économique</a></li>
 		<li style="margin-bottom:0.7em;"><a href="/fr/blog/why-the-swiss-said-no-to-free-money/" style="color:#2a5d84; text-decoration:underline;">Pourquoi les Suisses ont dit non à l'argent gratuit</a></li>
+		<li style="margin-bottom:0.7em;"><a href="/fr/blog/make-money-first-then-think-of-nature/" style="color:#2a5d84; text-decoration:underline;">Gagner de l'argent d'abord, puis (peut-être) penser à la nature</a></li>
 		<li style="margin-bottom:0.7em;"><a href="/fr/blog/money-work-worth/" style="color:#2a5d84; text-decoration:underline;">Argent = Travail = Valeur : une histoire que nous avons tous héritée</a></li>
 		<li style="margin-bottom:0.7em;"><a href="/fr/blog/what-if-stewardship-was-financially-recognised/" style="color:#2a5d84; text-decoration:underline;">Et si la préservation était reconnue financièrement ?</a></li>
 		<li style="margin-bottom:0.7em;"><a href="/fr/blog/" style="color:#2a5d84; text-decoration:underline;">Parcourir tous les essais sur l'économie et la Nature</a></li>

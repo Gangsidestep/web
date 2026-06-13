@@ -50,6 +50,7 @@ if (basename($_SERVER['PHP_SELF']) === 'home-de.php') {
 	<ul style="list-style:none; padding:0; margin:0;">
 		<li style="margin-bottom:0.7em;"><a href="/de/blog/nature-is-not-a-charity/" style="color:#2a5d84; text-decoration:underline;">Natur ist keine Wohltätigkeit — sie ist ein wirtschaftlicher Imperativ</a></li>
 		<li style="margin-bottom:0.7em;"><a href="/de/blog/why-the-swiss-said-no-to-free-money/" style="color:#2a5d84; text-decoration:underline;">Warum die Schweiz Nein zum freien Geld sagte</a></li>
+		<li style="margin-bottom:0.7em;"><a href="/de/blog/make-money-first-then-think-of-nature/" style="color:#2a5d84; text-decoration:underline;">Zuerst Geld verdienen, dann (vielleicht) an Natur denken</a></li>
 		<li style="margin-bottom:0.7em;"><a href="/de/blog/money-work-worth/" style="color:#2a5d84; text-decoration:underline;">Geld = Arbeit = Wert: Eine Geschichte, die wir alle geerbt haben</a></li>
 		<li style="margin-bottom:0.7em;"><a href="/de/blog/what-if-stewardship-was-financially-recognised/" style="color:#2a5d84; text-decoration:underline;">Was wäre, wenn Stewardship finanziell anerkannt würde?</a></li>
 		<li style="margin-bottom:0.7em;"><a href="/de/blog/" style="color:#2a5d84; text-decoration:underline;">Alle Essays zu Wirtschaft und Natur durchsuchen</a></li>

@@ -5,6 +5,8 @@ Allow: /login/loggedin/aboutmydio/about.php
 Allow: /login/loggedin/aboutmydio/about.php*
 Allow: /login/loggedin/aboutmydio/animation.php
 Allow: /login/loggedin/aboutmydio/animation.php*
+Allow: /login/loggedin/aboutmydio/credits.php
+Allow: /login/loggedin/aboutmydio/credits.php*
 Disallow: /admin/
 Disallow: /login/
 Disallow: /archive/

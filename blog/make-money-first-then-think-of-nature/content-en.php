@@ -275,6 +275,8 @@ and let the economy reflect that reality.</blockquote>
   <ul>
     <li><a class="blog-nav-link" href="<?php echo htmlspecialchars(localized_path('/theory-of-change/', $locale)); ?>">Theory of Change — including the Citizen’s Dividend for Nature</a></li>
     <li><a class="blog-nav-link" href="<?php echo htmlspecialchars(localized_path('/blog/why-the-swiss-said-no-to-free-money/', $locale)); ?>">Why the Swiss Said No to Free Money</a></li>
+    <li><a class="blog-nav-link" href="<?php echo htmlspecialchars(localized_path('/blog/what-if-stewardship-was-financially-recognised/', $locale)); ?>">What if Stewardship Was Financially Recognised?</a></li>
+    <li><a class="blog-nav-link" href="<?php echo htmlspecialchars(localized_path('/blog/nature-is-not-a-charity/', $locale)); ?>">Nature is Not a Charity — It's an Economic Imperative</a></li>
     <li><a class="blog-nav-link" href="<?php echo htmlspecialchars(localized_path('/blog/', $locale)); ?>">Browse all essays on economy and Nature</a></li>
   </ul>
   <p>Have questions or want to share your thoughts? <a class="blog-nav-link" href="<?php echo htmlspecialchars(localized_path('/contact/', $locale)); ?>">Contact us here</a>.</p>

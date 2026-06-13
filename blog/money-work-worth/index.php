@@ -46,10 +46,6 @@ include __DIR__ . '/../../php/analytics.php';
 		<meta property="og:image:height" content="200">
 		<link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl); ?>" />
 		<title><?php echo htmlspecialchars($pageTitle); ?></title>
-		<meta property="og:title" content="<?php echo htmlspecialchars($pageTitle); ?>">
-		<meta property="og:description" content="<?php echo htmlspecialchars($metaDescription); ?>">
-		<meta property="og:url" content="<?php echo htmlspecialchars($canonicalUrl); ?>">
-		<meta property="og:type" content="article">
 		<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 		<link rel="apple-touch-icon" sizes="180x180" href="/images/connect-icons/apple-touch-icon.png">
 		<link rel="stylesheet" type="text/css" href="/css/mydropintheoceans-style.css?v=<?php echo time(); ?>">

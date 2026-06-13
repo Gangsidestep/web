@@ -8,8 +8,24 @@ $canonicalUrl = localized_url('/contact/', $locale);
 $alternateEnUrl = localized_url('/contact/', 'en');
 $alternateFrUrl = localized_url('/contact/', 'fr');
 $alternateDeUrl = localized_url('/contact/', 'de');
-// Standard meta description used by seo_tags.php
-$metaDescription = 'Contact My Drop In The Oceans about partnerships, media requests, and the Dividend for Nature framework that aligns economy and natural capital.';
+$pageTitles = [
+	'en' => 'Contact My Drop In The Oceans | Partnerships, Media, Questions',
+	'fr' => 'Contact | My Drop In The Oceans',
+	'de' => 'Kontakt | My Drop In The Oceans',
+];
+$metaDescriptions = [
+	'en' => 'Contact My Drop In The Oceans about partnerships, media requests, and the Dividend for Nature framework that aligns economy and natural capital.',
+	'fr' => 'Contactez My Drop In The Oceans pour les partenariats, les demandes media et le cadre Dividend for Nature qui aligne economie et capital naturel.',
+	'de' => 'Kontaktieren Sie My Drop In The Oceans zu Partnerschaften, Medienanfragen und dem Dividend-for-Nature-Ansatz zur Ausrichtung von Wirtschaft und Naturkapital.',
+];
+$labels = [
+	'en' => ['heading' => 'Contact', 'email' => 'Email', 'message' => 'Message', 'send' => 'Send'],
+	'fr' => ['heading' => 'Contact', 'email' => 'E-mail', 'message' => 'Message', 'send' => 'Envoyer'],
+	'de' => ['heading' => 'Kontakt', 'email' => 'E-Mail', 'message' => 'Nachricht', 'send' => 'Senden'],
+];
+$pageTitle = $pageTitles[$locale] ?? $pageTitles['en'];
+$metaDescription = $metaDescriptions[$locale] ?? $metaDescriptions['en'];
+$ui = $labels[$locale] ?? $labels['en'];
 ?>
 <!doctype html>
 <html lang="<?php echo htmlspecialchars($locale, ENT_QUOTES, 'UTF-8'); ?>">
@@ -21,7 +37,7 @@ $metaDescription = 'Contact My Drop In The Oceans about partnerships, media requ
 	
 	<meta name="keywords" content="Sustainability, Dividend for Nature, Natural Capital," />
 	<link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8'); ?>" />
-	<title>Contact My Drop In The Oceans | Partnerships, Media, Questions</title>
+	<title><?php echo htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8'); ?></title>
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
 	<link rel="stylesheet" type="text/css" href="/css/mydropintheoceans-style.css?v=<?php echo time(); ?>">
 	
@@ -164,7 +180,7 @@ $metaDescription = 'Contact My Drop In The Oceans about partnerships, media requ
 	
 	<div style="border: 0;margin: 0;">
 		<div id="contact_box"  >
-			<h1 class="header_one"><?php echo htmlspecialchars($locale === 'fr' ? 'Contact' : ($locale === 'de' ? 'Kontakt' : 'Contact')); ?></h1>
+			<h1 class="header_one"><?php echo htmlspecialchars($ui['heading'], ENT_QUOTES, 'UTF-8'); ?></h1>
 			<div id="response_box" class="contact_box">Contact:
 				<br>
 				<p></p>
@@ -185,15 +201,15 @@ $metaDescription = 'Contact My Drop In The Oceans about partnerships, media requ
 							<!-- Timestamp field to check form submission speed -->
 							<input type="hidden" name="form_timestamp" id="form_timestamp" value="<?php echo time(); ?>">
 							<input type="hidden" name="form_key" id="form_key" value="<?php echo hash('sha256', time() . 'form_salt_key'); ?>">
-							<label for="Email" class="form-label">Email</label><br>
+							<label for="Email" class="form-label"><?php echo htmlspecialchars($ui['email'], ENT_QUOTES, 'UTF-8'); ?></label><br>
 							<input type="email" id="Email" name="Email" class="form-input" autocomplete="email" required>
-							<label for="Message" class="fcf-label">Message</label>
+							<label for="Message" class="fcf-label"><?php echo htmlspecialchars($ui['message'], ENT_QUOTES, 'UTF-8'); ?></label>
 							<div class="fcf-input-group">
 								<textarea id="Message" name="Message" class="fcf-form-control message-contact" rows="6" maxlength="3000" required></textarea>
 							</div>
 						</div>
 						<div class="fcf-form-group">
-							<button type="submit" id="contact-button" class="button-contact" disabled>Send</button>
+							<button type="submit" id="contact-button" class="button-contact" disabled><?php echo htmlspecialchars($ui['send'], ENT_QUOTES, 'UTF-8'); ?></button>
 						</div>
 					</div>
 				</form>

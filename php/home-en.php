@@ -45,6 +45,7 @@
 	<ul style="list-style:none; padding:0; margin:0;">
 		<li style="margin-bottom:0.7em;"><a href="/blog/nature-is-not-a-charity/" style="color:#2a5d84; text-decoration:underline;">Nature is Not a Charity—It's an Economic Imperative</a></li>
 		<li style="margin-bottom:0.7em;"><a href="/blog/why-the-swiss-said-no-to-free-money/" style="color:#2a5d84; text-decoration:underline;">Why the Swiss Said No to Free Money</a></li>
+		<li style="margin-bottom:0.7em;"><a href="/blog/make-money-first-then-think-of-nature/" style="color:#2a5d84; text-decoration:underline;">Make Money First, Then (Maybe) Think of Nature</a></li>
 		<li style="margin-bottom:0.7em;"><a href="/blog/money-work-worth/" style="color:#2a5d84; text-decoration:underline;">Money = Work = Worth: A Story We've All Inherited</a></li>
 		<li style="margin-bottom:0.7em;"><a href="/blog/what-if-stewardship-was-financially-recognised/" style="color:#2a5d84; text-decoration:underline;">What if Stewardship Was Financially Recognised?</a></li>
 		<li style="margin-bottom:0.7em;"><a href="/blog/" style="color:#2a5d84; text-decoration:underline;">Browse all essays on economy and Nature</a></li>

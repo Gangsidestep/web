@@ -32,6 +32,7 @@
 
 <div style="font-size: 0.95em; color: #222; margin-top: 2em;">
   <p>For a deeper look at how we can correct the mismatch between value and reward, see our <a class="blog-nav-link" href="<?php echo htmlspecialchars(localized_path('/theory-of-change/', $locale)); ?>">Theory of Change</a>.</p>
+  <p><strong>Related essays:</strong> <a class="blog-nav-link" href="<?php echo htmlspecialchars(localized_path('/blog/why-the-swiss-said-no-to-free-money/', $locale)); ?>">Why the Swiss Said No to Free Money</a>, <a class="blog-nav-link" href="<?php echo htmlspecialchars(localized_path('/blog/make-money-first-then-think-of-nature/', $locale)); ?>">Make Money First, Then (Maybe) Think of Nature</a>, and <a class="blog-nav-link" href="<?php echo htmlspecialchars(localized_path('/blog/what-if-stewardship-was-financially-recognised/', $locale)); ?>">What if Stewardship Was Financially Recognised?</a>.</p>
   <p>Have questions or want to share your thoughts? <a class="blog-nav-link" href="<?php echo htmlspecialchars(localized_path('/contact/', $locale)); ?>">Contact us here</a>.</p>
   <p>Want to know more about our mission? Visit the <a class="blog-nav-link" href="<?php echo htmlspecialchars(localized_path('/', $locale)); ?>">About page</a> to learn about My Drop In The Oceans.</p>
   <p>Explore more stories and insights on our <a class="blog-nav-link" href="<?php echo htmlspecialchars(localized_path('/blog/', $locale)); ?>">Blog</a>.</p>

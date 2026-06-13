@@ -28,6 +28,7 @@
 <p>🌊 Your drop in the oceans matters.<br>Let’s celebrate stewardship and start a chain reaction—redefining value and realigning growth.</p>
 <p><b>Question:</b><br>If you could earn credit for stewardship, what would you do differently?</p>
 <p><span class="blog-nav-label">🔗 Missed Parts 1 & 2?</span> <a class="blog-nav-link" href="/blog/why-the-swiss-said-no-to-free-money/">Why the Swiss Said No to Free Money</a> & <a class="blog-nav-link" href="/blog/money-work-worth/">Money = Work = Worth: A Story We’ve All Inherited</a></p>
+<p><span class="blog-nav-label">🔎 Also read:</span> <a class="blog-nav-link" href="/blog/make-money-first-then-think-of-nature/">Make Money First, Then (Maybe) Think of Nature</a> and <a class="blog-nav-link" href="/blog/nature-is-not-a-charity/">Nature is Not a Charity—It’s an Economic Imperative</a></p>
 <p>For a deeper look at how we can correct the mismatch between value and reward, see our <a class="blog-nav-link" href="/theory-of-change/">Theory of Change framework</a>.</p>
 <p>Explore more about why nature is not a charity in <a class="blog-nav-link" href="/blog/nature-is-not-a-charity/">Nature is Not a Charity—It’s an Economic Imperative</a>.</p>
 <p><span class="blog-nav-label blog-nav-upnext">⏩ Up next:</span> <span class="blog-nav-link">How Do We Measure What Matters?</span></p>

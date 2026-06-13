@@ -31,9 +31,12 @@ RewriteRule .* - [F,L]
 RewriteRule ^login/ - [E=NOINDEX:1]
 RewriteRule ^HR/ - [E=NOINDEX:1]
 RewriteRule ^community/action\.php$ - [E=NOINDEX:1]
+RewriteCond %{HTTP_HOST} ^chat\.mydropintheoceans\.org$ [NC]
+RewriteRule ^ - [E=NOINDEX:1]
 
 # Legacy HR endpoint: redirect permanently to site root
 Redirect 301 /HR/ https://mydropintheoceans.org/
+RewriteRule ^hr/?$ https://mydropintheoceans.org/ [R=301,L,NC,QSD]
 
 # MANAGED_BLOCK_END
 # -------------------------------------------------------------------------

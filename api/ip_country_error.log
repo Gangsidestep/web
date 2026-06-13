@@ -135842,3 +135842,1015 @@ This file will contain error logs for ip_country_lookup.php. If you see this lin
 2026-06-10T15:48:24+02:00 Cache hit for 216.73.217.61, country=US
 2026-06-10T15:48:24+02:00 Cache hit for 216.73.217.61, country=US
 2026-06-10T15:48:24+02:00 Cache hit for 216.73.217.61, country=US
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/72.154.155.129. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/72.154.155.129): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/47.79.207.191. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/47.79.207.191): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/54.72.228.30. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/54.72.228.30): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/43.130.3.120. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/43.130.3.120): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/27.129.251.71. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/27.129.251.71): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/121.229.156.96. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/121.229.156.96): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/43.135.145.77. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/43.135.145.77): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 curl success for https://api.ipinfo.io/lite/72.154.155.129
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/180.122.53.175. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/180.122.53.175): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 curl success for https://api.ipinfo.io/lite/47.79.207.191
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/43.154.140.188. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/43.154.140.188): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/66.249.64.162. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/66.249.64.162): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 curl success for https://api.ipinfo.io/lite/54.72.228.30
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/129.226.174.80. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/129.226.174.80): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 curl success for https://api.ipinfo.io/lite/43.130.3.120
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/123.161.32.82. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/123.161.32.82): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 curl success for https://api.ipinfo.io/lite/43.135.145.77
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/47.79.201.92. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/47.79.201.92): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 curl success for https://api.ipinfo.io/lite/27.129.251.71
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/47.79.207.40. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/47.79.207.40): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 curl success for https://api.ipinfo.io/lite/121.229.156.96
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/31.94.18.31. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/31.94.18.31): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/45.154.98.150. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/45.154.98.150): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/66.249.64.164. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/66.249.64.164): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/2a00%3A23ee%3A1978%3A600d%3Add03%3A83b0%3A2296%3Afc34. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/2a00%3A23ee%3A1978%3A600d%3Add03%3A83b0%3A2296%3Afc34): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/89.36.142.156. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/89.36.142.156): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 curl success for https://api.ipinfo.io/lite/180.122.53.175
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/52.18.32.154. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/52.18.32.154): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/86.108.17.198. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/86.108.17.198): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 curl success for https://api.ipinfo.io/lite/43.154.140.188
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/45.145.136.230. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/45.145.136.230): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 curl success for https://api.ipinfo.io/lite/66.249.64.162
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/194.55.229.9. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/194.55.229.9): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 curl success for https://api.ipinfo.io/lite/129.226.174.80
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/116.202.240.113. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/116.202.240.113): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 curl success for https://api.ipinfo.io/lite/123.161.32.82
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/47.79.207.31. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/47.79.207.31): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/47.79.200.145. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/47.79.200.145): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/147.182.218.40. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/147.182.218.40): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 curl success for https://api.ipinfo.io/lite/47.79.201.92
+2026-06-12T12:33:31+02:00 curl success for https://api.ipinfo.io/lite/47.79.207.40
+2026-06-12T12:33:31+02:00 Invalid JSON in cache file, resetting
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/122.192.32.64. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/122.192.32.64): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 curl success for https://api.ipinfo.io/lite/31.94.18.31
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/64.227.39.155. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/64.227.39.155): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/47.79.206.157. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/47.79.206.157): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 curl success for https://api.ipinfo.io/lite/45.154.98.150
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/47.79.201.94. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/47.79.201.94): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 curl success for https://api.ipinfo.io/lite/66.249.64.164
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/47.79.200.39. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/47.79.200.39): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 curl success for https://api.ipinfo.io/lite/2a00%3A23ee%3A1978%3A600d%3Add03%3A83b0%3A2296%3Afc34
+2026-06-12T12:33:31+02:00 curl success for https://api.ipinfo.io/lite/89.36.142.156
+2026-06-12T12:33:31+02:00 Invalid JSON in cache file, resetting
+2026-06-12T12:33:31+02:00 Invalid JSON in cache file, resetting
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/185.180.141.70. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/185.180.141.70): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/185.180.141.68. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/185.180.141.68): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/51.77.216.36. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/51.77.216.36): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/47.79.207.175. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/47.79.207.175): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/47.79.207.107. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/47.79.207.107): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/103.132.230.107. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/103.132.230.107): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/194.187.176.26. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/194.187.176.26): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 curl success for https://api.ipinfo.io/lite/52.18.32.154
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/194.187.176.250. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/194.187.176.250): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 curl success for https://api.ipinfo.io/lite/86.108.17.198
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/194.187.176.73. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/194.187.176.73): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 curl success for https://api.ipinfo.io/lite/194.55.229.9
+2026-06-12T12:33:31+02:00 curl success for https://api.ipinfo.io/lite/45.145.136.230
+2026-06-12T12:33:31+02:00 Invalid JSON in cache file, resetting
+2026-06-12T12:33:31+02:00 file_get_contents failed for https://api.ipinfo.io/lite/194.187.176.31. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/194.187.176.31): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:31+02:00 curl success for https://api.ipinfo.io/lite/116.202.240.113
+2026-06-12T12:33:32+02:00 Invalid JSON in cache file, resetting
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/194.187.176.253. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/194.187.176.253): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/142.248.80.191. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/142.248.80.191): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/47.79.207.31
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/46.203.157.69. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/46.203.157.69): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/147.182.218.40
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/89.249.194.31. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/89.249.194.31): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/47.79.200.145
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/45.61.116.243. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/45.61.116.243): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/64.227.39.155
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/122.192.32.64
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/9.169.124.50. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/9.169.124.50): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/66.249.64.163. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/66.249.64.163): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/47.79.206.157
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/43.160.225.169. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/43.160.225.169): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/47.79.201.94
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/45.156.129.171. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/45.156.129.171): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/47.79.200.39
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/185.180.141.70
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/45.156.129.169. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/45.156.129.169): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/45.156.129.168. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/45.156.129.168): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/185.180.141.68
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/47.79.207.100. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/47.79.207.100): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/51.77.216.36
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/23.94.179.91. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/23.94.179.91): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/47.79.207.175
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/47.79.207.107
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/167.233.70.125. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/167.233.70.125): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/208.84.102.200. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/208.84.102.200): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/194.187.176.26
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/17.246.23.30. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/17.246.23.30): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/103.132.230.107
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/158.173.75.119. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/158.173.75.119): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/194.187.176.250
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/47.79.207.180. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/47.79.207.180): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/194.187.176.73
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/194.187.176.31
+2026-06-12T12:33:32+02:00 Invalid JSON in cache file, resetting
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/47.128.16.33. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/47.128.16.33): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/47.79.200.120. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/47.79.200.120): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/194.187.176.253
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/142.248.80.191
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/47.79.206.189. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/47.79.206.189): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/47.79.205.245. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/47.79.205.245): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/46.203.157.69
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/47.79.202.7. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/47.79.202.7): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/89.249.194.31
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/47.79.205.206. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/47.79.205.206): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/45.61.116.243
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/92.222.108.105. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/92.222.108.105): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/66.249.64.163
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/43.160.225.169
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/89.21.130.95. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/89.21.130.95): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/203.159.90.205. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/203.159.90.205): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/9.169.124.50
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/47.79.201.123. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/47.79.201.123): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/45.156.129.171
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/95.181.235.139. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/95.181.235.139): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/47.79.207.100
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/47.79.206.118. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/47.79.206.118): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/45.156.129.169
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/45.156.129.168
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/2a02%3A598%3A128%3A8a00%3A%3Ab00%3A3. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/2a02%3A598%3A128%3A8a00%3A%3Ab00%3A3): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/93.158.90.168. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/93.158.90.168): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/23.94.179.91
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/47.79.205.252. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/47.79.205.252): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/167.233.70.125
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/208.84.102.200
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/72.153.231.53. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/72.153.231.53): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/175.27.136.83. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/175.27.136.83): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/17.246.23.30
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/43.157.22.57. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/43.157.22.57): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/158.173.75.119
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/72.154.155.130. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/72.154.155.130): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/47.79.207.180
+2026-06-12T12:33:32+02:00 Cache hit for 72.154.155.129, country=US
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/47.79.205.248. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/47.79.205.248): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/47.79.200.120
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/47.79.206.6. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/47.79.206.6): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/47.128.16.33
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/66.249.64.162. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/66.249.64.162): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/47.79.206.189
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/47.79.205.245
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/43.135.145.77. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/43.135.145.77): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/45.154.98.150. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/45.154.98.150): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/47.79.202.7
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/47.79.205.206
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/121.229.156.99. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/121.229.156.99): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/142.248.80.191. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/142.248.80.191): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/89.21.130.95
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/52.247.125.210. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/52.247.125.210): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/92.222.108.105
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/203.159.90.205
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/9.169.124.50. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/9.169.124.50): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/43.167.241.46. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/43.167.241.46): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/47.79.201.123
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/45.156.129.170. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/45.156.129.170): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/95.181.235.139
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/92.112.217.15. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/92.112.217.15): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/2a02%3A598%3A128%3A8a00%3A%3Ab00%3A3
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/181.214.6.6. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/181.214.6.6): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/93.158.90.168
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/47.79.205.252
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/193.25.167.204. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/193.25.167.204): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/192.177.103.155. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/192.177.103.155): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/47.79.206.118
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/72.153.231.53
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/201.165.29.72. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/201.165.29.72): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/185.180.141.68. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/185.180.141.68): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/175.27.136.83
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/167.233.70.125. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/167.233.70.125): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/43.157.22.57
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/208.84.102.200. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/208.84.102.200): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/72.154.155.130
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/43.157.46.118. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/43.157.46.118): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/47.79.205.248
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/43.157.52.37. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/43.157.52.37): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/47.79.206.6
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/45.156.129.168. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/45.156.129.168): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/66.249.64.162
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/72.154.155.129. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/72.154.155.129): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/43.135.145.77
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/203.159.90.205. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/203.159.90.205): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/45.154.98.150
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/66.249.64.162. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/66.249.64.162): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/142.248.80.191
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/121.229.156.99
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/43.135.145.77. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/43.135.145.77): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/45.154.98.150. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/45.154.98.150): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/52.247.125.210
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/43.167.241.46
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/142.248.80.191. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/142.248.80.191): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/9.169.124.50
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/45.156.129.170
+2026-06-12T12:33:32+02:00 Cache hit for 9.169.124.50, country=US
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/92.112.217.15
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/181.214.6.6
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/193.25.167.204
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/201.165.29.72
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/192.177.103.155
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/185.180.141.68
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/167.233.70.125
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/208.84.102.200
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/185.180.141.68. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/185.180.141.68): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 Cache hit for 208.84.102.200, country=US
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/43.157.46.118
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/43.157.52.37
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/45.156.129.168
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/203.159.90.205
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/72.154.155.129
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/45.156.129.168. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/45.156.129.168): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/66.249.64.162
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/203.159.90.205. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/203.159.90.205): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 Cache hit for 66.249.64.162, country=US
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/43.135.145.77
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/45.154.98.150
+2026-06-12T12:33:32+02:00 file_get_contents failed for https://api.ipinfo.io/lite/66.249.64.162. Error: Array
+(
+    [type] => 2
+    [message] => file_get_contents(https://api.ipinfo.io/lite/66.249.64.162): Failed to open stream: no suitable wrapper could be found
+    [file] => /home/clients/a87f9485d236547310279906c2e64cab/web/api/ip_country_lookup.php
+    [line] => 72
+)
+
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/142.248.80.191
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/185.180.141.68
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/45.156.129.168
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/203.159.90.205
+2026-06-12T12:33:32+02:00 curl success for https://api.ipinfo.io/lite/66.249.64.162
+2026-06-12T12:33:32+02:00 Cache hit for 66.249.64.162, country=US
+2026-06-12T12:33:32+02:00 Cache hit for 66.249.64.162, country=US
+2026-06-12T12:33:32+02:00 Cache hit for 66.249.64.162, country=US
