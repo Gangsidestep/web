@@ -9,7 +9,6 @@ Allow: /login/loggedin/aboutmydio/credits.php
 Allow: /login/loggedin/aboutmydio/credits.php*
 Disallow: /admin/
 Disallow: /login/
-Disallow: /
 Disallow: /.git/
 Disallow: /.venv/
 Disallow: /php/
