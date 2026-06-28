@@ -8,5 +8,5 @@
 	 	"type" : "image/png"}],
 	"display": "fullscreen",
 	 "orientation": "landscape",
-	 "start_url" : "/login/loggedin/account.php"
+	 "start_url" : "/login/index.php?redirect=/login/loggedin/account.php"
 }

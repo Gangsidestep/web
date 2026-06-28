@@ -1,0 +1,11 @@
+url_pattern,recommended_action,reason,examples
+/community/action.php,410,Gone - internal/defunct endpoint,"css/spendbusinessprofile.php, filesystem reports"
+/community/action-page.php,410,Gone - internal/defunct endpoint,"css/spendbusinessprofile.php, filesystem reports"
+/reward/category.php,410,Gone - retired endpoint,"js/tiltedpage_scroll-master/demo/demo.php, analytics reports"
+/login/,410,Gone - auth-only root (site-wide),".htaccess updated to G; curl confirmed"
+/login/loggedin/*,410,Gone - auth-only/internal pages,"images/ecomm_cart.php, filesystem reports"
+/blog/*.php,301,Redirect to /blog/<slug>/ to preserve SEO,".htaccess generic rule exists; sitemap lists directory URLs"
+/images/action.php?id=,410 or remove,Broken/parameterized image endpoint emits incomplete params,"images/spendbusinessprofile.php, filesystem reports"
+/css/action.php?id=,410 or remove,Broken/parameterized CSS endpoint emits incomplete params,"css/spendbusinessprofile.php, filesystem reports"
+/index_fr.php,301->/fr/,Canonicalized by existing rule,".htaccess"
+/about.php,301->/theory-of-change/,Redirect exists to consolidate content,".htaccess"

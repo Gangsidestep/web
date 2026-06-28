@@ -341,7 +341,7 @@ while($row=mysqli_fetch_array($result, MYSQLI_BOTH))
             <? if($rew_lk!=""){
 				?>    <form id='reg' name='reg' method='post' action='<? echo $rew_lk; ?>'>   <?
 				}else{ ?>
-              <form id='reg' name='reg' method='post' action='../../../reward/category.php?category=<? echo $rew_id; ?>'>
+              <form id='reg' name='reg' method='post' action='/login/index.php?redirect=/reward/category.php?category=<? echo $rew_id; ?>'>
                <? } ?>
                  <button type='submit' class='rewards' >
                   <table width="300">

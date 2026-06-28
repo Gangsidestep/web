@@ -1,6 +1,11 @@
 # Core rewrite engine
 RewriteEngine On
 
+# One-hop canonicalization for high-volume legacy variants in GSC examples.
+# This avoids multi-step redirect chains such as http+www+/home -> https non-www + /.
+RewriteRule ^home/?$ https://mydropintheoceans.org/ [R=301,L,NC]
+RewriteRule ^index\.php$ https://mydropintheoceans.org/ [R=301,L,NC]
+
 # ---------------- Security: managed blocklist (auto-generated) ----------------
 # MANAGED_BLOCK_START
 # Managed block inserted by scripts/update_htaccess_blocklist.sh
@@ -50,7 +55,7 @@ RewriteRule ^favicon\.ico$ https://%{HTTP_HOST}/images/favicon.ico [L,R=301]
 
 # Retire old page: return 410 Gone to accelerate de-indexing
 RewriteRule ^about-mydio(/.*)?$ - [G,L,NC]
-RewriteRule ^login(/.*)?$ https://mydropintheoceans.org/ [R=301,L,NC]
+RewriteRule ^login(/.*)?$ - [G,L,NC]
 
 
 # Coverage cleanup: map legacy public URLs to current equivalents

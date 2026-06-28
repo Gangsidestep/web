@@ -1,0 +1,133 @@
+GSC URL Inspection - 2026-06-14T12:46:38.480681
+
+robots.txt:
+User-agent: *
+Allow: /
+# Allow recrawl of legacy URLs so crawlers can process 410 and drop them from index.
+Allow: /login/loggedin/aboutmydio/about.php
+Allow: /login/loggedin/aboutmydio/about.php*
+Allow: /login/loggedin/aboutmydio/animation.php
+Allow: /login/loggedin/aboutmydio/animation.php*
+Allow: /login/loggedin/aboutmydio/credits.php
+Allow: /login/loggedin/aboutmydio/credits.php*
+Disallow: /admin/
+Disallow: /login/
+Disallow: /.git/
+Disallow: /.venv/
+Disallow: /php/
+Disallow: /scripts/
+Disallow: /sql/
+Disallow: /analytics/
+
+Sitemap: https://mydropintheoceans.org/sitemap.xml
+
+=== https://mydropintheoceans.org/home/ ===
+-- initial response (no redirects) --
+status: 301
+date: Sun, 14 Jun 2026 12:46:38 GMT
+server: Apache
+strict-transport-security: max-age=16000000
+location: https://mydropintheoceans.org/
+cache-control: max-age=0
+expires: Sun, 14 Jun 2026 12:46:38 GMT
+content-type: text/html; charset=iso-8859-1
+connection: close
+-- final after redirects (follow) --
+final_status: 200 final_url: https://mydropintheoceans.org/
+-- rel=canonical (if any) --
+canonical_href: https://mydropintheoceans.org/
+-- meta robots (if any) --
+meta_robots: index, follow
+-- robots.txt disallow check --
+
+=== https://mydropintheoceans.org/home ===
+-- initial response (no redirects) --
+status: 301
+date: Sun, 14 Jun 2026 12:46:38 GMT
+server: Apache
+strict-transport-security: max-age=16000000
+location: https://mydropintheoceans.org/
+cache-control: max-age=0
+expires: Sun, 14 Jun 2026 12:46:38 GMT
+content-type: text/html; charset=iso-8859-1
+connection: close
+-- final after redirects (follow) --
+final_status: 200 final_url: https://mydropintheoceans.org/
+-- rel=canonical (if any) --
+canonical_href: https://mydropintheoceans.org/
+-- meta robots (if any) --
+meta_robots: index, follow
+-- robots.txt disallow check --
+
+=== http://www.mydropintheoceans.org/home/ ===
+-- initial response (no redirects) --
+status: 301
+date: Sun, 14 Jun 2026 12:46:38 GMT
+server: Apache
+location: https://mydropintheoceans.org/home/
+cache-control: max-age=0
+expires: Sun, 14 Jun 2026 12:46:38 GMT
+content-type: text/html; charset=iso-8859-1
+connection: close
+-- final after redirects (follow) --
+final_status: 200 final_url: https://mydropintheoceans.org/
+-- rel=canonical (if any) --
+canonical_href: https://mydropintheoceans.org/
+-- meta robots (if any) --
+meta_robots: index, follow
+-- robots.txt disallow check --
+
+=== https://www.mydropintheoceans.org/home ===
+-- initial response (no redirects) --
+status: 301
+date: Sun, 14 Jun 2026 12:46:38 GMT
+server: Apache
+strict-transport-security: max-age=16000000
+location: https://mydropintheoceans.org/home
+cache-control: max-age=0
+expires: Sun, 14 Jun 2026 12:46:38 GMT
+content-type: text/html; charset=iso-8859-1
+connection: close
+-- final after redirects (follow) --
+final_status: 200 final_url: https://mydropintheoceans.org/
+-- rel=canonical (if any) --
+canonical_href: https://mydropintheoceans.org/
+-- meta robots (if any) --
+meta_robots: index, follow
+-- robots.txt disallow check --
+
+=== http://mydropintheoceans.org/index.php ===
+-- initial response (no redirects) --
+status: 301
+date: Sun, 14 Jun 2026 12:46:38 GMT
+server: Apache
+location: https://mydropintheoceans.org/index.php
+cache-control: max-age=0
+expires: Sun, 14 Jun 2026 12:46:38 GMT
+content-type: text/html; charset=iso-8859-1
+connection: close
+-- final after redirects (follow) --
+final_status: 200 final_url: https://mydropintheoceans.org/
+-- rel=canonical (if any) --
+canonical_href: https://mydropintheoceans.org/
+-- meta robots (if any) --
+meta_robots: index, follow
+-- robots.txt disallow check --
+
+=== https://mydropintheoceans.org/faq ===
+-- initial response (no redirects) --
+status: 301
+date: Sun, 14 Jun 2026 12:46:38 GMT
+server: Apache
+strict-transport-security: max-age=16000000
+location: https://mydropintheoceans.org/faq/
+content-type: text/html; charset=iso-8859-1
+connection: close
+-- final after redirects (follow) --
+final_status: 200 final_url: https://mydropintheoceans.org/faq/
+-- rel=canonical (if any) --
+canonical_href: https://mydropintheoceans.org/faq/
+-- meta robots (if any) --
+meta_robots: index, follow
+-- robots.txt disallow check --
+

@@ -11,10 +11,10 @@ $pageTitle = $locale === 'fr'
   ? 'Pourquoi les Suisses ont dit non à l\'argent gratuit'
   : ($locale === 'de' ? 'Warum die Schweiz Nein zu kostenlosem Geld sagte' : 'Why the Swiss Said No to Free Money');
 $pageDescription = $locale === 'fr'
-  ? 'Ce qu\'un vote historique a revele sur notre relation emotionnelle a la nature, au travail, a l\'argent et a la valeur.'
+  ? 'Ce qu\'un vote historique de 2016 a révélé sur notre relation émotionnelle au travail, à la valeur et à la nature — et pourquoi un dividende citoyen pour la nature diffère du revenu universel.'
   : ($locale === 'de'
-      ? 'Was eine historische Abstimmung ueber unsere emotionale Beziehung zu Natur, Arbeit, Geld und Wert offenbarte.'
-      : 'What a historic vote revealed about our emotional relationship with Nature, work, money, and worth.');
+      ? 'Was das Schweizer UBI-Referendum 2016 über unsere emotionale Beziehung zu Arbeit, Wert und Natur offenbarte — und warum eine Bürgerdividende für die Natur sich vom Grundeinkommen unterscheidet.'
+      : 'What the 2016 Swiss UBI referendum revealed about our emotional relationship with work, value, and nature — and why a Citizen\'s Dividend for Nature differs fundamentally from basic income.');
 // article path + localized canonical/alternates
 $articlePath = '/blog/why-the-swiss-said-no-to-free-money/';
 $canonicalUrl = localized_url($articlePath, $locale);

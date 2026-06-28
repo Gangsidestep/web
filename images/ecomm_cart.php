@@ -95,14 +95,14 @@ if($fname==null and $fname=="")
 		{
    		 ?>
             <div class="header"><nav>
-            <a  class="hamburger"
-                data-toggle="dropdown"
-                data-func="LoadFromTopBar"
-                href="/login/loggedin/account.php">About</a> <li> · </li>
-            <li class="logo nav-item"><a href="/login/loggedin/account.php" class="home">MyDIO&apos;</a> </li>
+			<a  class="hamburger"
+				data-toggle="dropdown"
+				data-func="LoadFromTopBar"
+				href="/login/index.php?redirect=/login/loggedin/account.php">About</a> <li> · </li>
+			<li class="logo nav-item"><a href="/login/index.php?redirect=/login/loggedin/account.php" class="home">MyDIO&apos;</a> </li>
             <ul class="dropdown-menu">
             <li><a href="/about.php">About Us</a></li>
-            <li><a href="/login/loggedin/aboutmydio/animation.php">Animation</a></li>
+			<li><a href="/login/index.php?redirect=/login/loggedin/aboutmydio/animation.php">Animation</a></li>
             <!-- <li><a href="create_a_quiz.php">Create a new Quiz</a></li> 
             <li class="divider"></li> 
             <li><a href="../admin_choice.php">Admin Panel</a></li>-->
