@@ -164,6 +164,8 @@ if (basename($_SERVER['PHP_SELF']) === 'home-de.php') {
 
 <span class="span_text_box">
 	Für mehr Hintergrund zur Erzählung, die wir erben, lesen Sie
+	<a href="/de/blog/why-the-swiss-said-no-to-free-money/" style="text-decoration:underline;">Warum die Schweiz Nein zum freien Geld sagte</a>,
+	für die Grundlagen unserer Wertlogik,
 	<a href="/de/blog/money-work-worth/" style="text-decoration:underline;">Geld = Arbeit = Wert</a>,
 	und für einen praktischen Einstieg in das Konzept der Anerkennung, siehe
 	<a href="/de/blog/what-if-stewardship-was-financially-recognised/" style="text-decoration:underline;">den Essay zur Stewardship-Anerkennung</a>.

@@ -211,7 +211,7 @@ $locale = $locale ?? 'de';
 
 <p><strong>My Drop In The Oceans ist eine Einladung, diese fehlende Ebene mitzugestalten — dort, wo ökologischer Wert am Punkt der tatsächlichen Entscheidungen sichtbar und teilbar wird.</strong></p>
 
-<p>Weiterlesen: <a class="blog-nav-link" href="<?php echo htmlspecialchars(localized_path('/theory-of-change/', $locale)); ?>">Theory of Change</a>, <a class="blog-nav-link" href="<?php echo htmlspecialchars(localized_path('/privacy/', $locale)); ?>">Datenschutz</a> und <a class="blog-nav-link" href="<?php echo htmlspecialchars(localized_path('/blog/', $locale)); ?>">Blogbeiträge</a>.</p>
+<p>Weiterlesen: <a class="blog-nav-link" href="<?php echo htmlspecialchars(localized_path('/theory-of-change/', $locale)); ?>">Theory of Change</a>, <a class="blog-nav-link" href="<?php echo htmlspecialchars(localized_path('/blog/why-the-swiss-said-no-to-free-money/', $locale)); ?>">Warum die Schweiz Nein zum freien Geld sagte</a>, <a class="blog-nav-link" href="<?php echo htmlspecialchars(localized_path('/privacy/', $locale)); ?>">Datenschutz</a> und <a class="blog-nav-link" href="<?php echo htmlspecialchars(localized_path('/blog/', $locale)); ?>">Blogbeiträge</a>.</p>
 
 <div class="social-share-bar">
   <div class="share-label">Teilen:</div>

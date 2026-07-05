@@ -12,8 +12,9 @@ $locale = get_current_locale();
 $isFr = $locale === 'fr';
 $isDe = $locale === 'de';
 
+
 $pageTitle = $isFr
-	? 'Théorie du changement : capital naturel, incitations et économie régénérative'
+	? 'Théorie du changement | Capital naturel et économie régénérative'
 	: ($isDe
 		? 'Theorie des Wandels: Naturkapital, Anreize und Buergerdividende'
 		: 'Theory of Change for Natural Capital: Aligning Economy and Nature');

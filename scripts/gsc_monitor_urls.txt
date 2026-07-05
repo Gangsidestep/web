@@ -1,9 +1,36 @@
-# One URL per line. Keep this list small and high-priority for daily monitoring.
+# One URL per line.
+# Includes core canonical URLs plus known technical variants tied to GSC issues.
 https://mydropintheoceans.org/
+https://mydropintheoceans.org/fr/
+https://mydropintheoceans.org/de/
+
+https://mydropintheoceans.org/theory-of-change/
+https://mydropintheoceans.org/fr/theory-of-change/
+https://mydropintheoceans.org/de/theory-of-change/
+
 https://mydropintheoceans.org/faq/
 https://mydropintheoceans.org/fr/faq/
 https://mydropintheoceans.org/de/faq/
+
+https://mydropintheoceans.org/contact/
+https://mydropintheoceans.org/fr/contact/
+https://mydropintheoceans.org/de/contact/
+
+https://mydropintheoceans.org/privacy/
+https://mydropintheoceans.org/fr/privacy/
+https://mydropintheoceans.org/de/privacy/
+
+https://mydropintheoceans.org/blog/
+https://mydropintheoceans.org/fr/blog/
+https://mydropintheoceans.org/de/blog/
+
 https://mydropintheoceans.org/blog/make-money-first-then-think-of-nature/
 https://mydropintheoceans.org/blog/money-work-worth/
 https://mydropintheoceans.org/fr/blog/why-the-swiss-said-no-to-free-money/
 https://mydropintheoceans.org/de/blog/why-the-swiss-said-no-to-free-money/
+
+# Technical variants to verify redirect/canonical behavior stays stable.
+https://mydropintheoceans.org/home
+https://mydropintheoceans.org/home/
+https://mydropintheoceans.org/index.php
+https://mydropintheoceans.org/faq

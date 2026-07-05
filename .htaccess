@@ -1,10 +1,24 @@
 # Core rewrite engine
 RewriteEngine On
 
-# One-hop canonicalization for high-volume legacy variants in GSC examples.
-# This avoids multi-step redirect chains such as http+www+/home -> https non-www + /.
-RewriteRule ^home/?$ https://mydropintheoceans.org/ [R=301,L,NC]
+# Canonicalize legacy query-string homepage variants (e.g., ?p=about, ?s=...)
+# to a clean root URL so GSC alternative-canonical samples can drain over time.
+RewriteCond %{REQUEST_URI} ^/$ [NC]
+RewriteCond %{QUERY_STRING} (^|&)p=about(&|$) [NC,OR]
+RewriteCond %{QUERY_STRING} (^|&)s=[^&]*(&|$) [NC]
+RewriteRule ^$ https://mydropintheoceans.org/ [R=301,L,QSD]
+
+# Aggressive cleanup: legacy variants are retired with 410 Gone.
+# This intentionally drops old aliases instead of redirecting them.
+RewriteRule ^home/?$ - [G,L,NC]
+RewriteCond %{THE_REQUEST} \s/+index\.php([?\s]|$) [NC]
 RewriteRule ^index\.php$ https://mydropintheoceans.org/ [R=301,L,NC]
+RewriteRule ^businesses/?$ - [G,L,NC]
+RewriteRule ^about\.php$ - [G,L,NC]
+RewriteRule ^about/?$ - [G,L,NC]
+RewriteRule ^how-dio-works/?$ - [G,L,NC]
+RewriteRule ^how-di-o-works/?$ - [G,L,NC]
+RewriteRule ^blog/nature-is-not-a-?$ - [G,L,NC]
 
 # ---------------- Security: managed blocklist (auto-generated) ----------------
 # MANAGED_BLOCK_START
@@ -39,9 +53,9 @@ RewriteRule ^community/action\.php$ - [E=NOINDEX:1]
 RewriteCond %{HTTP_HOST} ^chat\.mydropintheoceans\.org$ [NC]
 RewriteRule ^ - [E=NOINDEX:1]
 
-# Legacy HR endpoint: redirect permanently to site root
-Redirect 301 /HR/ https://mydropintheoceans.org/
-RewriteRule ^hr/?$ https://mydropintheoceans.org/ [R=301,L,NC,QSD]
+# Legacy HR endpoint: retire with 410 Gone
+Redirect gone /HR/
+RewriteRule ^hr/?$ - [G,L,NC]
 
 # MANAGED_BLOCK_END
 # -------------------------------------------------------------------------
@@ -58,14 +72,15 @@ RewriteRule ^about-mydio(/.*)?$ - [G,L,NC]
 RewriteRule ^login(/.*)?$ - [G,L,NC]
 
 
-# Coverage cleanup: map legacy public URLs to current equivalents
-RewriteRule ^index_fr\.php$ /fr/ [R=301,L,NC]
-RewriteRule ^about\.php$ /theory-of-change/ [R=301,L,NC]
-RewriteRule ^about/?$ /theory-of-change/ [R=301,L,NC]
-RewriteRule ^how-dio-works/?$ /theory-of-change/ [R=301,L,NC]
-RewriteRule ^how-di-o-works/?$ /theory-of-change/ [R=301,L,NC]
+# Coverage cleanup: retire legacy variants (kept here to prevent accidental lower-priority remaps)
+RewriteCond %{THE_REQUEST} \s/+index_fr\.php([?\s]|$) [NC]
+RewriteRule ^index_fr\.php$ - [G,L,NC]
+RewriteRule ^about\.php$ - [G,L,NC]
+RewriteRule ^about/?$ - [G,L,NC]
+RewriteRule ^how-dio-works/?$ - [G,L,NC]
+RewriteRule ^how-di-o-works/?$ - [G,L,NC]
 RewriteRule ^(contact|privacy|blog|theory-of-change|faq)$ /$1/ [R=301,L,NC]
-RewriteRule ^blog/nature-is-not-a-?$ /blog/nature-is-not-a-charity/ [R=301,L,NC]
+RewriteRule ^blog/nature-is-not-a-?$ - [G,L,NC]
 
 # Coverage cleanup: retire private/defunct endpoints so Google drops them faster
 RewriteRule ^community/action\.php$ - [G,L,NC]
@@ -86,9 +101,9 @@ RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Internal locale routing for multilingual URLs
-# /en/... redirects to canonical non-prefixed URL (English is default, no prefix needed)
-RewriteRule ^en/?$ https://mydropintheoceans.org/ [R=301,L]
-RewriteRule ^en/(.*)$ https://mydropintheoceans.org/$1 [R=301,L]
+# /en/... legacy aliases are retired instead of redirected.
+RewriteRule ^en/?$ - [G,L]
+RewriteRule ^en/(.*)$ - [G,L]
 # Canonical locale roots with trailing slash
 RewriteRule ^fr$ /fr/ [R=301,L]
 RewriteRule ^de$ /de/ [R=301,L]

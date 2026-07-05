@@ -1,7 +1,14 @@
 <?php
-if(empty($_POST))
-{
-	exit;
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(410);
+    header('Content-Type: text/plain; charset=UTF-8');
+    echo 'Gone';
+    exit;
+}
+
+if (empty($_POST)) {
+    http_response_code(400);
+    exit;
 }
 
 // Rate limiting setup

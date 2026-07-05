@@ -27,9 +27,9 @@
 <p>Une économie régénératrice : pas seulement des écosystèmes plus sains, mais aussi un meilleur équilibre de vie ?</p>
 <p>🌊 Votre goutte dans les océans compte.<br>Célébrons la stewardship et lançons une réaction en chaîne — pour redéfinir la valeur et réaligner la croissance.</p>
 <p><b>Question :</b><br>Si vous pouviez obtenir une reconnaissance concrète pour vos actes de stewardship, que feriez-vous différemment ?</p>
-<p><span class="blog-nav-label">🔗 Vous avez manqué les parties 1 et 2 ?</span> <a class="blog-nav-link" href="/blog/why-the-swiss-said-no-to-free-money/">Why the Swiss Said No to Free Money</a> & <a class="blog-nav-link" href="/blog/money-work-worth/">Money = Work = Worth: A Story We’ve All Inherited</a></p>
-<p>Pour aller plus loin sur la manière de corriger le décalage entre valeur créée et reconnaissance reçue, consultez notre <a class="blog-nav-link" href="/theory-of-change/">cadre de Théorie du Changement</a>.</p>
-<p>Découvrez aussi pourquoi la Nature n’est pas une œuvre de charité dans <a class="blog-nav-link" href="/blog/nature-is-not-a-charity/">Nature is Not a Charity—It’s an Economic Imperative</a>.</p>
+<p><span class="blog-nav-label">🔗 Vous avez manqué les parties 1 et 2 ?</span> <a class="blog-nav-link" href="/fr/blog/why-the-swiss-said-no-to-free-money/">Pourquoi les Suisses ont dit non à l’argent gratuit</a> & <a class="blog-nav-link" href="/fr/blog/money-work-worth/">Money = Work = Worth : une histoire que nous avons tous héritée</a></p>
+<p>Pour aller plus loin sur la manière de corriger le décalage entre valeur créée et reconnaissance reçue, consultez notre <a class="blog-nav-link" href="/fr/theory-of-change/">cadre de Théorie du Changement</a>.</p>
+<p>Découvrez aussi pourquoi la Nature n’est pas une œuvre de charité dans <a class="blog-nav-link" href="/fr/blog/nature-is-not-a-charity/">La Nature n’est pas une œuvre de charité — c’est un impératif économique</a>.</p>
 <p><span class="blog-nav-label blog-nav-upnext">⏩ À suivre :</span> <span class="blog-nav-link">Comment mesurer ce qui compte vraiment ?</span></p>
 
 <hr style="margin:2em 0;">
@@ -64,7 +64,7 @@
 
 <h3>Où puis-je en savoir plus ?</h3>
 
-<p>Consultez la <a class="blog-nav-link" href="/theory-of-change/">page Théorie du Changement</a> pour une explication plus approfondie des hypothèses, de la logique et de la vision à long terme qui sous-tendent ces idées.</p>
+<p>Consultez la <a class="blog-nav-link" href="/fr/theory-of-change/">page Théorie du Changement</a> pour une explication plus approfondie des hypothèses, de la logique et de la vision à long terme qui sous-tendent ces idées.</p>
 
 <div style="margin-top: 2em; font-size: 0.95em; color: #666;">
   <strong>Initialement partagé sur LinkedIn.</strong>
@@ -73,8 +73,8 @@
 </div>
 <div class="social-share-bar">
   <div class="share-label">Partager :</div>
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://mydropintheoceans.org/blog/what-if-stewardship-was-financially-recognised/" target="_blank" rel="noopener" class="social-link"><img src="/images/social/linkedin.svg" alt="LinkedIn" style="width:28px;height:28px;vertical-align:middle;"></a>
-  <a href="https://twitter.com/intent/tweet?url=https://mydropintheoceans.org/blog/what-if-stewardship-was-financially-recognised/&text=Et%20si%20la%20stewardship%20%C3%A9tait%20reconnue%20financi%C3%A8rement%20%3F" target="_blank" rel="noopener" class="social-link"><img src="/images/social/twitter.svg" alt="Twitter" style="width:28px;height:28px;vertical-align:middle;"></a>
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https://mydropintheoceans.org/blog/what-if-stewardship-was-financially-recognised/" target="_blank" rel="noopener" class="social-link"><img src="/images/social/facebook.svg" alt="Facebook" style="width:28px;height:28px;vertical-align:middle;"></a>
-  <a href="https://wa.me/?text=Et%20si%20la%20stewardship%20%C3%A9tait%20reconnue%20financi%C3%A8rement%20%3F%20https://mydropintheoceans.org/blog/what-if-stewardship-was-financially-recognised/" target="_blank" rel="noopener" class="social-link"><img src="/images/social/whatsapp.svg" alt="WhatsApp" style="width:28px;height:28px;vertical-align:middle;"></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://mydropintheoceans.org/fr/blog/what-if-stewardship-was-financially-recognised/" target="_blank" rel="noopener" class="social-link"><img src="/images/social/linkedin.svg" alt="LinkedIn" style="width:28px;height:28px;vertical-align:middle;"></a>
+  <a href="https://twitter.com/intent/tweet?url=https://mydropintheoceans.org/fr/blog/what-if-stewardship-was-financially-recognised/&text=Et%20si%20la%20stewardship%20%C3%A9tait%20reconnue%20financi%C3%A8rement%20%3F" target="_blank" rel="noopener" class="social-link"><img src="/images/social/twitter.svg" alt="Twitter" style="width:28px;height:28px;vertical-align:middle;"></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://mydropintheoceans.org/fr/blog/what-if-stewardship-was-financially-recognised/" target="_blank" rel="noopener" class="social-link"><img src="/images/social/facebook.svg" alt="Facebook" style="width:28px;height:28px;vertical-align:middle;"></a>
+  <a href="https://wa.me/?text=Et%20si%20la%20stewardship%20%C3%A9tait%20reconnue%20financi%C3%A8rement%20%3F%20https://mydropintheoceans.org/fr/blog/what-if-stewardship-was-financially-recognised/" target="_blank" rel="noopener" class="social-link"><img src="/images/social/whatsapp.svg" alt="WhatsApp" style="width:28px;height:28px;vertical-align:middle;"></a>
 </div>

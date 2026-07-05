@@ -1,0 +1,13 @@
+# GSC monitor schedules (Europe/Zurich timezone)
+# Paste into server cron (or ask host support to install these entries)
+
+CRON_TZ=Europe/Zurich
+
+# Daily focused URL inspection + email (12:10 CET/CEST)
+10 12 * * * cd /home/clients/a87f9485d236547310279906c2e64cab/web && GOOGLE_APPLICATION_CREDENTIALS=/home/clients/a87f9485d236547310279906c2e64cab/web/credentials/gsc-service-account.json .venv/bin/python scripts/gsc_url_inspection_monitor.py --property sc-domain:mydropintheoceans.org --urls-file scripts/gsc_monitor_urls.txt >> analytics/google/url_inspection_monitor/cron.log 2>&1 && scripts/send_latest_gsc_reports_email.sh --to david@mydio.ch --subject-prefix "[GSC Daily]" >> analytics/google/url_inspection_monitor/cron.log 2>&1
+
+# Monday + Wednesday sitemap sweep + email (12:20 CET/CEST)
+20 12 * * 1,3 cd /home/clients/a87f9485d236547310279906c2e64cab/web && GOOGLE_APPLICATION_CREDENTIALS=/home/clients/a87f9485d236547310279906c2e64cab/web/credentials/gsc-service-account.json .venv/bin/python scripts/gsc_url_inspection_monitor.py --property sc-domain:mydropintheoceans.org --urls-file scripts/gsc_monitor_urls_sitemap.txt >> analytics/google/url_inspection_monitor/cron.log 2>&1 && scripts/send_latest_gsc_reports_email.sh --to david@mydio.ch --subject-prefix "[GSC Sitemap Sweep]" >> analytics/google/url_inspection_monitor/cron.log 2>&1
+
+# Weekly performance run + email (Monday 12:30 CET/CEST)
+30 12 * * 1 cd /home/clients/a87f9485d236547310279906c2e64cab/web && GOOGLE_APPLICATION_CREDENTIALS=/home/clients/a87f9485d236547310279906c2e64cab/web/credentials/gsc-service-account.json .venv/bin/python scripts/gsc_performance_monitor.py --property sc-domain:mydropintheoceans.org >> analytics/google/performance_monitor/cron.log 2>&1 && scripts/send_latest_gsc_reports_email.sh --to david@mydio.ch --subject-prefix "[GSC Weekly Performance]" >> analytics/google/performance_monitor/cron.log 2>&1
