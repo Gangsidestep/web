@@ -14,7 +14,7 @@ $isDe = $locale === 'de';
 
 
 $pageTitle = $isFr
-	? 'Théorie du changement | Capital naturel et économie régénérative'
+	? 'Théorie du changement | Capital naturel, économie régénérative'
 	: ($isDe
 		? 'Theorie des Wandels: Naturkapital, Anreize und Buergerdividende'
 		: 'Theory of Change for Natural Capital: Aligning Economy and Nature');

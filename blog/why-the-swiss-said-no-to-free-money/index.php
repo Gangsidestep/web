@@ -11,7 +11,7 @@ $pageTitle = $locale === 'fr'
   ? 'Pourquoi les Suisses ont dit non à l\'argent gratuit'
   : ($locale === 'de' ? 'Warum die Schweiz Nein zu kostenlosem Geld sagte' : 'Why the Swiss Said No to Free Money');
 $pageDescription = $locale === 'fr'
-  ? 'Ce qu\'un vote historique de 2016 a révélé sur notre relation émotionnelle au travail, à la valeur et à la nature — et pourquoi un dividende citoyen pour la nature diffère du revenu universel.'
+  ? 'Pourquoi le référendum suisse de 2016 sur le revenu universel a échoué et pourquoi un dividende citoyen pour la Nature est fondamentalement différent.'
   : ($locale === 'de'
       ? 'Was das Schweizer UBI-Referendum 2016 über unsere emotionale Beziehung zu Arbeit, Wert und Natur offenbarte — und warum eine Bürgerdividende für die Natur sich vom Grundeinkommen unterscheidet.'
       : 'What the 2016 Swiss UBI referendum revealed about our emotional relationship with work, value, and nature — and why a Citizen\'s Dividend for Nature differs fundamentally from basic income.');
@@ -34,10 +34,18 @@ $ogImage = 'https://mydropintheoceans.org/images/backdrop_an_economy_linkedin.jp
     <!-- SEO -->
     <meta name="keywords" content="Universal Basic Income, Switzerland, Stewardship, Economy, Blog, Sustainability">
     <meta name="author" content="My Drop In The Oceans">
-  <?php include __DIR__ . '/../../php/seo_tags.php'; ?>
+  <?php include __DIR__ . '/../../php/seo_tags.php';
+  
+  $seoTitle = $locale === 'fr'
+    ? 'Suisse 2016 : pourquoi le revenu universel a été rejeté'
+    : ($locale === 'de'
+        ? 'Schweizer Grundeinkommen: Warum die Initiative scheiterte'
+        : 'Why the Swiss Said No to Free Money | Swiss UBI Referendum');
+        ?>
+        
     <link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8'); ?>" />
 
-    <title><?php echo htmlspecialchars($pageTitle ?? 'Why the Swiss Said No to Free Money'); ?> | Swiss UBI Referendum</title>
+    <title><?php echo htmlspecialchars($seoTitle, ENT_QUOTES, 'UTF-8'); ?></title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/connect-icons/apple-touch-icon.png">
     <link rel="stylesheet" type="text/css" href="/css/mydropintheoceans-style.css?v=<?php echo time(); ?>">
