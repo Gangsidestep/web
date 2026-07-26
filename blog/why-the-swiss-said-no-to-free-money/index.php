@@ -13,7 +13,7 @@ $pageTitle = $locale === 'fr'
 $pageDescription = $locale === 'fr'
   ? 'Pourquoi le référendum suisse de 2016 sur le revenu universel a échoué et pourquoi un dividende citoyen pour la Nature est fondamentalement différent.'
   : ($locale === 'de'
-      ? 'Was das Schweizer UBI-Referendum 2016 über unsere emotionale Beziehung zu Arbeit, Wert und Natur offenbarte — und warum eine Bürgerdividende für die Natur sich vom Grundeinkommen unterscheidet.'
+      ? 'Was das Schweizer UBI-Referendum 2016 über Arbeit, Wert und Natur zeigte – und warum die Bürgerdividende für die Natur anders ist als das Grundeinkommen'
       : 'What the 2016 Swiss UBI referendum revealed about our emotional relationship with work, value, and nature — and why a Citizen\'s Dividend for Nature differs fundamentally from basic income.');
 // article path + localized canonical/alternates
 $articlePath = '/blog/why-the-swiss-said-no-to-free-money/';
