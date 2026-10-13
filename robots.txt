@@ -12,6 +12,10 @@ Disallow: /login/
 Disallow: /.git/
 Disallow: /.venv/
 Disallow: /php/
+# Allow specific processor paths so Search Console can follow redirects to canonical handlers
+Allow: /de/contact-form-process.php
+Allow: /fr/contact-form-process.php
+Allow: /contact-form-process.php
 Disallow: /scripts/
 Disallow: /sql/
 Disallow: /analytics/

@@ -107,12 +107,12 @@ if($fname==null and $fname=="")
             <li class="divider"></li> 
             <li><a href="../admin_choice.php">Admin Panel</a></li>-->
             </ul>
-            <div><a href="/index.php" class="user-icon-mobile"
+			    <div><a href="/" class="user-icon-mobile"
             data-toggle="dropdown"
                     data-func="LoadFromTopBar"></a>
             <ul id="user-actions" class="pull-right dropdown-menu">
             <li><a href="/login/index.php?redirect=<? echo urlencode($server); ?>">Login</a></li>
-            <li><a href="/index.php">Signup</a></li>
+			    <li><a href="/">Signup</a></li>
             
             </ul>
             </div>

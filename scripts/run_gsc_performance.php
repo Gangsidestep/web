@@ -2,12 +2,10 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/cron_runner_common.php';
+// Replaced by the MyDIO search monitor (platform/shared/Search), which imports Search Console,
+// URL Inspection and PageSpeed data for mydropintheoceans.org daily and emails a Monday summary:
+// scheduled task https://chat.mydropintheoceans.org/search/cron.php?key=…,
+// dashboard https://chat.mydropintheoceans.org/search/. This scheduled task can be deleted.
 
-cron_require_key();
-cron_set_google_credentials();
-
-cron_run_commands([
-    '.venv/bin/python scripts/gsc_performance_monitor.py --property sc-domain:mydropintheoceans.org',
-    'scripts/send_latest_gsc_reports_email.sh --to david@mydio.ch --subject-prefix "[GSC Weekly Performance]"',
-]);
+header('Content-Type: text/plain; charset=UTF-8');
+echo "Replaced by https://chat.mydropintheoceans.org/search/ (daily task: /search/cron.php). This task can be deleted.\n";

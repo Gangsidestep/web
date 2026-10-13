@@ -75,6 +75,16 @@ $blog_posts = [
       'excerpt_fr' => 'Pourquoi la durabilité doit devenir visible dans les transactions quotidiennes, et pas seulement dans les mandats institutionnels.',
       'excerpt_de' => 'Warum Nachhaltigkeit nicht nur in Zentralbankmandaten, sondern in alltäglichen Entscheidungen wirtschaftlich sichtbar werden muss.',
     ],
+    [
+      'title' => 'Building Bridges 2026: The Bridge We May Still Be Missing',
+      'title_fr' => 'Building Bridges 2026 : le pont qui nous manque peut-être encore',
+      'title_de' => 'Building Bridges 2026: Die Brücke, die uns vielleicht noch fehlt',
+      'slug' => 'building-bridges-2026-missing-bridge/',
+      'date' => '2026-10-12',
+      'excerpt' => 'Reflections from Geneva on connecting recognition of Nature’s value with meaningful economic agency for the people who contribute to it.',
+      'excerpt_fr' => 'Réflexions depuis Genève sur le lien entre la reconnaissance de la valeur de la Nature et le pouvoir d’agir économique de celles et ceux qui y contribuent.',
+      'excerpt_de' => 'Gedanken aus Genf darüber, wie die Anerkennung des Werts der Natur mit wirtschaftlicher Handlungsfähigkeit für diejenigen verbunden werden kann, die dazu beitragen.',
+    ],
     // Add more posts here as you publish them
 ];
 

@@ -265,7 +265,7 @@ $faqSchema = $isFr
 					token: '<?php echo $form_token; ?>'
 				};
 
-				$.post("../contact-form-process.php", formData)
+				$.post("../php/contact-form-process.php", formData)
 					.done(function( data ) {
 						if (data="success") {
 							document.getElementById("response_box").innerHTML = "Thanks for getting in touch. We'll get back to you soon.";

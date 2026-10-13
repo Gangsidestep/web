@@ -72,12 +72,7 @@ $canonicalUrl = localized_url('/', $locale);
 			"@context": "https://schema.org",
 			"@type": "WebSite",
 			"name": "My Drop In the Oceans",
-			"url": "https://mydropintheoceans.org/",
-			"potentialAction": {
-				"@type": "SearchAction",
-				"target": "https://mydropintheoceans.org/?s={search_term_string}",
-				"query-input": "required name=search_term_string"
-			}
+			"url": "https://mydropintheoceans.org/"
 		}
 	</script>
 	<script type="application/ld+json">
